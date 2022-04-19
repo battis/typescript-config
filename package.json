@@ -1,11 +1,11 @@
 {
   "name": "@battis/typescript-tricks",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A handful of useful types and operators",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc --build --verbose"
   },
   "repository": {
     "type": "git",
