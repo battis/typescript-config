@@ -1,8 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.instanceOf = void 0;
-// https://stackoverflow.com/a/65152869/294171
-function instanceOf(array, filterType) {
-    return array.filter((e) => e instanceof filterType);
-}
-exports.instanceOf = instanceOf;
+!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.BattisTypescriptTricks=t():e.BattisTypescriptTricks=t()}(self,(()=>(()=>{"use strict";var e={};return(()=>{var t=e;Object.defineProperty(t,"__esModule",{value:!0}),t.instanceOf=void 0,t.instanceOf=function(e,t){return e.filter((e=>e instanceof t))}})(),e})()));
