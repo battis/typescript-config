@@ -4,9 +4,11 @@ specifiers:
   '@battis/prettier-config': github:battis/prettier-config
   eslint-config-prettier: ^8.6.0
 
+dependencies:
+  eslint-config-prettier: 8.6.0
+
 devDependencies:
   '@battis/prettier-config': github.com/battis/prettier-config/c268228e4a2afbd25eb071fc1e5733e0bdb33011
-  eslint-config-prettier: 8.6.0
 
 packages:
 
@@ -15,7 +17,7 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
-    dev: true
+    dev: false
 
   github.com/battis/prettier-config/c268228e4a2afbd25eb071fc1e5733e0bdb33011:
     resolution: {commit: c268228e4a2afbd25eb071fc1e5733e0bdb33011, repo: git+ssh://git@github.com/battis/prettier-config.git, type: git}
