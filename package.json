@@ -7,5 +7,11 @@
     "url": "https://github.com/battis"
   },
   "license": "GPL-3.0",
-  "main": "index.json"
+  "main": "index.json",
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-tsdoc": "^0.2.17",
+  }
 }
