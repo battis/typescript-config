@@ -1,0 +1,15 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@battis/prettier-config': github:battis/prettier-config
+
+devDependencies:
+  '@battis/prettier-config': github.com/battis/prettier-config/7aab7a1f81b2ba16b8e74f031fa91ac3972213b4
+
+packages:
+
+  github.com/battis/prettier-config/7aab7a1f81b2ba16b8e74f031fa91ac3972213b4:
+    resolution: {commit: 7aab7a1f81b2ba16b8e74f031fa91ac3972213b4, repo: git+ssh://git@github.com/battis/prettier-config.git, type: git}
+    name: '@battis/prettier-config'
+    version: 1.0.0
+    dev: true
