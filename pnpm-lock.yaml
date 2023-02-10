@@ -2,14 +2,25 @@ lockfileVersion: 5.4
 
 specifiers:
   '@battis/prettier-config': github:battis/prettier-config
+  eslint-config-prettier: ^8.6.0
 
 devDependencies:
-  '@battis/prettier-config': github.com/battis/prettier-config/7aab7a1f81b2ba16b8e74f031fa91ac3972213b4
+  '@battis/prettier-config': github.com/battis/prettier-config/c268228e4a2afbd25eb071fc1e5733e0bdb33011
+  eslint-config-prettier: 8.6.0
 
 packages:
 
-  github.com/battis/prettier-config/7aab7a1f81b2ba16b8e74f031fa91ac3972213b4:
-    resolution: {commit: 7aab7a1f81b2ba16b8e74f031fa91ac3972213b4, repo: git+ssh://git@github.com/battis/prettier-config.git, type: git}
+  /eslint-config-prettier/8.6.0:
+    resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dev: true
+
+  github.com/battis/prettier-config/c268228e4a2afbd25eb071fc1e5733e0bdb33011:
+    resolution: {commit: c268228e4a2afbd25eb071fc1e5733e0bdb33011, repo: git+ssh://git@github.com/battis/prettier-config.git, type: git}
     name: '@battis/prettier-config'
     version: 1.0.0
+    peerDependencies:
+      prettier: ^2.8.4
     dev: true
