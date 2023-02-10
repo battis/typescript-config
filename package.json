@@ -8,6 +8,9 @@
   },
   "license": "GPL-3.0",
   "main": "index.json",
+  "dependencies": {
+    "eslint-config-prettier": "^8.6.0"
+  },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
@@ -16,8 +19,7 @@
     "prettier": "^2.8.4"
   },
   "devDependencies": {
-    "@battis/prettier-config": "github:battis/prettier-config",
-    "eslint-config-prettier": "^8.6.0"
+    "@battis/prettier-config": "github:battis/prettier-config"
   },
   "prettier": "@battis/prettier-config"
 }
