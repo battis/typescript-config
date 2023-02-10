@@ -1,0 +1,11 @@
+{
+  "name": "@battis/eslint-config",
+  "description": "",
+  "version": "1.0.0",
+  "author": {
+    "name": "Seth Battis",
+    "url": "https://github.com/battis"
+  },
+  "license": "GPL-3.0",
+  "main": "index.json"
+}
