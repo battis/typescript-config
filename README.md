@@ -7,7 +7,7 @@ auto-install-peers = true
 ```
 
 ```bash
-pnpm add @battis/prettier-config@github:battis/prettier-config
+pnpm add @battis/eslint-config@github:battis/eslint-config
 ```
 
 In `package.json`:
