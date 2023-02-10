@@ -7,5 +7,12 @@
     "url": "https://github.com/battis"
   },
   "license": "GPL-3.0",
-  "main": "index.json"
+  "main": "index.json",
+  "peerDependencies": {
+    "prettier": "^2.8.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4"
+  },
+  "prettier": "./index.json"
 }
