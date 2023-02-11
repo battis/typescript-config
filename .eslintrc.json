@@ -1,5 +1,9 @@
 {
   "extends": ["eslint:recommended", "eslint-config-prettier"],
+  "env": {
+    "node": true,
+    "es6": true
+  },
   "overrides": [
     {
       "files": ["**/*.ts"],

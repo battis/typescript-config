@@ -7,7 +7,7 @@
     "url": "https://github.com/battis"
   },
   "license": "GPL-3.0",
-  "main": "index.json",
+  "main": ".eslintrc.json",
   "dependencies": {
     "eslint-config-prettier": "^8.6.0"
   },
