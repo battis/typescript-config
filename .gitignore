@@ -1,4 +1,7 @@
 /node_modules
+/vendor/
+
 /.nova/*
 !/.nova/Artwork
 !/.nova/Configuration.json
+
