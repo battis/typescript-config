@@ -1,4 +1,4 @@
-# @battis/eslint-config
+# @battis/prettier-config
 
 In `.npmrc`:
 
