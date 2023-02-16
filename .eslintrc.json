@@ -4,9 +4,10 @@
     "node": true,
     "es6": true
   },
+  "plugins": ["eslint-plugin-html", "eslint-plugin-markdown"],
   "overrides": [
     {
-      "files": ["**/*.ts"],
+      "files": ["**/*.ts", "**/*.tsx"],
       "env": {
         "node": true
       },
