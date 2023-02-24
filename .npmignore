@@ -1,6 +1,0 @@
-/.nova/
-/node_modules/
-/src/
-/index.*
-/*.config.*
-tsconfig.*

@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "author": "Seth Battis <seth@battis.net>",
   "license": "GPL-3.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "homepage": "https://github.com/battis/typescript-tricks#readme",
   "repository": {
     "type": "git",
@@ -15,14 +15,25 @@
     "url": "https://github.com/battis/typescript-tricks/issues"
   },
   "scripts": {
-    "build": "webpack"
+    "dev": "git worktree add dist dist",
+    "update-dependencies": "pnpm update --shamefully-hoist && npm update --package-lock-only",
+    "transfer-package-to-dist": "copyfiles package.json package-lock.json pnpm-lock.yaml dist",
+    "update": "npm run update-dependencies && npm run transfer-package-to-dist",
+    "clean": "rimraf dist/src",
+    "build": "npm run clean && tsc"
   },
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.1",
-    "clean-webpack-plugin": "^4.0.0",
-    "ts-loader": "^9.2.8",
-    "typescript": "^4.5.4",
-    "webpack": "^5.72.0",
-    "webpack-cli": "^4.9.2"
+    "@battis/eslint-config": "github:battis/eslint-config",
+    "@battis/prettier-config": "github:battis/prettier-config",
+    "@tsconfig/recommended": "^1.0.2",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^4.1.2",
+    "typescript": "^4.9.5"
+  },
+  "prettier": "@battis/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@battis/eslint-config"
+    ]
   }
 }
