@@ -7,15 +7,15 @@
     "url": "https://github.com/battis"
   },
   "license": "GPL-3.0",
-  "scripts": {
-    "update": "pnpm update --shamefully-hoist; npm update --package-lock-only"
-  },
   "main": "index.json",
+  "scripts": {
+    "update": "pnpm update; npm update --package-lock-only"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4"
+  },
   "peerDependencies": {
     "prettier": "^2.8.4"
   },
-  "prettier": "./index.json",
-  "dependencies": {
-    "prettier": "^2.8.4"
-  }
+  "prettier": "./index.json"
 }
