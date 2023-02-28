@@ -9,7 +9,7 @@
   "license": "GPL-3.0",
   "main": "index.json",
   "scripts": {
-    "update": "pnpm update; npm update --package-lock-only"
+    "update": "pnpm up; npm up --package-lock-only"
   },
   "devDependencies": {
     "prettier": "^2.8.4"
