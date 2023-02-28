@@ -1,28 +1,28 @@
 # @battis/eslint-config
 
+Shared `eslint` config across all projects
+
+### Install
+
 In `.npmrc`:
 
-```
-auto-install-peers = true
+```ini
+auto-install-peers=true
+public-hoist-pattern[]=prettier
+public-hoist-pattern[]=*eslint*
+public-hoist-pattern[]=@tsconfig/recommended
 ```
 
 ```bash
-npm i -D @battis/eslint-config@github:battis/eslint-config
+pnpm i -D @battis/eslint-config@github:battis/eslint-config
 ```
-or 
-```bash
-pnpm i -D --shamefully-hoist @battis/eslint-config@github:battis/eslint-config
-```
-(because not all tools are good about package resolution)
 
 In `package.json`:
 
 ```json
 {
-  ...
   "eslintConfig": {
     "extends": "@battis/eslint-config"
   }
-  ...
 }
 ```
