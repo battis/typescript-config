@@ -7,17 +7,18 @@
     "url": "https://github.com/battis"
   },
   "license": "GPL-3.0",
-  "main": "index.json",
+  "main": ".prettierrc.json",
   "scripts": {
     "update": "pnpm up; npm up --package-lock-only"
   },
   "devDependencies": {
-    "@prettier/plugin-php": "^0.19.3",
-    "prettier": "^2.8.4"
+    "@prettier/plugin-xml": "^2.2.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-sql": "^0.13.0"
   },
   "peerDependencies": {
-    "@prettier/plugin-php": "^0.19.3",
-    "prettier": "^2.0"
-  },
-  "prettier": "./index.json"
+    "@prettier/plugin-xml": "^2.2.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-sql": "^0.13.0"
+  }
 }
