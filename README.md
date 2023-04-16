@@ -6,9 +6,6 @@ In `.npmrc`:
 
 ```
 auto-install-peers=true
-public-hoist-pattern[]=prettier
-public-hoist-pattern[]=*eslint*
-public-hoist-pattern[]=@tsconfig/recommended
 public-hoist-pattern[]=*webpack*
 public-hoist-pattern[]=*loader*
 public-hoist-pattern[]=sass
