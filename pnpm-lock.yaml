@@ -1314,7 +1314,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001478
+      caniuse-lite: 1.0.30001479
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1463,7 +1463,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001478
+      caniuse-lite: 1.0.30001479
       electron-to-chromium: 1.4.365
       node-releases: 2.0.10
       update-browserslist-db: 1.0.11(browserslist@4.21.5)
@@ -1557,13 +1557,13 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001478
+      caniuse-lite: 1.0.30001479
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: true
 
-  /caniuse-lite@1.0.30001478:
-    resolution: {integrity: sha512-gMhDyXGItTHipJj2ApIvR+iVB5hd0KP3svMWWXDvZOmjzJJassGLMfxRkQCSYgGd2gtdL/ReeiyvMSFD1Ss6Mw==}
+  /caniuse-lite@1.0.30001479:
+    resolution: {integrity: sha512-6nuRFim5dx8Eu2tO+KJ9PiBdPHs7WB5Hdf+klDcyefyEuOAcfhihIv7pS+JFknJLUiNQbm1AJYKm0c9QOlQS/Q==}
     dev: true
 
   /caw@2.0.1:

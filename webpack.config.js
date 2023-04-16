@@ -19,7 +19,7 @@ module.exports = ({
   externals = {},
   favicon = false,
   appName = false,
-  production = true,
+  production = true
 }) => {
   const config = {
     mode: 'production',
@@ -27,19 +27,19 @@ module.exports = ({
     output: {
       path: path.resolve(root, build),
       filename: 'assets/js/[name].[contenthash].js',
-      publicPath: publicPath,
+      publicPath: publicPath
     },
     module: {
       rules: [
         {
           test: /\.tsx?$/,
           use: {
-            loader: 'ts-loader',
-          },
+            loader: 'ts-loader'
+          }
         },
         {
           test: /\.svg$/,
-          use: 'raw-loader',
+          use: 'raw-loader'
         },
         {
           test: /\.s?[ac]ss$/,
@@ -47,34 +47,34 @@ module.exports = ({
             MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
-              options: { importLoaders: 2 },
+              options: { importLoaders: 2 }
             },
             {
               loader: 'postcss-loader',
               options: {
                 postcssOptions: {
-                  plugins: ['postcss-preset-env'],
-                },
-              },
+                  plugins: ['postcss-preset-env']
+                }
+              }
             },
             {
               loader: 'sass-loader',
-              options: { implementation: require('sass') },
-            },
-          ],
+              options: { implementation: require('sass') }
+            }
+          ]
         },
         {
           test: /\.(jpe?g|gif|png)/,
           loader: 'file-loader',
           options: {
             name: '[name].[contenthash].[ext]',
-            outputPath: 'assets/images',
-          },
-        },
-      ],
+            outputPath: 'assets/images'
+          }
+        }
+      ]
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js'],
+      extensions: ['.tsx', '.ts', '.js']
     },
     externals: externals,
     plugins: [
@@ -84,20 +84,20 @@ module.exports = ({
           {
             from: path.resolve(root, template),
             to: path.resolve(root, build),
-            filter: (filePath) => !/index\.html$/.test(filePath),
-          },
-        ],
+            filter: (filePath) => !/index\.html$/.test(filePath)
+          }
+        ]
       }),
       new HtmlWebpackPlugin({
         templateParameters: {
           PUBLIC_PATH: publicPath,
-          APP_NAME: appName || bundle,
+          APP_NAME: appName || bundle
         },
         template: path.resolve(root, template, 'index.html'),
-        hash: true,
+        hash: true
       }),
       new MiniCssExtractPlugin({
-        filename: 'assets/css/[name].[contenthash].css',
+        filename: 'assets/css/[name].[contenthash].css'
       }),
       new ImageMinimizerWebpackPlugin({
         minimizer: {
@@ -107,17 +107,17 @@ module.exports = ({
               ['gifsicle', { interlaced: true }],
               ['jpegtran', { progresive: true }],
               ['optipng', { optimizationLevel: 5 }],
-              ['svgo', { plugins: ['preset-default', 'prefixIds'] }],
-            ],
-          },
-        },
-      }),
+              ['svgo', { plugins: ['preset-default', 'prefixIds'] }]
+            ]
+          }
+        }
+      })
     ],
     optimization: {
       minimize: true,
       minimizer: ['...', new CssMinimizerWebpackPlugin()],
-      splitChunks: { chunks: 'all' },
-    },
+      splitChunks: { chunks: 'all' }
+    }
   };
   if (favicon) {
     config.plugins.push([
@@ -125,9 +125,9 @@ module.exports = ({
         patterns: [
           {
             from: path.resolve(root, favicon, 'mask.svg'),
-            to: path.resolve(root, build, 'assets/favicon/apple-mask-icon.svg'),
-          },
-        ],
+            to: path.resolve(root, build, 'assets/favicon/apple-mask-icon.svg')
+          }
+        ]
       }),
       new FaviconsWebpackPlugin({
         // startup screen
@@ -143,9 +143,9 @@ module.exports = ({
             favicons: false,
             firefox: false,
             windows: false,
-            yandex: false,
-          },
-        },
+            yandex: false
+          }
+        }
       }),
       new FaviconsWebpackPlugin({
         // favicons & manifest.json
@@ -157,12 +157,12 @@ module.exports = ({
           icons: {
             appleStartup: false,
             coast: false,
-            yandex: false,
+            yandex: false
           },
           start_url: `${publicPath}/contexts/default`,
-          scope: publicPath,
-        },
-      }),
+          scope: publicPath
+        }
+      })
     ]);
   }
   if (!production) {
@@ -182,7 +182,7 @@ module.exports = ({
     config.devServer = {
       open: true,
       hot: true,
-      watchFiles: [path.join(root, template, '**/*')],
+      watchFiles: [path.join(root, template, '**/*')]
     };
   }
   return config;
