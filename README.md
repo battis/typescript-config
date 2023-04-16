@@ -8,7 +8,7 @@ In `.npmrc`:
 
 ```ini
 auto-install-peers=true
-public-hoist-pattern[]=prettier
+public-hoist-pattern[]=*prettier*
 ```
 
 ```bash
