@@ -1,4 +1,4 @@
-# @battis/webpack-typescript-spa
+# @battis/webpack
 
 ## Install
 
@@ -15,13 +15,13 @@ public-hoist-pattern[]=favicons
 ```
 
 ```bash
-pnpm i -D @battis/webpack-typescript-spa@github:battis/webpack-typescript-spa rimraf
+pnpm i -D @battis/webpack@github:battis/webpack rimraf
 ```
 
 In `webpack.config.js`:
 
 ```js
-const config = require('@battis/webpack-typescript-spa');
+const config = require('@battis/webpack/ts/spa');
 
 module.exports = config({ root: __dirname });
 ```
