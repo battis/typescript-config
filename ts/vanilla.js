@@ -74,10 +74,7 @@ module.exports = ({
     ],
     optimization: {
       minimize: true,
-      minimizer: [
-        new TerserPlugin({ terserOptions: { ecma: 2018 } }),
-        new CssMinimizerWebpackPlugin()
-      ],
+      minimizer: ['...', new TerserPlugin(), new CssMinimizerWebpackPlugin()],
       splitChunks: { chunks: 'all' }
     }
   };
