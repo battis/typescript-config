@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerWebpackPlugin = require('image-minimizer-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 // TODO explore resolve.modules
 
@@ -20,7 +21,8 @@ module.exports = ({
   externals = {},
   favicon = false,
   appName = false,
-  production = true
+  production = true,
+  terserOptions = undefined
 }) => {
   const config = {
     mode: 'production',
@@ -117,7 +119,11 @@ module.exports = ({
     ],
     optimization: {
       minimize: true,
-      minimizer: ['...', new CssMinimizerWebpackPlugin()],
+      minimizer: [
+        '...',
+        new TerserPlugin(terserOptions),
+        new CssMinimizerWebpackPlugin()
+      ],
       splitChunks: { chunks: 'all' }
     }
   };

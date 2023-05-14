@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 // TODO explore resolve.modules
 
@@ -14,7 +15,8 @@ module.exports = ({
   build = 'build',
   publicPath = '/',
   externals = {},
-  production = true
+  production = true,
+  terserOptions = undefined
 }) => {
   const config = {
     mode: 'production',
@@ -73,7 +75,11 @@ module.exports = ({
     ],
     optimization: {
       minimize: true,
-      minimizer: ['...', new CssMinimizerWebpackPlugin()],
+      minimizer: [
+        '...',
+        new TerserPlugin(terserOptions),
+        new CssMinimizerWebpackPlugin()
+      ],
       splitChunks: { chunks: 'all' }
     }
   };
