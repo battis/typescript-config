@@ -77,7 +77,8 @@ module.exports = ({
       minimize: true,
       minimizer: [
         new TerserPlugin(terserOptions),
-        new CssMinimizerWebpackPlugin()
+        new CssMinimizerWebpackPlugin(),
+        '...'
       ],
       splitChunks: { chunks: 'all' }
     }
