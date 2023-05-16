@@ -15,8 +15,7 @@ module.exports = ({
   build = 'build',
   publicPath = '/',
   externals = {},
-  production = true,
-  terserOptions = undefined
+  production = true
 }) => {
   const config = {
     mode: 'production',
@@ -76,7 +75,11 @@ module.exports = ({
     optimization: {
       minimize: true,
       minimizer: [
-        new TerserPlugin(terserOptions),
+        new TerserPlugin({
+          terserOptions: {
+            mangle: { properties: true }
+          }
+        }),
         new CssMinimizerWebpackPlugin()
       ],
       splitChunks: { chunks: 'all' }
