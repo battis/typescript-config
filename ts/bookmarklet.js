@@ -10,11 +10,11 @@ module.exports = ({ root, package, title, externals = {} }) => {
     new HtmlWebpackPlugin({
       templateParameters: {
         REPO_OWNER: package.repository.url.replace(
-          /\/github.com\/([^/]+)\/.*/,
+          /.*\/github\.com\/([^/]+)\/.*/,
           '$1'
         ),
         REPO_NAME: package.repository.url.replace(
-          /\/github.com\/[^/]+\/([^/]+)\/.*/,
+          /.*\/github\.com\/[^/]+\/([^/]+)\/.*/,
           '$1'
         ),
         TITLE: title
@@ -75,7 +75,7 @@ module.exports = ({ root, package, title, externals = {} }) => {
                 .replace(
                   '<%= REPO_NAME %>',
                   package.repository.url.replace(
-                    /\/github.com\/[^/]+\/([^/]+)\/.*/,
+                    /.*\/github\.com\/[^/]+\/([^/]+)\/.*/,
                     '$1'
                   )
                 )
