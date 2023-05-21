@@ -9,6 +9,8 @@ module.exports = ({ root, package, title, externals = {} }) => {
   const matches = /.*\/github\.com\/([^/]+)\/([^/]+)\/.*/.exec(
     package.repository.url
   );
+  console.log(package.repository.url);
+  console.log(matches);
   const repo = {
     owner: matches[1],
     name: matches[2]
