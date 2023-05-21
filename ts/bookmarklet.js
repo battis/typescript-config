@@ -6,24 +6,29 @@ const TerserPlugin = require('terser-webpack-plugin');
 const fs = require('fs');
 
 module.exports = ({ root, package, title, externals = {} }) => {
+  const repo = {
+    owner: package.repository.url.replace(/.*\/github\.com\/([^/]+)\/.*/, '$1'),
+    name: package.repository.url.replace(
+      /.*\/github\.com\/[^/]+\/([^/]+)\/.*/,
+      '$1'
+    )
+  };
+  const template = path.resolve(
+    root,
+    'node_modules',
+    '@battis',
+    'webpack',
+    'template',
+    'bookmarklet'
+  );
   const HtmlWebpackPage = (page) =>
     new HtmlWebpackPlugin({
       templateParameters: {
-        REPO_OWNER: package.repository.url.replace(
-          /.*\/github\.com\/([^/]+)\/.*/,
-          '$1'
-        ),
-        REPO_NAME: package.repository.url.replace(
-          /.*\/github\.com\/[^/]+\/([^/]+)\/.*/,
-          '$1'
-        ),
+        REPO_OWNER: repo.owner,
+        REPO_NAME: repo.name,
         TITLE: title
       },
-      template: path.resolve(
-        root,
-        'node_modules/@battis/webpack/template/bookmarklet',
-        page
-      ),
+      template: path.resolve(template, page),
       filename: page,
       inject: false,
       hash: true
@@ -31,7 +36,7 @@ module.exports = ({ root, package, title, externals = {} }) => {
 
   return {
     mode: 'production',
-    entry: { main: './src/index.ts' },
+    entry: { main: path.resolve(root, 'src', 'index.ts') },
     output: {
       path: path.resolve(root, 'build'),
       filename: 'bookmarklet.js'
@@ -59,26 +64,17 @@ module.exports = ({ root, package, title, externals = {} }) => {
         apply: (compiler) => {
           compiler.hooks.afterEmit.tap('AfterEmitPlugin', () => {
             const readme = fs.readFileSync(
-              path.resolve(
-                root,
-                'node_modules/@battis/webpack/template/bookmarklet/readme.md'
-              ),
+              path.resolve(template, 'readme.md'),
               'utf8'
             );
             const embed = fs.readFileSync(
-              path.resolve(root, 'build/embed.html'),
+              path.resolve(root, 'build', 'embed.html'),
               'utf8'
             );
             fs.writeFile(
               path.resolve(root, 'README.md'),
               readme
-                .replace(
-                  '<%= REPO_NAME %>',
-                  package.repository.url.replace(
-                    /.*\/github\.com\/[^/]+\/([^/]+)\/.*/,
-                    '$1'
-                  )
-                )
+                .replace('<%= REPO_NAME %>', repo.name)
                 .replace('<%= DESCRIPTION %>', package.description)
                 .replace('<%= EMBED %>', embed),
               (err) => err && console.error(err)
