@@ -14,7 +14,6 @@ module.exports = ({
   bookmarkletTitle,
   package,
   entry = './src/index.ts',
-  template = '@battis/webpack/template/bookmarklet',
   build = 'build',
   externals = {},
   terserOptions = undefined
@@ -79,7 +78,11 @@ module.exports = ({
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(root, template),
+          from: path.resolve(
+            root,
+            'node_modules',
+            '@battis/webpack/template/bookmarklet'
+          ),
           to: path.resolve(root, build),
           filter: (filePath) => !/index\.html$/.test(filePath)
         }
