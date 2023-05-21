@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Install</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .wrapper {
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+      }
+      .bookmarklet {
+        padding: 0.5em 2em;
+        border-radius: 0.5em;
+        border: dashed 1px #888;
+        background: #eee;
+        color: #000;
+        text-decoration: none;
+        text-shadow: 1px 1px #fff;
+        box-shadow: 0 0 1em #ccc;
+      }
+      .directions {
+        padding: 1em;
+        font-size: small;
+        color: #aaa;
+      }
+
+      .directions .bookmarklet {
+        padding: 0.1em 0.25em;
+        border-color: #ccc;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <a
+        class="bookmarklet"
+        href="javascript:(()=>{const a=document.createElement('script');a.src='https://<% REPO_OWNER %>.github.io/<% REPO_NAME %>/build/bookmarklet.js';document.body.append(a);})();"
+        ><% BOOKMARKLET_TITLE %></a
+      >
+      <div class="directions">
+        Drag <span class="bookmarklet">the link</span> above to your bookmarks
+        bar. Click it when you need it.
+      </div>
+    </div>
+  </body>
+</html>
