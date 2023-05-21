@@ -1,13 +1,27 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-// TODO explore resolve.modules
+const HtmlWebpackPage = ({ page, package, template, bookmarkletTitle }) =>
+  new HtmlWebpackPlugin({
+    templateParameters: {
+      REPO_OWNER: package.repository.url.replace(
+        /\/github.com\/([^/]+)\/.*/,
+        '$1'
+      ),
+      REPO_NAME: package.repository.url.replace(
+        /\/github.com\/[^/]+\/([^/]+)\/.*/,
+        '$1'
+      ),
+      BOOKMARKLET_TITLE: bookmarkletTitle
+    },
+    template: path.resolve(template, page),
+    hash: true
+  });
 
 module.exports = ({
   root,
@@ -25,6 +39,7 @@ module.exports = ({
     'template',
     'bookmarklet'
   );
+  console.log(template);
   return {
     mode: 'production',
     entry: { main: entry },
@@ -83,29 +98,17 @@ module.exports = ({
     plugins: [
       new CleanWebpackPlugin(),
       new Dotenv(),
-      new CopyWebpackPlugin({
-        patterns: [
-          {
-            from: template,
-            to: path.resolve(root, build),
-            filter: (filePath) => !/index\.html$/.test(filePath)
-          }
-        ]
+      new HtmlWebpackPage({
+        page: 'index.html',
+        package,
+        bookmarkletTitle,
+        template
       }),
-      new HtmlWebpackPlugin({
-        templateParameters: {
-          REPO_OWNER: package.repository.url.replace(
-            /\/github.com\/([^/]+)\/.*/,
-            '$1'
-          ),
-          REPO_NAME: package.repository.url.replace(
-            /\/github.com\/[^/]+\/([^/]+)\/.*/,
-            '$1'
-          ),
-          BOOKMARKLET_TITLE: bookmarkletTitle
-        },
-        template: path.resolve(template, 'index.html'),
-        hash: true
+      new HtmlWebpackPage({
+        page: 'embed.html',
+        package,
+        bookmarkletTitle,
+        template
       }),
       new MiniCssExtractPlugin({
         filename: 'stylesheet.css'
