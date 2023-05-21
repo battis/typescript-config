@@ -6,11 +6,9 @@ const TerserPlugin = require('terser-webpack-plugin');
 const fs = require('fs');
 
 module.exports = ({ root, package, title, externals = {} }) => {
-  console.log(package.repository.url);
   const matches = /.*\/github\.com\/([^/]+)\/([^/]+)\.git$/.exec(
     package.repository.url
   );
-  console.log(matches);
   const repo = {
     owner: matches[1],
     name: matches[2]
