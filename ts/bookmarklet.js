@@ -17,108 +17,108 @@ module.exports = ({
   build = 'build',
   externals = {},
   terserOptions = undefined
-}) => ({
-  mode: 'production',
-  entry: { main: entry },
-  output: {
-    path: path.resolve(root, build),
-    filename: 'bookmarklet.js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: {
-          loader: 'ts-loader'
-        }
-      },
-      {
-        test: /\.svg$/,
-        use: 'raw-loader'
-      },
-      {
-        test: /\.s?[ac]ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: { importLoaders: 2 }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: ['postcss-preset-env']
-              }
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: { implementation: require('sass') }
-          }
-        ]
-      },
-      {
-        test: /\.(jpe?g|gif|png)/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[contenthash].[ext]',
-          outputPath: 'assets/images'
-        }
-      }
-    ]
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js']
-  },
-  externals: externals,
-  plugins: [
-    new CleanWebpackPlugin(),
-    new Dotenv(),
-    new CopyWebpackPlugin({
-      patterns: [
+}) => {
+  const template = path.resolve(
+    root,
+    'node_modules',
+    '@battis/webpack',
+    'template',
+    'bookmarklet'
+  );
+  return {
+    mode: 'production',
+    entry: { main: entry },
+    output: {
+      path: path.resolve(root, build),
+      filename: 'bookmarklet.js'
+    },
+    module: {
+      rules: [
         {
-          from: path.resolve(
-            root,
-            'node_modules',
-            '@battis/webpack/template/bookmarklet'
-          ),
-          to: path.resolve(root, build),
-          filter: (filePath) => !/index\.html$/.test(filePath)
+          test: /\.tsx?$/,
+          use: {
+            loader: 'ts-loader'
+          }
+        },
+        {
+          test: /\.svg$/,
+          use: 'raw-loader'
+        },
+        {
+          test: /\.s?[ac]ss$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: { importLoaders: 2 }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: ['postcss-preset-env']
+                }
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: { implementation: require('sass') }
+            }
+          ]
+        },
+        {
+          test: /\.(jpe?g|gif|png)/,
+          loader: 'file-loader',
+          options: {
+            name: '[name].[contenthash].[ext]',
+            outputPath: 'assets/images'
+          }
         }
       ]
-    }),
-    new HtmlWebpackPlugin({
-      templateParameters: {
-        REPO_OWNER: package.repository.url.replace(
-          /\/github.com\/([^/]+)\/.*/,
-          '$1'
-        ),
-        REPO_NAME: package.repository.url.replace(
-          /\/github.com\/[^/]+\/([^/]+)\/.*/,
-          '$1'
-        ),
-        BOOKMARKLET_TITLE: bookmarkletTitle
-      },
-      template: path.resolve(
-        root,
-        'node_modules',
-        '@battis/webpack/template/bookmarklet',
-        'index.html'
-      ),
-      hash: true
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'stylesheet.css'
-    })
-  ],
-  optimization: {
-    minimize: true,
-    minimizer: [
-      '...',
-      new TerserPlugin(terserOptions),
-      new CssMinimizerWebpackPlugin()
+    },
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js']
+    },
+    externals: externals,
+    plugins: [
+      new CleanWebpackPlugin(),
+      new Dotenv(),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: template,
+            to: path.resolve(root, build),
+            filter: (filePath) => !/index\.html$/.test(filePath)
+          }
+        ]
+      }),
+      new HtmlWebpackPlugin({
+        templateParameters: {
+          REPO_OWNER: package.repository.url.replace(
+            /\/github.com\/([^/]+)\/.*/,
+            '$1'
+          ),
+          REPO_NAME: package.repository.url.replace(
+            /\/github.com\/[^/]+\/([^/]+)\/.*/,
+            '$1'
+          ),
+          BOOKMARKLET_TITLE: bookmarkletTitle
+        },
+        template: path.resolve(template, 'index.html'),
+        hash: true
+      }),
+      new MiniCssExtractPlugin({
+        filename: 'stylesheet.css'
+      })
     ],
-    splitChunks: { chunks: 'all' }
-  }
-});
+    optimization: {
+      minimize: true,
+      minimizer: [
+        '...',
+        new TerserPlugin(terserOptions),
+        new CssMinimizerWebpackPlugin()
+      ],
+      splitChunks: { chunks: 'all' }
+    }
+  };
+};
