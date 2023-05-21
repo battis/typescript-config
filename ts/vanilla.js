@@ -11,99 +11,72 @@ module.exports = ({
   root,
   bundle = 'main',
   entry = './src/index.ts',
-  template = 'public',
   build = 'build',
-  publicPath = '/',
-  externals = {},
-  production = true
-}) => {
-  const config = {
-    mode: 'production',
-    entry: { [bundle]: entry },
-    output: {
-      path: path.resolve(root, build),
-      filename: '[name].[contenthash].js',
-      publicPath: publicPath
-    },
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          use: {
-            loader: 'ts-loader'
-          }
-        },
-        {
-          test: /\.svg$/,
-          use: 'raw-loader'
-        },
-        {
-          test: /\.s?[ac]ss$/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader',
-              options: { importLoaders: 2 }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  plugins: ['postcss-preset-env']
-                }
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: { implementation: require('sass') }
-            }
-          ]
+  externals = {}
+}) => ({
+  mode: 'production',
+  entry: { [bundle]: entry },
+  output: {
+    path: path.resolve(root, build),
+    filename: '[name].[contenthash].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: {
+          loader: 'ts-loader'
         }
-      ]
-    },
-    resolve: {
-      extensions: ['.ts', '.js']
-    },
-    externals: externals,
-    plugins: [
-      new CleanWebpackPlugin(),
-      new Dotenv(),
-      new MiniCssExtractPlugin({
-        filename: '[name].[contenthash].css'
-      })
-    ],
-    optimization: {
-      minimize: true,
-      minimizer: [
-        new TerserPlugin({
-          terserOptions: {
-            mangle: { properties: true }
+      },
+      {
+        test: /\.svg$/,
+        use: 'raw-loader'
+      },
+      {
+        test: /\.s?[ac]ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 2 }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: ['postcss-preset-env']
+              }
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: { implementation: require('sass') }
           }
-        }),
-        new CssMinimizerWebpackPlugin()
-      ],
-      splitChunks: { chunks: 'all' }
-    }
-  };
-  if (!production) {
-    config.mode = 'development';
-    config.devtool = 'inline-source-map';
-    config.module.rules = config.module.rules.map((rule) => {
-      if (rule.test == /\.s?[ac]ss$/) {
-        rule.use = rule.use.map((loader) => {
-          if (loader == MiniCssExtractPlugin.loader) {
-            loader = 'style-loader';
-          }
-          return loader;
-        });
+        ]
       }
-      return rule;
-    });
-    config.devServer = {
-      open: true,
-      hot: true,
-      watchFiles: [path.join(root, template, '**/*')]
-    };
+    ]
+  },
+  resolve: {
+    extensions: ['.ts', '.js']
+  },
+  externals: externals,
+  plugins: [
+    new CleanWebpackPlugin(),
+    new Dotenv(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
+    })
+  ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          mangle: { properties: true }
+        }
+      }),
+      new CssMinimizerWebpackPlugin()
+    ],
+    splitChunks: { chunks: 'all' }
   }
-  return config;
-};
+});
