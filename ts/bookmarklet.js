@@ -57,15 +57,17 @@ module.exports = ({ root, package, title, externals = {} }) => {
       HtmlWebpackPage('embed.html'),
       {
         apply: (compiler) => {
-          compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => {
+          compiler.hooks.afterEmit.tap('AfterEmitPlugin', () => {
             const readme = fs.readFileSync(
               path.resolve(
                 root,
                 'node_modules/@battis/webpack/template/bookmarklet/readme.md'
-              )
+              ),
+              'utf8'
             );
             const embed = fs.readFileSync(
-              path.resolve(root, 'build/embed.html')
+              path.resolve(root, 'build/embed.html'),
+              'utf8'
             );
             fs.writeFile(
               path.resolve(root, 'build/README.md'),
