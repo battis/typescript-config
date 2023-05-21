@@ -3,8 +3,8 @@
 Reusable, extensible webpack configurations for different needs;
 
 1. [Single Page App](#single-page-app): a generic single-page web app with manifest, favicons, etc. Supports TypeScript and SASS.
-2. [Vanilla JS](#vanilla-js): develop in TypeScript, compile to minified, uglified vanilla JavaScript.
-3. [Bookmarklet](#bookmarklet): build a bookmarklet in TypeScript, autogenerate JavaScript executable and documentation.
+2. [Vanilla JS](#vanilla-js): develop in TypeScript and SASS, compile to minified, uglified vanilla JavaScript and CSS.
+3. [Bookmarklet](#bookmarklet): build a bookmarklet in TypeScript and SASS, autogenerate JavaScript executable and documentation.
 
 ## Install
 

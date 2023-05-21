@@ -2,6 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const fs = require('fs');
 
@@ -48,6 +49,27 @@ module.exports = ({ root, package, title, externals = {} }) => {
           use: {
             loader: 'ts-loader'
           }
+        },
+        {
+          test: /\.s?[ac]ss$/,
+          use: [
+            {
+              loader: 'css-loader',
+              options: { importLoaders: 2 }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: ['postcss-preset-env']
+                }
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: { implementation: require('sass') }
+            }
+          ]
         }
       ]
     },
@@ -85,7 +107,7 @@ module.exports = ({ root, package, title, externals = {} }) => {
     ],
     optimization: {
       minimize: true,
-      minimizer: ['...', new TerserPlugin()],
+      minimizer: ['...', new TerserPlugin(), new CssMinimizerWebpackPlugin()],
       splitChunks: { chunks: 'all' }
     }
   };
