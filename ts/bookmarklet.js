@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const exec = require('child_process').exec;
+const fs = require('fs');
 
 module.exports = ({ root, package, title, externals = {} }) => {
   const HtmlWebpackPage = (page) =>
@@ -58,7 +58,28 @@ module.exports = ({ root, package, title, externals = {} }) => {
       {
         apply: (compiler) => {
           compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => {
-            console.log(compilation);
+            const readme = fs.readFileSync(
+              path.resolve(
+                root,
+                'node_modules/@battis/webpack/template/bookmarklet/readme.md'
+              )
+            );
+            const embed = fs.readFileSync(
+              path.resolve(root, 'build/embed.html')
+            );
+            fs.writeFile(
+              path.resolve(root, 'build/README.md'),
+              readme
+                .replace(
+                  '<%= REPO_NAME %>',
+                  package.repository.url.replace(
+                    /\/github.com\/[^/]+\/([^/]+)\/.*/,
+                    '$1'
+                  )
+                )
+                .replace('<%= DESCRIPTION %>', package.description)
+                .replace('<%= EMBED %>', embed)
+            );
           });
         }
       }
