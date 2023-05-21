@@ -6,12 +6,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 const fs = require('fs');
 
 module.exports = ({ root, package, title, externals = {} }) => {
+  const matches = /.*\/github\.com\/([^/]+)\/([^/]+)\/.*/.exec(
+    package.repository.url
+  );
   const repo = {
-    owner: package.repository.url.replace(/.*\/github\.com\/([^/]+)\/.*/, '$1'),
-    name: package.repository.url.replace(
-      /.*\/github\.com\/[^/]+\/([^/]+)\/.*/,
-      '$1'
-    )
+    owner: matches[1],
+    name: matches[2]
   };
   const template = path.resolve(
     root,
