@@ -4,7 +4,6 @@ const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const exec = require('child_process').exec;
-const fs = require('fs');
 
 module.exports = ({ root, package, title, externals = {} }) => {
   const HtmlWebpackPage = (page) =>
@@ -58,14 +57,8 @@ module.exports = ({ root, package, title, externals = {} }) => {
       HtmlWebpackPage('embed.html'),
       {
         apply: (compiler) => {
-          compiler.hooks.afterEmit.tap('AfterEmitPlugin', () => {
-            exec(
-              () => console.log('foo!'),
-              (err, stdout, stderr) => {
-                if (stdout) process.stdout.write(stdout);
-                if (stderr) process.stderr.write(stderr);
-              }
-            );
+          compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => {
+            console.log(compilation);
           });
         }
       }
