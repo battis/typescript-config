@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Install</title>
+    <title>Install <%= TITLE %> bookmarklet</title>
     <style>
       body {
         margin: 0;
@@ -44,8 +44,8 @@
     <div class="wrapper">
       <a
         class="bookmarklet"
-        href="javascript:(()=>{const a=document.createElement('script');a.src='https://<% REPO_OWNER %>.github.io/<% REPO_NAME %>/build/bookmarklet.js';document.body.append(a);})();"
-        ><% BOOKMARKLET_TITLE %></a
+        href="javascript:(()=>{const a=document.createElement('script');a.src='https://<%= REPO_OWNER %>.github.io/<%= REPO_NAME %>/build/bookmarklet.js';document.body.append(a);})();"
+        ><%= TITLE %></a
       >
       <div class="directions">
         Drag <span class="bookmarklet">the link</span> above to your bookmarks
