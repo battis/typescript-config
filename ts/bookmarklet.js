@@ -3,7 +3,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const CreateFilePlugin = require('create-file-webpack');
+const exec = require('child_process').exec;
+const fs = require('fs');
 
 module.exports = ({ root, package, title, externals = {} }) => {
   const HtmlWebpackPage = (page) =>
@@ -55,16 +56,19 @@ module.exports = ({ root, package, title, externals = {} }) => {
       new Dotenv(),
       HtmlWebpackPage('install.html'),
       HtmlWebpackPage('embed.html'),
-      new CreateFilePlugin({
-        filename: 'README.md',
-        content: `# ${package.name}
-
-${package.description}
-
-## Install
-
-${require(path.resolve(root, 'build/embed.html'))}`
-      })
+      {
+        apply: (compiler) => {
+          compiler.hooks.afterEmit.tap('AfterEmitPlugin', () => {
+            exec(
+              () => console.log('foo!'),
+              (err, stdout, stderr) => {
+                if (stdout) process.stdout.write(stdout);
+                if (stderr) process.stderr.write(stderr);
+              }
+            );
+          });
+        }
+      }
     ],
     optimization: {
       minimize: true,
