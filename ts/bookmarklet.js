@@ -19,7 +19,7 @@ const HtmlWebpackPage = ({ page, package, template, bookmarkletTitle }) =>
       ),
       BOOKMARKLET_TITLE: bookmarkletTitle
     },
-    template: path.resolve(template, page),
+    template: path.join(template, page),
     hash: true
   });
 
@@ -39,7 +39,6 @@ module.exports = ({
     'template',
     'bookmarklet'
   );
-  console.log(template);
   return {
     mode: 'production',
     entry: { main: entry },
