@@ -70,7 +70,7 @@ module.exports = ({ root, package, title, externals = {} }) => {
               'utf8'
             );
             fs.writeFile(
-              path.resolve(root, 'build/README.md'),
+              path.resolve(root, 'README.md'),
               readme
                 .replace(
                   '<%= REPO_NAME %>',
@@ -80,7 +80,8 @@ module.exports = ({ root, package, title, externals = {} }) => {
                   )
                 )
                 .replace('<%= DESCRIPTION %>', package.description)
-                .replace('<%= EMBED %>', embed)
+                .replace('<%= EMBED %>', embed),
+              (err) => err && console.error(err)
             );
           });
         }
