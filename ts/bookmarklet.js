@@ -7,7 +7,7 @@ const fs = require('fs');
 
 module.exports = ({ root, package, title, externals = {} }) => {
   console.log(package.repository.url);
-  const matches = /.*\/github\.com\/([^/]+)\/([^/]+)\/.*/.exec(
+  const matches = /.*\/github\.com\/([^/]+)\/([^/]+)\.git$/.exec(
     package.repository.url
   );
   console.log(matches);
