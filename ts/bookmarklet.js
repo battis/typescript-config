@@ -98,13 +98,13 @@ module.exports = ({
     plugins: [
       new CleanWebpackPlugin(),
       new Dotenv(),
-      new HtmlWebpackPage({
+      HtmlWebpackPage({
         page: 'index.html',
         package,
         bookmarkletTitle,
         template
       }),
-      new HtmlWebpackPage({
+      HtmlWebpackPage({
         page: 'embed.html',
         package,
         bookmarkletTitle,
