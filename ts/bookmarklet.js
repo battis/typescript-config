@@ -100,7 +100,12 @@ module.exports = ({
         ),
         BOOKMARKLET_TITLE: bookmarkletTitle
       },
-      template: path.resolve(root, template, 'index.html'),
+      template: path.resolve(
+        root,
+        'node_modules',
+        '@battis/webpack/template/bookmarklet',
+        'index.html'
+      ),
       hash: true
     }),
     new MiniCssExtractPlugin({
