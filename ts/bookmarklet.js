@@ -53,6 +53,7 @@ module.exports = ({ root, package, title, externals = {} }) => {
         {
           test: /\.s?[ac]ss$/,
           use: [
+            'style-loader',
             {
               loader: 'css-loader',
               options: { importLoaders: 2 }
