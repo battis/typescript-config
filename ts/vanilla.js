@@ -28,6 +28,10 @@ module.exports = ({
     terserOptions: {},
     ...config
   };
+  resolve = {
+    extensions: [],
+    ...resolve
+  };
   return {
     mode: mode,
     entry: { [bundle]: entry },
