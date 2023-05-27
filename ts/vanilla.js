@@ -103,7 +103,7 @@ module.exports = ({
         new TerserPlugin({
           terserOptions: {
             mangle: { properties: true },
-            ...terserOptions
+            ...config.terserOptions
           }
         }),
         new CssMinimizerWebpackPlugin()
