@@ -9,74 +9,102 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = ({
   root,
+  mode = 'production',
   bundle = 'main',
   entry = './src/index.ts',
   build = 'build',
-  externals = {}
-}) => ({
-  mode: 'production',
-  entry: { [bundle]: entry },
-  output: {
-    path: path.resolve(root, build),
-    filename: '[name].[contenthash].js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: {
-          loader: 'ts-loader'
-        }
-      },
-      {
-        test: /\.svg$/,
-        use: 'raw-loader'
-      },
-      {
-        test: /\.s?[ac]ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
+  resolve = {},
+  externals = {},
+  config = {},
+  rules = [],
+  plugins = [],
+  optimization = null
+}) => {
+  config = {
+    extractCSS: true,
+    overrideResolve: false,
+    overridePlugins: false,
+    overrideRules: false,
+    terserOptions: {},
+    ...config
+  };
+  return {
+    mode: mode,
+    entry: { [bundle]: entry },
+    output: {
+      path: path.resolve(root, build),
+      filename: '[name].[contenthash].js'
+    },
+    module: {
+      rules: config.overrideRules
+        ? rules
+        : [
           {
-            loader: 'css-loader',
-            options: { importLoaders: 2 }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: ['postcss-preset-env']
-              }
+            test: /\.tsx?$/,
+            use: {
+              loader: 'ts-loader'
             }
           },
           {
-            loader: 'sass-loader',
-            options: { implementation: require('sass') }
-          }
+            test: /\.svg$/,
+            use: 'raw-loader'
+          },
+          {
+            test: /\.s?[ac]ss$/,
+            use: [
+              config.extractCSS
+                ? MiniCssExtractPlugin.loader
+                : 'style-loader',
+              {
+                loader: 'css-loader',
+                options: { importLoaders: 2 }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  postcssOptions: {
+                    plugins: ['postcss-preset-env']
+                  }
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: { implementation: require('sass') }
+              }
+            ]
+          },
+          ...rules
         ]
-      }
-    ]
-  },
-  resolve: {
-    extensions: ['.ts', '.js']
-  },
-  externals: externals,
-  plugins: [
-    new CleanWebpackPlugin(),
-    new Dotenv(),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
-    })
-  ],
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          mangle: { properties: true }
-        }
-      }),
-      new CssMinimizerWebpackPlugin()
-    ],
-    splitChunks: { chunks: 'all' }
-  }
-});
+    },
+    resolve: config.overrideResolve
+      ? resolve
+      : {
+        ...resolve,
+        extensions: ['.ts', '.js', ...resolve.extensions]
+      },
+    externals: externals,
+    plugins: config.overridePlugins
+      ? plugins
+      : [
+        new CleanWebpackPlugin(),
+        new Dotenv(),
+        new MiniCssExtractPlugin({
+          filename: '[name].[contenthash].css'
+        }),
+        ...plugins
+      ],
+    optimization: optimization || {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            mangle: { properties: true },
+            ...terserOptions
+          }
+        }),
+        new CssMinimizerWebpackPlugin()
+      ],
+      splitChunks: { chunks: 'all' }
+    }
+  };
+};
