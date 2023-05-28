@@ -55,13 +55,14 @@ module.exports = ({
           },
           {
             test: /\.s?[ac]ss$/,
+            exclude: /\.module\.s?[ac]ss$/,
             use: [
               config.extractCSS
                 ? MiniCssExtractPlugin.loader
                 : 'style-loader',
               {
                 loader: 'css-loader',
-                options: { importLoaders: 2 }
+                options: { importLoaders: 2, modules: true }
               },
               {
                 loader: 'postcss-loader',
