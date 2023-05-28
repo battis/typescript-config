@@ -62,7 +62,7 @@ module.exports = ({
                 : 'style-loader',
               {
                 loader: 'css-loader',
-                options: { importLoaders: 2, modules: true }
+                options: { importLoaders: 2 }
               },
               {
                 loader: 'postcss-loader',
