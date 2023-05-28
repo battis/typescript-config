@@ -55,7 +55,6 @@ module.exports = ({
           },
           {
             test: /\.s?[ac]ss$/,
-            exclude: /\.module\.s?[ac]ss$/,
             use: [
               config.extractCSS
                 ? MiniCssExtractPlugin.loader
