@@ -52,8 +52,8 @@
     "webpack-dev-server": "^4.15.0"
   },
   "peerDependencies": {
-    "@battis/eslint-config": "github:battis/eslint-config",
-    "@battis/prettier-config": "github:battis/prettier-config",
+    "@battis/eslint-config": "^1.0",
+    "@battis/prettier-config": "^1.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.4",
