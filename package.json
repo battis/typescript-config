@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "description": "",
   "main": "ts/spa.js",
+  "engines": {
+    "node": "*"
+  },
   "scripts": {
-    "update": "pnpm up; npm up --package-lock-only"
+    "deploy": "pnpm up && npx np --omit=dev"
   },
   "repository": {
     "type": "git",
@@ -20,8 +23,8 @@
   },
   "homepage": "https://github.com/battis/webpack#readme",
   "devDependencies": {
-    "@battis/eslint-config": "github:battis/eslint-config",
-    "@battis/prettier-config": "github:battis/prettier-config",
+    "@battis/eslint-config": "^1.0",
+    "@battis/prettier-config": "^1.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
@@ -38,6 +41,7 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
     "mini-css-extract-plugin": "^2.7.6",
+    "np": "^8.0.4",
     "postcss": "^8.4.24",
     "postcss-loader": "^7.3.3",
     "postcss-preset-env": "^8.5.0",
@@ -52,8 +56,8 @@
     "webpack-dev-server": "^4.15.1"
   },
   "peerDependencies": {
-    "@battis/eslint-config": "github:battis/eslint-config",
-    "@battis/prettier-config": "github:battis/prettier-config",
+    "@battis/eslint-config": "^1.0",
+    "@battis/prettier-config": "^1.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.4",
@@ -88,5 +92,9 @@
     "extends": [
       "@battis/eslint-config"
     ]
+  },
+  "np": {
+    "cleanup": false,
+    "tests": false
   }
 }
