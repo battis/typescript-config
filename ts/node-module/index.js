@@ -6,6 +6,7 @@ module.exports = ({
   root,
   bundle = 'lib',
   entry = './src/index.ts',
+  build = 'dist',
   libraryName,
   production = true
 }) => ({
@@ -16,7 +17,7 @@ module.exports = ({
     [`${bundle}.min`]: entry
   },
   output: {
-    path: path.resolve(root, '_bundles'),
+    path: path.resolve(root, build, '_bundles'),
     filename: '[name].js',
     libraryTarget: 'umd',
     library: libraryName,
