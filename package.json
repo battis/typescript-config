@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/battis/webpack#readme",
   "devDependencies": {
-    "@battis/eslint-config": "^1.0",
-    "@battis/prettier-config": "^1.0",
+    "@battis/eslint-config": "^1.0.1",
+    "@battis/prettier-config": "^1.1.1",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
