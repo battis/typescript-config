@@ -1,7 +1,7 @@
 {
   "name": "@battis/typescript-tricks",
   "description": "A handful of useful types and operators",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "author": "Seth Battis <seth@battis.net>",
   "license": "GPL-3.0",
   "main": "src/index.js",
