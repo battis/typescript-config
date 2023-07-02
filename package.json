@@ -38,5 +38,9 @@
     "extends": [
       "@battis/eslint-config"
     ]
+  },
+  "np": {
+    "cleanup": false,
+    "tests": false
   }
 }
