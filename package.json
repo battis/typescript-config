@@ -7,6 +7,9 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "homepage": "https://github.com/battis/typescript-tricks#readme",
+  "engines": {
+    "node": "*"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/battis/typescript-tricks.git"

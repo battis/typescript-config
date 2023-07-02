@@ -2,9 +2,7 @@
   "extends": "@tsconfig/recommended",
   "compilerOptions": {
     "declaration": true,
-    "outDir": "./dist",
-    "declaration": true
+    "outDir": "./dist"
   },
-  "include": ["./src"],
-  "exclude": ["node_modules"]
+  "include": ["./src"]
 }
