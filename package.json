@@ -4,10 +4,11 @@
   "description": "",
   "main": "ts/spa.js",
   "engines": {
-    "node": "*"
+    "node": ">=12.17"
   },
   "scripts": {
-    "deploy": "pnpm up && npx np --omit=dev"
+    "deploy": "npx np --yolo --omit=dev",
+    "postinstall": "node ./bin/postinstall.mjs"
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,9 @@
     "url": "https://github.com/battis/webpack/issues"
   },
   "homepage": "https://github.com/battis/webpack#readme",
-  "devDependencies": {
-    "@battis/eslint-config": "^1.0.1",
-    "@battis/prettier-config": "^1.1.1",
+  "dependencies": {
+    "@pnpm/hoist": "^8.0.7",
+    "app-root-path": "^3.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
@@ -41,60 +42,28 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
     "mini-css-extract-plugin": "^2.7.6",
-    "np": "^8.0.4",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.25",
     "postcss-loader": "^7.3.3",
-    "postcss-preset-env": "^8.5.0",
+    "postcss-preset-env": "^8.5.1",
     "raw-loader": "^4.0.2",
-    "sass": "^1.63.4",
+    "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "^5.3.9",
-    "ts-loader": "^9.4.3",
-    "webpack": "^5.87.0",
+    "ts-loader": "^9.4.4",
+    "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   },
-  "peerDependencies": {
-    "@battis/eslint-config": "^1.0",
-    "@battis/prettier-config": "^1.0",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.7.4",
-    "css-minimizer-webpack-plugin": "^4.2.2",
-    "dotenv-webpack": "^8.0.1",
-    "favicons": "^7.1.2",
-    "favicons-webpack-plugin": "^6.0.0",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.1",
-    "image-minimizer-webpack-plugin": "^3.8.2",
-    "imagemin": "^8.0.1",
-    "imagemin-gifsicle": "^7.0.0",
-    "imagemin-jpegtran": "^7.0.0",
-    "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^10.0.1",
-    "mini-css-extract-plugin": "^2.7.6",
-    "postcss": "^8.4.23",
-    "postcss-loader": "^7.3.0",
-    "postcss-preset-env": "^8.4.1",
-    "raw-loader": "^4.0.2",
-    "sass": "^1.62.1",
-    "sass-loader": "^13.2.2",
-    "style-loader": "^3.3.3",
-    "terser-webpack-plugin": "^5.3.9",
-    "ts-loader": "^9.4.2",
-    "webpack": "^5.83.1",
-    "webpack-cli": "^5.1.1",
-    "webpack-dev-server": "^4.15.0"
+  "devDependencies": {
+    "@battis/eslint-config": "latest",
+    "@battis/prettier-config": "latest",
+    "np": "^8.0.4"
   },
   "prettier": "@battis/prettier-config",
   "eslintConfig": {
     "extends": [
       "@battis/eslint-config"
     ]
-  },
-  "np": {
-    "cleanup": false,
-    "tests": false
   }
 }

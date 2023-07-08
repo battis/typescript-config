@@ -8,26 +8,13 @@ Reusable, extensible webpack configurations for different needs;
 
 ## Install
 
-### `.npmrc`
-
-if using `pnpm`:
-
-```
-auto-install-peers=true
-public-hoist-pattern[]=*prettier*
-public-hoist-pattern[]=*eslint*
-public-hoist-pattern[]=@tsconfig/recommended
-public-hoist-pattern[]=*webpack*
-public-hoist-pattern[]=*loader*
-public-hoist-pattern[]=sass
-public-hoist-pattern[]=postcss
-public-hoist-pattern[]=imagemin*
-public-hoist-pattern[]=favicons
-```
-
 ```bash
-pnpm i -D @battis/webpack@github:battis/webpack
+npm i -D @battis/webpack@latest
 ```
+
+If using `pnpm`, a postinstall script will "shamefully" hoist webpack dependencies.
+
+## Usage
 
 ### `webpack.config.js`
 
