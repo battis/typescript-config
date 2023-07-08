@@ -21,9 +21,9 @@
     "build": "run-s build:*",
     "build:clean": "shx rm -rf dist",
     "build:compile": "tsc",
-    "deploy": "run-s deploy:*",
-    "deploy:build": "npm run build",
-    "deploy:publish": "npx np --omit=dev"
+    "release": "run-s release:*",
+    "release:build": "npm run build",
+    "release:publish": "npx np --omit=dev"
   },
   "devDependencies": {
     "@battis/eslint-config": "github:battis/eslint-config",
