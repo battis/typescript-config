@@ -9,7 +9,7 @@
   "license": "GPL-3.0",
   "scripts": {
     "deploy": "npx np --yolo --omitDev",
-    "postinstall": "./bin/postinstall.mjs"
+    "postinstall": "node ./bin/postinstall.mjs"
   },
   "main": ".eslintrc.json",
   "engines": {

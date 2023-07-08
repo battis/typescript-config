@@ -32,8 +32,8 @@ dependencies:
 
 devDependencies:
   '@battis/prettier-config':
-    specifier: file:../prettier-config
-    version: file:../prettier-config(@pnpm/logger@5.0.0)
+    specifier: latest
+    version: 1.2.1(@pnpm/logger@5.0.0)
   '@pnpm/hoist':
     specifier: ^8.0.7
     version: 8.0.7(@pnpm/logger@5.0.0)
@@ -70,6 +70,20 @@ packages:
       '@babel/helper-validator-identifier': 7.22.5
       chalk: 2.4.2
       js-tokens: 4.0.0
+    dev: true
+
+  /@battis/prettier-config@1.2.1(@pnpm/logger@5.0.0):
+    resolution: {integrity: sha512-srZTzCh8j7ztAPnyBZ/UJEsR2mxJHWv+5rQ7qkr3mrDDwiw77nMfdQFGRrO/kfHmOj83T4x6xlWpEQUeKSmOoQ==}
+    engines: {node: '>=12.17'}
+    requiresBuild: true
+    dependencies:
+      '@pnpm/hoist': 8.0.7(@pnpm/logger@5.0.0)
+      '@prettier/plugin-xml': 2.2.0
+      app-root-path: 3.1.0
+      prettier: 2.8.8
+      prettier-plugin-sql: 0.13.0(prettier@2.8.8)
+    transitivePeerDependencies:
+      - '@pnpm/logger'
     dev: true
 
   /@bconnorwhite/module@2.0.2:
@@ -4037,20 +4051,4 @@ packages:
   /yocto-queue@1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
-    dev: true
-
-  file:../prettier-config(@pnpm/logger@5.0.0):
-    resolution: {directory: ../prettier-config, type: directory}
-    id: file:../prettier-config
-    name: '@battis/prettier-config'
-    engines: {node: '>=12.17'}
-    requiresBuild: true
-    dependencies:
-      '@pnpm/hoist': 8.0.7(@pnpm/logger@5.0.0)
-      '@prettier/plugin-xml': 2.2.0
-      app-root-path: 3.1.0
-      prettier: 2.8.8
-      prettier-plugin-sql: 0.13.0(prettier@2.8.8)
-    transitivePeerDependencies:
-      - '@pnpm/logger'
     dev: true
