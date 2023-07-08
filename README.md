@@ -1,5 +1,8 @@
 # @battis/webpack
 
+[![npm version](https://badge.fury.io/js/@battis%2Fwebpack.svg)](https://badge.fury.io/js/@battis%2Fwebpack)
+[![Module type: CJS](https://img.shields.io/badge/module%20type-cjs-brightgreen)](https://nodejs.org/api/modules.html#modules-commonjs-modules)
+
 Reusable, extensible webpack configurations for different needs;
 
 1. [Single Page App](#single-page-app): a generic single-page web app with manifest, favicons, etc. Supports TypeScript and SASS.
