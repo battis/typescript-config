@@ -1,10 +1,28 @@
 #!/usr/bin/env node
 import { hoist } from '@pnpm/hoist';
+import appRootPath from 'app-root-path';
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-if (fs.existsSync('../pnpm-lock.yaml')) {
-  hoist({
-    lockfile: '../pnpm-lock.yaml',
-    publicHoistPattern: ['*prettier*']
-  });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const lockfile = path.join(appRootPath.toString(), 'pnpm-lock.yaml');
+
+if (fs.existsSync(lockfile)) {
+  console.log('pnpm lockfile found');
+  const pkg = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../package.json'))
+  );
+  const publicHoistPattern = Object.keys(pkg.dependencies).filter((p) =>
+    /prettier/.test(p)
+  );
+  if (publicHoistPattern.length) {
+    console.log(`hoisting ${publicHoistPattern.join(', ')}`);
+    hoist({
+      lockfile,
+      publicHoistPattern
+    });
+  }
 }

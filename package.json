@@ -15,11 +15,14 @@
     "deploy": "npx np --yolo --omitDev",
     "postinstall": "./bin/postinstall.mjs"
   },
-  "devDependencies": {
+  "dependencies": {
     "@pnpm/hoist": "^8.0.7",
     "@prettier/plugin-xml": "^2.2.0",
-    "np": "^8.0.4",
+    "app-root-path": "^3.1.0",
     "prettier": "^2.8.8",
     "prettier-plugin-sql": "^0.13.0"
+  },
+  "devDependencies": {
+    "np": "^8.0.4"
   }
 }

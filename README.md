@@ -5,8 +5,10 @@ Shared Prettier configuration across all projects
 ### Install
 
 ```bash
-pnpm i -D @battis/prettier-config@latest
+npm i -D @battis/prettier-config@latest
 ```
+
+Installing via `pnpm` also works, but runs a postinstall script that "shamefully hoists" a bunch of dependencies.
 
 ### Usage
 
