@@ -4,18 +4,13 @@ Shared `eslint` config across all projects
 
 ### Install
 
-In `.npmrc`:
-
-```ini
-auto-install-peers=true
-public-hoist-pattern[]=*prettier*
-public-hoist-pattern[]=*eslint*
-public-hoist-pattern[]=@tsconfig/recommended
-```
-
 ```bash
-pnpm i -D @battis/eslint-config@github:battis/eslint-config
+npm i -D @battis/eslint-config@github:battis/eslint-config
 ```
+
+Installing via `pnpm` also works and runs a postinstall script that "shamefully" hoists a bunch of dependencies.
+
+### Usage
 
 In `package.json`:
 
