@@ -16,9 +16,11 @@
     "node": ">=12.17"
   },
   "dependencies": {
+    "@pnpm/hoist": "^8.0.7",
     "@tsconfig/recommended": "^1.0.2",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
+    "app-root-path": "^3.1.0",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-html": "^7.1.0",
@@ -27,8 +29,6 @@
   },
   "devDependencies": {
     "@battis/prettier-config": "latest",
-    "@pnpm/hoist": "^8.0.7",
-    "app-root-path": "^3.1.0",
     "np": "^8.0.4"
   },
   "prettier": "@battis/prettier-config"
