@@ -12,7 +12,7 @@
     "node": ">=12.17"
   },
   "scripts": {
-    "deploy": "npx np --yolo --omitDev",
+    "release": "npx np --yolo --omitDev",
     "postinstall": "node ./bin/postinstall.mjs"
   },
   "dependencies": {
