@@ -4,16 +4,11 @@ Shared Prettier configuration across all projects
 
 ### Install
 
-In `.npmrc`:
-
-```ini
-auto-install-peers=true
-public-hoist-pattern[]=*prettier*
-```
-
 ```bash
-pnpm i -D @battis/prettier-config@github:battis/prettier-config
+pnpm i -D @battis/prettier-config@latest
 ```
+
+### Usage
 
 In `package.json`:
 
