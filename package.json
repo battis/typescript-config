@@ -7,7 +7,7 @@
     "node": ">=12.17"
   },
   "scripts": {
-    "deploy": "npx np --yolo --omit=dev",
+    "release": "npx np --yolo --omit=dev",
     "postinstall": "node ./bin/postinstall.mjs"
   },
   "repository": {
