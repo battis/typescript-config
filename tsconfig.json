@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "lib/types",
+    "target": "es6",
+    "moduleResolution": "node",
+    "module": "es2020",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "isolatedModules": true,
+    "esModuleInterop": true
+  },
+  "include": ["src"]
+}
