@@ -1,6 +1,6 @@
 {
   "name": "@battis/babel",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Boilerplate to compile both CommonJS and ES modules from \"normal\" typescript using Babel.",
   "main": "esm.json",
   "target": "node",
