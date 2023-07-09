@@ -8,6 +8,7 @@
     "node": ">=12.17"
   },
   "scripts": {
+    "release": "np --yolo --omit=dev",
     "postinstall": "node ./bin/postinstall.mjs"
   },
   "author": {
