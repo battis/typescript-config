@@ -18,5 +18,11 @@ npm i -D @battis/babel npm-run-all shx
 ## Usage
 
 ```bash
+npx babel-config
+```
+
+For options:
+
+```bash
 npx babel-config --help
 ```
