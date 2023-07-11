@@ -1,44 +1,41 @@
 {
-  "name": "@battis/babel",
+  "name": "@battis/babel-config",
   "version": "0.1.0",
   "description": "Boilerplate to compile both CommonJS and ES modules from \"normal\" typescript using Babel.",
-  "main": "esm.json",
-  "target": "node",
-  "engines": {
-    "node": ">=12.17"
-  },
-  "scripts": {
-    "release": "np --yolo --omit=dev",
-    "postinstall": "node ./bin/postinstall.mjs"
-  },
   "author": {
     "name": "Seth Battis",
     "url": "https://github.com/battis"
   },
   "license": "GPL-3.0",
-  "dependencies": {
+  "target": "node",
+  "engines": {
+    "node": ">=12.17"
+  },
+  "bin": {
+    "babel-config": "./bin/babel-config.mjs"
+  },
+  "scripts": {
+    "build": "run-s build:*",
+    "build:clean": "shx rm -rf bin",
+    "build:esm": "babel src --extensions .ts --out-dir bin --out-file-extension .mjs --config-file ./esm.json",
+    "release": "np --yolo --omit=dev"
+  },
+  "peerDependencies": {
     "@babel/cli": "^7.22.6",
     "@babel/core": "^7.22.8",
     "@babel/preset-env": "^7.22.7",
     "@babel/preset-typescript": "^7.22.5",
+    "@npmcli/package-json": "^4.0.0",
     "babel-plugin-add-import-extension": "^1.6.0",
     "babel-plugin-add-module-exports": "^1.0.4",
-    "@pnpm/hoist": "^8.0.7",
-    "app-root-path": "^3.1.0",
+    "jackspeak": "^2.2.1",
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.3.4",
     "typescript": "^5.1.6"
   },
   "devDependencies": {
-    "@battis/eslint-config": "latest",
     "@battis/prettier-config": "latest",
-    "np": "^8.0.4",
-    "npm-run-all": "^4.1.5",
-    "shx": "^0.3.4"
+    "np": "^8.0.4"
   },
-  "prettier": "@battis/prettier-config",
-  "eslintConfig": {
-    "extends": "@battis/eslint-config",
-    "parserOptions": {
-      "sourceType": "module"
-    }
-  }
+  "prettier": "@battis/prettier-config"
 }

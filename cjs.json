@@ -4,7 +4,8 @@
     [
       "@babel/preset-env",
       {
-        "modules": "commonjs"
+        "modules": "commonjs",
+        "exclude": ["proposal-dynamic-import"]
       }
     ],
     "@babel/preset-typescript"

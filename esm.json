@@ -10,7 +10,6 @@
     "@babel/typescript"
   ],
   "plugins": [
-    "add-module-exports",
     [
       "babel-plugin-add-import-extension",
       { "extension": "mjs", "replace": true }
