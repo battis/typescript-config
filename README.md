@@ -1,6 +1,8 @@
 # @battis/babel
 
-Boilerplate to compile both CommonJS and ES modules from "normal" typescript using Babel.
+Boilerplate to compile both CommonJS and ES modules from "normal" typescript using Babel, with exported Typescript types to boot.
+
+Still very much a moving target as I run into wrinkles in my own projects.
 
 ## Install
 
