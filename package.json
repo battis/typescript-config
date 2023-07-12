@@ -1,6 +1,6 @@
 {
   "name": "@battis/babel-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Boilerplate to compile both CommonJS and ES modules from \"normal\" typescript using Babel.",
   "author": {
     "name": "Seth Battis",
