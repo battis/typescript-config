@@ -1,6 +1,12 @@
 import PackageJson from '@npmcli/package-json';
 import fs from 'fs';
 import { jack } from 'jackspeak';
+import ora from 'ora';
+import shell from 'shelljs';
+import winston from 'winston';
+
+const PNPM_LOCKFILE = 'pnpm-lock.yaml';
+const NPMRC = '.npmrc';
 
 (async () => {
   const parser = jack()
@@ -42,6 +48,11 @@ import { jack } from 'jackspeak';
         short: 'h',
         description: 'Usage'
       },
+      pnpm: {
+        short: 'p',
+        description:
+          'Update .npmrc and rebuild modules with pnpm afterwards (done by default if pnpm-lock.yaml existsm unless --no-pnpm flag is passed)'
+      },
       'source-maps': {
         description: 'Include source maps'
       },
@@ -65,6 +76,9 @@ import { jack } from 'jackspeak';
       },
       'no-tsconfig': {
         description: 'Do not overwrite tsconfig.json'
+      },
+      'no-log': {
+        description: 'Disable logging'
       }
     });
   const args = parser.parse();
@@ -74,14 +88,34 @@ import { jack } from 'jackspeak';
     process.exit(0);
   }
 
+  const logger = winston.createLogger({
+    transports: [new winston.transports.Console({ level: 'error' })]
+  });
+  if (!args.values['no-log']) {
+    logger.configure({
+      transports: [
+        new winston.transports.File({
+          filename: `${new Date().toISOString()} babel-config.log`,
+          level: 'silly'
+        })
+      ]
+    });
+  }
   const pkgJson = await PackageJson.load(process.cwd());
 
-  const moduleType = args.values['no-reset-type']
-    ? pkgJson.content.type
-    : undefined;
+  let moduleType = pkgJson.content.type;
+  if (!args.values['no-reset-type']) {
+    const spinner = ora('Resetting package.json type').start();
+    logger.info(`original package.content.type: ${moduleType}`);
+    moduleType = undefined;
+    logger.info(`updated packaage.content.type: ${moduleType}`);
+    spinner.succeed('Reset package.json type');
+  }
 
   const exports = pkgJson.content.exports || {};
   if (!args.values['no-exports']) {
+    const spinner = ora('Updating package.json exports...').start();
+    logger.info(`original package.content.exports: ${exports}`);
     exports['.'] = {};
     if (!args.values['no-types']) {
       exports[
@@ -99,10 +133,14 @@ import { jack } from 'jackspeak';
     } else if (!args.values['no-cjs']) {
       exports['.'].default = exports['.'].require;
     }
+    logger.info(`updated package.content.exports: ${exports}`);
+    spinner.succeed('package.json exports updated');
   }
 
   let scripts = pkgJson.content.scripts;
   if (!args.values['no-scripts']) {
+    const spinner = ora('updating package.json scripts').start();
+    logger.info(`original package.contents.scripts: ${scripts}`);
     for (const key in scripts) {
       if (/^build/.test(key)) {
         delete scripts[key];
@@ -124,6 +162,8 @@ import { jack } from 'jackspeak';
     if (!args.values['no-types']) {
       scripts['build:types'] = 'tsc';
     }
+    logger.info(`updated package.contents.scripts: ${scripts}`);
+    spinner.succeed('package.json build scripts updated');
   }
 
   pkgJson.update({
@@ -134,6 +174,7 @@ import { jack } from 'jackspeak';
   await pkgJson.save();
 
   if (!args.values['no-tsconfig']) {
+    const spinner = ora('Creating tsconfig.json').start();
     fs.writeFileSync(
       'tsconfig.json',
       JSON.stringify({
@@ -144,5 +185,33 @@ import { jack } from 'jackspeak';
         include: [args.values.source]
       })
     );
+    logger.info('wrote tsconfig.json');
+    spinner.succeed('tsconfig.json created');
+  }
+
+  if (
+    args.values.pnpm ||
+    (fs.existsSync(PNPM_LOCKFILE) && !args.values['no-pnpm'])
+  ) {
+    const spinner = ora('updating .npmrc to hoist dependencies');
+    let npmrc = [];
+    if (fs.existsSync(NPMRC)) {
+      npmrc = fs
+        .readFileSync(NPMRC)
+        .toString()
+        .split('\n')
+        .map((line) => line.trim())
+        .filter((line) => line.length > 0);
+    }
+    logger.info(`original .npmrc: ${npmrc.join('\n')}`);
+    npmrc.push(
+      'public-hoist-pattern[]=*babel*',
+      'public-hoist-pattern[]=typescript'
+    );
+    npmrc = [...new Set(npmrc)];
+    fs.writeFileSync(NPMRC, npmrc.join('\n'));
+    shell.exec('pnpm rebuild');
+    logger.info(`updated .npmrc: ${npmrc.join('\n')}`);
+    spinner.succeed('.npmrc hoist patterns updated');
   }
 })();
