@@ -23,7 +23,7 @@
     "build:compile": "tsc",
     "release": "run-s release:*",
     "release:build": "npm run build",
-    "release:publish": "np --yolo --omit=dev"
+    "release:publish": "np --yolo --no-release-draft"
   },
   "devDependencies": {
     "@battis/eslint-config": "github:battis/eslint-config",
