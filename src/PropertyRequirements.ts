@@ -29,3 +29,27 @@ export type RecursivePartial<T> = {
   ? RecursivePartial<T[P]>
   : T[P];
 };
+
+/**
+ * ```ts
+ * type A = {
+ *   d: number,
+ *   e: string
+ *   f: boolean
+ * }
+ *
+ * type B = ReplaceProperty<A, 'e', number[]>;
+ * // type B = {
+ * //   d: number,
+ * //   e: number[],
+ * //   f: boolean
+ * // }
+ * ```
+ * @see {@link https://stackoverflow.com/a/51599774 StackOverflow response}
+ */
+export type ReplaceProperty<T, K extends keyof T, TReplace> = Identity<
+  Pick<T, Exclude<keyof T, K>> & {
+    [P in K]: TReplace;
+  }
+>;
+type Identity<T> = { [P in keyof T]: T[P] };
