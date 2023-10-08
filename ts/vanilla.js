@@ -1,5 +1,4 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
@@ -37,66 +36,66 @@ module.exports = ({
     entry: { [bundle]: entry },
     output: {
       path: path.resolve(root, build),
-      filename: '[name].[contenthash].js'
+      filename: '[name].[contenthash].js',
+      clean: true
     },
     module: {
       rules: config.overrideRules
         ? rules
         : [
-          {
-            test: /\.tsx?$/,
-            use: {
-              loader: 'ts-loader'
-            }
-          },
-          {
-            test: /\.svg$/,
-            use: 'raw-loader'
-          },
-          {
-            test: /\.s?[ac]ss$/,
-            use: [
-              config.extractCSS
-                ? MiniCssExtractPlugin.loader
-                : 'style-loader',
-              {
-                loader: 'css-loader',
-                options: { importLoaders: 2 }
-              },
-              {
-                loader: 'postcss-loader',
-                options: {
-                  postcssOptions: {
-                    plugins: ['postcss-preset-env']
-                  }
-                }
-              },
-              {
-                loader: 'sass-loader',
-                options: { implementation: require('sass') }
+            {
+              test: /\.tsx?$/,
+              use: {
+                loader: 'ts-loader'
               }
-            ]
-          },
-          ...rules
-        ]
+            },
+            {
+              test: /\.svg$/,
+              use: 'raw-loader'
+            },
+            {
+              test: /\.s?[ac]ss$/,
+              use: [
+                config.extractCSS
+                  ? MiniCssExtractPlugin.loader
+                  : 'style-loader',
+                {
+                  loader: 'css-loader',
+                  options: { importLoaders: 2 }
+                },
+                {
+                  loader: 'postcss-loader',
+                  options: {
+                    postcssOptions: {
+                      plugins: ['postcss-preset-env']
+                    }
+                  }
+                },
+                {
+                  loader: 'sass-loader',
+                  options: { implementation: require('sass') }
+                }
+              ]
+            },
+            ...rules
+          ]
     },
     resolve: config.overrideResolve
       ? resolve
       : {
-        ...resolve,
-        extensions: ['.ts', '.js', ...resolve.extensions]
-      },
+          ...resolve,
+          extensions: ['.ts', '.js', ...resolve.extensions]
+        },
     externals: externals,
     plugins: config.overridePlugins
       ? plugins
       : [
-        new CleanWebpackPlugin(),
-        new Dotenv(),
-        new MiniCssExtractPlugin({
-          filename: '[name].[contenthash].css'
-        }),
-        ...plugins
-      ],
+          new Dotenv(),
+          new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css'
+          }),
+          ...plugins
+        ],
     optimization: optimization || {
       minimize: true,
       minimizer: [

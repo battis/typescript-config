@@ -1,5 +1,4 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -30,7 +29,8 @@ module.exports = ({
     output: {
       path: path.resolve(root, build),
       filename: 'assets/js/[name].[contenthash].js',
-      publicPath: publicPath
+      publicPath: publicPath,
+      clean: true
     },
     module: {
       rules: [
@@ -81,7 +81,6 @@ module.exports = ({
     },
     externals: externals,
     plugins: [
-      new CleanWebpackPlugin(),
       new Dotenv(),
       new CopyWebpackPlugin({
         patterns: [

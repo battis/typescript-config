@@ -1,5 +1,4 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
@@ -40,7 +39,8 @@ module.exports = ({ root, package, title, externals = {} }) => {
     entry: { main: path.resolve(root, 'src', 'index.ts') },
     output: {
       path: path.resolve(root, 'build'),
-      filename: 'bookmarklet.js'
+      filename: 'bookmarklet.js',
+      clean: true
     },
     module: {
       rules: [
@@ -79,7 +79,6 @@ module.exports = ({ root, package, title, externals = {} }) => {
     },
     externals,
     plugins: [
-      new CleanWebpackPlugin(),
       new Dotenv(),
       HtmlWebpackPage('install.html'),
       HtmlWebpackPage('embed.html'),
