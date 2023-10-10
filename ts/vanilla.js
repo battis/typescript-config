@@ -8,7 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = ({
   root,
-  mode = 'production',
+  production = true,
   bundle = 'main',
   entry = './src/index.ts',
   build = 'build',
@@ -17,8 +17,9 @@ module.exports = ({
   config = {},
   rules = [],
   plugins = [],
-  optimization = null
+  optimization = undefined
 }) => {
+  production = production ?? mode === 'production';
   config = {
     extractCSS: true,
     overrideResolve: false,
@@ -32,7 +33,7 @@ module.exports = ({
     ...resolve
   };
   return {
-    mode: mode,
+    mode: production ? 'production' : 'development',
     entry: { [bundle]: entry },
     output: {
       path: path.resolve(root, build),
@@ -97,7 +98,7 @@ module.exports = ({
           ...plugins
         ],
     optimization: optimization || {
-      minimize: true,
+      minimize: production,
       minimizer: [
         new TerserPlugin({
           terserOptions: {
@@ -107,7 +108,7 @@ module.exports = ({
         }),
         new CssMinimizerWebpackPlugin()
       ],
-      splitChunks: { chunks: 'all' }
+      splitChunks: false
     }
   };
 };
