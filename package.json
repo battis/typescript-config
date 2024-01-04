@@ -12,7 +12,7 @@
     "node": ">=12.17"
   },
   "scripts": {
-    "release": "npx np --yolo --omitDev"
+    "release": "np --yolo --no-release-draft"
   },
   "dependencies": {
     "@prettier/plugin-xml": "^2.2.0",
