@@ -3,5 +3,9 @@
   "singleQuote": true,
   "trailingComma": "none",
   "xmlWhitespaceSensitivity": "ignore",
-  "plugins": ["prettier-plugin-sql", "@prettier/plugin-xml"]
+  "plugins": [
+    "prettier-plugin-sql",
+    "@prettier/plugin-xml",
+    "@trivago/prettier-plugin-sort-imports"
+  ]
 }
