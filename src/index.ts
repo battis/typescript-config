@@ -5,3 +5,4 @@ export * from './PropertyRequirements';
 export * from './Shorthand';
 export * from './StaticImplements';
 export * from './JSONValue';
+export * from './MethodNames';
