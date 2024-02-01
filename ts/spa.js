@@ -68,10 +68,9 @@ module.exports = ({
         },
         {
           test: /\.(jpe?g|gif|png)/,
-          loader: 'file-loader',
-          options: {
-            name: '[name].[contenthash].[ext]',
-            outputPath: 'assets/images'
+          type: 'asset/resource',
+          generator: {
+            filename: 'assets/images/[name].[hash].[ext]'
           }
         }
       ]
