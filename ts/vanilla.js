@@ -45,17 +45,17 @@ module.exports = ({
         ? rules
         : [
             {
-              test: /\.tsx?$/,
+              test: /\.tsx?$/i,
               use: {
                 loader: 'ts-loader'
               }
             },
             {
-              test: /\.svg$/,
+              test: /\.svg$/i,
               use: 'raw-loader'
             },
             {
-              test: /\.s?[ac]ss$/,
+              test: /\.(s[ac]ss|css)$/i,
               use: [
                 config.extractCSS
                   ? MiniCssExtractPlugin.loader
@@ -77,6 +77,13 @@ module.exports = ({
                   options: { implementation: require('sass') }
                 }
               ]
+            },
+            {
+              test: /\.(jpe?g|gif|png)$/i,
+              type: 'asset/resource',
+              generator: {
+                filename: 'assets/images/[name].[hash].[ext]'
+              }
             },
             ...rules
           ]
