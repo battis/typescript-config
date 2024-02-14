@@ -2,7 +2,6 @@
   "name": "@battis/webpack",
   "version": "0.3.2",
   "description": "",
-  "main": "ts/spa.js",
   "engines": {
     "node": ">=12.17"
   },
