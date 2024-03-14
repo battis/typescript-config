@@ -8,7 +8,9 @@
   },
   "license": "GPL-3.0",
   "scripts": {
-    "release": "np --yolo --omitDev"
+    "release": "run-s release:*",
+    "release:changeset": "changeset version",
+    "release:publish": "publish --otp $(op item get npm --otp)"
   },
   "main": ".eslintrc.json",
   "engines": {
@@ -27,7 +29,8 @@
   },
   "devDependencies": {
     "@battis/prettier-config": "file:../prettier-config",
-    "np": "^8.0.4"
+    "@changesets/cli": "^2.27.1",
+    "npm-run-all": "^4.1.5"
   },
   "prettier": "@battis/prettier-config"
 }
