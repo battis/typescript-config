@@ -14,7 +14,7 @@
   "scripts": {
     "release": "run-s release:*",
     "release:changeset": "changeset version",
-    "release:publish": "publish --otp $(op item get npm --otp)"
+    "release:publish": "pnpm publish --otp $(op item get npm --otp)"
   },
   "dependencies": {
     "@prettier/plugin-xml": "^2.2.0",
