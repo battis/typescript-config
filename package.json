@@ -24,7 +24,7 @@
     "release": "run-s release:*",
     "release:build": "run build",
     "release:changeset": "changeset version",
-    "release:publish": "publish --otp $(op item get npm --otp)"
+    "release:publish": "pnpm publish --otp $(op item get npm --otp)"
   },
   "devDependencies": {
     "@battis/eslint-config": "github:battis/eslint-config",
