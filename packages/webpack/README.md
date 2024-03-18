@@ -12,7 +12,7 @@ Reusable, extensible webpack configurations for different needs;
 ## Install
 
 ```bash
-npm i -D @battis/webpack@latest
+npm i -D @battis/webpack
 ```
 
 If using `pnpm`, a postinstall script will "shamefully" hoist webpack dependencies.
