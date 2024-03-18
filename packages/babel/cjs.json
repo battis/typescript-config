@@ -1,0 +1,14 @@
+{
+  "ignore": ["node_modules/**/*"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": "commonjs",
+        "exclude": ["proposal-dynamic-import"]
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": ["babel-plugin-add-module-exports"]
+}
