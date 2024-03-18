@@ -10,7 +10,9 @@
     "url": "https://github.com/battis/typescript-config.git"
   },
   "homepage": "https://github.com/battis/typescript-config#readme",
-  "workspaces": "packages/*",
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@battis/eslint-config": "workspace:latest",
     "@battis/prettier-config": "workspace:latest",
@@ -23,5 +25,8 @@
     "release:changeset": "changeset version",
     "release:publish": "pnpm publish -r --otp $(op item get npm --otp)"
   },
-  "prettier": "@battis/prettier-config"
+  "prettier": "@battis/prettier-config",
+  "eslintConfig": {
+    "extends": "@battis/eslint-config"
+  }
 }
