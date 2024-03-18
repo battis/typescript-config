@@ -1,7 +1,7 @@
 {
   "name": "@battis/eslint-config",
   "description": "",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "author": {
     "name": "Seth Battis",
     "url": "https://github.com/battis"
@@ -26,5 +26,6 @@
     "eslint-plugin-markdown": "^3.0.0",
     "eslint-plugin-tsdoc": "^0.2.17",
     "typescript": "^5.1.6"
-  }
+  },
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/eslint#readme"
 }

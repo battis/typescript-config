@@ -1,12 +1,12 @@
 {
   "name": "@battis/typescript-tricks",
   "description": "A handful of useful types and operators",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "Seth Battis <seth@battis.net>",
   "license": "GPL-3.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "homepage": "https://github.com/battis/typescript-tricks#readme",
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/tricks#readme",
   "engines": {
     "node": "*"
   },
