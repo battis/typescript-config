@@ -15,9 +15,6 @@
     "url": "https://github.com/battis"
   },
   "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/battis/webpack/issues"
-  },
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/webpack#readme",
   "dependencies": {
     "app-root-path": "^3.1.0",

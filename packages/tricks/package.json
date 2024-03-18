@@ -15,9 +15,6 @@
     "url": "https://github.com/battis/typescript-config.git",
     "directory": "packages/tricks"
   },
-  "bugs": {
-    "url": "https://github.com/battis/typescript-config/issues"
-  },
   "scripts": {
     "build": "run-s build:*",
     "build:clean": "shx rm -rf dist",
