@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:markdown/recommended",
+    "eslint-config-prettier"
+  ],
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "plugins": ["eslint-plugin-html", "eslint-plugin-markdown"],
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "env": {
+        "node": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "eslint-config-prettier"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"]
+    }
+  ]
+}
