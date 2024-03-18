@@ -1,0 +1,27 @@
+{
+  "name": "@battis/typescript-config",
+  "author": {
+    "name": "Seth Battis",
+    "url": "https://github.com/battis"
+  },
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/battis/typescript-config.git"
+  },
+  "homepage": "https://github.com/battis/typescript-config#readme",
+  "workspaces": "packages/*",
+  "devDependencies": {
+    "@battis/eslint-config": "workspace:latest",
+    "@battis/prettier-config": "workspace:latest",
+    "@changesets/cli": "^2.27.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "release": "run-s release:*",
+    "release:package-info": "bin/package-info.mjs",
+    "release:changeset": "changeset version",
+    "release:publish": "pnpm publish -r --otp $(op item get npm --otp)"
+  },
+  "prettier": "@battis/prettier-config"
+}
