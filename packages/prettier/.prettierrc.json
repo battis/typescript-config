@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc.json",
+  "singleQuote": true,
+  "trailingComma": "none",
+  "xmlWhitespaceSensitivity": "ignore",
+  "plugins": [
+    "prettier-plugin-sql",
+    "@prettier/plugin-xml",
+    "@trivago/prettier-plugin-sort-imports"
+  ]
+}
