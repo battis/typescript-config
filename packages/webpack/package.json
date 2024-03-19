@@ -1,6 +1,6 @@
 {
   "name": "@battis/webpack",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "",
   "engines": {
     "node": ">=12.17"

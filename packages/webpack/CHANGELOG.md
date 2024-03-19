@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 0.4.3
+
+### Patch Changes
+
+- fb0e467: type importing
+
 ## 0.4.2
 
 ### Patch Changes
