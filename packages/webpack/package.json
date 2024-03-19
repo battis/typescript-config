@@ -16,6 +16,7 @@
   },
   "license": "GPL-3.0",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/webpack#readme",
+  "main": "src",
   "dependencies": {
     "app-root-path": "^3.1.0",
     "copy-webpack-plugin": "^11.0.0",
