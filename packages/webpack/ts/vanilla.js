@@ -10,6 +10,7 @@ module.exports = ({
   root,
   production = true,
   bundle = 'main',
+  filename = '[name].[contenthash].js',
   entry = './src/index.ts',
   build = 'build',
   resolve = {},
@@ -37,7 +38,7 @@ module.exports = ({
     entry: { [bundle]: entry },
     output: {
       path: path.resolve(root, build),
-      filename: '[name].[contenthash].js',
+      filename,
       clean: true
     },
     module: {
