@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 0.4.4
+
+### Patch Changes
+
+- f67070b: add filename param
+
 ## 0.4.3
 
 ### Patch Changes
