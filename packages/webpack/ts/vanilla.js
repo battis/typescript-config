@@ -10,7 +10,7 @@ module.exports = ({
   root,
   production = true,
   bundle = 'main',
-  filename = '[name].[contenthash].js',
+  filename = '[name].[contenthash]',
   entry = './src/index.ts',
   build = 'build',
   resolve = {},
@@ -38,7 +38,7 @@ module.exports = ({
     entry: { [bundle]: entry },
     output: {
       path: path.resolve(root, build),
-      filename,
+      filename: path.extname(filename) == '.js' ? filename : `${filename}.js`,
       clean: true
     },
     module: {
@@ -102,7 +102,10 @@ module.exports = ({
       : [
           new Dotenv(),
           new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
+            filename:
+              path.extname(filename) == '.js'
+                ? '[name].[contenthash].css'
+                : `${filename}.css`
           }),
           ...plugins
         ],
