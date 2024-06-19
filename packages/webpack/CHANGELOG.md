@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 0.4.5
+
+### Patch Changes
+
+- b906e13: filename affects css export
+
 ## 0.4.4
 
 ### Patch Changes
