@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 0.4.6
+
+### Patch Changes
+
+- 921639c: .npmrc format change, peer dependencies
+
 ## 0.4.5
 
 ### Patch Changes
