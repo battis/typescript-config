@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 0.4.7
+
+### Patch Changes
+
+- 582c1ae: fix target default
+
 ## 0.4.6
 
 ### Patch Changes
