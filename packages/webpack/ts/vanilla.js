@@ -9,7 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = ({
   root,
   production = true,
-  target = false,
+  target = 'web',
   bundle = 'main',
   filename = '[name].[contenthash]',
   entry = './src/index.ts',
