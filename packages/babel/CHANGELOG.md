@@ -1,5 +1,11 @@
 # @battis/babel-config
 
+## 0.1.4
+
+### Patch Changes
+
+- 6730759: bump dependencies
+
 ## 0.1.3
 
 ### Patch Changes

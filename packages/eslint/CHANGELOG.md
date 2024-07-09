@@ -1,5 +1,11 @@
 # @battis/eslint-config
 
+## 1.1.5
+
+### Patch Changes
+
+- 6730759: bump dependencies
+
 ## 1.1.4
 
 ### Patch Changes

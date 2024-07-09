@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 0.4.8
+
+### Patch Changes
+
+- 6730759: bump dependencies
+
 ## 0.4.7
 
 ### Patch Changes

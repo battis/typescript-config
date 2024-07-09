@@ -1,5 +1,11 @@
 # @battis/prettier-config
 
+## 1.3.3
+
+### Patch Changes
+
+- 6730759: bump dependencies
+
 ## 1.3.2
 
 ### Patch Changes
