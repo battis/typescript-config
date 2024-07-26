@@ -1,5 +1,11 @@
 # @battis/eslint-config
 
+## 1.2.0
+
+### Minor Changes
+
+- 6c31031: move to peer dependencies
+
 ## 1.1.5
 
 ### Patch Changes

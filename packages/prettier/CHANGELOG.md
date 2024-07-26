@@ -1,5 +1,11 @@
 # @battis/prettier-config
 
+## 1.4.0
+
+### Minor Changes
+
+- 6c31031: move to peer dependencies
+
 ## 1.3.3
 
 ### Patch Changes
