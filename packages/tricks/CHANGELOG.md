@@ -1,5 +1,11 @@
 # @battis/typescript-tricks
 
+## 0.5.3
+
+### Patch Changes
+
+- f97ced8: fiddling with dist
+
 ## 0.5.2
 
 ### Patch Changes
