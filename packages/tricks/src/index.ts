@@ -6,3 +6,4 @@ export * from './Shorthand';
 export * from './StaticImplements';
 export * from './JSONValue';
 export * from './MethodNames';
+export * from './Forms';
