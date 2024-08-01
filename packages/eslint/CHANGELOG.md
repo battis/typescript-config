@@ -1,5 +1,11 @@
 # @battis/eslint-config
 
+## 1.2.1
+
+### Patch Changes
+
+- 0881d85: less squawking about typescript version
+
 ## 1.2.0
 
 ### Minor Changes
