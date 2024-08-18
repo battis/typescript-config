@@ -1,8 +1,7 @@
 import cleanEmptyDependencies from './cleanEmptyDependencies.js';
-import fetchPackage from './fetchPackage.js';
-import importPackage from './importPackage.js';
 import cli from '@battis/qui-cli';
 import fs from 'fs';
+import pkg from 'get-package-json';
 import { IPackageJson, IDependencyMap } from 'package-json-type';
 import path from 'path';
 
@@ -80,7 +79,7 @@ let projectPackage: IPackageJson;
 try {
   packagePath = path.resolve(CWD, packagePath);
   spinner.start(`Loading ${cli.colors.url(packagePath)}`);
-  projectPackage = await importPackage(packagePath);
+  projectPackage = await pkg.importLocal(packagePath);
   spinner.succeed(`Loaded ${cli.colors.url(packagePath)}`);
 } catch (error) {
   spinner.fail(`Failed to load ${cli.colors.url(packagePath)}`);
@@ -112,12 +111,10 @@ async function addToPeers({
     peers[dependency][peerName] += ` ${peerVersion}`;
   } else {
     peers[dependency][peerName] = peerVersion;
-    let peerPackage: IPackageJson | undefined;
-    try {
-      peerPackage = await importPackage(peerName);
-    } catch {
-      peerPackage = await fetchPackage(peerName, peerVersion);
-    }
+    const peerPackage = await pkg.importLocalWithNPMFallback(
+      peerName,
+      peerVersion
+    );
     if (peerPackage) {
       await identifyPeers({ targetPackage: peerPackage });
     }
@@ -154,15 +151,10 @@ async function identifyPeers({
           const packageVersion = targetPackage[dependency][packageName];
           if (dependency == 'peerDependencies') {
           }
-          let dependencyPackage: IPackageJson | undefined;
-          try {
-            dependencyPackage = await importPackage(packageName);
-          } catch (error) {
-            dependencyPackage = await fetchPackage(
-              packageName,
-              targetPackage[dependency][packageName]
-            );
-          }
+          const dependencyPackage = await pkg.importLocalWithNPMFallback(
+            packageName,
+            targetPackage[dependency][packageName]
+          );
           if (dependencyPackage) {
             for (const peerName in dependencyPackage.peerDependencies) {
               if (

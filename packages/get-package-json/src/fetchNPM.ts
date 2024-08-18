@@ -22,7 +22,7 @@ type PackageDescription = {
   readmeFilename?: string;
 };
 
-export default async function fetchPackage(name: string, version: string) {
+export default async function fetchNPM(name: string, version: string) {
   const description = (await (
     await fetch(`https://registry.npmjs.com/${name}`)
   ).json()) as PackageDescription;
