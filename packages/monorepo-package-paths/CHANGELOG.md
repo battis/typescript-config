@@ -1,5 +1,11 @@
 # monorepo-package-paths
 
+## 0.1.3
+
+### Patch Changes
+
+- 930d549: actually distribute rebuilt code
+
 ## 0.1.2
 
 ### Patch Changes
