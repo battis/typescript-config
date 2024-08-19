@@ -1,7 +1,7 @@
 import cleanEmptyDependencies from './cleanEmptyDependencies.js';
+import pkg from '@battis/import-package-json';
 import cli from '@battis/qui-cli';
 import fs from 'fs';
-import pkg from 'get-package-json';
 import { IPackageJson, IDependencyMap } from 'package-json-type';
 import path from 'path';
 
