@@ -1,6 +1,6 @@
+import pkg from '@battis/import-package-json';
 import cli from '@battis/qui-cli';
 import fs from 'fs';
-import pkg from 'get-package-json';
 import { glob } from 'glob';
 import { IRepository } from 'package-json-type';
 import path from 'path';
