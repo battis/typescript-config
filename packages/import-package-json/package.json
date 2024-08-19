@@ -1,5 +1,5 @@
 {
-  "name": "get-package-json",
+  "name": "@battis/import-package-json",
   "version": "0.1.0",
   "author": {
     "name": "Seth Battis",
