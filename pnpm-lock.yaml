@@ -26,12 +26,12 @@ importers:
 
   packages/add-peer-dependencies:
     dependencies:
+      '@battis/import-package-json':
+        specifier: workspace:*
+        version: link:../import-package-json
       '@battis/qui-cli':
         specifier: ^0.4.2
         version: 0.4.2
-      get-package-json:
-        specifier: workspace:*
-        version: link:../get-package-json
     devDependencies:
       '@tsconfig/recommended':
         specifier: ^1.0.7
@@ -134,7 +134,7 @@ importers:
         specifier: '*'
         version: 5.5.4
 
-  packages/get-package-json:
+  packages/import-package-json:
     dependencies:
       node-fetch:
         specifier: ^3.3.2
@@ -167,12 +167,12 @@ importers:
 
   packages/monorepo-package-paths:
     dependencies:
+      '@battis/import-package-json':
+        specifier: workspace:*
+        version: link:../import-package-json
       '@battis/qui-cli':
         specifier: ^0.4.2
         version: 0.4.2
-      get-package-json:
-        specifier: workspace:*
-        version: link:../get-package-json
       glob:
         specifier: ^11.0.0
         version: 11.0.0

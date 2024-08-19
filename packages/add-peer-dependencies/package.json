@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@battis/qui-cli": "^0.4.2",
-    "get-package-json": "workspace:*"
+    "@battis/import-package-json": "workspace:*"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.7",

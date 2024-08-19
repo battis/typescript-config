@@ -8,7 +8,7 @@
   "type": "module",
   "dependencies": {
     "@battis/qui-cli": "^0.4.2",
-    "get-package-json": "workspace:*",
+    "@battis/import-package-json": "workspace:*",
     "glob": "^11.0.0",
     "package-json-type": "^1.0.3",
     "yaml": "^2.5.0"
