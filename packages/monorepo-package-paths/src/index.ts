@@ -158,7 +158,7 @@ for (const workspace of workspaces) {
       }
       fs.writeFileSync(
         workspacePackagePath,
-        JSON.stringify(updatedPackage, null, 2)
+        JSON.stringify(updatedPackage, null, 2) + '\n'
       );
       spinner.succeed(`Updated ${cli.colors.url(workspaceRelativePath)}`);
     } else {

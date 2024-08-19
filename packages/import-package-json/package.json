@@ -1,11 +1,11 @@
 {
   "name": "@battis/import-package-json",
   "version": "0.1.1",
-  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/get-package-json#readme",
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/import-package-json#readme",
   "repository": {
     "url": "https://github.com/battis/typescript-config.git",
     "type": "git",
-    "directory": "packages/get-package-json"
+    "directory": "packages/import-package-json"
   },
   "author": {
     "name": "Seth Battis",

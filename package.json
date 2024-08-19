@@ -10,6 +10,14 @@
     "url": "https://github.com/battis/typescript-config.git"
   },
   "homepage": "https://github.com/battis/typescript-config#readme",
+  "scripts": {
+    "pre-changeset": "run-s pre-changeset:*",
+    "pre-changeset:monorepo-package-paths": "npx monorepo-package-paths -w",
+    "pre-changeset:build": "lerna run build",
+    "release": "run-s release:*",
+    "release:changeset": "changeset version",
+    "release:publish": "pnpm publish -r --otp $(op item get npm --otp)"
+  },
   "devDependencies": {
     "@battis/eslint-config": "workspace:latest",
     "@battis/prettier-config": "workspace:latest",
@@ -17,11 +25,6 @@
     "lerna": "^8.1.8",
     "monorepo-package-paths": "workspace:*",
     "npm-run-all": "^4.1.5"
-  },
-  "scripts": {
-    "release": "run-s release:*",
-    "release:changeset": "changeset version",
-    "release:publish": "pnpm publish -r --otp $(op item get npm --otp)"
   },
   "prettier": "@battis/prettier-config",
   "eslintConfig": {
