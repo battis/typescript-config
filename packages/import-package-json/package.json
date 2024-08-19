@@ -1,10 +1,17 @@
 {
   "name": "@battis/import-package-json",
   "version": "0.1.0",
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/get-package-json#readme",
+  "repository": {
+    "url": "https://github.com/battis/typescript-config.git",
+    "type": "git",
+    "directory": "packages/get-package-json"
+  },
   "author": {
     "name": "Seth Battis",
     "url": "https://github.com/battis"
   },
+  "license": "GPL-3.0",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -26,11 +33,5 @@
   "dependencies": {
     "node-fetch": "^3.3.2",
     "semver": "^7.6.3"
-  },
-  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/get-package-json#readme",
-  "repository": {
-    "url": "https://github.com/battis/typescript-config.git",
-    "type": "git",
-    "directory": "packages/get-package-json"
   }
 }

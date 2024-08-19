@@ -6,6 +6,7 @@
     "name": "Seth Battis",
     "url": "https://github.com/battis"
   },
+  "license": "GPL-3.0",
   "repository": {
     "url": "https://github.com/battis/typescript-config.git",
     "type": "git",

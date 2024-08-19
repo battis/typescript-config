@@ -12,6 +12,7 @@
     "name": "Seth Battis",
     "url": "https://github.com/battis"
   },
+  "license": "GPL-3.0",
   "type": "module",
   "dependencies": {
     "@battis/qui-cli": "^0.4.2",
