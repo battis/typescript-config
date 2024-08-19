@@ -1,5 +1,11 @@
 # @battis/babel-config
 
+## 0.1.5
+
+### Patch Changes
+
+- 98e1e83: license info
+
 ## 0.1.4
 
 ### Patch Changes

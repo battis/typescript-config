@@ -1,5 +1,13 @@
 # monorepo-package-paths
 
+## 0.1.2
+
+### Patch Changes
+
+- 98e1e83: license info
+- Updated dependencies [98e1e83]
+  - @battis/import-package-json@0.1.1
+
 ## 0.1.1
 
 ### Patch Changes
