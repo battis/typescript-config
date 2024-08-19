@@ -19,7 +19,7 @@
   },
   "scripts": {
     "release": "run-s release:*",
-    "release:package-info": "monorepo-package-paths",
+    "release:package-info": "npx monorepo-package-paths -w",
     "release:changeset": "changeset version",
     "release:publish": "pnpm publish -r --otp $(op item get npm --otp)"
   },
