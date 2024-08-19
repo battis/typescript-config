@@ -1,5 +1,11 @@
 # monorepo-package-paths
 
+## 0.1.4
+
+### Patch Changes
+
+- 03c31f2: newline at end of package
+
 ## 0.1.3
 
 ### Patch Changes
