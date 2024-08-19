@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/recommended",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "declaration": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["./src"]
+}

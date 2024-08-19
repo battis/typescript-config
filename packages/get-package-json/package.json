@@ -21,5 +21,11 @@
   "dependencies": {
     "node-fetch": "^3.3.2",
     "semver": "^7.6.3"
+  },
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/get-package-json#readme",
+  "repository": {
+    "url": "https://github.com/battis/typescript-config.git",
+    "type": "git",
+    "directory": "packages/get-package-json"
   }
 }

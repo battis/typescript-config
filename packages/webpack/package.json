@@ -6,8 +6,8 @@
     "node": ">=12.17"
   },
   "repository": {
-    "type": "git",
     "url": "https://github.com/battis/typescript-config.git",
+    "type": "git",
     "directory": "packages/webpack"
   },
   "author": {
