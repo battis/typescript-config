@@ -1,5 +1,13 @@
 # add-peer-dependencies
 
+## 0.1.4
+
+### Patch Changes
+
+- dae421f: workspace:\* in import-package-json
+- Updated dependencies [a1943c0]
+  - @battis/import-package-json@0.1.2
+
 ## 0.1.3
 
 ### Patch Changes

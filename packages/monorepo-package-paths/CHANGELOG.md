@@ -1,5 +1,12 @@
 # monorepo-package-paths
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies [a1943c0]
+  - @battis/import-package-json@0.1.2
+
 ## 0.2.0
 
 ### Minor Changes
