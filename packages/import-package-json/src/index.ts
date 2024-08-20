@@ -10,7 +10,10 @@ export async function importLocalWithNPMFallback(
 ) {
   try {
     const pkg = await importLocal(packageName);
-    if (pkg.version && semver.satisfies(pkg.version, packageVersion)) {
+    if (
+      packageVersion == 'workspace:*' ||
+      (pkg.version && semver.satisfies(pkg.version, packageVersion))
+    ) {
       return pkg;
     } else {
       throw new Error(
