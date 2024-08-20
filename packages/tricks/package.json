@@ -2,7 +2,10 @@
   "name": "@battis/typescript-tricks",
   "description": "A handful of useful types and operators",
   "version": "0.5.4",
-  "author": "Seth Battis <seth@battis.net>",
+  "author": {
+    "name": "Seth Battis",
+    "url": "https://github.com/battis"
+  },
   "license": "GPL-3.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

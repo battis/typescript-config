@@ -12,7 +12,7 @@
   "homepage": "https://github.com/battis/typescript-config#readme",
   "scripts": {
     "pre-changeset": "run-s pre-changeset:*",
-    "pre-changeset:monorepo-package-paths": "npx monorepo-package-paths -w",
+    "pre-changeset:monorepo-package-paths": "npx monorepo-package-paths -w --author --homepage --repository",
     "pre-changeset:build": "lerna run build",
     "release": "run-s release:*",
     "release:changeset": "changeset version",

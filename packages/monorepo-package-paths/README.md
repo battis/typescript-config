@@ -14,8 +14,8 @@ npm i -D monorepo-package-paths
 npx monorepo-package-paths -w
 ```
 
-Get help:
+## Help
 
-```
-npx monorepo-package-oaths --help
+```sh
+npx monorepo-package-paths --help
 ```

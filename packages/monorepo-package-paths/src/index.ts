@@ -2,7 +2,6 @@ import pkg from '@battis/import-package-json';
 import cli from '@battis/qui-cli';
 import fs from 'fs';
 import { glob } from 'glob';
-import { IRepository } from 'package-json-type';
 import path from 'path';
 import YAML from 'yaml';
 
@@ -35,12 +34,22 @@ const args = cli.init({
         default: false
       },
       repository: {
-        description: 'Update package.repo.directory (default true)',
+        description: `Update ${cli.colors.value(
+          'package.repo.directory'
+        )} (default true)`,
         default: true
       },
       homepage: {
-        description: 'Update package.homepage (default true)',
+        description: `Update ${cli.colors.value(
+          'package.homepage'
+        )} (default true)`,
         default: true
+      },
+      author: {
+        description: `Update ${cli.colors.value(
+          'package.author'
+        )} (default false)`,
+        default: false
       }
     }
   }
@@ -50,6 +59,7 @@ const {
   values: {
     rootPackage: pathToRootPackage,
     repository,
+    author,
     homepage,
     homepagePrefix,
     write
@@ -95,6 +105,8 @@ if (workspaces.length === 0) {
   spinner.fail(`No workspace definitions found`);
   process.exit(0);
 }
+
+const rootAuthor = author ? rootPackage.author : undefined;
 
 const rootHomepage =
   homepage && rootPackage.homepage ? new URL(rootPackage.homepage) : undefined;
@@ -150,6 +162,9 @@ for (const workspace of workspaces) {
 
     if (write) {
       const updatedPackage = { ...workspacePackage };
+      if (rootAuthor) {
+        updatedPackage.author = rootAuthor;
+      }
       if (workspaceHomepage) {
         updatedPackage.homepage = workspaceHomepage.toString();
       }
@@ -163,6 +178,9 @@ for (const workspace of workspaces) {
       spinner.succeed(`Updated ${cli.colors.url(workspaceRelativePath)}`);
     } else {
       const summary: Record<string, any> = { name: workspacePackage.name };
+      if (rootAuthor) {
+        summary['author'] = rootAuthor;
+      }
       if (workspaceHomepage) {
         summary['homepage'] = workspaceHomepage.toString();
       }
