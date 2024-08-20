@@ -1,5 +1,11 @@
 # monorepo-package-paths
 
+## 0.2.0
+
+### Minor Changes
+
+- 52c8d19: --author
+
 ## 0.1.4
 
 ### Patch Changes
