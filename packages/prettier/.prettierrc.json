@@ -4,8 +4,11 @@
   "trailingComma": "none",
   "xmlWhitespaceSensitivity": "ignore",
   "plugins": [
-    "prettier-plugin-sql",
     "@prettier/plugin-xml",
-    "@trivago/prettier-plugin-sort-imports"
+    "prettier-plugin-ejs",
+    "prettier-plugin-packagejson",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-jsdoc",
+    "prettier-plugin-sql"
   ]
 }
