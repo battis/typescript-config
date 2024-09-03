@@ -1,5 +1,11 @@
 # @battis/prettier-config
 
+## 1.5.1
+
+### Patch Changes
+
+- a8cf40b: Remove jsdoc
+
 ## 1.5.0
 
 ### Minor Changes
