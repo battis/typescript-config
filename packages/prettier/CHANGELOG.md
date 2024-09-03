@@ -1,5 +1,11 @@
 # @battis/prettier-config
 
+## 1.5.0
+
+### Minor Changes
+
+- b4ee191: EJS, Updated organization
+
 ## 1.4.0
 
 ### Minor Changes
