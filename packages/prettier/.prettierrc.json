@@ -7,7 +7,7 @@
     "@prettier/plugin-xml",
     "prettier-plugin-ejs",
     "prettier-plugin-packagejson",
-    "prettier-plugin-organize-imports",
+    "@trivago/prettier-plugin-sort-imports",
     "prettier-plugin-sql"
   ]
 }
