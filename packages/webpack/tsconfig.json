@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/recommended",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["es2022", "dom"],
+    "target": "esnext",
+    "declaration": true
+  },
+  "include": ["./src"]
+}

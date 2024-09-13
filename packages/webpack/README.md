@@ -15,21 +15,17 @@ Reusable, extensible webpack configurations for different needs;
 npm i -D @battis/webpack
 ```
 
-If using `pnpm`, a postinstall script will "shamefully" hoist webpack dependencies.
+if working in a monorepo or using `pnpm`, you may want to explore [`add-peer-dependencies`](../add-peer-dependencies).
 
 ## Usage
-
-### `webpack.config.js`
-
-See [Choose Build](#choose-build) below.
 
 ### `package.json`
 
 ```json
 {
   "scripts": {
-    "serve": "npx webpack serve",
-    "build": "npx webpack"
+    "serve": "webpack serve",
+    "build": "webpack"
   }
 }
 ```
@@ -38,39 +34,84 @@ See [Choose Build](#choose-build) below.
 
 ```json
 {
-  "extends": "@battis/webpack/ts/tsconfig.json"
+  "extends": "@battis/webpack/tsconfig.json",
+  "include": ["./src"]
 }
 ```
+
+### `src/index.ts`
+
+If making use of more advanced features (e.g. importing images, using the `__webpack_hash__` variable, or using `style.module.scss` to import values between SCSS and TS):
+
+```ts
+/// <reference types="@battis/webpack/types" />
+```
+
+### `webpack.config.mjs`
+
+```js
+import bundle from `@battis/webpack`;
+
+export default bundle.fromTS.toVanillaJS({
+  root: import.meta.dirname
+});
+```
+
+See [Choose Build](#choose-build) below.
+
+#### Common Options
+
+Optional unless otherwise indicated.
+
+##### Script configuration
+
+| Parameter         | Description                                                                                                                                                                                                                                                                 |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `root` (required) | Path to project root, where `package.json`, `webpack.config.mjs`, etc. reside. In general, `import.meta.dirname` is the right answer.                                                                                                                                       |
+| `template`        | Path to template directory (if needed) relative to `root`, from which to draw static web templates that will be updated during the build. Defaults to `'template'`                                                                                                          |
+| `bundle`          | Name of the module to bundle. Defaults to `'main'`                                                                                                                                                                                                                          |
+| `production`      | Whether this is a production or development build (which includes a great deal more debugging information and takes up a a lot more space). Defaults to `true`                                                                                                              |
+| `override`        | An object indicating which of the below Webpak configurations override, rather than extend the default configurationof the script. By default, all overrides are `false`. Possible overrides include `resolveExtensions`,`moduleRules`,`externals`,`plugins`,`optimization` |
+
+##### Webpack configuration
+
+| Parameter            | Description                                                                                                                                                                                         |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `entry`              | Path to the entrypoint to the app relative to `root`. Defaults to `'src/index.ts'`                                                                                                                  |
+| `output.path`        | Path to the desired output directory for the bundle, relative to `root`. Default varies depending on build, usually `'build'` or `'dist'`                                                           |
+| `output.filename`    | Naming scheme for the bundle output. Default varies depending on build, usually `'[name].[contenthash]'`                                                                                            |
+| `resolve.extensions` | An array of strings listing file extensions to be resolved by Webpack. Default varies depending on build                                                                                            |
+| `module.rules`       | An array of Webpack rules for processing file types. Defeault varies depending on build                                                                                                             |
+| `externals`          | An object defining modules that Webpack can externalize from the actual bundle (e.g. JQuery, lodash, etc.). Defaults to none.                                                                       |
+| `plugins`            | An array of Webpack plugin instances to be applied to the bundle. Defaults vary depending on build, but always include [`clean-webpack-plugin`](https://www.npmjs.com/package/clean-webpack-plugin) |
+| `optimization`       | Webpack optmization rules. Default varies depending on build                                                                                                                                        |
+| `terserOptions`      | Configuration options for the Terser Plugin in the optimization configuration. Defaults vary depending on build                                                                                     |
 
 ## Choose build
 
 ### Single Page App
 
-#### `webpack.config.js`
+#### `webpack.config.mjs`
 
 ```js
-module.exports = require('@battis/webpack/ts/spa')({
-  root: __dirname
+import bundle from '@battis/webpack';
+
+export default bundle.fromTS.toSPA({
+  root: import.meta.dirname
 });
 ```
 
 Meant to build a single page app, including a manifest, favicons, image compression, etc.
 
-Configuration options include, with defaults:
+#### Additional configuration options
 
-| Parameter                  | Description                                                                                                                                                                                                                              |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `root`                     | **Required:** path to project root, usually `__dirname`                                                                                                                                                                                  |
-| `bundle = 'main'`          | Name of bundle to be exported                                                                                                                                                                                                            |
-| `entry = './src/index.ts'` | Path to entry point, relative to `root`                                                                                                                                                                                                  |
-| `template = 'public'`      | Path to template for build folder, relative to `root`. All files _except_ `index.html` while be copied. `index.html` will be built using the HtmlWebpackPlugin, with the assets injected.                                                |
-| `build = 'build'`          | Path to build output folder, relative to `root`.                                                                                                                                                                                         |
-| `publicPath = '/'`         | Web path to app on server                                                                                                                                                                                                                |
-| `externals = {}`           | [Webpack-defined object](https://webpack.js.org/configuration/externals/) defining externally-loaded libraries.                                                                                                                          |
-| `favicon = false`          | If `favicon` is `false`, favicons will be ignored. If it is set to a path relative to the `root` path, it will assume there is a directory with the following files, and use them to generate a [SPA assets folder](#spa-assets-folder). |
-| `appName = false`          | Name of the app to display in title bar, etc. Defaults to the value of `bundle`                                                                                                                                                          |
+| Parameter           | Description                                                                                                          |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `favicon`           | Path to favicon assets folder relative to `root`. Defaults is none. If defined, favicon resources will be processed. |
+| `appName`           | Display name for the app. Defaults to `bundle` value                                                                 |
+| `output.publicPath` | Public path to the web app                                                                                           |
 
-###### SPA assets folder
+#### SPA assets folder
 
 ```
 📂favicon
@@ -82,23 +123,24 @@ Configuration options include, with defaults:
 
 ### Vanilla JS
 
-#### `webpack.confg.js`
+Meant to generate vanilla JavaScript for re-use in a browser.
+
+#### `webpack.confg.mjs`
 
 ```js
-module.exports = require('@battis/webpack/ts/vanilla')({
-  root: __dirname
+import bundle from '@battis/webpack';
+
+export default bundle.fromTS.toVanillaJS({
+  root: import.meta.dirname
 });
 ```
 
-Meant to generate vanilla JavaScript for re-use in a browser.
+#### Additional configuration options
 
-| Parameter                  | Description                                                                                                     |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `root`                     | **Required:** path to project root, usually `__dirname`                                                         |
-| `bundle = 'main'`          | Name of bundle to be exported                                                                                   |
-| `entry = './src/index.ts'` | Path to entry point, relative to `root`                                                                         |
-| `build = 'build'`          | Path to build output folder, relative to `root`.                                                                |
-| `externals = {}`           | [Webpack-defined object](https://webpack.js.org/configuration/externals/) defining externally-loaded libraries. |
+| Parameter    | Description                                                                                                            |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| `target`     | Webpack target value. Defaults to `'web'`, but `'node'` is useful for compiling node apps and libraries.               |
+| `extractCSS` | Boolean value determining whether CSS is extracted as a separate file or embedded in the JS bundle. Defaults to `true` |
 
 #### `package.json`
 
@@ -146,19 +188,19 @@ This will generate the following files:
 
 This assumes that GitHub Pages has been enabled for the repo, deployed from the `main` branch root.
 
-#### `webpack.config.js`
+#### `webpack.config.mjs`
 
 ```js
-module.exports = require('@battis/webpack/ts/bookmarklet')({
-  root: __dirname,
-  title: 'Click me!',
-  package: require('./package.json')
+import bundle from '@battis/webpack';
+
+export default bundle.fromTS.toBookmarklet({
+  root: import.meta.dirname,
+  title: 'Click me!'
 });
 ```
 
-| Parameter        | Description                                                                                                                        |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `root`           | **Required:** path to project root, usually `__dirname`                                                                            |
-| `title`          | **Required** the title of the bookmarklet                                                                                          |
-| `package`        | **Required** either the `package.json` file itself, or a JSON object that includes the `repository` configuration for the package. |
-| `externals = {}` | [Webpack-defined object](https://webpack.js.org/configuration/externals/) defining externally-loaded libraries.                    |
+#### Additional configuration options
+
+| Parameter          | Description                  |
+| ------------------ | ---------------------------- |
+| `title` (required) | Display name for bookmarklet |

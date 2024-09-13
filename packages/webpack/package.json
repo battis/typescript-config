@@ -2,23 +2,39 @@
   "name": "@battis/webpack",
   "version": "0.4.8",
   "description": "",
-  "engines": {
-    "node": ">=12.17"
-  },
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/webpack#readme",
   "repository": {
-    "url": "https://github.com/battis/typescript-config.git",
     "type": "git",
+    "url": "https://github.com/battis/typescript-config.git",
     "directory": "packages/webpack"
   },
+  "license": "GPL-3.0",
   "author": {
     "name": "Seth Battis",
     "url": "https://github.com/battis"
   },
-  "license": "GPL-3.0",
-  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/webpack#readme",
-  "main": "src",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./types.d.ts",
+  "scripts": {
+    "build": "run-s build:*",
+    "build:clean": "run-s clean",
+    "build:compile": "tsc",
+    "build:copy-html": "copyfiles -u 1 ./src/**/*.html ./dist",
+    "clean": "shx rm -rf ./dist/*"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.7",
+    "@types/dotenv-webpack": "^7.0.7",
+    "@types/node": "^22.5.4",
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.3.4",
+    "typescript": "^5.6.2"
+  },
   "peerDependencies": {
     "app-root-path": "*",
+    "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "*",
     "css-loader": "*",
     "css-minimizer-webpack-plugin": "*",
@@ -48,5 +64,8 @@
     "webpack": "^5.0",
     "webpack-cli": "*",
     "webpack-dev-server": "*"
+  },
+  "engines": {
+    "node": ">=12.17"
   }
 }
