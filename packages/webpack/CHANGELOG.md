@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 1.0.1
+
+### Patch Changes
+
+- 383e378: Prune package published
+
 ## 1.0.0
 
 ### Major Changes
