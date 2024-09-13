@@ -16,7 +16,7 @@ import shell from 'shelljs';
 import winston from 'winston';
 var PNPM_LOCKFILE = 'pnpm-lock.yaml';
 var NPMRC = '.npmrc';
-_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
   var parser, args, logger, pkgJson, moduleType, spinner, exports, _spinner, scripts, _spinner2, key, _spinner3, _spinner4, npmrc;
   return _regeneratorRuntime().wrap(function _callee$(_context) {
     while (1) switch (_context.prev = _context.next) {
