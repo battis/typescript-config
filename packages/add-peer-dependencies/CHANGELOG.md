@@ -1,5 +1,16 @@
 # add-peer-dependencies
 
+## 0.1.5
+
+### Patch Changes
+
+- c4f3174: replace shx with del
+
+  `del` (or, rather, `del-cli`) provides a safer, more-focused way of cleaning build directories.
+
+- Updated dependencies [c4f3174]
+  - @battis/import-package-json@0.1.3
+
 ## 0.1.4
 
 ### Patch Changes

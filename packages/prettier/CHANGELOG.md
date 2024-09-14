@@ -1,5 +1,13 @@
 # @battis/prettier-config
 
+## 1.5.3
+
+### Patch Changes
+
+- c4f3174: replace shx with del
+
+  `del` (or, rather, `del-cli`) provides a safer, more-focused way of cleaning build directories.
+
 ## 1.5.2
 
 ### Patch Changes

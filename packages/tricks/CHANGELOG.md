@@ -1,5 +1,13 @@
 # @battis/typescript-tricks
 
+## 0.5.5
+
+### Patch Changes
+
+- c4f3174: replace shx with del
+
+  `del` (or, rather, `del-cli`) provides a safer, more-focused way of cleaning build directories.
+
 ## 0.5.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # get-package-json
 
+## 0.1.3
+
+### Patch Changes
+
+- c4f3174: replace shx with del
+
+  `del` (or, rather, `del-cli`) provides a safer, more-focused way of cleaning build directories.
+
 ## 0.1.2
 
 ### Patch Changes

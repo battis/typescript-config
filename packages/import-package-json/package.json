@@ -1,6 +1,6 @@
 {
   "name": "@battis/import-package-json",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/import-package-json#readme",
   "repository": {
     "type": "git",

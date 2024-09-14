@@ -1,5 +1,13 @@
 # @battis/babel-config
 
+## 0.2.0
+
+### Minor Changes
+
+- c4f3174: replace shx with del
+
+  `del` (or, rather, `del-cli`) provides a safer, more-focused way of cleaning build directories.
+
 ## 0.1.5
 
 ### Patch Changes

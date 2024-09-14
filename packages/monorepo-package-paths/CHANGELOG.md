@@ -1,5 +1,18 @@
 # monorepo-package-paths
 
+## 0.3.0
+
+### Minor Changes
+
+- c4f3174: replace shx with del
+
+  `del` (or, rather, `del-cli`) provides a safer, more-focused way of cleaning build directories.
+
+### Patch Changes
+
+- Updated dependencies [c4f3174]
+  - @battis/import-package-json@0.1.3
+
 ## 0.2.1
 
 ### Patch Changes
