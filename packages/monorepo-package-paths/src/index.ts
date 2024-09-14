@@ -67,6 +67,15 @@ const {
 } = args;
 const spinner = cli.spinner();
 
+spinner.start('Checking for Prettier');
+let prettier;
+try {
+  prettier = await import('prettier');
+  spinner.succeed('Prettier');
+} catch (e) {
+  spinner.fail('Prettier not found, using basic JSON formatting');
+}
+
 packagePath = path.resolve(CWD, pathToRootPackage);
 spinner.start(`Loading ${cli.colors.url(packagePath)}`);
 const rootPackage = await pkg.importLocal(packagePath);
@@ -173,7 +182,12 @@ for (const workspace of workspaces) {
       }
       fs.writeFileSync(
         workspacePackagePath,
-        JSON.stringify(updatedPackage, null, 2) + '\n'
+        prettier
+          ? await prettier.format(JSON.stringify(updatedPackage), {
+              ...(await prettier.resolveConfig(workspacePackagePath)),
+              filepath: workspacePackagePath
+            })
+          : JSON.stringify(updatedPackage, null, 2) + '\n'
       );
       spinner.succeed(`Updated ${cli.colors.url(workspaceRelativePath)}`);
     } else {
@@ -188,7 +202,16 @@ for (const workspace of workspaces) {
         summary['repository'] = workspaceRepository;
       }
       spinner.succeed(`Computed ${cli.colors.url(workspaceRelativePath)}`);
-      cli.log.info(cli.colors.value(JSON.stringify(summary, null, 2)));
+      cli.log.info(
+        cli.colors.value(
+          prettier
+            ? await prettier.format(JSON.stringify(summary), {
+                ...(await prettier.resolveConfig(workspacePackagePath)),
+                filepath: workspacePackagePath
+              })
+            : JSON.stringify(summary, null, 2) + '\n'
+        )
+      );
     }
   }
 }
