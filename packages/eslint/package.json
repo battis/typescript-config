@@ -1,21 +1,19 @@
 {
   "name": "@battis/eslint-config",
-  "description": "",
   "version": "1.2.1",
+  "description": "",
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/eslint#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/battis/typescript-config.git",
+    "directory": "packages/eslint"
+  },
+  "license": "GPL-3.0",
   "author": {
     "name": "Seth Battis",
     "url": "https://github.com/battis"
   },
-  "license": "GPL-3.0",
-  "repository": {
-    "url": "https://github.com/battis/typescript-config.git",
-    "type": "git",
-    "directory": "packages/eslint"
-  },
   "main": ".eslintrc.json",
-  "engines": {
-    "node": ">=12.17"
-  },
   "peerDependencies": {
     "@tsconfig/recommended": "^1.0.7",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
@@ -27,5 +25,7 @@
     "eslint-plugin-tsdoc": "^0.2.17",
     "typescript": "*"
   },
-  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/eslint#readme"
+  "engines": {
+    "node": ">=12.17"
+  }
 }

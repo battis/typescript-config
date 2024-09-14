@@ -149,7 +149,7 @@ _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
             }
           }
           scripts.build = 'run-s build:*';
-          scripts['build:clean'] = "shx rm -rf ".concat(args.values.target);
+          scripts['build:clean'] = "del ".concat(args.values.target);
           if (!args.values['no-cjs']) {
             scripts['build:cjs'] = "babel \"".concat(args.values.source, "\" --extensions \"").concat(args.values.extensions, "\" --out-dir \"").concat(args.values.target, "/").concat(args.values['cjs-dir'], "\" ").concat(args.values['source-maps'] ? '--source-maps ' : '', "--config-file @battis/babel-config/cjs.json");
           }

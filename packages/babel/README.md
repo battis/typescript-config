@@ -14,7 +14,7 @@ public-hoist-pattern[]=typescript
 ```
 
 ```bash
-npm i -D @battis/babel npm-run-all shx
+npm i -D @battis/babel npm-run-all del-cli
 ```
 
 ## Usage

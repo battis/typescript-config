@@ -118,14 +118,12 @@ const NPMRC = '.npmrc';
     logger.info(`original package.content.exports: ${exports}`);
     exports['.'] = {};
     if (!args.values['no-types']) {
-      exports[
-        '.'
-      ].types = `./${args.values.target}/${args.values['types-dir']}`;
+      exports['.'].types =
+        `./${args.values.target}/${args.values['types-dir']}`;
     }
     if (!args.values['no-cjs']) {
-      exports[
-        '.'
-      ].require = `./${args.values.target}/${args.values['cjs-dir']}`;
+      exports['.'].require =
+        `./${args.values.target}/${args.values['cjs-dir']}`;
     }
     if (!args.values['no-esm']) {
       exports['.'].import = `./${args.values.target}/${args.values['esm-dir']}`;
@@ -147,17 +145,22 @@ const NPMRC = '.npmrc';
       }
     }
     scripts.build = 'run-s build:*';
-    scripts['build:clean'] = `shx rm -rf ${args.values.target}`;
+    scripts['build:clean'] = `del ${args.values.target}`;
     if (!args.values['no-cjs']) {
-      scripts['build:cjs'] = `babel "${args.values.source}" --extensions "${args.values.extensions
-        }" --out-dir "${args.values.target}/${args.values['cjs-dir']}" ${args.values['source-maps'] ? '--source-maps ' : ''
-        }--config-file @battis/babel-config/cjs.json`;
+      scripts['build:cjs'] = `babel "${args.values.source}" --extensions "${
+        args.values.extensions
+      }" --out-dir "${args.values.target}/${args.values['cjs-dir']}" ${
+        args.values['source-maps'] ? '--source-maps ' : ''
+      }--config-file @battis/babel-config/cjs.json`;
     }
     if (!args.values['no-esm']) {
-      scripts['build:esm'] = `babel "${args.values.source}" --extensions "${args.values.extensions
-        }" --out-dir "${args.values.target}/${args.values['esm-dir']
-        }" --out-file-extension .mjs ${args.values['source-maps'] ? '--source-maps ' : ''
-        }--config-file @battis/babel-config/esm.json`;
+      scripts['build:esm'] = `babel "${args.values.source}" --extensions "${
+        args.values.extensions
+      }" --out-dir "${args.values.target}/${
+        args.values['esm-dir']
+      }" --out-file-extension .mjs ${
+        args.values['source-maps'] ? '--source-maps ' : ''
+      }--config-file @battis/babel-config/esm.json`;
     }
     if (!args.values['no-types']) {
       scripts['build:types'] = 'tsc';
