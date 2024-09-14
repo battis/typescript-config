@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 1.0.4
+
+### Patch Changes
+
+- ccc8719: remove accidentally include html
+
 ## 1.0.3
 
 ### Patch Changes
