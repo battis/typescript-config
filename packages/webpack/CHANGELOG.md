@@ -1,5 +1,13 @@
 # @battis/webpack
 
+## 1.0.2
+
+### Patch Changes
+
+- 94d046c: Fixed types
+
+  Rather than exporting a non-module and/or confusing TS, types should now be both cleanly broken up into separate files for understandability and also importable into source. I hope.
+
 ## 1.0.1
 
 ### Patch Changes
