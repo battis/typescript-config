@@ -87,7 +87,7 @@ export default function config({
             ]
           },
           {
-            test: /\.(jpe?g|gif|png|html)$/i,
+            test: /\.(jpe?g|gif|png)$/i,
             type: 'asset/resource',
             generator: {
               filename: 'assets/images/[name].[hash].[ext]'
