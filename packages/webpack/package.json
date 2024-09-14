@@ -33,6 +33,7 @@
     "typescript": "^5.6.2"
   },
   "peerDependencies": {
+    "add-peer-dependencies": "workspace:*",
     "app-root-path": "*",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "*",
@@ -64,6 +65,11 @@
     "webpack": "^5.0",
     "webpack-cli": "*",
     "webpack-dev-server": "*"
+  },
+  "peerDependenciesMeta": {
+    "add-peer-dependencies": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=12.17"

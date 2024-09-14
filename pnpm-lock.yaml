@@ -243,6 +243,9 @@ importers:
 
   packages/webpack:
     dependencies:
+      add-peer-dependencies:
+        specifier: workspace:*
+        version: link:../add-peer-dependencies
       app-root-path:
         specifier: '*'
         version: 3.1.0
