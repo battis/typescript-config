@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 1.0.5
+
+### Patch Changes
+
+- 9a0f3eb: recommend add-peer-dependencie as peer dependency
+
 ## 1.0.4
 
 ### Patch Changes
