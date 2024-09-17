@@ -225,6 +225,10 @@ importers:
       prettier-plugin-sql:
         specifier: ^0.18.1
         version: 0.18.1(prettier@3.3.3)
+    devDependencies:
+      prettier-plugin-organize-imports:
+        specifier: ^4.0.0
+        version: 4.0.0(prettier@3.3.3)(typescript@5.6.2)
 
   packages/tricks:
     devDependencies:
@@ -6002,6 +6006,19 @@ packages:
     resolution: {integrity: sha512-wTL4U/ou6dHHp1ZTfS67SHVb/dRgVhpIOTgCvkgdqF/Lw6A472W90dxFtsWSXIR7GmLZRgZb2PdArR9ozxX7cg==}
     peerDependencies:
       prettier: 2.x - 3.x
+
+  prettier-plugin-organize-imports@4.0.0:
+    resolution: {integrity: sha512-vnKSdgv9aOlqKeEFGhf9SCBsTyzDSyScy1k7E0R1Uo4L0cTcOV7c1XQaT7jfXIOc/p08WLBfN2QUQA9zDSZMxA==}
+    peerDependencies:
+      '@vue/language-plugin-pug': ^2.0.24
+      prettier: '>=2.0'
+      typescript: '>=2.9'
+      vue-tsc: ^2.0.24
+    peerDependenciesMeta:
+      '@vue/language-plugin-pug':
+        optional: true
+      vue-tsc:
+        optional: true
 
   prettier-plugin-packagejson@2.5.2:
     resolution: {integrity: sha512-w+TmoLv2pIa+siplW1cCj2ujEXQQS6z7wmWLOiLQK/2QVl7Wy6xh/ZUpqQw8tbKMXDodmSW4GONxlA33xpdNOg==}
@@ -14143,6 +14160,11 @@ snapshots:
   prettier-plugin-ejs@1.0.3(prettier@3.3.3):
     dependencies:
       prettier: 3.3.3
+
+  prettier-plugin-organize-imports@4.0.0(prettier@3.3.3)(typescript@5.6.2):
+    dependencies:
+      prettier: 3.3.3
+      typescript: 5.6.2
 
   prettier-plugin-packagejson@2.5.2(prettier@3.3.3):
     dependencies:

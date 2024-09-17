@@ -3,11 +3,12 @@
   "singleQuote": true,
   "trailingComma": "none",
   "xmlWhitespaceSensitivity": "ignore",
+  "organizeImportsSkipDestructiveCodeActions": true,
   "plugins": [
     "@prettier/plugin-xml",
     "prettier-plugin-ejs",
     "prettier-plugin-packagejson",
-    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-organize-imports",
     "prettier-plugin-sql"
   ]
 }
