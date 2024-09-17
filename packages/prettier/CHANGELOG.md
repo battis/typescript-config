@@ -1,5 +1,11 @@
 # @battis/prettier-config
 
+## 1.5.4
+
+### Patch Changes
+
+- 639b5c7: imports with type assertions
+
 ## 1.5.3
 
 ### Patch Changes
