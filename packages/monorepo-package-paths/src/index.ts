@@ -147,69 +147,78 @@ for (const workspace of workspaces) {
     );
     spinner.start(cli.colors.url(workspaceRelativePath));
     const workspacePackagePath = path.join(packagePath, 'package.json');
-    const workspacePackage = await pkg.importLocal(workspacePackagePath);
+    try {
+      const workspacePackage = await pkg.importLocal(workspacePackagePath);
 
-    let workspaceHomepage: string | URL | undefined = workspacePackage.homepage;
-    if (rootHomepage) {
-      workspaceHomepage = workspaceHomepage
-        ? new URL(workspaceHomepage)
-        : new URL(rootHomepage);
-      workspaceHomepage.pathname = path.join(
-        rootHomepage.pathname,
-        homepagePrefix,
-        workspaceRelativePath
-      );
-    }
+      let workspaceHomepage: string | URL | undefined =
+        workspacePackage.homepage;
+      if (rootHomepage) {
+        workspaceHomepage = workspaceHomepage
+          ? new URL(workspaceHomepage)
+          : new URL(rootHomepage);
+        workspaceHomepage.pathname = path.join(
+          rootHomepage.pathname,
+          homepagePrefix,
+          workspaceRelativePath
+        );
+      }
 
-    let workspaceRepository = workspacePackage.repository;
-    if (rootRepository) {
-      workspaceRepository = {
-        ...rootRepository,
-        directory: workspaceRelativePath
-      };
-    }
+      let workspaceRepository = workspacePackage.repository;
+      if (rootRepository) {
+        workspaceRepository = {
+          ...rootRepository,
+          directory: workspaceRelativePath
+        };
+      }
 
-    if (write) {
-      const updatedPackage = { ...workspacePackage };
-      if (rootAuthor) {
-        updatedPackage.author = rootAuthor;
-      }
-      if (workspaceHomepage) {
-        updatedPackage.homepage = workspaceHomepage.toString();
-      }
-      if (workspaceRepository) {
-        updatedPackage.repository = workspaceRepository;
-      }
-      fs.writeFileSync(
-        workspacePackagePath,
-        prettier
-          ? await prettier.format(JSON.stringify(updatedPackage), {
-              ...(await prettier.resolveConfig(workspacePackagePath)),
-              filepath: workspacePackagePath
-            })
-          : JSON.stringify(updatedPackage, null, 2) + '\n'
-      );
-      spinner.succeed(`Updated ${cli.colors.url(workspaceRelativePath)}`);
-    } else {
-      const summary: Record<string, any> = { name: workspacePackage.name };
-      if (rootAuthor) {
-        summary['author'] = rootAuthor;
-      }
-      if (workspaceHomepage) {
-        summary['homepage'] = workspaceHomepage.toString();
-      }
-      if (workspaceRepository) {
-        summary['repository'] = workspaceRepository;
-      }
-      spinner.succeed(`Computed ${cli.colors.url(workspaceRelativePath)}`);
-      cli.log.info(
-        cli.colors.value(
+      if (write) {
+        const updatedPackage = { ...workspacePackage };
+        if (rootAuthor) {
+          updatedPackage.author = rootAuthor;
+        }
+        if (workspaceHomepage) {
+          updatedPackage.homepage = workspaceHomepage.toString();
+        }
+        if (workspaceRepository) {
+          updatedPackage.repository = workspaceRepository;
+        }
+        fs.writeFileSync(
+          workspacePackagePath,
           prettier
-            ? await prettier.format(JSON.stringify(summary), {
+            ? await prettier.format(JSON.stringify(updatedPackage), {
                 ...(await prettier.resolveConfig(workspacePackagePath)),
                 filepath: workspacePackagePath
               })
-            : JSON.stringify(summary, null, 2) + '\n'
+            : JSON.stringify(updatedPackage, null, 2) + '\n'
+        );
+        spinner.succeed(`Updated ${cli.colors.url(workspaceRelativePath)}`);
+      } else {
+        const summary: Record<string, any> = { name: workspacePackage.name };
+        if (rootAuthor) {
+          summary['author'] = rootAuthor;
+        }
+        if (workspaceHomepage) {
+          summary['homepage'] = workspaceHomepage.toString();
+        }
+        if (workspaceRepository) {
+          summary['repository'] = workspaceRepository;
+        }
+        spinner.succeed(`Computed ${cli.colors.url(workspaceRelativePath)}`);
+        cli.log.info(
+          cli.colors.value(
+            prettier
+              ? await prettier.format(JSON.stringify(summary), {
+                  ...(await prettier.resolveConfig(workspacePackagePath)),
+                  filepath: workspacePackagePath
+                })
+              : JSON.stringify(summary, null, 2) + '\n'
+          )
+        );
+      }
+    } catch (e) {
+      spinner.fail(
+        cli.colors.error(
+          `Not found: ${`${cli.colors.url(workspaceRelativePath)}`}`
         )
       );
     }
