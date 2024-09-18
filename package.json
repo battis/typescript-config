@@ -14,9 +14,10 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "lerna run build",
     "pre-changeset": "run-s pre-changeset:*",
     "pre-changeset:monorepo-package-paths": "npx monorepo-package-paths -w --author --homepage --repository",
-    "pre-changeset:build": "lerna run build",
+    "pre-changeset:build": "run-s build",
     "release": "run-s release:*",
     "release:changeset": "changeset version",
     "release:publish": "pnpm publish -r --otp $(op item get npm --otp)"
