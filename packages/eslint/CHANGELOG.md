@@ -1,5 +1,11 @@
 # @battis/eslint-config
 
+## 1.2.3
+
+### Patch Changes
+
+- 8d96c89: more forgiving peer specifications
+
 ## 1.2.2
 
 ### Patch Changes
