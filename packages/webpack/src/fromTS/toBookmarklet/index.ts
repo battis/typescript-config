@@ -1,4 +1,3 @@
-import Options from '../../Options.js';
 import CssMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -6,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
+import Options from '../../Options.js';
 
 type BookmarkletOptions = Options & { title: string };
 
@@ -86,7 +86,7 @@ export default function config({
               },
               {
                 loader: 'sass-loader',
-                options: { implementation: require('sass') }
+                options: { api: 'modern' }
               }
             ]
           }

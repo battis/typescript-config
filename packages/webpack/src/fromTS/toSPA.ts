@@ -1,4 +1,3 @@
-import Options from '../Options.js';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import CssMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin';
@@ -11,6 +10,7 @@ import path from 'node:path';
 import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import 'webpack-dev-server';
+import Options from '../Options.js';
 
 // TODO explore resolve.modules
 
@@ -93,7 +93,7 @@ export default function config({
               },
               {
                 loader: 'sass-loader',
-                options: { implementation: require('sass') }
+                options: { api: 'modern' }
               }
             ]
           },

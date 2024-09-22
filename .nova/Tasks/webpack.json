@@ -1,0 +1,9 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "pnpm -F @battis\/webpack run build"
+    }
+  },
+  "openLogOnRun" : "start"
+}
