@@ -4,7 +4,6 @@ import CssMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ImageMinimizerWebpackPlugin from 'image-minimizer-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'node:path';
 import TerserPlugin from 'terser-webpack-plugin';
@@ -20,7 +19,7 @@ type SPAOptions = Options & {
   output: { publicPath?: string };
 };
 
-export default function config({
+export default async function config({
   root,
   favicon,
   appName,
@@ -38,13 +37,25 @@ export default function config({
   optimization,
 
   terserOptions
-}: SPAOptions): webpack.Configuration {
+}: SPAOptions): Promise<webpack.Configuration> {
   output = {
     path: 'build',
     filename: 'assets/js/[name].[contenthash].js',
     publicPath: '/',
     ...output
   };
+
+  let ImageMinimizerWebpackPlugin = undefined;
+  try {
+    ImageMinimizerWebpackPlugin = await import(
+      'image-minimizer-webpack-plugin'
+    );
+    console.log('image-minimizer-webpack-plugin peer dependency found');
+  } catch (_) {
+    console.log(
+      'image-minimizer-webpack-plugin peer dependency not found: images will not be compressed (see https://github.com/battis/typescript-config/blob/main/packages/webpack/README.md#single-page-app)'
+    );
+  }
 
   const config: webpack.Configuration = {
     mode: Options.mode(production),
@@ -134,19 +145,21 @@ export default function config({
         new MiniCssExtractPlugin({
           filename: 'assets/css/[name].[contenthash].css'
         }),
-        new ImageMinimizerWebpackPlugin({
-          minimizer: {
-            implementation: ImageMinimizerWebpackPlugin.imageminMinify,
-            options: {
-              plugins: [
-                ['gifsicle', { interlaced: true }],
-                ['jpegtran', { progresive: true }],
-                ['optipng', { optimizationLevel: 5 }],
-                ['svgo', { plugins: ['preset-default', 'prefixIds'] }]
-              ]
+        ImageMinimizerWebpackPlugin &&
+          // @ts-ignore
+          new ImageMinimizerWebpackPlugin({
+            minimizer: {
+              implementation: ImageMinimizerWebpackPlugin.imageminMinify,
+              options: {
+                plugins: [
+                  ['gifsicle', { interlaced: true }],
+                  ['jpegtran', { progresive: true }],
+                  ['optipng', { optimizationLevel: 5 }],
+                  ['svgo', { plugins: ['preset-default', 'prefixIds'] }]
+                ]
+              }
             }
-          }
-        })
+          })
       ],
       override?.plugins,
       plugins

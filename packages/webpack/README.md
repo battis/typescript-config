@@ -101,7 +101,13 @@ export default bundle.fromTS.toSPA({
 });
 ```
 
-Meant to build a single page app, including a manifest, favicons, image compression, etc.
+Meant to build a single page app, including a manifest, favicons, etc.
+
+Image compression is also supported, but requires optional peer dependencies:
+
+```sh
+npm i -D image-minimizer-webpack-plugin imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-svgo
+```
 
 #### Additional configuration options
 

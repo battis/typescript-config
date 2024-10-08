@@ -26,7 +26,7 @@
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.7",
     "@types/dotenv-webpack": "^7.0.7",
-    "@types/node": "^22.5.5",
+    "@types/node": "^22.7.5",
     "copyfiles": "^2.4.1",
     "del-cli": "^5.1.0",
     "npm-run-all": "^4.1.5",
@@ -68,6 +68,24 @@
   },
   "peerDependenciesMeta": {
     "add-peer-dependencies": {
+      "optional": true
+    },
+    "image-minimizer-webpack-plugin": {
+      "optional": true
+    },
+    "imagemin": {
+      "optional": true
+    },
+    "imagemin-gifsicle": {
+      "optional": true
+    },
+    "imagemin-jpegtran": {
+      "optional": true
+    },
+    "imagemin-optipng": {
+      "optional": true
+    },
+    "imagemin-svgo": {
       "optional": true
     }
   },
