@@ -1,5 +1,13 @@
 # monorepo-package-paths
 
+## 0.3.2
+
+### Patch Changes
+
+- a5c8168: bump dependencies
+- Updated dependencies [a5c8168]
+  - @battis/import-package-json@0.1.4
+
 ## 0.3.1
 
 ### Patch Changes

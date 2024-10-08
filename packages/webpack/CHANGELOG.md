@@ -1,5 +1,16 @@
 # @battis/webpack
 
+## 1.1.0
+
+### Minor Changes
+
+- a5c8168: bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [a5c8168]
+  - add-peer-dependencies@0.1.6
+
 ## 1.0.6
 
 ### Patch Changes

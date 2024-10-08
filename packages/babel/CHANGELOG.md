@@ -1,5 +1,11 @@
 # @battis/babel-config
 
+## 0.2.1
+
+### Patch Changes
+
+- a5c8168: bump dependencies
+
 ## 0.2.0
 
 ### Minor Changes

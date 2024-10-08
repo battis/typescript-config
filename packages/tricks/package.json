@@ -1,6 +1,6 @@
 {
   "name": "@battis/typescript-tricks",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "A handful of useful types and operators",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/tricks#readme",
   "repository": {

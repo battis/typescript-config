@@ -1,5 +1,11 @@
 # @battis/eslint-config
 
+## 1.2.4
+
+### Patch Changes
+
+- a5c8168: bump dependencies
+
 ## 1.2.3
 
 ### Patch Changes

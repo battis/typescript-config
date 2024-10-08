@@ -1,6 +1,6 @@
 {
   "name": "@battis/babel-config",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Boilerplate to compile both CommonJS and ES modules from \"normal\" typescript using Babel.",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/babel#readme",
   "repository": {

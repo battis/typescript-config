@@ -1,5 +1,11 @@
 # @battis/prettier-config
 
+## 1.5.5
+
+### Patch Changes
+
+- a5c8168: bump dependencies
+
 ## 1.5.4
 
 ### Patch Changes

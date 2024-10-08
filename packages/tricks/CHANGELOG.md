@@ -1,5 +1,11 @@
 # @battis/typescript-tricks
 
+## 0.5.6
+
+### Patch Changes
+
+- a5c8168: bump dependencies
+
 ## 0.5.5
 
 ### Patch Changes

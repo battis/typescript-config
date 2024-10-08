@@ -1,5 +1,11 @@
 # get-package-json
 
+## 0.1.4
+
+### Patch Changes
+
+- a5c8168: bump dependencies
+
 ## 0.1.3
 
 ### Patch Changes
