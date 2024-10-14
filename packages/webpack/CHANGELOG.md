@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 1.1.1
+
+### Patch Changes
+
+- b4cb026: reworked scss imports
+
 ## 1.1.0
 
 ### Minor Changes
