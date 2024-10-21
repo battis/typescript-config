@@ -1,0 +1,5 @@
+---
+'@battis/webpack': patch
+---
+
+esModuleInterop
