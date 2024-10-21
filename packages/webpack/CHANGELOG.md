@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 1.1.2
+
+### Patch Changes
+
+- c2cd6cf: esModuleInterop
+
 ## 1.1.1
 
 ### Patch Changes
