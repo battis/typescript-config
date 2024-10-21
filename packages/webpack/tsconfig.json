@@ -6,7 +6,8 @@
     "moduleResolution": "node",
     "lib": ["es2022", "dom"],
     "target": "esnext",
-    "declaration": true
+    "declaration": true,
+    "esModuleInterop": true
   },
   "include": ["./src"]
 }
