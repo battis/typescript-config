@@ -1,5 +1,11 @@
 # @battis/eslint-config
 
+## 1.2.5
+
+### Patch Changes
+
+- 8fe65be: loosen peer deps
+
 ## 1.2.4
 
 ### Patch Changes
