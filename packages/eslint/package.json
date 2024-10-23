@@ -15,17 +15,12 @@
   },
   "main": ".eslintrc.json",
   "peerDependencies": {
-    "@tsconfig/recommended": "^1.0",
-    "@typescript-eslint/eslint-plugin": "^5.0",
-    "@typescript-eslint/parser": "^5.0",
-    "eslint": "^8.0",
-    "eslint-config-prettier": "^8.0",
-    "eslint-plugin-html": "^7.0",
-    "eslint-plugin-markdown": "^3.0",
-    "eslint-plugin-tsdoc": "^0.2.0",
-    "typescript": "*"
-  },
-  "engines": {
-    "node": ">=12.17"
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-html": "*",
+    "eslint-plugin-markdown": "*",
+    "eslint-plugin-tsdoc": "*"
   }
 }
