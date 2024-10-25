@@ -1,4 +1,3 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CssMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -108,7 +107,6 @@ export default function config({
     externals,
     plugins: Options.resolve.plugins(
       [
-        new CleanWebpackPlugin(),
         new Dotenv(),
         new MiniCssExtractPlugin({
           filename:

@@ -26,16 +26,15 @@
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.7",
     "@types/dotenv-webpack": "^7.0.7",
-    "@types/node": "^22.7.5",
+    "@types/node": "^22.8.0",
     "copyfiles": "^2.4.1",
     "del-cli": "^5.1.0",
     "npm-run-all": "^4.1.5",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.3"
   },
   "peerDependencies": {
     "add-peer-dependencies": "workspace:*",
     "app-root-path": "*",
-    "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "*",
     "css-loader": "*",
     "css-minimizer-webpack-plugin": "*",

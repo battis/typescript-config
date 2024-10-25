@@ -1,4 +1,3 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import CssMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
@@ -123,7 +122,6 @@ export default async function config({
     externals,
     plugins: Options.resolve.plugins(
       [
-        new CleanWebpackPlugin(),
         new Dotenv(),
         new CopyWebpackPlugin({
           patterns: [
