@@ -1,5 +1,13 @@
 # add-peer-dependencies
 
+## 0.1.7
+
+### Patch Changes
+
+- e572655: bump deps
+- Updated dependencies [e572655]
+  - @battis/import-package-json@0.1.5
+
 ## 0.1.6
 
 ### Patch Changes

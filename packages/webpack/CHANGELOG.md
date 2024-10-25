@@ -1,5 +1,13 @@
 # @battis/webpack
 
+## 1.1.3
+
+### Patch Changes
+
+- 967e7a8: lose redundant clean-webpack-plugin
+- Updated dependencies [e572655]
+  - add-peer-dependencies@0.1.7
+
 ## 1.1.2
 
 ### Patch Changes

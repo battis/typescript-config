@@ -1,6 +1,6 @@
 {
   "name": "add-peer-dependencies",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Install/remove peer dependencies as direct dependencies",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/add-peer-dependencies#readme",
   "repository": {

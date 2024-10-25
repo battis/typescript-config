@@ -1,5 +1,11 @@
 # get-package-json
 
+## 0.1.5
+
+### Patch Changes
+
+- e572655: bump deps
+
 ## 0.1.4
 
 ### Patch Changes

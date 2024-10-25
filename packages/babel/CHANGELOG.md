@@ -1,5 +1,11 @@
 # @battis/babel-config
 
+## 0.2.2
+
+### Patch Changes
+
+- e572655: bump deps
+
 ## 0.2.1
 
 ### Patch Changes

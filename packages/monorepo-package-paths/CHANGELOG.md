@@ -1,5 +1,13 @@
 # monorepo-package-paths
 
+## 0.3.3
+
+### Patch Changes
+
+- e572655: bump deps
+- Updated dependencies [e572655]
+  - @battis/import-package-json@0.1.5
+
 ## 0.3.2
 
 ### Patch Changes
