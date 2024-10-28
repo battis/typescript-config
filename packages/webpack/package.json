@@ -33,7 +33,7 @@
     "typescript": "^5.6.3"
   },
   "peerDependencies": {
-    "add-peer-dependencies": "workspace:*",
+    "add-peer-dependencies": "*",
     "app-root-path": "*",
     "copy-webpack-plugin": "*",
     "css-loader": "*",
