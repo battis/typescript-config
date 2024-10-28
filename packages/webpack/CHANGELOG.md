@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 2.0.0
+
+### Major Changes
+
+- 1393996: Removed module types
+
 ## 1.1.3
 
 ### Patch Changes
