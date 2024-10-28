@@ -39,14 +39,6 @@ if working in a monorepo or using `pnpm`, you may want to explore [`add-peer-dep
 }
 ```
 
-### `src/index.ts`
-
-If making use of more advanced features (e.g. importing images, using the `__webpack_hash__` variable, or using `style.module.scss` to import values between SCSS and TS):
-
-```ts
-/// <reference types="@battis/webpack/types" />
-```
-
 ### `webpack.config.mjs`
 
 ```js
