@@ -1,5 +1,11 @@
 # @battis/webpack
 
+## 2.0.1
+
+### Patch Changes
+
+- 0b131c8: loosen add-peer-dependencies version
+
 ## 2.0.0
 
 ### Major Changes
