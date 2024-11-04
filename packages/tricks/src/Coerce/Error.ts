@@ -1,6 +1,6 @@
 import { Coerce } from './Coerce.js';
 
-function isError(error: unknown): error is Error {
+export function isError(error: unknown): error is Error {
   return (
     typeof error === 'object' &&
     error !== null &&
@@ -10,6 +10,6 @@ function isError(error: unknown): error is Error {
     typeof error.message === 'string'
   );
 }
-export function coerceError(error: unknown): Error {
+export function CoerceError(error: unknown): Error {
   return Coerce<Error>(error, isError, (e) => new Error(String(e)));
 }
