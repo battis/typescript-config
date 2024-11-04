@@ -1,5 +1,11 @@
 # @battis/typescript-tricks
 
+## 0.6.1
+
+### Patch Changes
+
+- 51a7a9f: consistent caps
+
 ## 0.6.0
 
 ### Minor Changes
