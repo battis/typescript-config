@@ -1,5 +1,11 @@
 # @battis/typescript-tricks
 
+## 0.6.0
+
+### Minor Changes
+
+- 377d538: Coerce
+
 ## 0.5.6
 
 ### Patch Changes
