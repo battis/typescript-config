@@ -1,5 +1,11 @@
 # @battis/typescript-tricks
 
+## 0.7.0
+
+### Minor Changes
+
+- 837e093: ArrayElement<T>
+
 ## 0.6.1
 
 ### Patch Changes
