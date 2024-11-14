@@ -1,3 +1,4 @@
+export * from './ArrayElement';
 export * from './Coerce';
 export * from './Constructor';
 export * from './EnumeratedTypes';
