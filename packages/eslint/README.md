@@ -10,12 +10,8 @@ npm i -D @battis/eslint-config
 
 ### Usage
 
-In `package.json`:
+In `eslint.config.js`:
 
 ```json
-{
-  "eslintConfig": {
-    "extends": "@battis/eslint-config"
-  }
-}
+export { default as default } from '@battis/eslint-config';
 ```

@@ -10,6 +10,7 @@
     "name": "Seth Battis",
     "url": "https://github.com/battis"
   },
+  "type": "module",
   "scripts": {
     "build": "lerna run build",
     "pre-changeset": "run-s pre-changeset:*",
