@@ -1,6 +1,7 @@
 {
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:markdown/recommended",
     "eslint-config-prettier"
   ],
