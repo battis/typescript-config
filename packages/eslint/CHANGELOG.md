@@ -1,5 +1,11 @@
 # @battis/eslint-config
 
+## 2.0.0
+
+### Major Changes
+
+- f4fc3b6: eslint 9 flat config files
+
 ## 1.2.5
 
 ### Patch Changes
