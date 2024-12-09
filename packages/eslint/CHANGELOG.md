@@ -1,5 +1,11 @@
 # @battis/eslint-config
 
+## 2.0.1
+
+### Patch Changes
+
+- 880fb06: tweak docs for non-ESM compatibility too
+
 ## 2.0.0
 
 ### Major Changes
