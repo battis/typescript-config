@@ -10,7 +10,7 @@ npm i -D @battis/eslint-config
 
 ### Usage
 
-In `eslint.config.js`:
+In `eslint.config.mjs`:
 
 ```json
 export { default as default } from '@battis/eslint-config';
