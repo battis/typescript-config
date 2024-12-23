@@ -1,9 +1,11 @@
-import cleanEmptyDependencies from './cleanEmptyDependencies.js';
+#!/usr/bin/env node
+
 import pkg from '@battis/import-package-json';
 import cli from '@battis/qui-cli';
 import fs from 'fs';
-import { IPackageJson, IDependencyMap } from 'package-json-type';
+import { IDependencyMap, IPackageJson } from 'package-json-type';
 import path from 'path';
+import cleanEmptyDependencies from './cleanEmptyDependencies.js';
 
 const CWD = process.cwd();
 const cacheFilename = 'add-peer-depencies.cache.json';

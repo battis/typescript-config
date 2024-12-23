@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import pkg from '@battis/import-package-json';
 import cli from '@battis/qui-cli';
 import fs from 'fs';
