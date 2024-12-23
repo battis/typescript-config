@@ -98,8 +98,8 @@ importers:
         specifier: ^22.10.2
         version: 22.10.2
       '@types/npmcli__package-json':
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^4.0.4
+        version: 4.0.4
       del-cli:
         specifier: ^6.0.0
         version: 6.0.0
@@ -2059,8 +2059,8 @@ packages:
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
-  '@types/npmcli__package-json@2.0.0':
-    resolution: {integrity: sha512-8/+/ZIuh9aZjW8QIrnpRwUqUoEXCQePzH03WRZSx+3RtBZhQI4ytVRVsfhMjYtxZpJiepXLW27WKPfDl2o/i8Q==}
+  '@types/npmcli__package-json@4.0.4':
+    resolution: {integrity: sha512-6QjlFUSHBmZJWuC08bz1ZCx6tm4t+7+OJXAdvM6tL2pI7n6Bh5SIp/YxQvnOLFf8MzCXs2ijyFgrzaiu1UFBGA==}
 
   '@types/qs@6.9.17':
     resolution: {integrity: sha512-rX4/bPcfmvxHDv0XjfJELTTr+iB+tn032nPILqHm5wbthUUUuVtNGGqzhya9XUxjTP8Fpr0qYgSZZKxGY++svQ==}
@@ -9647,7 +9647,7 @@ snapshots:
 
   '@types/normalize-package-data@2.4.4': {}
 
-  '@types/npmcli__package-json@2.0.0': {}
+  '@types/npmcli__package-json@4.0.4': {}
 
   '@types/qs@6.9.17': {}
 
