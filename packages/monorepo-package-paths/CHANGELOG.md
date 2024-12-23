@@ -1,5 +1,11 @@
 # monorepo-package-paths
 
+## 0.3.6
+
+### Patch Changes
+
+- 21ea4bd: npmignore
+
 ## 0.3.5
 
 ### Patch Changes
