@@ -76,6 +76,11 @@ const args = cli.init({
 const { remove, write, optional, dev, metadata, cache } = args.values;
 let { package: packagePath } = args.values;
 
+// TODO waiting on better typing in @battis/qui-cli
+if (!packagePath) {
+  throw new Error(`option ${cli.colors.value('--package')} must be defined`);
+}
+
 const spinner = cli.spinner();
 let projectPackage: IPackageJson;
 try {

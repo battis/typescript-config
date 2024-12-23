@@ -69,12 +69,26 @@ const {
 } = args;
 const spinner = cli.spinner();
 
+if (!pathToRootPackage) {
+  throw new Error(
+    `option ${cli.colors.value('--rootPackage')} must be defined`
+  );
+}
+
+// TODO waiting on better typing in @battis/qui-cli
+if (!homepagePrefix) {
+  throw new Error(
+    `option ${cli.colors.value('--homepagePrefix')} must be defined`
+  );
+}
+
+// TODO waiting on better typing in @battis/qui-cli
 spinner.start('Checking for Prettier');
 let prettier;
 try {
   prettier = await import('prettier');
   spinner.succeed('Prettier');
-} catch (e) {
+} catch (_) {
   spinner.fail('Prettier not found, using basic JSON formatting');
 }
 
@@ -88,7 +102,7 @@ if (!fs.lstatSync(packagePath).isDirectory()) {
   rootPath = path.dirname(packagePath);
 }
 
-let workspaces: string[] = [];
+const workspaces: string[] = [];
 
 if (rootPackage.workspaces && rootPackage.workspaces.length > 0) {
   workspaces.push(...rootPackage.workspaces);
