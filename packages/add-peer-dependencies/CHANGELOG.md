@@ -1,5 +1,13 @@
 # add-peer-dependencies
 
+## 0.1.9
+
+### Patch Changes
+
+- 1a87af4: npmignore fixed
+- Updated dependencies [1a87af4]
+  - @battis/import-package-json@0.1.6
+
 ## 0.1.8
 
 ### Patch Changes

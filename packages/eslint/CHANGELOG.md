@@ -1,5 +1,11 @@
 # @battis/eslint-config
 
+## 2.0.2
+
+### Patch Changes
+
+- 1a87af4: npmignore fixed
+
 ## 2.0.1
 
 ### Patch Changes

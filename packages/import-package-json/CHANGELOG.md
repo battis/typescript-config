@@ -1,5 +1,11 @@
 # get-package-json
 
+## 0.1.6
+
+### Patch Changes
+
+- 1a87af4: npmignore fixed
+
 ## 0.1.5
 
 ### Patch Changes

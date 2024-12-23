@@ -1,5 +1,11 @@
 # @battis/typescript-tricks
 
+## 0.7.1
+
+### Patch Changes
+
+- 1a87af4: npmignore fixed
+
 ## 0.7.0
 
 ### Minor Changes
