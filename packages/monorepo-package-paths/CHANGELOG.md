@@ -1,5 +1,11 @@
 # monorepo-package-paths
 
+## 0.3.5
+
+### Patch Changes
+
+- 231c8ac: Tweak readme
+
 ## 0.3.4
 
 ### Patch Changes
