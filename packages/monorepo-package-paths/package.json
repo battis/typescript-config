@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@battis/import-package-json": "workspace:*",
-    "@battis/qui-cli": "^0.4.2",
+    "@battis/qui-cli": "^0.8.5",
     "glob": "^11.0.0",
     "package-json-type": "^1.0.3",
     "yaml": "^2.6.1"
