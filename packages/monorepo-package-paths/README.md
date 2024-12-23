@@ -10,12 +10,14 @@ npm i -D monorepo-package-paths
 
 ## Usage
 
+Not including the `--write` (or `-w`) flag is effectively a dry run, dumping changes to `stdout` or a log file, rather than changing manifests.
+
 ```sh
-npx monorepo-package-paths -w
+monorepo-package-paths -w
 ```
 
 ## Help
 
 ```sh
-npx monorepo-package-paths --help
+monorepo-package-paths --help
 ```
