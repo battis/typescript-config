@@ -1,5 +1,11 @@
 # monorepo-package-paths
 
+## 0.3.4
+
+### Patch Changes
+
+- 64d0f1b: Fix shebangs
+
 ## 0.3.3
 
 ### Patch Changes

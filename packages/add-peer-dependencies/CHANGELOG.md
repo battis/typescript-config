@@ -1,5 +1,11 @@
 # add-peer-dependencies
 
+## 0.1.8
+
+### Patch Changes
+
+- 64d0f1b: Fix shebangs
+
 ## 0.1.7
 
 ### Patch Changes
