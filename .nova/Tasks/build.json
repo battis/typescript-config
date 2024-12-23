@@ -1,8 +1,8 @@
 {
   "actions" : {
-    "run" : {
+    "build" : {
       "enabled" : true,
-      "script" : "pnpm run pre-changeset"
+      "script" : "pnpm run build"
     }
   },
   "openLogOnRun" : "start"
