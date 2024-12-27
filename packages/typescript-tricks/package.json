@@ -2,11 +2,11 @@
   "name": "@battis/typescript-tricks",
   "version": "0.7.1",
   "description": "A handful of useful types and operators",
-  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/tricks#readme",
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/typescript-tricks#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/battis/typescript-config.git",
-    "directory": "packages/tricks"
+    "directory": "packages/typescript-tricks"
   },
   "license": "GPL-3.0",
   "author": {

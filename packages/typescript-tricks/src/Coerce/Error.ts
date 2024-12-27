@@ -11,5 +11,5 @@ export function isError(error: unknown): error is Error {
   );
 }
 export function CoerceError(error: unknown): Error {
-  return Coerce<Error>(error, isError, (e) => new Error(String(e)));
+  return Coerce<Error>(error, isError, (e) => e as Error);
 }

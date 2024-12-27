@@ -1,4 +1,4 @@
-function FailedCoercion<T>(u: unknown): T {
+function FailedCoercion<T>(): T {
   throw new TypeError('Attempted coercion to a non-matching type');
 }
 
