@@ -1,5 +1,11 @@
 # @battis/typescript-tricks
 
+## 0.7.3
+
+### Patch Changes
+
+- 5e67cc8: OptionalProperty
+
 ## 0.7.2
 
 ### Patch Changes
