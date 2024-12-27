@@ -1,5 +1,11 @@
 # @battis/typescript-tricks
 
+## 0.7.2
+
+### Patch Changes
+
+- 66ec81d: CoerceError without losing stack
+
 ## 0.7.1
 
 ### Patch Changes
