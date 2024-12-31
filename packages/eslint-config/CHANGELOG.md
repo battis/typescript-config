@@ -1,5 +1,11 @@
 # @battis/eslint-config
 
+## 2.0.3
+
+### Patch Changes
+
+- 770c1ab: Licensing
+
 ## 2.0.2
 
 ### Patch Changes

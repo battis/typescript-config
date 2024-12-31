@@ -1,5 +1,12 @@
 # @battis/webpack
 
+## 2.0.2
+
+### Patch Changes
+
+- 770c1ab: Licensing
+  - add-peer-dependencies@0.1.10
+
 ## 2.0.1
 
 ### Patch Changes

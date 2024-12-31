@@ -1,5 +1,11 @@
 # @battis/babel-config
 
+## 0.2.3
+
+### Patch Changes
+
+- 770c1ab: Licensing
+
 ## 0.2.2
 
 ### Patch Changes

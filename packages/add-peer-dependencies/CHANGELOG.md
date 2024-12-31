@@ -1,5 +1,12 @@
 # add-peer-dependencies
 
+## 0.1.10
+
+### Patch Changes
+
+- Updated dependencies [770c1ab]
+  - @battis/import-package-json@0.1.7
+
 ## 0.1.9
 
 ### Patch Changes

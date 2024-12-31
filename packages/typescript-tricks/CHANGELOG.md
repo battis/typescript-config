@@ -1,5 +1,11 @@
 # @battis/typescript-tricks
 
+## 0.7.4
+
+### Patch Changes
+
+- 770c1ab: Licensing
+
 ## 0.7.3
 
 ### Patch Changes

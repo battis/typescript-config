@@ -1,5 +1,11 @@
 # @battis/prettier-config
 
+## 1.5.6
+
+### Patch Changes
+
+- 770c1ab: Licensing
+
 ## 1.5.5
 
 ### Patch Changes

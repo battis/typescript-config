@@ -1,5 +1,11 @@
 # get-package-json
 
+## 0.1.7
+
+### Patch Changes
+
+- 770c1ab: Licensing
+
 ## 0.1.6
 
 ### Patch Changes

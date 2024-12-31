@@ -1,5 +1,13 @@
 # monorepo-package-paths
 
+## 0.3.8
+
+### Patch Changes
+
+- 770c1ab: Licensing
+- Updated dependencies [770c1ab]
+  - @battis/import-package-json@0.1.7
+
 ## 0.3.7
 
 ### Patch Changes
