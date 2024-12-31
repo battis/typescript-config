@@ -4,4 +4,4 @@
 
 ### Minor Changes
 
-- 770c1ab: Licensing
+- 770c1ab: Initial Release
