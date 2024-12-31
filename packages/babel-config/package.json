@@ -30,7 +30,7 @@
     "@npmcli/package-json": "^6.1.0",
     "babel-plugin-add-import-extension": "^1.6.0",
     "babel-plugin-add-module-exports": "^1.0.4",
-    "jackspeak": "^2.3.6",
+    "jackspeak": "^4.0.2",
     "ora": "^6.3.1",
     "shelljs": "^0.8.5",
     "typescript": "^5.7.2"
