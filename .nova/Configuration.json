@@ -1,4 +1,23 @@
 {
+  "eablokker.tabsSidebar.config.collapsedFolders" : [
+
+  ],
+  "eablokker.tabsSidebar.config.customKindGroupsOrder" : [
+    "json",
+    "typescript",
+    "markdown"
+  ],
+  "eablokker.tabsSidebar.config.customTabOrder" : [
+    "file:\/\/\/Users\/sbattis\/Documents\/GitHub\/typescript-config\/packages\/descriptive-types\/package.json",
+    "file:\/\/\/Users\/sbattis\/Documents\/GitHub\/typescript-config\/packages\/descriptive-types\/tsconfig.json",
+    "file:\/\/\/Users\/sbattis\/Documents\/GitHub\/typescript-config\/packages\/eslint-config\/package.json",
+    "file:\/\/\/Users\/sbattis\/Documents\/GitHub\/typescript-config\/packages\/monorepo-package-paths\/package.json",
+    "file:\/\/\/Users\/sbattis\/Documents\/GitHub\/typescript-config\/packages\/descriptive-types\/src\/index.ts",
+    "file:\/\/\/Users\/sbattis\/Documents\/GitHub\/typescript-config\/packages\/descriptive-types\/src\/number.ts",
+    "file:\/\/\/Users\/sbattis\/Documents\/GitHub\/typescript-config\/packages\/descriptive-types\/src\/string.ts",
+    "file:\/\/\/Users\/sbattis\/Documents\/GitHub\/typescript-config\/packages\/descriptive-types\/README.md",
+    "file:\/\/\/Users\/sbattis\/Documents\/GitHub\/typescript-config\/package.json"
+  ],
   "prettier.module.path" : "\/Users\/sbattis\/Documents\/GitHub\/typescript-config\/node_modules\/prettier",
   "workspace.art_style" : 1,
   "workspace.color" : 8,
