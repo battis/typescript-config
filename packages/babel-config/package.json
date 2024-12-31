@@ -2,11 +2,11 @@
   "name": "@battis/babel-config",
   "version": "0.2.2",
   "description": "Boilerplate to compile both CommonJS and ES modules from \"normal\" typescript using Babel.",
-  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/babel#readme",
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/babel-config#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/battis/typescript-config.git",
-    "directory": "packages/babel"
+    "directory": "packages/babel-config"
   },
   "license": "GPL-3.0",
   "author": {
