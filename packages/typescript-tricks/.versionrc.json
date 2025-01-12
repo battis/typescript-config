@@ -1,0 +1,5 @@
+{
+  "path": ".",
+  "tag-prefix": "typescript-tricks/",
+  "releaseCommitMessageFormat": "chore(typescript-tricks): @battis/typescript-tricks@{{currentTag}}"
+}
