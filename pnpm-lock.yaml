@@ -286,6 +286,10 @@ importers:
       prettier-plugin-sql:
         specifier: ^0.18.1
         version: 0.18.1(prettier@3.4.2)
+    devDependencies:
+      commit-and-tag-version:
+        specifier: ^12.5.0
+        version: 12.5.0
 
   packages/typescript-tricks:
     devDependencies:

@@ -1,0 +1,5 @@
+{
+  "path": ".",
+  "tag-prefix": "prettier-config/",
+  "releaseCommitMessageFormat": "chore(prettier-config): @battis/prettier-config@{{currentTag}}"
+}
