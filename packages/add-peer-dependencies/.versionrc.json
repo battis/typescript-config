@@ -1,0 +1,5 @@
+{
+  "path": ".",
+  "tag-prefix": "add-peer-dependencies/",
+  "releaseCommitMessageFormat": "chore(add-peer-dependencies): add-peer-dependencies@{{currentTag}}"
+}
