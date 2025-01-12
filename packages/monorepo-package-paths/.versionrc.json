@@ -1,0 +1,5 @@
+{
+  "path": ".",
+  "tag-prefix": "monorepo-package-paths/",
+  "releaseCommitMessageFormat": "chore(monorepo-package-paths): monorepo-package-paths@{{currentTag}}"
+}
