@@ -21,12 +21,14 @@
     "build:clean": "run-s clean",
     "build:compile": "tsc",
     "build:copy-html": "copyfiles -u 1 ./src/**/*.html ./dist",
-    "clean": "del ./dist/*"
+    "clean": "del ./dist/*",
+    "release": "commit-and-tag-version"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.8",
     "@types/dotenv-webpack": "^7.0.8",
     "@types/node": "^22.10.2",
+    "commit-and-tag-version": "^12.5.0",
     "copyfiles": "^2.4.1",
     "del-cli": "^6.0.0",
     "npm-run-all": "^4.1.5",
