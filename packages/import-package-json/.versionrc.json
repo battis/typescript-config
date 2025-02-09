@@ -1,0 +1,5 @@
+{
+  "path": ".",
+  "tag-prefix": "import-package-json/",
+  "releaseCommitMessageFormat": "chore(import-package-json): @battis/import-package-json@{{currentTag}}"
+}

@@ -14,14 +14,20 @@
     "url": "https://github.com/battis"
   },
   "main": ".prettierrc.json",
+  "scripts": {
+    "release": "commit-and-tag-version"
+  },
   "dependencies": {
     "@prettier/plugin-xml": "^3.4.1",
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
     "prettier": "latest",
     "prettier-plugin-ejs": "^1.0.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-packagejson": "^2.5.6",
     "prettier-plugin-sql": "^0.18.1"
+  },
+  "devDependencies": {
+    "commit-and-tag-version": "^12.5.0"
   },
   "engines": {
     "node": ">=12.17"
