@@ -18,7 +18,7 @@
     "release": "commit-and-tag-version"
   },
   "dependencies": {
-    "@prettier/plugin-xml": "^2.2.0",
+    "@prettier/plugin-xml": "^3.4.1",
     "@trivago/prettier-plugin-sort-imports": "^5.2.1",
     "prettier": "latest",
     "prettier-plugin-ejs": "^1.0.3",
