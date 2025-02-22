@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 
 import pkg from '@battis/import-package-json';
-import cli from '@battis/qui-cli';
+import { Colors } from '@battis/qui-cli.colors';
+import { Core } from '@battis/qui-cli.core';
+import { Log } from '@battis/qui-cli.log';
+import { Root } from '@battis/qui-cli.root';
 import fs from 'fs';
+import ora from 'ora';
 import { IDependencyMap, IPackageJson } from 'package-json-type';
 import path from 'path';
 import cleanEmptyDependencies from './cleanEmptyDependencies.js';
 
-const CWD = process.cwd();
 const cacheFilename = 'add-peer-depencies.cache.json';
 const peers: Record<string, IDependencyMap> = {
   dependencies: {},
@@ -17,59 +20,55 @@ const peers: Record<string, IDependencyMap> = {
 const peersMeta: Record<string, { peerOf: IDependencyMap }> = {};
 const examined: IDependencyMap = {};
 
-const args = cli.init({
-  env: {
-    root: CWD
+Root.configure({ root: process.cwd() });
+const args = Core.init({
+  opt: {
+    package: {
+      short: 'p',
+      description: `Path to package.json to examine (defaults to package in current working directory: ${Colors.url(
+        path.resolve(Root.path(), 'package.json')
+      )})`,
+      default: './package.json'
+    }
   },
-  args: {
-    options: {
-      package: {
-        short: 'p',
-        description: `Path to package.json to examine (defaults to package in current working directory: ${cli.colors.url(
-          path.resolve(CWD, 'package.json')
-        )})`,
-        default: './package.json'
-      }
+  flag: {
+    remove: {
+      short: 'r',
+      description: `Removes dependencies added by this tool`
     },
-    flags: {
-      remove: {
-        short: 'r',
-        description: `Removes dependencies added by this tool`
-      },
-      write: {
-        short: 'w',
-        description: `Write changes to package.json (required to make changes, omitting ${cli.colors.command(
-          '--write'
-        )} is a dry run that outputs results to the console)`
-      },
-      optional: {
-        short: 'o',
-        description: 'Include optional peer dependencies (defaults to false)'
-      },
-      dev: {
-        short: 'd',
-        description: `Install missing peers as ${cli.colors.value(
-          'devDependencies'
-        )} (defaults to true, ${cli.colors.command(
-          '--no-dev'
-        )} to install as regular ${cli.colors.value('dependencies')})`,
-        default: true
-      },
-      metadata: {
-        short: 'm',
-        description:
-          'Update package metadata to indicate which peers have been installed by this tool (defaults to false)',
-        default: false
-      },
-      cache: {
-        short: 'c',
-        description: `Update ${cli.colors.url(
-          cacheFilename
-        )} in the package root to indicate which peers have been installed by this tool (defaults to true, ${cli.colors.command(
-          '--no-cache'
-        )} to omit)`,
-        default: true
-      }
+    write: {
+      short: 'w',
+      description: `Write changes to package.json (required to make changes, omitting ${Colors.command(
+        '--write'
+      )} is a dry run that outputs results to the console)`
+    },
+    optional: {
+      short: 'o',
+      description: 'Include optional peer dependencies (defaults to false)'
+    },
+    dev: {
+      short: 'd',
+      description: `Install missing peers as ${Colors.value(
+        'devDependencies'
+      )} (defaults to true, ${Colors.command(
+        '--no-dev'
+      )} to install as regular ${Colors.value('dependencies')})`,
+      default: true
+    },
+    metadata: {
+      short: 'm',
+      description:
+        'Update package metadata to indicate which peers have been installed by this tool (defaults to false)',
+      default: false
+    },
+    cache: {
+      short: 'c',
+      description: `Update ${Colors.url(
+        cacheFilename
+      )} in the package root to indicate which peers have been installed by this tool (defaults to true, ${Colors.command(
+        '--no-cache'
+      )} to omit)`,
+      default: true
     }
   }
 });
@@ -78,18 +77,18 @@ let { package: packagePath } = args.values;
 
 // TODO waiting on better typing in @battis/qui-cli
 if (!packagePath) {
-  throw new Error(`option ${cli.colors.value('--package')} must be defined`);
+  throw new Error(`option ${Colors.value('--package')} must be defined`);
 }
 
-const spinner = cli.spinner();
+const spinner = ora();
 let projectPackage: IPackageJson;
 try {
-  packagePath = path.resolve(CWD, packagePath);
-  spinner.start(`Loading ${cli.colors.url(packagePath)}`);
+  packagePath = path.resolve(Root.path(), packagePath);
+  spinner.start(`Loading ${Colors.url(packagePath)}`);
   projectPackage = await pkg.importLocal(packagePath);
-  spinner.succeed(`Loaded ${cli.colors.url(packagePath)}`);
+  spinner.succeed(`Loaded ${Colors.url(packagePath)}`);
 } catch (error) {
-  spinner.fail(`Failed to load ${cli.colors.url(packagePath)}`);
+  spinner.fail(`Failed to load ${Colors.url(packagePath)}`);
   throw error;
 }
 
@@ -106,10 +105,10 @@ async function addToPeers({
   packageName: string;
   packageVersion?: string;
 }) {
-  cli.log.info(
-    `${cli.colors.value(
+  Log.info(
+    `${Colors.value(
       `${peerName}@${peerVersion}`
-    )} is peer of ${cli.colors.value(`${packageName}@${packageVersion}`)}`
+    )} is peer of ${Colors.value(`${packageName}@${packageVersion}`)}`
   );
   if (
     peerName in peers[dependency] &&
@@ -220,12 +219,12 @@ spinner.start('Identifying cache information');
 let cacheHistory: Record<string, any>;
 if (fs.existsSync(cachePath)) {
   cacheHistory = JSON.parse(fs.readFileSync(cachePath).toString());
-  spinner.succeed(`Loaded ${cli.colors.url(cachePath)}`);
+  spinner.succeed(`Loaded ${Colors.url(cachePath)}`);
 } else {
   cacheHistory = projectPackage.peerDependencieMeta;
   if (cache) {
     spinner.succeed(
-      `Cache loaded from ${cli.colors.url(packagePath)}.${cli.colors.value(
+      `Cache loaded from ${Colors.url(packagePath)}.${Colors.value(
         'peerDependenciesMeta'
       )}`
     );
@@ -244,10 +243,10 @@ if (remove) {
           projectPackage[dependency] &&
           projectPackage[dependency][peerName]
         ) {
-          cli.log.info(
-            `${cli.colors.value(
+          Log.info(
+            `${Colors.value(
               `${peerName}@${projectPackage[dependency][peerName]}`
-            )} removed from ${cli.colors.value(dependency)}`
+            )} removed from ${Colors.value(dependency)}`
           );
           delete projectPackage[dependency][peerName];
         }
@@ -301,12 +300,12 @@ cacheHistory = {
 };
 if (cache) {
   if (write) {
-    spinner.start(`Updating ${cli.colors.url(cachePath)}`);
+    spinner.start(`Updating ${Colors.url(cachePath)}`);
     fs.writeFileSync(cachePath, JSON.stringify(cacheHistory));
-    spinner.succeed(`Wrote cache to ${cli.colors.url(cachePath)}`);
+    spinner.succeed(`Wrote cache to ${Colors.url(cachePath)}`);
   } else {
     spinner.succeed(
-      `Computed ${cli.colors.url(cachePath)}\n${JSON.stringify(
+      `Computed ${Colors.url(cachePath)}\n${JSON.stringify(
         cacheHistory,
         null,
         2
@@ -316,26 +315,22 @@ if (cache) {
 }
 
 if (metadata) {
-  spinner.start(
-    `Adding cache data to ${cli.colors.value('peerDependenciesMeta')}`
-  );
+  spinner.start(`Adding cache data to ${Colors.value('peerDependenciesMeta')}`);
   projectPackage.peerDependenciesMeta = {
     ...projectPackage.peerDependenciesMeta,
     ...cacheHistory
   };
   spinner.succeed(
-    `Cache data added to ${cli.colors.value('peerDependenciesMeta')}`
+    `Cache data added to ${Colors.value('peerDependenciesMeta')}`
   );
 }
 
 cleanEmptyDependencies(projectPackage);
 const packageContents = JSON.stringify(projectPackage, null, 2);
 if (write) {
-  spinner.start(`Updating ${cli.colors.url(packagePath)}`);
+  spinner.start(`Updating ${Colors.url(packagePath)}`);
   fs.writeFileSync(packagePath, packageContents);
-  spinner.succeed(`${cli.colors.url(packagePath)} written`);
+  spinner.succeed(`${Colors.url(packagePath)} written`);
 } else {
-  spinner.succeed(
-    `Computed ${cli.colors.url(packagePath)}\n${packageContents}`
-  );
+  spinner.succeed(`Computed ${Colors.url(packagePath)}\n${packageContents}`);
 }
