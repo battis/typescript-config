@@ -1,4 +1,13 @@
-# add-peer-dependencies
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [0.1.11](https://github.com/battis/typescript-config/compare/add-peer-dependencies/0.1.9...add-peer-dependencies/0.1.11) (2025-02-22)
+
+
+### Bug Fixes
+
+* **add-peer-dependencies:** better processing of package paths within monorepos ([d411bdb](https://github.com/battis/typescript-config/commit/d411bdba72b1a18b501e885769f666f2bb602199))
 
 ## 0.1.10
 
