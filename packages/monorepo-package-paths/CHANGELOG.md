@@ -1,4 +1,10 @@
-# monorepo-package-paths
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [0.3.9](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.3.8...monorepo-package-paths/0.3.9) (2025-02-24)
+
+- bumping dependencies to remove @battis/qui-cli.env error when .env not found
 
 ## 0.3.8
 
