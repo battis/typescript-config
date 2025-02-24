@@ -21,7 +21,7 @@ const peersMeta: Record<string, { peerOf: IDependencyMap }> = {};
 const examined: IDependencyMap = {};
 
 Root.configure({ root: process.cwd() });
-const args = Core.init({
+const args = await Core.init({
   opt: {
     package: {
       short: 'p',

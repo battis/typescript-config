@@ -42,20 +42,20 @@ importers:
         specifier: workspace:*
         version: link:../import-package-json
       '@battis/qui-cli.colors':
-        specifier: ^1.0.0
-        version: 1.0.0(@battis/qui-cli.plugin@1.0.0)
+        specifier: ^2.0.1
+        version: 2.0.1(@battis/qui-cli.plugin@2.1.0)
       '@battis/qui-cli.core':
-        specifier: ^1.0.0
-        version: 1.0.0(@battis/qui-cli.plugin@1.0.0)
+        specifier: ^2.0.1
+        version: 2.0.1(@battis/qui-cli.plugin@2.1.0)
       '@battis/qui-cli.log':
-        specifier: ^1.0.0
-        version: 1.0.0(@battis/qui-cli.colors@1.0.0(@battis/qui-cli.plugin@1.0.0))(@battis/qui-cli.plugin@1.0.0)(@battis/qui-cli.root@1.0.0(@battis/qui-cli.plugin@1.0.0))
+        specifier: ^2.0.1
+        version: 2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0))
       '@battis/qui-cli.plugin':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^2.1.0
+        version: 2.1.0
       '@battis/qui-cli.root':
-        specifier: ^1.0.0
-        version: 1.0.0(@battis/qui-cli.plugin@1.0.0)
+        specifier: ^2.0.1
+        version: 2.0.1(@battis/qui-cli.plugin@2.1.0)
       ora:
         specifier: ^8.2.0
         version: 8.2.0
@@ -983,11 +983,6 @@ packages:
   '@battis/qui-cli.colors@0.8.2':
     resolution: {integrity: sha512-VzkixmUvtqzX5lS8KTldwlRa+Pub6QGYgBYXjfBLT3iFYpYxf4Q/hYcqZeuk3tPAZ6cf+n7TuFEX0c5tYyJeIA==}
 
-  '@battis/qui-cli.colors@1.0.0':
-    resolution: {integrity: sha512-HClv2OX+buUIHJprlWR9i/dtWl7EaLNpZOmrqg43dRwUxtP0iLnmzXfzn/IHp4PKyjyNpQfdwQNJGbLar/fMsw==}
-    peerDependencies:
-      '@battis/qui-cli.plugin': 1.0.0
-
   '@battis/qui-cli.colors@2.0.1':
     resolution: {integrity: sha512-9iR2VYZKn0+5E9zg5t0agNAylTv+o77hFIbSg/z97lvBlk5Q2b4uAFexUTOJCY7XRqmsvqNy2qJ998fu1/+cEg==}
     peerDependencies:
@@ -995,11 +990,6 @@ packages:
 
   '@battis/qui-cli.core@0.8.4':
     resolution: {integrity: sha512-dyQzmtzYMVJT3pBQjyn0XkkvHRrN1L5qZWosAZXKLZnpJ5sivPhY+XHbSU5Dy9rqC05xue/kUjwNEpfmfIOG2w==}
-
-  '@battis/qui-cli.core@1.0.0':
-    resolution: {integrity: sha512-hjEQ96504kGXzgBHhhEyiXIj6q7uj29dIjBsIX/9ynsbd5mnKUhJOIX59Ve/LQCu86XaZwAXafnN56xDSWCrBA==}
-    peerDependencies:
-      '@battis/qui-cli.plugin': 1.0.0
 
   '@battis/qui-cli.core@2.0.1':
     resolution: {integrity: sha512-VZgoDORzggBxtL6v8jSJF0VTeQhOuphIHDUb59zSePD5lkacCNpcy7d1fVLFFPIp92aZD6Os6VkStJg5oQ+ewg==}
@@ -1018,13 +1008,6 @@ packages:
   '@battis/qui-cli.log@0.8.2':
     resolution: {integrity: sha512-eAkr1mzer8fuBtGQYDxk4P2EdcWcaAktnqU9nbCVAsxTXKCvlmGEgGybCb0dz9SuKSKdzsbUNKfxiuDsjgZCPg==}
 
-  '@battis/qui-cli.log@1.0.0':
-    resolution: {integrity: sha512-VESzLQCIcn5fa3kp4etZECpZ46aT4XxSgFpNklHRx43Yj3UV3GRw8i7fPudQCtpZXJqmDeSvCcStaV+0gYPuXg==}
-    peerDependencies:
-      '@battis/qui-cli.colors': 1.0.0
-      '@battis/qui-cli.plugin': 1.0.0
-      '@battis/qui-cli.root': 1.0.0
-
   '@battis/qui-cli.log@2.0.1':
     resolution: {integrity: sha512-84vvUubCIvpFfTSBoDs3X3/hEbECgtm6640MLxGFevjlJ6f53gXTa373jwnNdaMIuEjSl+96MVMYhuP5x3ZwLA==}
     peerDependencies:
@@ -1034,9 +1017,6 @@ packages:
 
   '@battis/qui-cli.plugin@0.1.2':
     resolution: {integrity: sha512-AOPm0kHDDDkvmkw4kz7ckHEfxoOE/Z/JzzE71jhzMk5oAHpbY5CBGshIwFgx+Xt4Q5Tvj03yui/W35KqZHfvlg==}
-
-  '@battis/qui-cli.plugin@1.0.0':
-    resolution: {integrity: sha512-nKnYw6dCiWDXK1YRPeO9d9PcFjeCIYXouq/pNAgDxPjIJTj5pZCJEUEzU3GcHOYU1Hhs76gjtq9wwPtHpyxwqw==}
 
   '@battis/qui-cli.plugin@2.1.0':
     resolution: {integrity: sha512-82s32oeWlaL2gzSZUkH8WXctWsc8763jrdcmURbQBOIQYB3Cbh1K3Ls+LoOdimDtXtI8EzL9bulUjrCaZxq13A==}
@@ -1049,11 +1029,6 @@ packages:
 
   '@battis/qui-cli.root@0.8.2':
     resolution: {integrity: sha512-QOW5urXUQsHp0pDvH3WDvsMIw8qqpg6/J0MZeRXQo08dRZYwt9cOGih8YP3fieHj4YgQ/qBa1KnmLOZCxnxfvw==}
-
-  '@battis/qui-cli.root@1.0.0':
-    resolution: {integrity: sha512-4INFteszeFe4/9aJmSCwZ5Z3hA2Kaj+vdS9ciFrstbi4RwZl0t6RNUXc9ZlRwWggHzNx/JDey+P+q1tv1AAFGw==}
-    peerDependencies:
-      '@battis/qui-cli.plugin': 1.0.0
 
   '@battis/qui-cli.root@2.0.1':
     resolution: {integrity: sha512-+MbRPPytQORi3RtDV/NAAIy/9n9508UfOLfehpEnLyPwhsqYOyE10rPRYMsurP4+ZJRCAFYCPvGmZ4Bqd6nYng==}
@@ -8761,11 +8736,6 @@ snapshots:
       '@battis/qui-cli.plugin': 0.1.2
       chalk: 4.1.2
 
-  '@battis/qui-cli.colors@1.0.0(@battis/qui-cli.plugin@1.0.0)':
-    dependencies:
-      '@battis/qui-cli.plugin': 1.0.0
-      chalk: 4.1.2
-
   '@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0)':
     dependencies:
       '@battis/qui-cli.plugin': 2.1.0
@@ -8774,11 +8744,6 @@ snapshots:
   '@battis/qui-cli.core@0.8.4':
     dependencies:
       '@battis/qui-cli.plugin': 0.1.2
-      jackspeak: 2.3.6
-
-  '@battis/qui-cli.core@1.0.0(@battis/qui-cli.plugin@1.0.0)':
-    dependencies:
-      '@battis/qui-cli.plugin': 1.0.0
       jackspeak: 2.3.6
 
   '@battis/qui-cli.core@2.0.1(@battis/qui-cli.plugin@2.1.0)':
@@ -8806,15 +8771,6 @@ snapshots:
       strip-ansi: 7.1.0
       winston: 3.17.0
 
-  '@battis/qui-cli.log@1.0.0(@battis/qui-cli.colors@1.0.0(@battis/qui-cli.plugin@1.0.0))(@battis/qui-cli.plugin@1.0.0)(@battis/qui-cli.root@1.0.0(@battis/qui-cli.plugin@1.0.0))':
-    dependencies:
-      '@battis/qui-cli.colors': 1.0.0(@battis/qui-cli.plugin@1.0.0)
-      '@battis/qui-cli.plugin': 1.0.0
-      '@battis/qui-cli.root': 1.0.0(@battis/qui-cli.plugin@1.0.0)
-      ora: 6.3.1
-      strip-ansi: 7.1.0
-      winston: 3.17.0
-
   '@battis/qui-cli.log@2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0))':
     dependencies:
       '@battis/qui-cli.colors': 2.0.1(@battis/qui-cli.plugin@2.1.0)
@@ -8826,11 +8782,6 @@ snapshots:
 
   '@battis/qui-cli.plugin@0.1.2':
     dependencies:
-      jackspeak: 2.3.6
-
-  '@battis/qui-cli.plugin@1.0.0':
-    dependencies:
-      '@battis/import-package-json': 0.1.7
       jackspeak: 2.3.6
 
   '@battis/qui-cli.plugin@2.1.0':
@@ -8848,11 +8799,6 @@ snapshots:
   '@battis/qui-cli.root@0.8.2':
     dependencies:
       '@battis/qui-cli.plugin': 0.1.2
-      app-root-path: 3.1.0
-
-  '@battis/qui-cli.root@1.0.0(@battis/qui-cli.plugin@1.0.0)':
-    dependencies:
-      '@battis/qui-cli.plugin': 1.0.0
       app-root-path: 3.1.0
 
   '@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0)':

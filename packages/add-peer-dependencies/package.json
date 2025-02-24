@@ -26,11 +26,11 @@
   },
   "dependencies": {
     "@battis/import-package-json": "workspace:*",
-    "@battis/qui-cli.colors": "^1.0.0",
-    "@battis/qui-cli.core": "^1.0.0",
-    "@battis/qui-cli.log": "^1.0.0",
-    "@battis/qui-cli.plugin": "^1.0.0",
-    "@battis/qui-cli.root": "^1.0.0",
+    "@battis/qui-cli.colors": "^2.0.1",
+    "@battis/qui-cli.core": "^2.0.1",
+    "@battis/qui-cli.log": "^2.0.1",
+    "@battis/qui-cli.plugin": "^2.1.0",
+    "@battis/qui-cli.root": "^2.0.1",
     "ora": "^8.2.0"
   },
   "devDependencies": {
