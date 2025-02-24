@@ -2,57 +2,52 @@
 
 import pkg from '@battis/import-package-json';
 import cli from '@battis/qui-cli';
+import input from '@inquirer/input';
 import fs from 'fs';
 import { glob } from 'glob';
+import ora from 'ora';
 import path from 'path';
 import YAML from 'yaml';
 
-const CWD = process.cwd();
-let packagePath = path.join(CWD, 'package.json');
+await cli.configure({ root: { root: process.cwd() } });
+let packagePath = path.join(cli.root.path(), 'package.json');
 
-const args = cli.init({
-  env: { root: CWD },
-  args: {
-    options: {
-      rootPackage: {
-        short: 'p',
-        description: `Path to monorepo root package file (defaults to ${cli.colors.url(
-          packagePath
-        )})`,
-        default: packagePath
-      },
-      homepagePrefix: {
-        short: 'x',
-        description: `Prefix relative path URLs (default ${cli.colors.value(
-          'tree/main'
-        )} as for GitHub)`,
-        default: 'tree/main'
-      }
+const args = await cli.init({
+  opt: {
+    rootPackage: {
+      short: 'p',
+      description: `Path to monorepo root package file (defaults to ${cli.colors.url(
+        packagePath
+      )})`,
+      default: packagePath
     },
-    flags: {
-      write: {
-        short: 'w',
-        description: 'Write changes to workspace package files (default false)',
-        default: false
-      },
-      repository: {
-        description: `Update ${cli.colors.value(
-          'package.repo.directory'
-        )} (default true)`,
-        default: true
-      },
-      homepage: {
-        description: `Update ${cli.colors.value(
-          'package.homepage'
-        )} (default true)`,
-        default: true
-      },
-      author: {
-        description: `Update ${cli.colors.value(
-          'package.author'
-        )} (default false)`,
-        default: false
-      }
+    homepagePrefix: {
+      short: 'x',
+      description: `Prefix relative path URLs (default ${cli.colors.value(
+        'tree/main'
+      )} as for GitHub)`,
+      default: 'tree/main'
+    }
+  },
+  flag: {
+    write: {
+      short: 'w',
+      description: 'Write changes to workspace package files (default false)',
+      default: false
+    },
+    repository: {
+      description: `Update ${cli.colors.value(
+        'package.repo.directory'
+      )} (default true)`,
+      default: true
+    },
+    homepage: {
+      description: `Update ${cli.colors.value('package.homepage')} (default true)`,
+      default: true
+    },
+    author: {
+      description: `Update ${cli.colors.value('package.author')} (default false)`,
+      default: false
     }
   }
 });
@@ -67,7 +62,7 @@ const {
     write
   }
 } = args;
-const spinner = cli.spinner();
+const spinner = ora();
 
 if (!pathToRootPackage) {
   throw new Error(
@@ -92,7 +87,7 @@ try {
   spinner.fail('Prettier not found, using basic JSON formatting');
 }
 
-packagePath = path.resolve(CWD, pathToRootPackage);
+packagePath = path.resolve(cli.root.path(), pathToRootPackage);
 spinner.start(`Loading ${cli.colors.url(packagePath)}`);
 const rootPackage = await pkg.importLocal(packagePath);
 spinner.succeed(`Root package ${cli.colors.url(packagePath)}`);
@@ -145,7 +140,7 @@ const rootRepository =
             : rootPackage.repository.url,
         type:
           typeof rootPackage.repository == 'string'
-            ? await cli.prompts.input({
+            ? await input({
                 message: 'What type of repository is being used?',
                 default: 'git',
                 validate: cli.validators.notEmpty
@@ -231,7 +226,7 @@ for (const workspace of workspaces) {
           )
         );
       }
-    } catch (e) {
+    } catch (_) {
       spinner.fail(
         cli.colors.error(
           `Not found: ${`${cli.colors.url(workspaceRelativePath)}`}`

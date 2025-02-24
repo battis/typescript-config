@@ -50,6 +50,9 @@ importers:
       '@battis/qui-cli.log':
         specifier: ^1.0.0
         version: 1.0.0(@battis/qui-cli.colors@1.0.0(@battis/qui-cli.plugin@1.0.0))(@battis/qui-cli.plugin@1.0.0)(@battis/qui-cli.root@1.0.0(@battis/qui-cli.plugin@1.0.0))
+      '@battis/qui-cli.plugin':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@battis/qui-cli.root':
         specifier: ^1.0.0
         version: 1.0.0(@battis/qui-cli.plugin@1.0.0)
@@ -57,9 +60,6 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0
     devDependencies:
-      '@battis/qui-cli.plugin':
-        specifier: ^1.0.0
-        version: 1.0.0
       '@tsconfig/recommended':
         specifier: ^1.0.8
         version: 1.0.8
@@ -244,17 +244,23 @@ importers:
         specifier: workspace:*
         version: link:../import-package-json
       '@battis/qui-cli':
-        specifier: ^0.8.5
-        version: 0.8.5
+        specifier: ^2.0.1
+        version: 2.0.1(@battis/qui-cli.plugin@2.1.0)
+      '@inquirer/input':
+        specifier: ^4.1.6
+        version: 4.1.6(@types/node@22.13.5)
       glob:
         specifier: ^11.0.1
         version: 11.0.1
+      ora:
+        specifier: ^8.2.0
+        version: 8.2.0
       package-json-type:
         specifier: ^1.0.3
         version: 1.0.3
       prettier:
         specifier: ^3.0
-        version: 3.4.2
+        version: 3.5.2
       yaml:
         specifier: ^2.7.0
         version: 2.7.0
@@ -263,8 +269,8 @@ importers:
         specifier: ^1.0.8
         version: 1.0.8
       '@types/node':
-        specifier: ^22.13.1
-        version: 22.13.1
+        specifier: ^22.13.5
+        version: 22.13.5
       commit-and-tag-version:
         specifier: ^12.5.0
         version: 12.5.0
@@ -955,6 +961,10 @@ packages:
     resolution: {integrity: sha512-AOPI3D+a8dXnja+iwsUqGRjr1BbZIe771sXdapOtYI531gSqpi92vXivKcq2asu/DFpdl1ceFAKZyRzK2PCVcQ==}
     engines: {node: '>=6.9.0'}
 
+  '@babel/runtime@7.26.9':
+    resolution: {integrity: sha512-aA63XwOkcl4xxQa3HjPMqOP6LiK0ZDv3mUPYEFXkpHbaFjtGggE1A61FjFzJnB+p7/oy2gA8E+rcBNl/zC1tMg==}
+    engines: {node: '>=6.9.0'}
+
   '@babel/template@7.26.8':
     resolution: {integrity: sha512-iNKaX3ZebKIsCvJ+0jd6embf+Aulaa3vNBqZ41kM7iTWjx5qzWKXGHiJUW3+nTpQ18SG11hdF8OAzKrpXkb96Q==}
     engines: {node: '>=6.9.0'}
@@ -978,6 +988,11 @@ packages:
     peerDependencies:
       '@battis/qui-cli.plugin': 1.0.0
 
+  '@battis/qui-cli.colors@2.0.1':
+    resolution: {integrity: sha512-9iR2VYZKn0+5E9zg5t0agNAylTv+o77hFIbSg/z97lvBlk5Q2b4uAFexUTOJCY7XRqmsvqNy2qJ998fu1/+cEg==}
+    peerDependencies:
+      '@battis/qui-cli.plugin': ^2.0
+
   '@battis/qui-cli.core@0.8.4':
     resolution: {integrity: sha512-dyQzmtzYMVJT3pBQjyn0XkkvHRrN1L5qZWosAZXKLZnpJ5sivPhY+XHbSU5Dy9rqC05xue/kUjwNEpfmfIOG2w==}
 
@@ -986,8 +1001,19 @@ packages:
     peerDependencies:
       '@battis/qui-cli.plugin': 1.0.0
 
+  '@battis/qui-cli.core@2.0.1':
+    resolution: {integrity: sha512-VZgoDORzggBxtL6v8jSJF0VTeQhOuphIHDUb59zSePD5lkacCNpcy7d1fVLFFPIp92aZD6Os6VkStJg5oQ+ewg==}
+    peerDependencies:
+      '@battis/qui-cli.plugin': ^2.0
+
   '@battis/qui-cli.env@0.8.2':
     resolution: {integrity: sha512-MDYhKe1U39jSputb3K1rVHuL6t9r1nFhBE8owny4CpGps95D4oL6ivtdcEN8op5KrWiUVlq6GxHxPkd6If1Vxg==}
+
+  '@battis/qui-cli.env@2.0.1':
+    resolution: {integrity: sha512-kv3dUS9l6zgHntdzuP43S4lytCcYRIBgrL1uukR5TLM8G6i2oQ4mL5NGwLjZ10M5mUeD15Umza03il+DbzZGQg==}
+    peerDependencies:
+      '@battis/qui-cli.plugin': ^2.0
+      '@battis/qui-cli.root': ^2.0
 
   '@battis/qui-cli.log@0.8.2':
     resolution: {integrity: sha512-eAkr1mzer8fuBtGQYDxk4P2EdcWcaAktnqU9nbCVAsxTXKCvlmGEgGybCb0dz9SuKSKdzsbUNKfxiuDsjgZCPg==}
@@ -999,11 +1025,27 @@ packages:
       '@battis/qui-cli.plugin': 1.0.0
       '@battis/qui-cli.root': 1.0.0
 
+  '@battis/qui-cli.log@2.0.1':
+    resolution: {integrity: sha512-84vvUubCIvpFfTSBoDs3X3/hEbECgtm6640MLxGFevjlJ6f53gXTa373jwnNdaMIuEjSl+96MVMYhuP5x3ZwLA==}
+    peerDependencies:
+      '@battis/qui-cli.colors': ^2.0
+      '@battis/qui-cli.plugin': ^2.0
+      '@battis/qui-cli.root': ^2.0
+
   '@battis/qui-cli.plugin@0.1.2':
     resolution: {integrity: sha512-AOPm0kHDDDkvmkw4kz7ckHEfxoOE/Z/JzzE71jhzMk5oAHpbY5CBGshIwFgx+Xt4Q5Tvj03yui/W35KqZHfvlg==}
 
   '@battis/qui-cli.plugin@1.0.0':
     resolution: {integrity: sha512-nKnYw6dCiWDXK1YRPeO9d9PcFjeCIYXouq/pNAgDxPjIJTj5pZCJEUEzU3GcHOYU1Hhs76gjtq9wwPtHpyxwqw==}
+
+  '@battis/qui-cli.plugin@2.1.0':
+    resolution: {integrity: sha512-82s32oeWlaL2gzSZUkH8WXctWsc8763jrdcmURbQBOIQYB3Cbh1K3Ls+LoOdimDtXtI8EzL9bulUjrCaZxq13A==}
+
+  '@battis/qui-cli.progress@2.0.1':
+    resolution: {integrity: sha512-xW8WHF/CFuaJKQQnXP9Uc3ldNBOIV4KpUVvLlvgNSDACrf0UMQ+T4ylU8SsJKG5fnEJip0KLvxfE1+YjXZCcPA==}
+    peerDependencies:
+      '@battis/qui-cli.colors': ^2.0
+      '@battis/qui-cli.plugin': ^2.0
 
   '@battis/qui-cli.root@0.8.2':
     resolution: {integrity: sha512-QOW5urXUQsHp0pDvH3WDvsMIw8qqpg6/J0MZeRXQo08dRZYwt9cOGih8YP3fieHj4YgQ/qBa1KnmLOZCxnxfvw==}
@@ -1013,14 +1055,36 @@ packages:
     peerDependencies:
       '@battis/qui-cli.plugin': 1.0.0
 
+  '@battis/qui-cli.root@2.0.1':
+    resolution: {integrity: sha512-+MbRPPytQORi3RtDV/NAAIy/9n9508UfOLfehpEnLyPwhsqYOyE10rPRYMsurP4+ZJRCAFYCPvGmZ4Bqd6nYng==}
+    peerDependencies:
+      '@battis/qui-cli.plugin': ^2.0
+
   '@battis/qui-cli.shell@0.8.3':
     resolution: {integrity: sha512-jB4vbFn0AZHE9JD5TlQ91lKl4ULkbfHbmSMApeix5lqrPNwrCtdct+70iuT0lVrAck05M+ITJs7E6xq8SAGVRw==}
+
+  '@battis/qui-cli.shell@2.0.1':
+    resolution: {integrity: sha512-+yInBaldZO8U+Z/Jl+1bOJ68WlXEM41PpEnOe4lQEOFbDFMT+SDqqBKXx06kBN/nklhr2JxGXLrRmv5hnrrwmg==}
+    peerDependencies:
+      '@battis/qui-cli.colors': ^2.0
+      '@battis/qui-cli.log': ^2.0
+      '@battis/qui-cli.plugin': ^2.0
 
   '@battis/qui-cli.validators@0.8.2':
     resolution: {integrity: sha512-KI+qLAyxMvMN9niB8i5o/DfhuOxENX3Wwalc11nep++1FMzSLUVVMmNptIvOde2ca2lhC7E3DGX8/TuZo1UlOQ==}
 
+  '@battis/qui-cli.validators@2.0.1':
+    resolution: {integrity: sha512-9MQ6CCR3diMgrDkxCokTCCiA/x55lUGxwFGORGaN5bwPc/Q89rPe3PpYb/5RIPDuZH9rY9rjR+KrYLwSKn0Y5w==}
+    peerDependencies:
+      '@battis/qui-cli.plugin': ^2.0
+      '@battis/qui-cli.root': ^2.0
+
   '@battis/qui-cli@0.8.5':
     resolution: {integrity: sha512-wlVdp50i1meO6CIigHc+nLPNQyxn5sGE7h3J+tbQj3mUm8F6psJGHT3q1g78+ep+G9YmiUYMrm9kWmTlEs94sQ==}
+    engines: {node: '>=12.17'}
+
+  '@battis/qui-cli@2.0.1':
+    resolution: {integrity: sha512-rSA75i/g7H5hntmwo8gH1Yzl72v+nUwb/OHqymMAHidVb5MKeJLreq5oOKWF4BB7MkGtQvoixp5QOUJLLB2Qyw==}
     engines: {node: '>=12.17'}
 
   '@changesets/apply-release-plan@7.0.8':
@@ -1602,6 +1666,15 @@ packages:
     resolution: {integrity: sha512-EqzhGryzmGpy2aJf6LxJVhndxYmFs+m8cxXzf8nejb1DE3sabf6mUgBcp4J0jAUEiAcYzqmkqRr7LPFh/WdnXA==}
     engines: {node: '>=14.18.0'}
 
+  '@inquirer/core@10.1.7':
+    resolution: {integrity: sha512-AA9CQhlrt6ZgiSy6qoAigiA1izOa751ugX6ioSjqgJ+/Gd+tEN/TORk5sUYNjXuHWfW0r1n/a6ak4u/NqHHrtA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
   '@inquirer/core@2.3.1':
     resolution: {integrity: sha512-faYAYnIfdEuns3jGKykaog5oUqFiEVbCx9nXGZfUhyEEpKcHt5bpJfZTb3eOBQKo8I/v4sJkZeBHmFlSZQuBCw==}
     engines: {node: '>=14.18.0'}
@@ -1618,9 +1691,22 @@ packages:
     resolution: {integrity: sha512-TGLU9egcuo+s7PxphKUCnJnpCIVY32/EwPCLLuu+gTvYiD8hZgx8Z2niNQD36sa6xcfpdLY6xXDBiL/+g1r2XQ==}
     engines: {node: '>=14.18.0'}
 
+  '@inquirer/figures@1.0.10':
+    resolution: {integrity: sha512-Ey6176gZmeqZuY/W/nZiUyvmb1/qInjcpiZjXWi6nON+nxJpD1bxtSoBxNliGISae32n6OwbY+TSXPZ1CfS4bw==}
+    engines: {node: '>=18'}
+
   '@inquirer/input@1.2.16':
     resolution: {integrity: sha512-Ou0LaSWvj1ni+egnyQ+NBtfM1885UwhRCMtsRt2bBO47DoC1dwtCa+ZUNgrxlnCHHF0IXsbQHYtIIjFGAavI4g==}
     engines: {node: '>=14.18.0'}
+
+  '@inquirer/input@4.1.6':
+    resolution: {integrity: sha512-1f5AIsZuVjPT4ecA8AwaxDFNHny/tSershP/cTvTDxLdiIGTeILNcKozB0LaYt6mojJLUbOYhpIxicaYf7UKIQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
 
   '@inquirer/password@1.1.16':
     resolution: {integrity: sha512-aZYZVHLUXZ2gbBot+i+zOJrks1WaiI95lvZCn1sKfcw6MtSSlYC8uDX8sTzQvAsQ8epHoP84UNvAIT0KVGOGqw==}
@@ -1641,6 +1727,15 @@ packages:
   '@inquirer/type@1.5.5':
     resolution: {integrity: sha512-MzICLu4yS7V8AA61sANROZ9vT1H3ooca5dSmI1FjZkzq7o/koMsRfQSzRtFo+F3Ao4Sf1C0bpLKejpKB/+j6MA==}
     engines: {node: '>=18'}
+
+  '@inquirer/type@3.0.4':
+    resolution: {integrity: sha512-2MNFrDY8jkFYc9Il9DgLsHhMzuHnOYM1+CUYVWbzu9oT0hC7V7EcYvdCKeoll/Fcci04A+ERZ9wcc7cQ8lTkIA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -2881,6 +2976,10 @@ packages:
   cli-cursor@5.0.0:
     resolution: {integrity: sha512-aCj4O5wKyszjMmDT4tZj93kxyydN/K5zPWSCe6/0AV/AA1pqe5ZBIw0a2ZfPQV7lL5/yb5HsUreJ6UFAF1tEQw==}
     engines: {node: '>=18'}
+
+  cli-progress@3.12.0:
+    resolution: {integrity: sha512-tRkV3HJ1ASwm19THiiLIXLO7Im7wlTuKnvkYaTkyoAPefqjNg7W7DHKUlGRxy9vxDvbyCYQkQozvptuMkGCg8A==}
+    engines: {node: '>=4'}
 
   cli-spinners@2.6.1:
     resolution: {integrity: sha512-x/5fWmGMnbKQAaNwN+UZlV79qBLM9JFnJuJ03gIi5whrob0xV0ofNVHy9DhwGdsMJQc2OKv0oGmLzvaqvAVv+g==}
@@ -4922,8 +5021,8 @@ packages:
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
 
-  jackspeak@4.0.2:
-    resolution: {integrity: sha512-bZsjR/iRjl1Nk1UkjGpAzLNfQtzuijhn2g+pbZb98HQ1Gk8vM9hfbxeMBP+M2/UUdwj0RqGG3mlvk2MsAqwvEw==}
+  jackspeak@4.1.0:
+    resolution: {integrity: sha512-9DDdhb5j6cpeitCbvLO7n7J4IxnbM6hoF6O1g4HQ5TfhvvKN8ywDM7668ZhMHRqVmxqhps/F6syWK2KcPxYlkw==}
     engines: {node: 20 || >=22}
 
   jake@10.9.2:
@@ -5472,6 +5571,10 @@ packages:
   mute-stream@1.0.0:
     resolution: {integrity: sha512-avsJQhyd+680gKXyG/sQc0nXaC6rBkPOfyHYcFb9+hdkqQkR9bdnkJ0AMZhke0oesPqIO+mFFJ+IdBc7mst4IA==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+
+  mute-stream@2.0.0:
+    resolution: {integrity: sha512-WWdIxpyjEn+FhQJQQv9aQAYlHoNVdzIzUySNV1gHUPDSdZJ3yZn7pAAbQcV7B56Mvu881q9FZV+0Vx2xC44VWA==}
+    engines: {node: ^18.17.0 || >=20.5.0}
 
   nanoclone@0.2.1:
     resolution: {integrity: sha512-wynEP02LmIbLpcYw8uBKpcfF6dmg2vcpKqxeH5UcoKEYdExslsdUA4ugFauuaeYdTB76ez6gJW8XAZ6CgkXYxA==}
@@ -6463,11 +6566,6 @@ packages:
   prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
-    hasBin: true
-
-  prettier@3.4.2:
-    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
-    engines: {node: '>=14'}
     hasBin: true
 
   prettier@3.5.2:
@@ -7936,6 +8034,10 @@ packages:
     resolution: {integrity: sha512-b4JR1PFR10y1mKjhHY9LaGo6tmrgjit7hxVIeAmyMw3jegXR4dhYqLaQF5zMXZxY7tLpMyJeLjr1C4rLmkVe8g==}
     engines: {node: '>=12.20'}
 
+  yoctocolors-cjs@2.1.2:
+    resolution: {integrity: sha512-cYVsTjKl8b+FrnidjibDWskAv7UKOfcwaVZdp/it9n1s9fU3IkgDbhdIRKCW4JDsAlECJY0ytoVPT3sK6kideA==}
+    engines: {node: '>=18'}
+
   yoctocolors@2.1.1:
     resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
     engines: {node: '>=18'}
@@ -8622,6 +8724,10 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
+  '@babel/runtime@7.26.9':
+    dependencies:
+      regenerator-runtime: 0.14.1
+
   '@babel/template@7.26.8':
     dependencies:
       '@babel/code-frame': 7.26.2
@@ -8660,6 +8766,11 @@ snapshots:
       '@battis/qui-cli.plugin': 1.0.0
       chalk: 4.1.2
 
+  '@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0)':
+    dependencies:
+      '@battis/qui-cli.plugin': 2.1.0
+      chalk: 4.1.2
+
   '@battis/qui-cli.core@0.8.4':
     dependencies:
       '@battis/qui-cli.plugin': 0.1.2
@@ -8670,10 +8781,21 @@ snapshots:
       '@battis/qui-cli.plugin': 1.0.0
       jackspeak: 2.3.6
 
+  '@battis/qui-cli.core@2.0.1(@battis/qui-cli.plugin@2.1.0)':
+    dependencies:
+      '@battis/qui-cli.plugin': 2.1.0
+      jackspeak: 2.3.6
+
   '@battis/qui-cli.env@0.8.2':
     dependencies:
       '@battis/qui-cli.plugin': 0.1.2
       '@battis/qui-cli.root': 0.8.2
+      dotenv: 16.4.7
+
+  '@battis/qui-cli.env@2.0.1(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0))':
+    dependencies:
+      '@battis/qui-cli.plugin': 2.1.0
+      '@battis/qui-cli.root': 2.0.1(@battis/qui-cli.plugin@2.1.0)
       dotenv: 16.4.7
 
   '@battis/qui-cli.log@0.8.2':
@@ -8693,6 +8815,15 @@ snapshots:
       strip-ansi: 7.1.0
       winston: 3.17.0
 
+  '@battis/qui-cli.log@2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0))':
+    dependencies:
+      '@battis/qui-cli.colors': 2.0.1(@battis/qui-cli.plugin@2.1.0)
+      '@battis/qui-cli.plugin': 2.1.0
+      '@battis/qui-cli.root': 2.0.1(@battis/qui-cli.plugin@2.1.0)
+      ora: 6.3.1
+      strip-ansi: 7.1.0
+      winston: 3.17.0
+
   '@battis/qui-cli.plugin@0.1.2':
     dependencies:
       jackspeak: 2.3.6
@@ -8701,6 +8832,18 @@ snapshots:
     dependencies:
       '@battis/import-package-json': 0.1.7
       jackspeak: 2.3.6
+
+  '@battis/qui-cli.plugin@2.1.0':
+    dependencies:
+      '@battis/import-package-json': 0.1.7
+      jackspeak: 2.3.6
+
+  '@battis/qui-cli.progress@2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.plugin@2.1.0)':
+    dependencies:
+      '@battis/qui-cli.colors': 2.0.1(@battis/qui-cli.plugin@2.1.0)
+      '@battis/qui-cli.plugin': 2.1.0
+      chalk: 4.1.2
+      cli-progress: 3.12.0
 
   '@battis/qui-cli.root@0.8.2':
     dependencies:
@@ -8712,6 +8855,11 @@ snapshots:
       '@battis/qui-cli.plugin': 1.0.0
       app-root-path: 3.1.0
 
+  '@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0)':
+    dependencies:
+      '@battis/qui-cli.plugin': 2.1.0
+      app-root-path: 3.1.0
+
   '@battis/qui-cli.shell@0.8.3':
     dependencies:
       '@battis/qui-cli.colors': 0.8.2
@@ -8720,10 +8868,27 @@ snapshots:
       ora: 6.3.1
       shelljs: 0.8.5
 
+  '@battis/qui-cli.shell@2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.log@2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0)))(@battis/qui-cli.plugin@2.1.0)':
+    dependencies:
+      '@battis/qui-cli.colors': 2.0.1(@battis/qui-cli.plugin@2.1.0)
+      '@battis/qui-cli.log': 2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0))
+      '@battis/qui-cli.plugin': 2.1.0
+      ora: 6.3.1
+      shelljs: 0.8.5
+
   '@battis/qui-cli.validators@0.8.2':
     dependencies:
       '@battis/qui-cli.plugin': 0.1.2
       '@battis/qui-cli.root': 0.8.2
+      '@tahul/is-valid-domain': 1.0.5
+      cron-validate: 1.4.5
+      email-validator: 2.0.4
+      is-valid-path: 0.1.1
+
+  '@battis/qui-cli.validators@2.0.1(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0))':
+    dependencies:
+      '@battis/qui-cli.plugin': 2.1.0
+      '@battis/qui-cli.root': 2.0.1(@battis/qui-cli.plugin@2.1.0)
       '@tahul/is-valid-domain': 1.0.5
       cron-validate: 1.4.5
       email-validator: 2.0.4
@@ -8741,6 +8906,20 @@ snapshots:
       '@battis/qui-cli.validators': 0.8.2
       '@inquirer/prompts': 2.3.1
       ora: 6.3.1
+
+  '@battis/qui-cli@2.0.1(@battis/qui-cli.plugin@2.1.0)':
+    dependencies:
+      '@battis/qui-cli.colors': 2.0.1(@battis/qui-cli.plugin@2.1.0)
+      '@battis/qui-cli.core': 2.0.1(@battis/qui-cli.plugin@2.1.0)
+      '@battis/qui-cli.env': 2.0.1(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0))
+      '@battis/qui-cli.log': 2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0))
+      '@battis/qui-cli.progress': 2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.plugin@2.1.0)
+      '@battis/qui-cli.root': 2.0.1(@battis/qui-cli.plugin@2.1.0)
+      '@battis/qui-cli.shell': 2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.log@2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.1.0))(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0)))(@battis/qui-cli.plugin@2.1.0)
+      '@battis/qui-cli.validators': 2.0.1(@battis/qui-cli.plugin@2.1.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.1.0))
+      '@inquirer/prompts': 2.3.1
+    transitivePeerDependencies:
+      - '@battis/qui-cli.plugin'
 
   '@changesets/apply-release-plan@7.0.8':
     dependencies:
@@ -9427,6 +9606,19 @@ snapshots:
       '@inquirer/type': 1.5.5
       chalk: 4.1.2
 
+  '@inquirer/core@10.1.7(@types/node@22.13.5)':
+    dependencies:
+      '@inquirer/figures': 1.0.10
+      '@inquirer/type': 3.0.4(@types/node@22.13.5)
+      ansi-escapes: 4.3.2
+      cli-width: 4.1.0
+      mute-stream: 2.0.0
+      signal-exit: 4.1.0
+      wrap-ansi: 6.2.0
+      yoctocolors-cjs: 2.1.2
+    optionalDependencies:
+      '@types/node': 22.13.5
+
   '@inquirer/core@2.3.1':
     dependencies:
       '@inquirer/type': 1.5.5
@@ -9475,11 +9667,20 @@ snapshots:
       chalk: 4.1.2
       figures: 3.2.0
 
+  '@inquirer/figures@1.0.10': {}
+
   '@inquirer/input@1.2.16':
     dependencies:
       '@inquirer/core': 6.0.0
       '@inquirer/type': 1.5.5
       chalk: 4.1.2
+
+  '@inquirer/input@4.1.6(@types/node@22.13.5)':
+    dependencies:
+      '@inquirer/core': 10.1.7(@types/node@22.13.5)
+      '@inquirer/type': 3.0.4(@types/node@22.13.5)
+    optionalDependencies:
+      '@types/node': 22.13.5
 
   '@inquirer/password@1.1.16':
     dependencies:
@@ -9517,6 +9718,10 @@ snapshots:
   '@inquirer/type@1.5.5':
     dependencies:
       mute-stream: 1.0.0
+
+  '@inquirer/type@3.0.4(@types/node@22.13.5)':
+    optionalDependencies:
+      '@types/node': 22.13.5
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -10293,11 +10498,11 @@ snapshots:
 
   '@types/mute-stream@0.0.1':
     dependencies:
-      '@types/node': 22.13.1
+      '@types/node': 22.13.5
 
   '@types/mute-stream@0.0.4':
     dependencies:
-      '@types/node': 22.13.1
+      '@types/node': 22.13.5
 
   '@types/node-forge@1.3.11':
     dependencies:
@@ -11049,6 +11254,10 @@ snapshots:
   cli-cursor@5.0.0:
     dependencies:
       restore-cursor: 5.1.0
+
+  cli-progress@3.12.0:
+    dependencies:
+      string-width: 4.2.3
 
   cli-spinners@2.6.1: {}
 
@@ -12584,7 +12793,7 @@ snapshots:
   glob@11.0.1:
     dependencies:
       foreground-child: 3.3.0
-      jackspeak: 4.0.2
+      jackspeak: 4.1.0
       minimatch: 10.0.1
       minipass: 7.1.2
       package-json-from-dist: 1.0.1
@@ -13298,7 +13507,7 @@ snapshots:
     optionalDependencies:
       '@pkgjs/parseargs': 0.11.0
 
-  jackspeak@4.0.2:
+  jackspeak@4.1.0:
     dependencies:
       '@isaacs/cliui': 8.0.2
 
@@ -13935,6 +14144,8 @@ snapshots:
   mute-stream@0.0.8: {}
 
   mute-stream@1.0.0: {}
+
+  mute-stream@2.0.0: {}
 
   nanoclone@0.2.1: {}
 
@@ -15035,8 +15246,6 @@ snapshots:
       tslib: 2.8.1
 
   prettier@2.8.8: {}
-
-  prettier@3.4.2: {}
 
   prettier@3.5.2: {}
 
@@ -16618,11 +16827,13 @@ snapshots:
 
   yocto-queue@1.1.1: {}
 
+  yoctocolors-cjs@2.1.2: {}
+
   yoctocolors@2.1.1: {}
 
   yup@0.32.9:
     dependencies:
-      '@babel/runtime': 7.26.7
+      '@babel/runtime': 7.26.9
       '@types/lodash': 4.17.15
       lodash: 4.17.21
       lodash-es: 4.17.21
