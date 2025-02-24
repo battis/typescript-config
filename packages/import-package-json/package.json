@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.8",
-    "@types/node": "^22.13.1",
+    "@types/node": "^22.13.5",
     "@types/semver": "^7.5.8",
     "commit-and-tag-version": "^12.5.0",
     "del-cli": "^6.0.0",

@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@battis/import-package-json": "workspace:*",
-    "@battis/qui-cli": "^2.0.1",
+    "@battis/qui-cli": "^2.0.2",
     "@inquirer/input": "^4.1.6",
     "glob": "^11.0.1",
     "ora": "^8.2.0",
