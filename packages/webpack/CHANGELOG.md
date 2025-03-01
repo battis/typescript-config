@@ -1,4 +1,13 @@
-# @battis/webpack
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.0.3](https://github.com/battis/typescript-config/compare/webpack/2.0.2...webpack/2.0.3) (2025-03-01)
+
+
+### Bug Fixes
+
+* **webpack:** remove overly-complex optional peer imagemin ([8b87dd1](https://github.com/battis/typescript-config/commit/8b87dd13ea3113632ee0cbf96477cca96b930920))
 
 ## 2.0.2
 
