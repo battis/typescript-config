@@ -46,7 +46,7 @@ importers:
         version: 2.0.1(@battis/qui-cli.plugin@2.2.0)
       '@battis/qui-cli.core':
         specifier: ^2.0.1
-        version: 2.0.1(@battis/qui-cli.plugin@2.2.0)
+        version: 2.1.0(@battis/qui-cli.plugin@2.2.0)
       '@battis/qui-cli.log':
         specifier: ^2.0.1
         version: 2.0.1(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.2.0))(@battis/qui-cli.plugin@2.2.0)(@battis/qui-cli.root@2.0.1(@battis/qui-cli.plugin@2.2.0))
@@ -978,11 +978,6 @@ packages:
 
   '@battis/qui-cli.colors@2.0.1':
     resolution: {integrity: sha512-9iR2VYZKn0+5E9zg5t0agNAylTv+o77hFIbSg/z97lvBlk5Q2b4uAFexUTOJCY7XRqmsvqNy2qJ998fu1/+cEg==}
-    peerDependencies:
-      '@battis/qui-cli.plugin': ^2.0
-
-  '@battis/qui-cli.core@2.0.1':
-    resolution: {integrity: sha512-VZgoDORzggBxtL6v8jSJF0VTeQhOuphIHDUb59zSePD5lkacCNpcy7d1fVLFFPIp92aZD6Os6VkStJg5oQ+ewg==}
     peerDependencies:
       '@battis/qui-cli.plugin': ^2.0
 
@@ -8704,11 +8699,6 @@ snapshots:
     dependencies:
       '@battis/qui-cli.plugin': 2.2.0
       chalk: 4.1.2
-
-  '@battis/qui-cli.core@2.0.1(@battis/qui-cli.plugin@2.2.0)':
-    dependencies:
-      '@battis/qui-cli.plugin': 2.2.0
-      jackspeak: 2.3.6
 
   '@battis/qui-cli.core@2.1.0(@battis/qui-cli.plugin@2.2.0)':
     dependencies:
