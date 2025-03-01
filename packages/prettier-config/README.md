@@ -10,10 +10,8 @@ npm i -D @battis/prettier-config
 
 ### Usage
 
-In `package.json`:
+In `.prettierrc.json`:
 
 ```json
-{
-  "prettier": "@battis/prettier-config"
-}
+"@battis/prettier-config"
 ```
