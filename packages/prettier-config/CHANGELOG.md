@@ -1,4 +1,10 @@
-# @battis/prettier-config
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [1.5.7](https://github.com/battis/typescript-config/compare/prettier-config/1.5.6...prettier-config/1.5.7) (2025-03-01)
+
+- e9efccf: update usage
 
 ## 1.5.6
 
