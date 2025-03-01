@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.4](https://github.com/battis/typescript-config/compare/webpack/2.0.3...webpack/2.0.4) (2025-03-01)
+
+
+### Bug Fixes
+
+* **webpack:** do not treat html files as images ([21ac5a3](https://github.com/battis/typescript-config/commit/21ac5a3d3ccf3cc04b0b321164cbc81b9f76f62c))
+
 ## [2.0.3](https://github.com/battis/typescript-config/compare/webpack/2.0.2...webpack/2.0.3) (2025-03-01)
 
 
