@@ -96,7 +96,7 @@ export default async function config({
             ]
           },
           {
-            test: /\.(jpe?g|gif|png|html)/,
+            test: /\.(jpe?g|gif|png)/,
             type: 'asset/resource',
             generator: {
               filename: 'assets/images/[name].[hash].[ext]'
