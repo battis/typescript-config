@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.10](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.3.9...monorepo-package-paths/0.3.10) (2025-03-01)
+
+
+### Bug Fixes
+
+* **monorepo-package-paths:** bump qui-cli to not have missing peer ([3ef8512](https://github.com/battis/typescript-config/commit/3ef8512fecff23bc82ae4076ead770c8d58b3aaa))
+
 ## [0.3.9](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.3.8...monorepo-package-paths/0.3.9) (2025-02-24)
 
 - bumping dependencies to remove @battis/qui-cli.env error when .env not found
