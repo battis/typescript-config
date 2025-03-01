@@ -3,13 +3,13 @@ import CssMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'node:path';
 import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import 'webpack-dev-server';
 import Options from '../Options.js';
-
 // TODO explore resolve.modules
 
 type SPAOptions = Options & {
@@ -43,18 +43,6 @@ export default async function config({
     publicPath: '/',
     ...output
   };
-
-  let ImageMinimizerWebpackPlugin = undefined;
-  try {
-    ImageMinimizerWebpackPlugin = await import(
-      'image-minimizer-webpack-plugin'
-    );
-    console.log('image-minimizer-webpack-plugin peer dependency found');
-  } catch (_) {
-    console.log(
-      'image-minimizer-webpack-plugin peer dependency not found: images will not be compressed (see https://github.com/battis/typescript-config/blob/main/packages/webpack/README.md#single-page-app)'
-    );
-  }
 
   const config: webpack.Configuration = {
     mode: Options.mode(production),
@@ -142,22 +130,7 @@ export default async function config({
         }),
         new MiniCssExtractPlugin({
           filename: 'assets/css/[name].[contenthash].css'
-        }),
-        ImageMinimizerWebpackPlugin &&
-          // @ts-ignore
-          new ImageMinimizerWebpackPlugin({
-            minimizer: {
-              implementation: ImageMinimizerWebpackPlugin.imageminMinify,
-              options: {
-                plugins: [
-                  ['gifsicle', { interlaced: true }],
-                  ['jpegtran', { progresive: true }],
-                  ['optipng', { optimizationLevel: 5 }],
-                  ['svgo', { plugins: ['preset-default', 'prefixIds'] }]
-                ]
-              }
-            }
-          })
+        })
       ],
       override?.plugins,
       plugins
@@ -168,7 +141,20 @@ export default async function config({
         minimizer: [
           '...',
           new TerserPlugin(terserOptions),
-          new CssMinimizerWebpackPlugin()
+          new CssMinimizerWebpackPlugin(),
+          new ImageMinimizerPlugin({
+            minimizer: {
+              implementation: ImageMinimizerPlugin.imageminMinify,
+              options: {
+                plugins: [
+                  ['gifsicle', { interlaced: true }],
+                  ['jpegtran', { progresive: true }],
+                  ['optipng', { optimizationLevel: 5 }],
+                  ['svgo', { plugins: ['preset-default', 'prefixIds'] }]
+                ]
+              }
+            }
+          })
         ],
         splitChunks: { chunks: 'all' }
       },
