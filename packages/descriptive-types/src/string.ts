@@ -1,11 +1,11 @@
 /** A string that represents a date value without a time */
-export type DateString = string;
+export type DateString<Format extends string = ''> = string;
 
 /** A string that represents a time without a date */
-export type TimeString = string;
+export type TimeString<Format extends string = ''> = string;
 
 /** A string that represents a date and time value */
-export type DateTimeString = string;
+export type DateTimeString<Format extends string = ''> = string;
 
 /** A string that is a UUID */
 export type UUIDString = string;
@@ -33,5 +33,3 @@ export type ListOf<
   ItemType extends string,
   Delimiter extends string = ','
 > = string;
-
-// TODO DateString<FormatDescriptor>
