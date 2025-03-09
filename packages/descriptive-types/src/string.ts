@@ -25,6 +25,9 @@ export type HTMLString = string;
 /** A string that is a number */
 export type NumericString = string;
 
+/** A string that is valid JSON */
+export type JSONString = string;
+
 // TODO ListOf<StringType, Delimiter>
 
 // TODO DateString<FormatDescriptor>
