@@ -28,6 +28,10 @@ export type NumericString = string;
 /** A string that is valid JSON */
 export type JSONString = string;
 
-// TODO ListOf<StringType, Delimiter>
+/** A string that is a list of data of ItemType separated by Delimiter */
+export type ListOf<
+  ItemType extends string,
+  Delimiter extends string = ','
+> = string;
 
 // TODO DateString<FormatDescriptor>
