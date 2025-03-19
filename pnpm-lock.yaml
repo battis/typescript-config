@@ -295,9 +295,6 @@ importers:
       prettier:
         specifier: latest
         version: 3.5.3
-      prettier-plugin-ejs:
-        specifier: ^1.0.3
-        version: 1.0.3(prettier@3.5.3)
       prettier-plugin-organize-imports:
         specifier: ^4.1.0
         version: 4.1.0(prettier@3.5.3)(typescript@5.8.2)
@@ -6438,11 +6435,6 @@ packages:
   prepend-http@2.0.0:
     resolution: {integrity: sha512-ravE6m9Atw9Z/jjttRUZ+clIXogdghyZAuWJ3qEzjT+jI/dL1ifAqhZeC5VHzQp1MSt1+jxKkFNemj/iO7tVUA==}
     engines: {node: '>=4'}
-
-  prettier-plugin-ejs@1.0.3:
-    resolution: {integrity: sha512-wTL4U/ou6dHHp1ZTfS67SHVb/dRgVhpIOTgCvkgdqF/Lw6A472W90dxFtsWSXIR7GmLZRgZb2PdArR9ozxX7cg==}
-    peerDependencies:
-      prettier: 2.x - 3.x
 
   prettier-plugin-organize-imports@4.1.0:
     resolution: {integrity: sha512-5aWRdCgv645xaa58X8lOxzZoiHAldAPChljr/MT0crXVOWTZ+Svl4hIWlz+niYSlO6ikE5UXkN1JrRvIP2ut0A==}
@@ -14993,10 +14985,6 @@ snapshots:
   prepend-http@1.0.4: {}
 
   prepend-http@2.0.0: {}
-
-  prettier-plugin-ejs@1.0.3(prettier@3.5.3):
-    dependencies:
-      prettier: 3.5.3
 
   prettier-plugin-organize-imports@4.1.0(prettier@3.5.3)(typescript@5.8.2):
     dependencies:
