@@ -1,6 +1,6 @@
 {
   "name": "@battis/descriptive-types",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Towards domain-specific types for more legible code",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/descriptive-types#readme",
   "repository": {

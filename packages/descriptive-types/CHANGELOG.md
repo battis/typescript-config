@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.2](https://github.com/battis/typescript-config/compare/descriptive-types/0.2.1...descriptive-types/0.2.2) (2025-04-01)
+
+
+### Features
+
+* **descriptive-types:** add MimeTypeString ([f2d6a25](https://github.com/battis/typescript-config/commit/f2d6a25407cabfeb9961f85bdcb175079ed6fe59))
+
 ## [0.2.1](https://github.com/battis/typescript-config/compare/descriptive-types/0.2.0...descriptive-types/0.2.1) (2025-04-01)
 
 
