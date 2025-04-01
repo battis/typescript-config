@@ -7,6 +7,9 @@ export type TimeString<Format extends string = ''> = string;
 /** A string that represents a date and time value */
 export type DateTimeString<Format extends string = ''> = string;
 
+/** A string that represents a time zone ID in standard format */
+export type TimeZoneString = string;
+
 /** A string that is a UUID */
 export type UUIDString = string;
 
