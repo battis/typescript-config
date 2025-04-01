@@ -15,7 +15,9 @@
     "build": "run-s build:*",
     "build:paths": "monorepo-package-paths -w --author --homepage --repository",
     "build:compile": "lerna run build",
-    "release": "pnpm publish -r --otp $(op item get npm --otp) --access public"
+    "release": "run-s release:*",
+    "release:build": "run-s build",
+    "release:publish": "pnpm publish -r --otp $(op item get npm --otp) --access public"
   },
   "prettier": "@battis/prettier-config",
   "eslintConfig": {
