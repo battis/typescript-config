@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.1](https://github.com/battis/typescript-config/compare/descriptive-types/0.2.0...descriptive-types/0.2.1) (2025-04-01)
+
+
+### Features
+
+* **descriptive-types:** added TimeZoneString ([589cd4f](https://github.com/battis/typescript-config/commit/589cd4f71322a71f9f84edfd8d68f4a5ddcd31ae))
+
 ## [0.2.0](https://github.com/battis/typescript-config/compare/descriptive-types/0.1.0...descriptive-types/0.2.0) (2025-03-09)
 
 
