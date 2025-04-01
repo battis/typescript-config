@@ -263,7 +263,7 @@ importers:
         version: 3.5.3
       yaml:
         specifier: ^2.7.0
-        version: 2.7.0
+        version: 2.7.1
     devDependencies:
       '@tsconfig/recommended':
         specifier: ^1.0.8
@@ -7906,6 +7906,11 @@ packages:
     engines: {node: '>= 14'}
     hasBin: true
 
+  yaml@2.7.1:
+    resolution: {integrity: sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==}
+    engines: {node: '>= 14'}
+    hasBin: true
+
   yargs-parser@20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
     engines: {node: '>=10'}
@@ -14159,7 +14164,7 @@ snapshots:
       tmp: 0.2.3
       tsconfig-paths: 4.2.0
       tslib: 2.8.1
-      yaml: 2.7.0
+      yaml: 2.7.1
       yargs: 17.7.2
       yargs-parser: 21.1.1
     optionalDependencies:
@@ -16552,6 +16557,8 @@ snapshots:
   yallist@4.0.0: {}
 
   yaml@2.7.0: {}
+
+  yaml@2.7.1: {}
 
   yargs-parser@20.2.9: {}
 
