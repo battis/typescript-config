@@ -32,7 +32,7 @@ export type NumericString = string;
 export type JSONString = string;
 
 /** a string that represents a MIME type */
-export type MimeTypeSTring = string;
+export type MimeTypeString = string;
 
 /** A string that is a list of data of ItemType separated by Delimiter */
 export type ListOf<
