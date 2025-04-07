@@ -16,7 +16,7 @@ import YAML from 'yaml';
 Root.configure({ root: process.cwd() });
 
 type Configuration = Plugin.Configuration & {
-  rootPackage?: string;
+  monorepoRoot?: string;
   repository?: boolean;
   author?: boolean;
   homepage?: boolean;
@@ -27,7 +27,7 @@ type Configuration = Plugin.Configuration & {
 export const name = 'monorepo-package-paths';
 export const src = import.meta.dirname;
 
-let rootPackage = path.join(Root.path(), 'package.json');
+let monorepoRoot = path.join(Root.path(), 'package.json');
 let repository = true;
 let author = true;
 let homepage = true;
@@ -35,7 +35,7 @@ let homepagePrefix = 'tree/main';
 let write = true;
 
 export function configure(config: Configuration = {}) {
-  rootPackage = Plugin.hydrate(config.rootPackage, rootPackage);
+  monorepoRoot = Plugin.hydrate(config.monorepoRoot, monorepoRoot);
   repository = Plugin.hydrate(config.repository, repository);
   author = Plugin.hydrate(config.author, author);
   homepage = Plugin.hydrate(config.homepage, homepage);
@@ -46,12 +46,12 @@ export function configure(config: Configuration = {}) {
 export function options(): Plugin.Options {
   return {
     opt: {
-      rootPackage: {
+      monorepoRoot: {
         short: 'p',
         description: `Path to monorepo root package file (default: ${Colors.url(
-          rootPackage
+          monorepoRoot
         )})`,
-        default: rootPackage
+        default: monorepoRoot
       },
       homepagePrefix: {
         short: 'x',
@@ -92,8 +92,8 @@ export function init(args: Plugin.ExpectedArguments<typeof options>) {
 export async function run() {
   const spinner = ora();
 
-  if (!rootPackage) {
-    throw new Error(`option ${Colors.value('--rootPackage')} must be defined`);
+  if (!monorepoRoot) {
+    throw new Error(`option ${Colors.value('--monorepoRoot')} must be defined`);
   }
 
   // TODO waiting on better typing in @battis/qui-cli
@@ -114,14 +114,13 @@ export async function run() {
     spinner.fail('Prettier not found, using basic JSON formatting');
   }
 
-  rootPackage = path.resolve(Root.path(), rootPackage);
-  spinner.start(`Loading ${Colors.url(rootPackage)}`);
-  const monorepo = await pkg.importLocal(rootPackage);
-  spinner.succeed(`Root package ${Colors.url(rootPackage)}`);
+  let rootPath = path.resolve(Root.path(), monorepoRoot);
+  spinner.start(`Loading ${Colors.url(rootPath)}`);
+  const monorepo = await pkg.importLocal(rootPath);
+  spinner.succeed(`Root package ${Colors.url(rootPath)}`);
 
-  let rootPath = rootPackage;
-  if (!fs.lstatSync(rootPackage).isDirectory()) {
-    rootPath = path.dirname(rootPackage);
+  if (!fs.lstatSync(rootPath).isDirectory()) {
+    rootPath = path.dirname(rootPath);
   }
 
   const workspaces: string[] = [];
