@@ -35,6 +35,7 @@
     "typescript": "^5.8.2"
   },
   "peerDependencies": {
+    "@tsconfig/recommended": "*",
     "add-peer-dependencies": "*",
     "app-root-path": "*",
     "copy-webpack-plugin": "*",
