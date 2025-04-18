@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.5](https://github.com/battis/typescript-config/compare/webpack/2.0.4...webpack/2.0.5) (2025-04-18)
+
+
+### Bug Fixes
+
+* **webpack:** include @tsconfig/recommended in peers ([99a1a2f](https://github.com/battis/typescript-config/commit/99a1a2f9f43b4845c94c8ba4cd0d7403b8a7b890))
+
 ## [2.0.4](https://github.com/battis/typescript-config/compare/webpack/2.0.3...webpack/2.0.4) (2025-03-01)
 
 
