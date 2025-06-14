@@ -1,4 +1,12 @@
-# @battis/eslint-config
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.0.4](https://github.com/battis/typescript-config/compare/eslint-config/2.0.3...eslint-config/2.0.4) (2025-06-14)
+
+### Features
+
+- more specific peer dependencies ([91263b3](https://github.com/battis/typescript-config/commit/91263b372ee5f1d400ebab1e26855e278fa40bca))
 
 ## 2.0.3
 
