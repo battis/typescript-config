@@ -2,12 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [1.6.0](https://github.com/battis/typescript-config/compare/prettier-config/1.5.7...prettier-config/1.6.0) (2025-04-03)
-
+## [1.6.1](https://github.com/battis/typescript-config/compare/prettier-config/1.6.0...prettier-config/1.6.1) (2025-06-14)
 
 ### Features
 
-* add prettier-plugin-jsdoc ([d519221](https://github.com/battis/typescript-config/commit/d51922125749dca31eec7b97eb90cae1e9e2ab76))
+- more specific peer dependencies ([240f4e1](https://github.com/battis/typescript-config/commit/240f4e1c37fe841be2e28e80c6639df1c8b6d4ee))
+
+## [1.6.0](https://github.com/battis/typescript-config/compare/prettier-config/1.5.7...prettier-config/1.6.0) (2025-04-03)
+
+### Features
+
+- add prettier-plugin-jsdoc ([d519221](https://github.com/battis/typescript-config/commit/d51922125749dca31eec7b97eb90cae1e9e2ab76))
 
 ## [1.5.7](https://github.com/battis/typescript-config/compare/prettier-config/1.5.6...prettier-config/1.5.7) (2025-03-01)
 
