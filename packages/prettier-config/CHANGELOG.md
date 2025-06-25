@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.6.3](https://github.com/battis/typescript-config/compare/prettier-config/1.6.2...prettier-config/1.6.3) (2025-06-25)
+
+
+### Bug Fixes
+
+* override @prettier/plugin-xml regression ([f8cadd4](https://github.com/battis/typescript-config/commit/f8cadd47a712d732231d00783d79852496f4ef20)), closes [/github.com/prettier/prettier/issues/17653#issuecomment-2995829311](https://github.com/battis//github.com/prettier/prettier/issues/17653/issues/issuecomment-2995829311)
+
 ## [1.6.2](https://github.com/battis/typescript-config/compare/prettier-config/1.6.1...prettier-config/1.6.2) (2025-06-18)
 
 
