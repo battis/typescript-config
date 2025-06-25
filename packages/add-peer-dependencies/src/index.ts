@@ -73,7 +73,7 @@ const args = await Core.init({
   }
 });
 const { remove, write, optional, dev, metadata, cache } = args.values;
-let { package: packagePath } = args.values;
+let packagePath: string | undefined = args.values.package;
 
 // TODO waiting on better typing in @battis/qui-cli
 if (!packagePath) {
@@ -156,6 +156,7 @@ async function identifyPeers({
         for (const packageName in targetPackage[dependency]) {
           const packageVersion = targetPackage[dependency][packageName];
           if (dependency == 'peerDependencies') {
+            // TODO address peer dependencies
           }
           const dependencyPackage = await pkg.importLocalWithNPMFallback(
             packageName,
@@ -216,6 +217,8 @@ const cachePath = path.join(
   cacheFilename
 );
 spinner.start('Identifying cache information');
+// FIXME resolve poor use of any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let cacheHistory: Record<string, any>;
 if (fs.existsSync(cachePath)) {
   cacheHistory = JSON.parse(fs.readFileSync(cachePath).toString());
@@ -288,6 +291,8 @@ if (remove) {
 
 cacheHistory = {
   ...cacheHistory,
+  // FIXME resolve poor use of any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ...Object.keys(peersMeta).reduce((built: Record<string, any>, peer) => {
     if (
       !projectPackage.peerDependenciesMeta ||
