@@ -10,5 +10,13 @@
     "prettier-plugin-organize-imports",
     "prettier-plugin-sql",
     "prettier-plugin-jsdoc"
+  ],
+  "overrides": [
+    {
+      "files": "**/*.{ts,tsx}",
+      "options": {
+        "parser": "typescript"
+      }
+    }
   ]
 }
