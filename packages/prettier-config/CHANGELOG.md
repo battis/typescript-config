@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.6.4](https://github.com/battis/typescript-config/compare/prettier-config/1.6.3...prettier-config/1.6.4) (2025-06-25)
+
+
+### Bug Fixes
+
+* revert to prettier@3.5.3 ([720ea9b](https://github.com/battis/typescript-config/commit/720ea9b90c7fd7530038480db0208a3be8d3c7a0))
+
 ## [1.6.3](https://github.com/battis/typescript-config/compare/prettier-config/1.6.2...prettier-config/1.6.3) (2025-06-25)
 
 
