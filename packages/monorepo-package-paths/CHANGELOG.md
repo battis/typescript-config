@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.0](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.3.10...monorepo-package-paths/0.4.0) (2025-06-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* **monorepo-package-path:** rename rootPackage to monorepoRoot
+
+* **monorepo-package-path:** rename rootPackage to monorepoRoot ([33842c5](https://github.com/battis/typescript-config/commit/33842c578be0b709ca48aee0d681dfc9a04a929a))
+
+
+### Features
+
+* **monorepo-package-paths:** update to use qui-cli@2.x plugin framework ([cf79f7f](https://github.com/battis/typescript-config/commit/cf79f7f5f2e878d5eaee5d0dfb2a9332d20b78cf))
+
+
+### Bug Fixes
+
+* more consistent support for all package managers ([d7ece72](https://github.com/battis/typescript-config/commit/d7ece72fa589300f3f35d4c63182e9fa2f2d07e8))
+
 ## [0.3.10](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.3.9...monorepo-package-paths/0.3.10) (2025-03-01)
 
 
