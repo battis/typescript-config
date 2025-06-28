@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.13](https://github.com/battis/typescript-config/compare/add-peer-dependencies/0.1.12...add-peer-dependencies/0.1.13) (2025-06-28)
+
+
+### Bug Fixes
+
+* more consistent support for all package managers ([3632268](https://github.com/battis/typescript-config/commit/3632268297270c0204ee95de83a3e156c229bf19))
+
 ## [0.1.12](https://github.com/battis/typescript-config/compare/add-peer-dependencies/0.1.11...add-peer-dependencies/0.1.12) (2025-02-24)
 
 ## [0.1.11](https://github.com/battis/typescript-config/compare/add-peer-dependencies/0.1.9...add-peer-dependencies/0.1.11) (2025-02-22)
