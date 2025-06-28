@@ -26,7 +26,7 @@
   "devDependencies": {
     "@battis/eslint-config": "workspace:latest",
     "@battis/prettier-config": "workspace:latest",
-    "@changesets/cli": "^2.29.4",
+    "@changesets/cli": "^2.29.5",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/config-pnpm-scopes": "^19.8.1",

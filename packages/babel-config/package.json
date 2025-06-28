@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@babel/cli": "^7.27.2",
-    "@babel/core": "^7.27.4",
+    "@babel/core": "^7.27.7",
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-typescript": "^7.27.1",
     "@npmcli/package-json": "^6.2.0",
@@ -37,7 +37,7 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "@types/node": "^22.15.32",
+    "@types/node": "^22.15.33",
     "@types/npmcli__package-json": "^4.0.4",
     "commit-and-tag-version": "^12.5.1",
     "del-cli": "^6.0.0",
