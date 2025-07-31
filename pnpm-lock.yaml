@@ -197,7 +197,7 @@ importers:
         specifier: ^4.1.5
         version: 4.1.5
       typescript:
-        specifier: '>=4.8.4 <5.9.0'
+        specifier: ^5.8.3
         version: 5.8.3
       typescript-eslint:
         specifier: ^8.38.0
@@ -3822,6 +3822,10 @@ packages:
     resolution: {integrity: sha512-ov6w/2LCiuyO4RLYGdpFGjkcs0wMTgGE8PrkTHikeUy5iJekXyPIKUjifk5CsE0pt7sMCrMZ3YNqoCj6idQOnQ==}
     engines: {node: '>=10'}
 
+  execa@5.1.1:
+    resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
+    engines: {node: '>=10'}
+
   execa@9.6.0:
     resolution: {integrity: sha512-jpWzZ1ZhwUmeWRhS7Qv3mhpOhLfwI+uAX4e5fOcXqwMR7EcJ0pj2kV1CVzHVMX/LphnKWD3LObjZCoJ71lKpHw==}
     engines: {node: ^18.19.0 || >=20.5.0}
@@ -4159,6 +4163,10 @@ packages:
 
   get-stream@6.0.0:
     resolution: {integrity: sha512-A1B3Bh1UmL0bidM/YX2NsCOTnGJePL9rO/M+Mw3m9f2gUpfokS0hi5Eah0WSUEWZdZhIZtMjkIYS7mDfOqNHbg==}
+    engines: {node: '>=10'}
+
+  get-stream@6.0.1:
+    resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
 
   get-stream@9.0.1:
@@ -4523,6 +4531,11 @@ packages:
 
   import-local@3.1.0:
     resolution: {integrity: sha512-ASB07uLtnDs1o6EHjKpX34BKYDSqnFerfTOJL2HvMqF70LnxpjkzDB8J44oT9pu4AMPkQwf8jl6szgvNd2tRIg==}
+    engines: {node: '>=8'}
+    hasBin: true
+
+  import-local@3.2.0:
+    resolution: {integrity: sha512-2SPlun1JUPWoM6t3F0dw0FkCF/jWY8kttcY4f599GLTSjh2OCuuhdTkJQsEcZzBqbXZGKMK2OqW1oZsjtf/gQA==}
     engines: {node: '>=8'}
     hasBin: true
 
@@ -5383,6 +5396,10 @@ packages:
 
   mime-db@1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
+    engines: {node: '>= 0.6'}
+
+  mime-db@1.54.0:
+    resolution: {integrity: sha512-aU5EJuIN2WDemCcAp2vFBfp/m4EAhWJnUNSSw0ixs7/kXbd6Pg64EmwJkNdFhB8aWt1sH2CTXrLxo/iAGV3oPQ==}
     engines: {node: '>= 0.6'}
 
   mime-types@2.1.35:
@@ -11123,7 +11140,7 @@ snapshots:
 
   compressible@2.0.18:
     dependencies:
-      mime-db: 1.52.0
+      mime-db: 1.54.0
 
   compression@1.8.1:
     dependencies:
@@ -12076,6 +12093,18 @@ snapshots:
       signal-exit: 3.0.7
       strip-final-newline: 2.0.0
 
+  execa@5.1.1:
+    dependencies:
+      cross-spawn: 7.0.6
+      get-stream: 6.0.1
+      human-signals: 2.1.0
+      is-stream: 2.0.1
+      merge-stream: 2.0.0
+      npm-run-path: 4.0.1
+      onetime: 5.1.2
+      signal-exit: 3.0.7
+      strip-final-newline: 2.0.0
+
   execa@9.6.0:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
@@ -12135,7 +12164,7 @@ snapshots:
 
   ext-list@2.2.2:
     dependencies:
-      mime-db: 1.52.0
+      mime-db: 1.54.0
 
   ext-name@5.0.0:
     dependencies:
@@ -12459,6 +12488,8 @@ snapshots:
 
   get-stream@6.0.0: {}
 
+  get-stream@6.0.1: {}
+
   get-stream@9.0.1:
     dependencies:
       '@sec-ant/readable-stream': 0.4.1
@@ -12474,7 +12505,7 @@ snapshots:
     dependencies:
       bin-build: 3.0.0
       bin-wrapper: 4.1.0
-      execa: 5.0.0
+      execa: 5.1.1
 
   git-hooks-list@4.1.1: {}
 
@@ -12890,6 +12921,11 @@ snapshots:
   import-lazy@3.1.0: {}
 
   import-local@3.1.0:
+    dependencies:
+      pkg-dir: 4.2.0
+      resolve-cwd: 3.0.0
+
+  import-local@3.2.0:
     dependencies:
       pkg-dir: 4.2.0
       resolve-cwd: 3.0.0
@@ -13894,6 +13930,8 @@ snapshots:
       picomatch: 2.3.1
 
   mime-db@1.52.0: {}
+
+  mime-db@1.54.0: {}
 
   mime-types@2.1.35:
     dependencies:
@@ -16396,7 +16434,7 @@ snapshots:
       cross-spawn: 7.0.6
       envinfo: 7.14.0
       fastest-levenshtein: 1.0.16
-      import-local: 3.1.0
+      import-local: 3.2.0
       interpret: 3.1.1
       rechoir: 0.8.0
       webpack: 5.101.0(webpack-cli@6.0.1)
