@@ -5,6 +5,7 @@ import path from 'node:path';
 import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import Options from '../Options.js';
+import { esmResolver } from '../esmResolver.js';
 
 // TODO explore resolve.modules
 
@@ -54,24 +55,24 @@ export default function config({
           {
             test: /\.tsx?$/i,
             use: {
-              loader: 'ts-loader',
+              loader: esmResolver('ts-loader'),
               options: { allowTsInNodeModules: true }
             }
           },
           {
             test: /\.svg$/i,
-            use: 'raw-loader'
+            use: esmResolver('raw-loader')
           },
           {
             test: /\.(s[ac]ss|css)$/i,
             use: [
               extractCSS ? MiniCssExtractPlugin.loader : 'style-loader',
               {
-                loader: 'css-loader',
+                loader: esmResolver('css-loader'),
                 options: { importLoaders: 2 }
               },
               {
-                loader: 'postcss-loader',
+                loader: esmResolver('postcss-loader'),
                 options: {
                   postcssOptions: {
                     plugins: ['postcss-preset-env']
@@ -79,7 +80,7 @@ export default function config({
                 }
               },
               {
-                loader: 'sass-loader',
+                loader: esmResolver('sass-loader'),
                 options: { api: 'modern' }
               }
             ]

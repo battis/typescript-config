@@ -10,6 +10,7 @@ import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import 'webpack-dev-server';
 import Options from '../Options.js';
+import { esmResolver } from '../esmResolver.js';
 // TODO explore resolve.modules
 
 type SPAOptions = Options & {
@@ -66,23 +67,23 @@ export default async function config({
           {
             test: /\.tsx?$/,
             use: {
-              loader: 'ts-loader'
+              loader: esmResolver('ts-loader')
             }
           },
           {
             test: /\.svg$/,
-            use: 'raw-loader'
+            use: esmResolver('raw-loader')
           },
           {
             test: /\.s?[ac]ss$/,
             use: [
               MiniCssExtractPlugin.loader,
               {
-                loader: 'css-loader',
+                loader: esmResolver('css-loader'),
                 options: { importLoaders: 2 }
               },
               {
-                loader: 'postcss-loader',
+                loader: esmResolver('postcss-loader'),
                 options: {
                   postcssOptions: {
                     plugins: ['postcss-preset-env']
@@ -90,7 +91,7 @@ export default async function config({
                 }
               },
               {
-                loader: 'sass-loader',
+                loader: import.meta.resolve('sass-loader'),
                 options: { api: 'modern' }
               }
             ]
