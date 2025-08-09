@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.6](https://github.com/battis/typescript-config/compare/webpack/2.0.5...webpack/2.0.6) (2025-08-09)
+
+
+### Bug Fixes
+
+* resolve webpack plugins in pnpm monorepo successfully ([0158005](https://github.com/battis/typescript-config/commit/0158005e2d3493a0ce80e5132e5eacdfa6d6d8db))
+
 ## [2.0.5](https://github.com/battis/typescript-config/compare/webpack/2.0.4...webpack/2.0.5) (2025-04-18)
 
 
