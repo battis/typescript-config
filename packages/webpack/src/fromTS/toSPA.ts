@@ -91,7 +91,7 @@ export default async function config({
                 }
               },
               {
-                loader: import.meta.resolve('sass-loader'),
+                loader: esmResolver('sass-loader'),
                 options: { api: 'modern' }
               }
             ]
