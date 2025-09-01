@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.7](https://github.com/battis/typescript-config/compare/webpack/2.0.6...webpack/2.0.7) (2025-09-01)
+
+
+### Bug Fixes
+
+* use esmResolver for sass-loader ([6400a2c](https://github.com/battis/typescript-config/commit/6400a2c9e89216e8e952238ca17cfd2fb85de293))
+
 ## [2.0.6](https://github.com/battis/typescript-config/compare/webpack/2.0.5...webpack/2.0.6) (2025-08-09)
 
 
