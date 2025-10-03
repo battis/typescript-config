@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.4](https://github.com/battis/typescript-config/compare/descriptive-types/0.2.3...descriptive-types/0.2.4) (2025-10-03)
+
+
+### Features
+
+* add ColorString ([a10a4b9](https://github.com/battis/typescript-config/commit/a10a4b99197cbe83f52b9bb76faedea71f735ca5))
+
 ## [0.2.3](https://github.com/battis/typescript-config/compare/descriptive-types/0.2.2...descriptive-types/0.2.3) (2025-04-02)
 
 
