@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.7.0](https://github.com/battis/typescript-config/compare/prettier-config/1.6.4...prettier-config/1.7.0) (2025-10-11)
+
+
+### Features
+
+* add support for ejs files ([1123e45](https://github.com/battis/typescript-config/commit/1123e45f64a99660120768d8bacba7b0e8611eff))
+
 ## [1.6.4](https://github.com/battis/typescript-config/compare/prettier-config/1.6.3...prettier-config/1.6.4) (2025-06-25)
 
 
