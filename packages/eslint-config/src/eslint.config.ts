@@ -1,20 +1,26 @@
 import eslint from '@eslint/js';
-import { TSESLint } from '@typescript-eslint/utils';
+import markdown from '@eslint/markdown';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import html from 'eslint-plugin-html';
-import markdown from 'eslint-plugin-markdown';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default defineConfig(
   eslint.configs.recommended,
   tseslint.configs.recommended,
-  markdown.configs.recommended,
   eslintConfigPrettier,
   {
     files: ['**/*.html'],
     plugins: { html }
   },
+  {
+    files: ['**/*.md'],
+    plugins: {
+      markdown
+    },
+    extends: ['markdown/recommended']
+  },
   { languageOptions: { globals: globals.node } },
   { ignores: ['**/dist/*'] }
-) as TSESLint.FlatConfig.ConfigArray;
+);
