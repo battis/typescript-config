@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.8](https://github.com/battis/typescript-config/compare/webpack/2.0.7...webpack/2.0.8) (2025-10-28)
+
+
+### Bug Fixes
+
+* suppress imagemin configuration error (?) ([8e1c709](https://github.com/battis/typescript-config/commit/8e1c709cf70bbb28b6a07631fef9da847741c62c))
+
 ## [2.0.7](https://github.com/battis/typescript-config/compare/webpack/2.0.6...webpack/2.0.7) (2025-09-01)
 
 
