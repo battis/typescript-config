@@ -144,6 +144,7 @@ export default async function config({
           new TerserPlugin(terserOptions),
           new CssMinimizerWebpackPlugin(),
           new ImageMinimizerPlugin({
+            // @ts-expect-error 2322 this is exactly what the docs say to do
             minimizer: {
               implementation: ImageMinimizerPlugin.imageminMinify,
               options: {

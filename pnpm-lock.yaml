@@ -347,97 +347,6 @@ importers:
         version: 5.9.3
 
   packages/webpack:
-    dependencies:
-      add-peer-dependencies:
-        specifier: '*'
-        version: 0.1.13
-      app-root-path:
-        specifier: '*'
-        version: 3.1.0
-      copy-webpack-plugin:
-        specifier: '*'
-        version: 13.0.1(webpack@5.102.1)
-      css-loader:
-        specifier: '*'
-        version: 7.1.2(webpack@5.102.1)
-      css-minimizer-webpack-plugin:
-        specifier: '*'
-        version: 7.0.2(webpack@5.102.1)
-      dotenv-webpack:
-        specifier: '*'
-        version: 8.1.1(webpack@5.102.1)
-      favicons:
-        specifier: '*'
-        version: 7.2.0
-      favicons-webpack-plugin:
-        specifier: '*'
-        version: 6.0.1(favicons@7.2.0)(webpack@5.102.1)
-      file-loader:
-        specifier: '*'
-        version: 6.2.0(webpack@5.102.1)
-      html-webpack-plugin:
-        specifier: '*'
-        version: 5.6.4(webpack@5.102.1)
-      image-minimizer-webpack-plugin:
-        specifier: '*'
-        version: 4.1.4(imagemin@9.0.1)(webpack@5.102.1)
-      imagemin:
-        specifier: '*'
-        version: 9.0.1
-      imagemin-gifsicle:
-        specifier: '*'
-        version: 7.0.0
-      imagemin-jpegtran:
-        specifier: '*'
-        version: 8.0.0
-      imagemin-optipng:
-        specifier: '*'
-        version: 8.0.0
-      imagemin-svgo:
-        specifier: '*'
-        version: 11.0.1
-      mini-css-extract-plugin:
-        specifier: '*'
-        version: 2.9.4(webpack@5.102.1)
-      postcss:
-        specifier: '*'
-        version: 8.5.6
-      postcss-loader:
-        specifier: '*'
-        version: 8.2.0(postcss@8.5.6)(typescript@5.9.3)(webpack@5.102.1)
-      postcss-preset-env:
-        specifier: '*'
-        version: 10.4.0(postcss@8.5.6)
-      raw-loader:
-        specifier: '*'
-        version: 4.0.2(webpack@5.102.1)
-      sass:
-        specifier: ^1.0
-        version: 1.93.2
-      sass-loader:
-        specifier: '*'
-        version: 16.0.6(sass@1.93.2)(webpack@5.102.1)
-      style-loader:
-        specifier: '*'
-        version: 4.0.0(webpack@5.102.1)
-      terser-webpack-plugin:
-        specifier: '*'
-        version: 5.3.14(webpack@5.102.1)
-      ts-loader:
-        specifier: '*'
-        version: 9.5.4(typescript@5.9.3)(webpack@5.102.1)
-      url-loader:
-        specifier: '*'
-        version: 4.1.1(file-loader@6.2.0(webpack@5.102.1))(webpack@5.102.1)
-      webpack:
-        specifier: ^5.0
-        version: 5.102.1(webpack-cli@6.0.1)
-      webpack-cli:
-        specifier: '*'
-        version: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.102.1)
-      webpack-dev-server:
-        specifier: '*'
-        version: 5.2.2(webpack-cli@6.0.1)(webpack@5.102.1)
     devDependencies:
       '@tsconfig/recommended':
         specifier: ^1.0.10
@@ -448,21 +357,111 @@ importers:
       '@types/node':
         specifier: ^24.9.1
         version: 24.9.1
+      add-peer-dependencies:
+        specifier: ^0.1.13
+        version: 0.1.13
+      app-root-path:
+        specifier: ^3.1.0
+        version: 3.1.0
       commit-and-tag-version:
         specifier: ^12.6.0
         version: 12.6.0
+      copy-webpack-plugin:
+        specifier: ^13.0.1
+        version: 13.0.1(webpack@5.102.1)
       copyfiles:
         specifier: ^2.4.1
         version: 2.4.1
+      css-loader:
+        specifier: ^7.1.2
+        version: 7.1.2(webpack@5.102.1)
+      css-minimizer-webpack-plugin:
+        specifier: ^7.0.2
+        version: 7.0.2(webpack@5.102.1)
       del-cli:
         specifier: ^6.0.0
         version: 6.0.0
+      dotenv-webpack:
+        specifier: ^8.1.1
+        version: 8.1.1(webpack@5.102.1)
+      favicons:
+        specifier: ^7.2.0
+        version: 7.2.0
+      favicons-webpack-plugin:
+        specifier: ^6.0.1
+        version: 6.0.1(favicons@7.2.0)(webpack@5.102.1)
+      file-loader:
+        specifier: ^6.2.0
+        version: 6.2.0(webpack@5.102.1)
+      html-webpack-plugin:
+        specifier: ^5.6.4
+        version: 5.6.4(webpack@5.102.1)
+      image-minimizer-webpack-plugin:
+        specifier: ^4.1.4
+        version: 4.1.4(imagemin@9.0.1)(webpack@5.102.1)
+      imagemin:
+        specifier: ^9.0.1
+        version: 9.0.1
+      imagemin-gifsicle:
+        specifier: ^7.0.0
+        version: 7.0.0
+      imagemin-jpegtran:
+        specifier: ^8.0.0
+        version: 8.0.0
+      imagemin-optipng:
+        specifier: ^8.0.0
+        version: 8.0.0
+      imagemin-svgo:
+        specifier: ^11.0.1
+        version: 11.0.1
+      mini-css-extract-plugin:
+        specifier: ^2.9.4
+        version: 2.9.4(webpack@5.102.1)
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
+      postcss:
+        specifier: ^8.5.6
+        version: 8.5.6
+      postcss-loader:
+        specifier: ^8.2.0
+        version: 8.2.0(postcss@8.5.6)(typescript@5.9.3)(webpack@5.102.1)
+      postcss-preset-env:
+        specifier: ^10.4.0
+        version: 10.4.0(postcss@8.5.6)
+      raw-loader:
+        specifier: ^4.0.2
+        version: 4.0.2(webpack@5.102.1)
+      sass:
+        specifier: ^1.93.2
+        version: 1.93.2
+      sass-loader:
+        specifier: ^16.0.6
+        version: 16.0.6(sass@1.93.2)(webpack@5.102.1)
+      style-loader:
+        specifier: ^4.0.0
+        version: 4.0.0(webpack@5.102.1)
+      terser-webpack-plugin:
+        specifier: ^5.3.14
+        version: 5.3.14(webpack@5.102.1)
+      ts-loader:
+        specifier: ^9.5.4
+        version: 9.5.4(typescript@5.9.3)(webpack@5.102.1)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
+      url-loader:
+        specifier: ^4.1.1
+        version: 4.1.1(file-loader@6.2.0(webpack@5.102.1))(webpack@5.102.1)
+      webpack:
+        specifier: ^5.102.1
+        version: 5.102.1(webpack-cli@6.0.1)
+      webpack-cli:
+        specifier: ^6.0.1
+        version: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.102.1)
+      webpack-dev-server:
+        specifier: ^5.2.2
+        version: 5.2.2(webpack-cli@6.0.1)(webpack@5.102.1)
 
 packages:
 
