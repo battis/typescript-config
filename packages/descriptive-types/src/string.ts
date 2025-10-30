@@ -45,3 +45,7 @@ export type ListOf<
   ItemType extends string,
   Delimiter extends string = ','
 > = string;
+
+/** A string that represents a boolean value */
+export type BooleanString<ExpectedValues extends string = 'true' | 'false'> =
+  ExpectedValues;
