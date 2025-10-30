@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.5](https://github.com/battis/typescript-config/compare/descriptive-types/0.2.4...descriptive-types/0.2.5) (2025-10-30)
+
+
+### Features
+
+* BooleanString ([21a51b6](https://github.com/battis/typescript-config/commit/21a51b61dde74045d0fa704ba55a3793321dabc2))
+
 ## [0.2.4](https://github.com/battis/typescript-config/compare/descriptive-types/0.2.3...descriptive-types/0.2.4) (2025-10-03)
 
 
