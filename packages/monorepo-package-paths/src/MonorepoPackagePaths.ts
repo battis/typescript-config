@@ -175,89 +175,96 @@ export async function run() {
         }
       : undefined;
 
+  let packagePaths: string[] = [];
   for (const workspace of workspaces) {
-    const pathToWorkspace = path.join(rootPath, workspace);
-    for (const packagePath of await glob(pathToWorkspace)) {
-      const workspaceRelativePath = packagePath.replace(
-        new RegExp(`^${rootPath}/`),
-        ''
-      );
-      spinner.start(Colors.url(workspaceRelativePath));
-      const workspacePackagePath = path.join(packagePath, 'package.json');
-      try {
-        const workspacePackage = await pkg.importLocal(workspacePackagePath);
+    if (/^!/.test(workspace)) {
+      const ignorePath = path.join(rootPath, workspace.replace(/^!/, ''));
+      packagePaths = packagePaths.filter((p) => p !== ignorePath);
+    } else {
+      packagePaths.push(...(await glob(path.join(rootPath, workspace))));
+    }
+  }
 
-        let workspaceHomepage: string | URL | undefined =
-          workspacePackage.homepage;
-        if (rootHomepage) {
-          workspaceHomepage = workspaceHomepage
-            ? new URL(workspaceHomepage)
-            : new URL(rootHomepage);
-          workspaceHomepage.pathname = path.join(
-            rootHomepage.pathname,
-            homepagePrefix,
-            workspaceRelativePath
-          );
-        }
+  for (const packagePath of packagePaths) {
+    const workspaceRelativePath = packagePath.replace(
+      new RegExp(`^${rootPath}/`),
+      ''
+    );
+    spinner.start(Colors.url(workspaceRelativePath));
+    const workspacePackagePath = path.join(packagePath, 'package.json');
+    try {
+      const workspacePackage = await pkg.importLocal(workspacePackagePath);
 
-        let workspaceRepository = workspacePackage.repository;
-        if (rootRepository) {
-          workspaceRepository = {
-            ...rootRepository,
-            directory: workspaceRelativePath
-          };
-        }
-
-        if (write) {
-          const updatedPackage = { ...workspacePackage };
-          if (rootAuthor) {
-            updatedPackage.author = rootAuthor;
-          }
-          if (workspaceHomepage) {
-            updatedPackage.homepage = workspaceHomepage.toString();
-          }
-          if (workspaceRepository) {
-            updatedPackage.repository = workspaceRepository;
-          }
-          fs.writeFileSync(
-            workspacePackagePath,
-            prettier
-              ? await prettier.format(JSON.stringify(updatedPackage), {
-                  ...(await prettier.resolveConfig(workspacePackagePath)),
-                  filepath: workspacePackagePath
-                })
-              : JSON.stringify(updatedPackage, null, 2) + '\n'
-          );
-          spinner.succeed(`Updated ${Colors.url(workspaceRelativePath)}`);
-        } else {
-          const summary: Record<string, unknown> = {
-            name: workspacePackage.name
-          };
-          if (rootAuthor) {
-            summary['author'] = rootAuthor;
-          }
-          if (workspaceHomepage) {
-            summary['homepage'] = workspaceHomepage.toString();
-          }
-          if (workspaceRepository) {
-            summary['repository'] = workspaceRepository;
-          }
-          spinner.succeed(`Computed ${Colors.url(workspaceRelativePath)}`);
-          Log.info(
-            prettier
-              ? await prettier.format(JSON.stringify(summary), {
-                  ...(await prettier.resolveConfig(workspacePackagePath)),
-                  filepath: workspacePackagePath
-                })
-              : JSON.stringify(summary, null, 2) + '\n'
-          );
-        }
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      } catch (_) {
-        spinner.fail(
-          Colors.error(`Not found: ${`${Colors.url(workspaceRelativePath)}`}`)
+      let workspaceHomepage: string | URL | undefined =
+        workspacePackage.homepage;
+      if (rootHomepage) {
+        workspaceHomepage = workspaceHomepage
+          ? new URL(workspaceHomepage)
+          : new URL(rootHomepage);
+        workspaceHomepage.pathname = path.join(
+          rootHomepage.pathname,
+          homepagePrefix,
+          workspaceRelativePath
         );
       }
+
+      let workspaceRepository = workspacePackage.repository;
+      if (rootRepository) {
+        workspaceRepository = {
+          ...rootRepository,
+          directory: workspaceRelativePath
+        };
+      }
+
+      if (write) {
+        const updatedPackage = { ...workspacePackage };
+        if (rootAuthor) {
+          updatedPackage.author = rootAuthor;
+        }
+        if (workspaceHomepage) {
+          updatedPackage.homepage = workspaceHomepage.toString();
+        }
+        if (workspaceRepository) {
+          updatedPackage.repository = workspaceRepository;
+        }
+        fs.writeFileSync(
+          workspacePackagePath,
+          prettier
+            ? await prettier.format(JSON.stringify(updatedPackage), {
+                ...(await prettier.resolveConfig(workspacePackagePath)),
+                filepath: workspacePackagePath
+              })
+            : JSON.stringify(updatedPackage, null, 2) + '\n'
+        );
+        spinner.succeed(`Updated ${Colors.url(workspaceRelativePath)}`);
+      } else {
+        const summary: Record<string, unknown> = {
+          name: workspacePackage.name
+        };
+        if (rootAuthor) {
+          summary['author'] = rootAuthor;
+        }
+        if (workspaceHomepage) {
+          summary['homepage'] = workspaceHomepage.toString();
+        }
+        if (workspaceRepository) {
+          summary['repository'] = workspaceRepository;
+        }
+        spinner.succeed(`Computed ${Colors.url(workspaceRelativePath)}`);
+        Log.info(
+          prettier
+            ? await prettier.format(JSON.stringify(summary), {
+                ...(await prettier.resolveConfig(workspacePackagePath)),
+                filepath: workspacePackagePath
+              })
+            : JSON.stringify(summary, null, 2) + '\n'
+        );
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_) {
+      spinner.fail(
+        Colors.error(`Not found: ${`${Colors.url(workspaceRelativePath)}`}`)
+      );
     }
   }
 }
