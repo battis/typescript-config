@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.1](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.4.0...monorepo-package-paths/0.4.1) (2025-11-07)
+
+
+### Bug Fixes
+
+* properly ignore ignored workspace paths ([f739809](https://github.com/battis/typescript-config/commit/f739809b3220edbc2d6057424fed62f3b6ff5cec))
+
 ## [0.4.0](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.3.10...monorepo-package-paths/0.4.0) (2025-06-28)
 
 
