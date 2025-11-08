@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.2](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.4.1...monorepo-package-paths/0.4.2) (2025-11-08)
+
+
+### Bug Fixes
+
+* spider only directories ([c4d7a07](https://github.com/battis/typescript-config/commit/c4d7a076fd73ff086491b363c5c2512d4bdc3e8e))
+
 ## [0.4.1](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.4.0...monorepo-package-paths/0.4.1) (2025-11-07)
 
 
