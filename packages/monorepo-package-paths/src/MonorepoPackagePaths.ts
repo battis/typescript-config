@@ -181,7 +181,11 @@ export async function run() {
       const ignorePath = path.join(rootPath, workspace.replace(/^!/, ''));
       packagePaths = packagePaths.filter((p) => p !== ignorePath);
     } else {
-      packagePaths.push(...(await glob(path.join(rootPath, workspace))));
+      packagePaths.push(
+        ...(await glob(path.join(rootPath, workspace))).filter((p) =>
+          fs.statSync(p).isDirectory()
+        )
+      );
     }
   }
 
