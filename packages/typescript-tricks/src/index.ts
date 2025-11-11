@@ -6,6 +6,7 @@ export * from './Forms';
 export * from './JSONValue';
 export * from './MethodNames';
 export * from './Mixin';
+export * from './OneOf';
 export * from './OptionalProperty';
 export * from './PropertyRequirements';
 export * from './Shorthand';
