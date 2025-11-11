@@ -1,4 +1,13 @@
-# @battis/typescript-tricks
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [0.7.5](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.4...typescript-tricks/0.7.5) (2025-11-11)
+
+
+### Features
+
+* tjjfvi's OneOf type ([bf3a78d](https://github.com/battis/typescript-config/commit/bf3a78d834079029e2aa2da5313bc8387f1239c5))
 
 ## 0.7.4
 
