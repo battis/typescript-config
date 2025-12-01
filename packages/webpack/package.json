@@ -35,7 +35,7 @@
     "copyfiles": "^2.4.1",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.2",
-    "del-cli": "^6.0.0",
+    "del-cli": "^7.0.0",
     "dotenv-webpack": "^8.1.1",
     "favicons": "^7.2.0",
     "favicons-webpack-plugin": "^6.0.1",
