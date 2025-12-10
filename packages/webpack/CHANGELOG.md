@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.0](https://github.com/battis/typescript-config/compare/webpack/2.0.8...webpack/2.1.0) (2025-12-10)
+
+
+### Features
+
+* toVanillaJS() toggle content hashes off ([fde5c94](https://github.com/battis/typescript-config/commit/fde5c94ab4f43db8eade01a35fcd4e1d3c57608f))
+
 ## [2.0.8](https://github.com/battis/typescript-config/compare/webpack/2.0.7...webpack/2.0.8) (2025-10-28)
 
 
