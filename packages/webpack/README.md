@@ -63,7 +63,7 @@ Optional unless otherwise indicated.
 | `template`        | Path to template directory (if needed) relative to `root`, from which to draw static web templates that will be updated during the build. Defaults to `'template'`                                                                                                          |
 | `bundle`          | Name of the module to bundle. Defaults to `'main'`                                                                                                                                                                                                                          |
 | `production`      | Whether this is a production or development build (which includes a great deal more debugging information and takes up a a lot more space). Defaults to `true`                                                                                                              |
-| `override`        | An object indicating which of the below Webpak configurations override, rather than extend the default configurationof the script. By default, all overrides are `false`. Possible overrides include `resolveExtensions`,`moduleRules`,`externals`,`plugins`,`optimization` |
+| `override`        | An object indicating which of the below Webpack configurations override, rather than extend the default configurationof the script. By default, all overrides are `false`. Possible overrides include `resolveExtensions`,`moduleRules`,`externals`,`plugins`,`optimization` |
 
 ##### Webpack configuration
 
