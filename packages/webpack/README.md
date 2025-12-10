@@ -139,6 +139,7 @@ export default bundle.fromTS.toVanillaJS({
 | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | `target`     | Webpack target value. Defaults to `'web'`, but `'node'` is useful for compiling node apps and libraries.               |
 | `extractCSS` | Boolean value determining whether CSS is extracted as a separate file or embedded in the JS bundle. Defaults to `true` |
+| `hash` | Boolean value determining whether content hashes are appended to output file names. Defaults to `true` |
 
 #### `package.json`
 

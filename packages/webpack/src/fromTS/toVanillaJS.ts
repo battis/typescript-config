@@ -12,6 +12,7 @@ import { esmResolver } from '../esmResolver.js';
 type VanillaOptions = Options & {
   target?: webpack.Configuration['target'];
   extractCSS?: boolean;
+  hash?:boolean
 };
 
 export default function config({
@@ -29,12 +30,13 @@ export default function config({
   plugins = [],
   optimization,
   extractCSS = true,
+  hash = true,
 
   terserOptions
 }: VanillaOptions): webpack.Configuration {
   output = {
     path: 'build',
-    filename: '[name].[contenthash]',
+    filename: `[name]${hash ? '.[contenthash]' :''}`,
     ...output
   };
   return {
@@ -89,7 +91,7 @@ export default function config({
             test: /\.(jpe?g|gif|png)$/i,
             type: 'asset/resource',
             generator: {
-              filename: 'assets/images/[name].[hash].[ext]'
+              filename: `assets/images/[name]${hash ? '.[hash]' :''}.[ext]`
             }
           }
         ],
@@ -112,7 +114,7 @@ export default function config({
         new MiniCssExtractPlugin({
           filename:
             path.extname(output.filename!) == '.js'
-              ? '[name].[contenthash].css'
+              ? `[name]${hash?'.[contenthash]':''}.css`
               : `${output.filename}.css`
         })
       ],
