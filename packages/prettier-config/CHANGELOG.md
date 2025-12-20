@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.7.2](https://github.com/battis/typescript-config/compare/prettier-config/1.7.1...prettier-config/1.7.2) (2025-12-20)
+
+
+### Bug Fixes
+
+* update README to document `.npmrc` in `pnpm` monorepos ([2fe8040](https://github.com/battis/typescript-config/commit/2fe80408160dd421b8381da9e88f936c31a91cb9))
+
 ## [1.7.1](https://github.com/battis/typescript-config/compare/prettier-config/1.7.0...prettier-config/1.7.1) (2025-11-28)
 
 
