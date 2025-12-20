@@ -302,31 +302,31 @@ importers:
     devDependencies:
       '@prettier/plugin-xml':
         specifier: ^3.4.2
-        version: 3.4.2(prettier@3.7.1)
+        version: 3.4.2(prettier@3.7.4)
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^5.2.2
-        version: 5.2.2(prettier@3.7.1)
+        version: 5.2.2(prettier@3.7.4)
       commit-and-tag-version:
         specifier: ^12.6.0
         version: 12.6.0
       prettier:
-        specifier: ^3.7.1
-        version: 3.7.1
+        specifier: ^3.7.4
+        version: 3.7.4
       prettier-plugin-ejs:
         specifier: ^1.0.3
-        version: 1.0.3(prettier@3.7.1)
+        version: 1.0.3(prettier@3.7.4)
       prettier-plugin-jsdoc:
         specifier: ^1.7.0
-        version: 1.7.0(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.1))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3))(prettier@3.7.1)
+        version: 1.7.0(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.4))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.4)(typescript@5.9.3))(prettier@3.7.4)
       prettier-plugin-organize-imports:
         specifier: ^4.3.0
-        version: 4.3.0(prettier@3.7.1)(typescript@5.9.3)
+        version: 4.3.0(prettier@3.7.4)(typescript@5.9.3)
       prettier-plugin-packagejson:
         specifier: ^2.5.20
-        version: 2.5.20(prettier@3.7.1)
+        version: 2.5.20(prettier@3.7.4)
       prettier-plugin-sql:
         specifier: ^0.19.2
-        version: 0.19.2(prettier@3.7.1)
+        version: 0.19.2(prettier@3.7.4)
 
   packages/typescript-tricks:
     devDependencies:
@@ -5120,6 +5120,7 @@ packages:
 
   jsox@1.2.124:
     resolution: {integrity: sha512-KwptI8xUfOt7qJ+P+2utrJIEHTgDjXpBsDhPSM4GDq++4by+LX9nUFee97QfRloGcMh5iA9Ha/4UCVZl7zWzuA==}
+    deprecated: Discovered error in stringification with certain references
     hasBin: true
 
   junk@4.0.1:
@@ -6719,6 +6720,11 @@ packages:
 
   prettier@3.7.1:
     resolution: {integrity: sha512-RWKXE4qB3u5Z6yz7omJkjWwmTfLdcbv44jUVHC5NpfXwFGzvpQM798FGv/6WNK879tc+Cn0AAyherCl1KjbyZQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  prettier@3.7.4:
+    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -10306,10 +10312,10 @@ snapshots:
       write-file-atomic: 5.0.1
       write-yaml-file: 5.0.0
 
-  '@prettier/plugin-xml@3.4.2(prettier@3.7.1)':
+  '@prettier/plugin-xml@3.4.2(prettier@3.7.4)':
     dependencies:
       '@xml-tools/parser': 1.0.11
-      prettier: 3.7.1
+      prettier: 3.7.4
 
   '@sec-ant/readable-stream@0.4.1': {}
 
@@ -10368,7 +10374,7 @@ snapshots:
 
   '@tokenizer/token@0.3.0': {}
 
-  '@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.1)':
+  '@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.4)':
     dependencies:
       '@babel/generator': 7.28.5
       '@babel/parser': 7.28.5
@@ -10376,7 +10382,7 @@ snapshots:
       '@babel/types': 7.28.5
       javascript-natural-sort: 0.7.1
       lodash: 4.17.21
-      prettier: 3.7.1
+      prettier: 3.7.4
     transitivePeerDependencies:
       - supports-color
 
@@ -15525,17 +15531,17 @@ snapshots:
 
   presentable-error@0.0.1: {}
 
-  prettier-plugin-ejs@1.0.3(prettier@3.7.1):
+  prettier-plugin-ejs@1.0.3(prettier@3.7.4):
     dependencies:
-      prettier: 3.7.1
+      prettier: 3.7.4
 
-  prettier-plugin-jsdoc@1.7.0(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.1))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3))(prettier@3.7.1):
+  prettier-plugin-jsdoc@1.7.0(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.4))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.4)(typescript@5.9.3))(prettier@3.7.4):
     dependencies:
       binary-searching: 2.0.5
       comment-parser: 1.4.1
       mdast-util-from-markdown: 2.0.2
-      prettier: 3.7.1
-      prettier-plugin-tailwindcss: 0.7.1(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.1))(prettier-plugin-jsdoc@1.7.0(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.1))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3))(prettier@3.7.1))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3))(prettier@3.7.1)
+      prettier: 3.7.4
+      prettier-plugin-tailwindcss: 0.7.1(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.4))(prettier-plugin-jsdoc@1.7.0(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.4))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.4)(typescript@5.9.3))(prettier@3.7.4))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.4)(typescript@5.9.3))(prettier@3.7.4)
     transitivePeerDependencies:
       - '@ianvs/prettier-plugin-sort-imports'
       - '@prettier/plugin-hermes'
@@ -15554,37 +15560,39 @@ snapshots:
       - prettier-plugin-svelte
       - supports-color
 
-  prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3):
+  prettier-plugin-organize-imports@4.3.0(prettier@3.7.4)(typescript@5.9.3):
     dependencies:
-      prettier: 3.7.1
+      prettier: 3.7.4
       typescript: 5.9.3
 
-  prettier-plugin-packagejson@2.5.20(prettier@3.7.1):
+  prettier-plugin-packagejson@2.5.20(prettier@3.7.4):
     dependencies:
       sort-package-json: 3.5.0
       synckit: 0.11.11
     optionalDependencies:
-      prettier: 3.7.1
+      prettier: 3.7.4
 
-  prettier-plugin-sql@0.19.2(prettier@3.7.1):
+  prettier-plugin-sql@0.19.2(prettier@3.7.4):
     dependencies:
       jsox: 1.2.124
       node-sql-parser: 5.3.13
-      prettier: 3.7.1
+      prettier: 3.7.4
       sql-formatter: 15.6.10
       tslib: 2.8.1
 
-  prettier-plugin-tailwindcss@0.7.1(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.1))(prettier-plugin-jsdoc@1.7.0(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.1))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3))(prettier@3.7.1))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3))(prettier@3.7.1):
+  prettier-plugin-tailwindcss@0.7.1(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.4))(prettier-plugin-jsdoc@1.7.0(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.4))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.4)(typescript@5.9.3))(prettier@3.7.4))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.4)(typescript@5.9.3))(prettier@3.7.4):
     dependencies:
-      prettier: 3.7.1
+      prettier: 3.7.4
     optionalDependencies:
-      '@trivago/prettier-plugin-sort-imports': 5.2.2(prettier@3.7.1)
-      prettier-plugin-jsdoc: 1.7.0(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.1))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3))(prettier@3.7.1)
-      prettier-plugin-organize-imports: 4.3.0(prettier@3.7.1)(typescript@5.9.3)
+      '@trivago/prettier-plugin-sort-imports': 5.2.2(prettier@3.7.4)
+      prettier-plugin-jsdoc: 1.7.0(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.7.4))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.4)(typescript@5.9.3))(prettier@3.7.4)
+      prettier-plugin-organize-imports: 4.3.0(prettier@3.7.4)(typescript@5.9.3)
 
   prettier@2.8.8: {}
 
   prettier@3.7.1: {}
+
+  prettier@3.7.4: {}
 
   pretty-error@4.0.0:
     dependencies:
