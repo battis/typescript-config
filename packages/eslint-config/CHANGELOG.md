@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.8](https://github.com/battis/typescript-config/compare/eslint-config/2.0.7...eslint-config/2.0.8) (2025-12-20)
+
+
+### Bug Fixes
+
+* update README to document `.npmrc` in `pnpm` monorepos ([2fe8040](https://github.com/battis/typescript-config/commit/2fe80408160dd421b8381da9e88f936c31a91cb9))
+
 ## [2.0.7](https://github.com/battis/typescript-config/compare/eslint-config/2.0.6...eslint-config/2.0.7) (2025-10-28)
 
 Bump dependencies
