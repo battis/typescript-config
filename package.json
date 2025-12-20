@@ -29,7 +29,7 @@
     "@battis/prettier-config": "workspace:^",
     "@changesets/cli": "^2.29.8",
     "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/config-conventional": "^20.2.0",
     "@commitlint/config-pnpm-scopes": "^19.9.1",
     "lerna": "^8.2.4",
     "monorepo-package-paths": "workspace:*",
