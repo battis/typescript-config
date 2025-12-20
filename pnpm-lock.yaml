@@ -16,10 +16,10 @@ importers:
         version: link:packages/prettier-config
       '@changesets/cli':
         specifier: ^2.29.8
-        version: 2.29.8(@types/node@24.10.4)
+        version: 2.29.8(@types/node@25.0.3)
       '@commitlint/cli':
         specifier: ^19.8.1
-        version: 19.8.1(@types/node@24.10.4)(typescript@5.9.3)
+        version: 19.8.1(@types/node@25.0.3)(typescript@5.9.3)
       '@commitlint/config-conventional':
         specifier: ^19.8.1
         version: 19.8.1
@@ -28,7 +28,7 @@ importers:
         version: 19.9.1
       lerna:
         specifier: ^8.2.4
-        version: 8.2.4(@types/node@24.10.4)(encoding@0.1.13)
+        version: 8.2.4(@types/node@25.0.3)(encoding@0.1.13)
       monorepo-package-paths:
         specifier: workspace:*
         version: link:packages/monorepo-package-paths
@@ -64,13 +64,13 @@ importers:
         specifier: ^1.0.13
         version: 1.0.13
       '@types/node':
-        specifier: ^24.10.1
+        specifier: ^24.10.4
         version: 24.10.4
       '@types/semver':
         specifier: ^7.7.1
         version: 7.7.1
       commit-and-tag-version:
-        specifier: ^12.6.0
+        specifier: ^12.6.1
         version: 12.6.1
       del-cli:
         specifier: ^6.0.0
@@ -122,13 +122,13 @@ importers:
         version: 5.9.3
     devDependencies:
       '@types/node':
-        specifier: ^24.10.1
+        specifier: ^24.10.4
         version: 24.10.4
       '@types/npmcli__package-json':
         specifier: ^4.0.4
         version: 4.0.4
       commit-and-tag-version:
-        specifier: ^12.6.0
+        specifier: ^12.6.1
         version: 12.6.1
       del-cli:
         specifier: ^6.0.0
@@ -143,7 +143,7 @@ importers:
         specifier: ^1.0.13
         version: 1.0.13
       commit-and-tag-version:
-        specifier: ^12.6.0
+        specifier: ^12.6.1
         version: 12.6.1
       del-cli:
         specifier: ^6.0.0
@@ -158,7 +158,7 @@ importers:
   packages/eslint-config:
     devDependencies:
       '@eslint/js':
-        specifier: ^9.39.1
+        specifier: ^9.39.2
         version: 9.39.2
       '@eslint/markdown':
         specifier: ^7.5.1
@@ -173,16 +173,16 @@ importers:
         specifier: ^2.0.2
         version: 2.0.2
       '@typescript-eslint/utils':
-        specifier: ^8.48.0
+        specifier: ^8.50.0
         version: 8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       commit-and-tag-version:
-        specifier: ^12.6.0
+        specifier: ^12.6.1
         version: 12.6.1
       del-cli:
         specifier: ^6.0.0
         version: 6.0.0
       eslint:
-        specifier: ^9.39.1
+        specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
       eslint-config-prettier:
         specifier: ^10.1.8
@@ -200,7 +200,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       typescript-eslint:
-        specifier: ^8.48.0
+        specifier: ^8.50.0
         version: 8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
 
   packages/import-package-json:
@@ -216,13 +216,13 @@ importers:
         specifier: ^1.0.13
         version: 1.0.13
       '@types/node':
-        specifier: ^24.10.1
+        specifier: ^24.10.4
         version: 24.10.4
       '@types/semver':
         specifier: ^7.7.1
         version: 7.7.1
       commit-and-tag-version:
-        specifier: ^12.6.0
+        specifier: ^12.6.1
         version: 12.6.1
       del-cli:
         specifier: ^6.0.0
@@ -276,7 +276,7 @@ importers:
         specifier: ^3.0
         version: 3.7.4
       yaml:
-        specifier: ^2.8.1
+        specifier: ^2.8.2
         version: 2.8.2
     devDependencies:
       '@tsconfig/recommended':
@@ -286,10 +286,10 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0
       '@types/node':
-        specifier: ^24.10.1
+        specifier: ^24.10.4
         version: 24.10.4
       commit-and-tag-version:
-        specifier: ^12.6.0
+        specifier: ^12.6.1
         version: 12.6.1
       del-cli:
         specifier: ^6.0.0
@@ -310,16 +310,16 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2(prettier@3.7.4)
       commit-and-tag-version:
-        specifier: ^12.6.0
+        specifier: ^12.6.1
         version: 12.6.1
       prettier:
-        specifier: ^3.7.1
+        specifier: ^3.7.4
         version: 3.7.4
       prettier-plugin-ejs:
         specifier: ^1.0.3
         version: 1.0.3(prettier@3.7.4)
       prettier-plugin-jsdoc:
-        specifier: ^1.7.0
+        specifier: ^1.8.0
         version: 1.8.0(prettier@3.7.4)
       prettier-plugin-organize-imports:
         specifier: ^4.3.0
@@ -337,7 +337,7 @@ importers:
         specifier: ^1.0.13
         version: 1.0.13
       commit-and-tag-version:
-        specifier: ^12.6.0
+        specifier: ^12.6.1
         version: 12.6.1
       del-cli:
         specifier: ^6.0.0
@@ -358,7 +358,7 @@ importers:
         specifier: ^7.0.8
         version: 7.0.8(webpack-cli@6.0.1)
       '@types/node':
-        specifier: ^24.10.1
+        specifier: ^24.10.4
         version: 24.10.4
       add-peer-dependencies:
         specifier: ^0.1.13
@@ -367,7 +367,7 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       commit-and-tag-version:
-        specifier: ^12.6.0
+        specifier: ^12.6.1
         version: 12.6.1
       copy-webpack-plugin:
         specifier: ^13.0.1
@@ -379,7 +379,7 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(webpack@5.104.1)
       css-minimizer-webpack-plugin:
-        specifier: ^7.0.2
+        specifier: ^7.0.4
         version: 7.0.4(webpack@5.104.1)
       del-cli:
         specifier: ^6.0.0
@@ -430,13 +430,13 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0(postcss@8.5.6)(typescript@5.9.3)(webpack@5.104.1)
       postcss-preset-env:
-        specifier: ^10.4.0
+        specifier: ^10.5.0
         version: 10.5.0(postcss@8.5.6)
       raw-loader:
         specifier: ^4.0.2
         version: 4.0.2(webpack@5.104.1)
       sass:
-        specifier: ^1.94.2
+        specifier: ^1.97.1
         version: 1.97.1
       sass-loader:
         specifier: ^16.0.6
@@ -445,7 +445,7 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.104.1)
       terser-webpack-plugin:
-        specifier: ^5.3.14
+        specifier: ^5.3.16
         version: 5.3.16(webpack@5.104.1)
       ts-loader:
         specifier: ^9.5.4
@@ -457,7 +457,7 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1(file-loader@6.2.0(webpack@5.104.1))(webpack@5.104.1)
       webpack:
-        specifier: ^5.103.0
+        specifier: ^5.104.1
         version: 5.104.1(webpack-cli@6.0.1)
       webpack-cli:
         specifier: ^6.0.1
@@ -2305,6 +2305,9 @@ packages:
 
   '@types/node@24.10.4':
     resolution: {integrity: sha512-vnDVpYPMzs4wunl27jHrfmwojOGKya0xyM3sH+UE5iv5uPS6vX7UIoh6m+vQc5LGBq52HBKPIn/zcSZVzeDEZg==}
+
+  '@types/node@25.0.3':
+    resolution: {integrity: sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -8881,7 +8884,7 @@ snapshots:
     dependencies:
       '@changesets/types': 6.1.0
 
-  '@changesets/cli@2.29.8(@types/node@24.10.4)':
+  '@changesets/cli@2.29.8(@types/node@25.0.3)':
     dependencies:
       '@changesets/apply-release-plan': 7.0.14
       '@changesets/assemble-release-plan': 6.0.9
@@ -8897,7 +8900,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@changesets/write': 0.4.0
-      '@inquirer/external-editor': 1.0.3(@types/node@24.10.4)
+      '@inquirer/external-editor': 1.0.3(@types/node@25.0.3)
       '@manypkg/get-packages': 1.1.3
       ansi-colors: 4.1.3
       ci-info: 3.9.0
@@ -8998,11 +9001,11 @@ snapshots:
 
   '@colors/colors@1.6.0': {}
 
-  '@commitlint/cli@19.8.1(@types/node@24.10.4)(typescript@5.9.3)':
+  '@commitlint/cli@19.8.1(@types/node@25.0.3)(typescript@5.9.3)':
     dependencies:
       '@commitlint/format': 19.8.1
       '@commitlint/lint': 19.8.1
-      '@commitlint/load': 19.8.1(@types/node@24.10.4)(typescript@5.9.3)
+      '@commitlint/load': 19.8.1(@types/node@25.0.3)(typescript@5.9.3)
       '@commitlint/read': 19.8.1
       '@commitlint/types': 19.8.1
       tinyexec: 1.0.2
@@ -9055,7 +9058,7 @@ snapshots:
       '@commitlint/rules': 19.8.1
       '@commitlint/types': 19.8.1
 
-  '@commitlint/load@19.8.1(@types/node@24.10.4)(typescript@5.9.3)':
+  '@commitlint/load@19.8.1(@types/node@25.0.3)(typescript@5.9.3)':
     dependencies:
       '@commitlint/config-validator': 19.8.1
       '@commitlint/execute-rule': 19.8.1
@@ -9063,7 +9066,7 @@ snapshots:
       '@commitlint/types': 19.8.1
       chalk: 5.6.2
       cosmiconfig: 9.0.0(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 6.2.0(@types/node@24.10.4)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 6.2.0(@types/node@25.0.3)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -9598,12 +9601,12 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.10.4
 
-  '@inquirer/external-editor@1.0.3(@types/node@24.10.4)':
+  '@inquirer/external-editor@1.0.3(@types/node@25.0.3)':
     dependencies:
       chardet: 2.1.1
       iconv-lite: 0.7.1
     optionalDependencies:
-      '@types/node': 24.10.4
+      '@types/node': 25.0.3
 
   '@inquirer/figures@1.0.15': {}
 
@@ -9720,7 +9723,7 @@ snapshots:
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
-  '@lerna/create@8.2.4(@types/node@24.10.4)(encoding@0.1.13)(typescript@5.9.3)':
+  '@lerna/create@8.2.4(@types/node@25.0.3)(encoding@0.1.13)(typescript@5.9.3)':
     dependencies:
       '@npmcli/arborist': 7.5.4
       '@npmcli/package-json': 5.2.0
@@ -9749,7 +9752,7 @@ snapshots:
       has-unicode: 2.0.1
       ini: 1.3.8
       init-package-json: 6.0.3
-      inquirer: 8.2.7(@types/node@24.10.4)
+      inquirer: 8.2.7(@types/node@25.0.3)
       is-ci: 3.0.1
       is-stream: 2.0.0
       js-yaml: 4.1.0
@@ -10321,7 +10324,7 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.2':
     dependencies:
-      '@types/node': 24.10.4
+      '@types/node': 25.0.3
 
   '@types/debug@4.1.12':
     dependencies:
@@ -10418,6 +10421,10 @@ snapshots:
   '@types/node@12.20.55': {}
 
   '@types/node@24.10.4':
+    dependencies:
+      undici-types: 7.16.0
+
+  '@types/node@25.0.3':
     dependencies:
       undici-types: 7.16.0
 
@@ -11483,9 +11490,9 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
-  cosmiconfig-typescript-loader@6.2.0(@types/node@24.10.4)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@6.2.0(@types/node@25.0.3)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
-      '@types/node': 24.10.4
+      '@types/node': 25.0.3
       cosmiconfig: 9.0.0(typescript@5.9.3)
       jiti: 2.6.1
       typescript: 5.9.3
@@ -11494,7 +11501,7 @@ snapshots:
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
-      js-yaml: 4.1.0
+      js-yaml: 4.1.1
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 5.9.3
@@ -13112,9 +13119,9 @@ snapshots:
     transitivePeerDependencies:
       - bluebird
 
-  inquirer@8.2.7(@types/node@24.10.4):
+  inquirer@8.2.7(@types/node@25.0.3):
     dependencies:
-      '@inquirer/external-editor': 1.0.3(@types/node@24.10.4)
+      '@inquirer/external-editor': 1.0.3(@types/node@25.0.3)
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       cli-cursor: 3.1.0
@@ -13540,9 +13547,9 @@ snapshots:
       picocolors: 1.1.1
       shell-quote: 1.8.3
 
-  lerna@8.2.4(@types/node@24.10.4)(encoding@0.1.13):
+  lerna@8.2.4(@types/node@25.0.3)(encoding@0.1.13):
     dependencies:
-      '@lerna/create': 8.2.4(@types/node@24.10.4)(encoding@0.1.13)(typescript@5.9.3)
+      '@lerna/create': 8.2.4(@types/node@25.0.3)(encoding@0.1.13)(typescript@5.9.3)
       '@npmcli/arborist': 7.5.4
       '@npmcli/package-json': 5.2.0
       '@npmcli/run-script': 8.1.0
@@ -13574,7 +13581,7 @@ snapshots:
       import-local: 3.1.0
       ini: 1.3.8
       init-package-json: 6.0.3
-      inquirer: 8.2.7(@types/node@24.10.4)
+      inquirer: 8.2.7(@types/node@25.0.3)
       is-ci: 3.0.1
       is-stream: 2.0.0
       jest-diff: 29.7.0
@@ -13736,7 +13743,7 @@ snapshots:
 
   log-symbols@4.1.0:
     dependencies:
-      chalk: 4.1.2
+      chalk: 4.1.0
       is-unicode-supported: 0.1.0
 
   log-symbols@6.0.0:
