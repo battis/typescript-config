@@ -15,3 +15,9 @@ In `eslint.config.mjs`:
 ```json
 export { default as default } from '@battis/eslint-config';
 ```
+
+In `.npmrc` (especially in monorepos using `pnpm`):
+
+```ini
+public-hoist-pattern[]=*eslint*
+```
