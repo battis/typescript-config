@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.3](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.4.2...monorepo-package-paths/0.4.3) (2025-12-20)
+
+
+### Bug Fixes
+
+* tolerate misconfigured pnpm .npmrc ([5aaa936](https://github.com/battis/typescript-config/commit/5aaa936e0d37842c78287d50095a14e0c5a0b015))
+
 ## [0.4.2](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.4.1...monorepo-package-paths/0.4.2) (2025-11-08)
 
 
