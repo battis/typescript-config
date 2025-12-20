@@ -231,15 +231,21 @@ export async function run() {
         if (workspaceRepository) {
           updatedPackage.repository = workspaceRepository;
         }
-        fs.writeFileSync(
-          workspacePackagePath,
-          prettier
-            ? await prettier.format(JSON.stringify(updatedPackage), {
-                ...(await prettier.resolveConfig(workspacePackagePath)),
-                filepath: workspacePackagePath
-              })
-            : JSON.stringify(updatedPackage, null, 2) + '\n'
-        );
+        let json = JSON.stringify(updatedPackage, null, 2) + '\n';
+        if (prettier) {
+          try {
+            json = await prettier.format(json, {
+              ...(await prettier.resolveConfig(workspacePackagePath)),
+              filepath: workspacePackagePath
+            });
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          } catch (_) {
+            spinner.warn(
+              `Prettier is installed but failed to format ${Colors.url(workspaceRelativePath)}: make sure that there is an ${Colors.value('.npmrc')} file defined in the repo root that defines at least ${Colors.value('public-hoist-pattern[]')}=${Colors.regexpValue('*prettier*')}.`
+            );
+          }
+        }
+        fs.writeFileSync(workspacePackagePath, json);
         spinner.succeed(`Updated ${Colors.url(workspaceRelativePath)}`);
       } else {
         const summary: Record<string, unknown> = {

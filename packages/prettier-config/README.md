@@ -15,3 +15,9 @@ In `.prettierrc.json`:
 ```json
 "@battis/prettier-config"
 ```
+
+In `.npmrc` (especially in monorepos using `pnpm`):
+
+```ini
+public-hoist-pattern[]=*prettier*
+```
