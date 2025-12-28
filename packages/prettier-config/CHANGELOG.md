@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.7.3](https://github.com/battis/typescript-config/compare/prettier-config/1.7.2...prettier-config/1.7.3) (2025-12-28)
+
+
+### Bug Fixes
+
+* remove flaky SQL formatting ([e27bd47](https://github.com/battis/typescript-config/commit/e27bd474cb850b6a089a550a37da2925d4b89228))
+
 ## [1.7.2](https://github.com/battis/typescript-config/compare/prettier-config/1.7.1...prettier-config/1.7.2) (2025-12-20)
 
 
