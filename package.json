@@ -15,7 +15,7 @@
     "build": "run-s build:*",
     "build:compile": "lerna run build",
     "build:paths": "monorepo-package-paths -w --author --homepage --repository",
-     "release": "run-s release:*",
+    "release": "run-s release:*",
     "release:build": "run-s build",
     "release:git": "git push --follow-tags",
     "release:publish": "pnpm publish -r --access public"
@@ -35,5 +35,5 @@
     "monorepo-package-paths": "workspace:*",
     "npm-run-all": "^4.1.5"
   },
-  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
+  "packageManager": "pnpm@10.26.2+sha512.0e308ff2005fc7410366f154f625f6631ab2b16b1d2e70238444dd6ae9d630a8482d92a451144debc492416896ed16f7b114a86ec68b8404b2443869e68ffda6"
 }

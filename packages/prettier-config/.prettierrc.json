@@ -8,7 +8,6 @@
     "@prettier/plugin-xml",
     "prettier-plugin-packagejson",
     "prettier-plugin-organize-imports",
-    "prettier-plugin-sql",
     "prettier-plugin-jsdoc",
     "prettier-plugin-ejs"
   ],
