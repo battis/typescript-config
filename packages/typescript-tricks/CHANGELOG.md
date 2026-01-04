@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.6](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.5...typescript-tricks/0.7.6) (2026-01-04)
+
+
+### Bug Fixes
+
+* include null as possible JSONPrimitive ([6f2aa04](https://github.com/battis/typescript-config/commit/6f2aa043a1b201f54d975a81bdc256c5feeb6989))
+
 ## [0.7.5](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.4...typescript-tricks/0.7.5) (2025-11-11)
 
 
