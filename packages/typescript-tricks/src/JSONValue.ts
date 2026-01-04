@@ -1,15 +1,12 @@
 // https://stackoverflow.com/a/64117261
-export type JSONValue =
-  | string
-  | number
-  | boolean
-  | null
-  | JSONValue[]
-  | { [key: string]: JSONValue };
+export type JSONPrimitive = string | number | boolean | null;
+
+export type JSONArray = Array<JSONValue>;
 
 export interface JSONObject {
   [k: string]: JSONValue;
 }
-export interface JSONArray extends Array<JSONValue> {}
+
+export type JSONValue = JSONPrimitive | JSONArray | JSONObject;
 
 export default JSONValue;
