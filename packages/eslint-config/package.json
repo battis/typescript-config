@@ -45,7 +45,7 @@
     "eslint": "9.x",
     "eslint-config-prettier": "10.x",
     "eslint-plugin-html": "8.x",
-    "globals": "16.x",
-    "typescript-eslint": "8.x"
+    "globals": "*",
+    "typescript-eslint": "*"
   }
 }
