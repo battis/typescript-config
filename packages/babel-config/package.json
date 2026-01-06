@@ -32,7 +32,7 @@
     "babel-plugin-add-import-extension": "^1.6.0",
     "babel-plugin-add-module-exports": "^1.0.4",
     "jackspeak": "^4.1.1",
-    "ora": "^8.2.0",
+    "ora": "^9.0.0",
     "shelljs": "^0.9.2",
     "typescript": "^5.9.3"
   },
