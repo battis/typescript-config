@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.9](https://github.com/battis/typescript-config/compare/eslint-config/2.0.8...eslint-config/2.0.9) (2026-01-06)
+
+
+### Bug Fixes
+
+* adjust peer dependencies to get typescript-eslint to calm down ([7fbb9c2](https://github.com/battis/typescript-config/commit/7fbb9c2906131a0caac90ac0144499081bdd540d))
+
 ## [2.0.8](https://github.com/battis/typescript-config/compare/eslint-config/2.0.7...eslint-config/2.0.8) (2025-12-20)
 
 
