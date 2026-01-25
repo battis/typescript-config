@@ -22,7 +22,7 @@
     "build:compile": "tsc",
     "build:copy-html": "copyfiles -u 1 ./src/**/*.html ./dist",
     "clean": "del ./dist/*",
-    "release": "commit-and-tag-version"
+    "version": "commit-and-tag-version"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.13",

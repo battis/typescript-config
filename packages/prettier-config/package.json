@@ -15,7 +15,7 @@
   },
   "main": ".prettierrc.json",
   "scripts": {
-    "release": "commit-and-tag-version"
+    "version": "commit-and-tag-version"
   },
   "devDependencies": {
     "@prettier/plugin-xml": "^3.4.2",
