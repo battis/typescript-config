@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.0](https://github.com/battis/typescript-config/compare/eslint-config/2.0.9...eslint-config/2.1.0) (2026-01-25)
+
+
+### Features
+
+* unused-vars named ^_.* do not trigger warnings ([727f075](https://github.com/battis/typescript-config/commit/727f075c4832145fc723973a868c87179a72fc32))
+
 ## [2.0.9](https://github.com/battis/typescript-config/compare/eslint-config/2.0.8...eslint-config/2.0.9) (2026-01-06)
 
 
