@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.7](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.6...typescript-tricks/0.7.7) (2026-02-10)
+
+
+### Features
+
+* isRecord<K,V>() ([fcc23b4](https://github.com/battis/typescript-config/commit/fcc23b49b0d0c2945d104f7dc88c1c902b582e0c))
+
 ## [0.7.6](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.5...typescript-tricks/0.7.6) (2026-01-04)
 
 
