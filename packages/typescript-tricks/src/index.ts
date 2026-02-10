@@ -9,5 +9,6 @@ export * from './Mixin';
 export * from './OneOf';
 export * from './OptionalProperty';
 export * from './PropertyRequirements';
+export * from './Record';
 export * from './Shorthand';
 export * from './StaticImplements';
