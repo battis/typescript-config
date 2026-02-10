@@ -24,20 +24,20 @@
     "version": "commit-and-tag-version"
   },
   "dependencies": {
-    "@babel/cli": "^7.28.3",
-    "@babel/core": "^7.28.5",
-    "@babel/preset-env": "^7.28.5",
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.0",
     "@babel/preset-typescript": "^7.28.5",
     "@npmcli/package-json": "^6.2.0",
     "babel-plugin-add-import-extension": "^1.6.0",
     "babel-plugin-add-module-exports": "^1.0.4",
-    "jackspeak": "^4.1.1",
+    "jackspeak": "^4.2.3",
     "ora": "^8.2.0",
     "shelljs": "^0.9.2",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@types/node": "^24.10.4",
+    "@types/node": "^24.10.13",
     "@types/npmcli__package-json": "^4.0.4",
     "commit-and-tag-version": "^12.6.1",
     "del-cli": "^6.0.0",
