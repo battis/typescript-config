@@ -9,6 +9,32 @@ export function isRecord<K extends string | number | symbol, V>(
     Object.keys(obj).reduce((result, key) => result && isK(key), true) &&
     Object.keys(obj)
       .map((key) => obj[key as keyof typeof obj])
-      .reduce((result, value) => result && isV(value), true)
+      .reduce((result, value) => result && isV(value), true) &&
+    [
+      Function,
+      Boolean,
+      Error,
+      Number,
+      Date,
+      String,
+      RegExp,
+      Array,
+      Uint8Array,
+      Uint16Array,
+      Uint32Array,
+      Int16Array,
+      Int32Array,
+      Float32Array,
+      Float64Array,
+      Map,
+      Set,
+      WeakMap,
+      WeakSet,
+      ArrayBuffer,
+      DataView,
+      Promise,
+      DisposableStack,
+      AsyncDisposableStack
+    ].reduce((result, T) => result && !(obj instanceof T), true)
   );
 }
