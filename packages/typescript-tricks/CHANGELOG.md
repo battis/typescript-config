@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.8](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.7...typescript-tricks/0.7.8) (2026-03-06)
+
+
+### Bug Fixes
+
+* improve typechecking ([af6a06e](https://github.com/battis/typescript-config/commit/af6a06ede72238bdc046dfed0dafcb33fc177fcc))
+
 ## [0.7.7](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.6...typescript-tricks/0.7.7) (2026-02-10)
 
 
