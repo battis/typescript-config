@@ -109,7 +109,6 @@ export async function run() {
   try {
     prettier = await import('prettier');
     spinner.succeed('Prettier');
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (_) {
     spinner.fail('Prettier not found, using basic JSON formatting');
   }
@@ -125,8 +124,17 @@ export async function run() {
 
   const workspaces: string[] = [];
 
-  if (monorepo.workspaces && monorepo.workspaces.length > 0) {
-    workspaces.push(...monorepo.workspaces);
+  if (monorepo.workspaces) {
+    if (Array.isArray(monorepo.workspaces)) {
+      workspaces.push(...monorepo.workspaces);
+    } else {
+      if (monorepo.workspaces.packages) {
+        workspaces.push(...monorepo.workspaces.packages);
+      }
+      if (monorepo.workspaces.nohoist) {
+        workspaces.push(...monorepo.workspaces.nohoist);
+      }
+    }
     spinner.succeed(
       `Workspaces defined in root ${Colors.value('package.json')}`
     );
@@ -238,7 +246,6 @@ export async function run() {
               ...(await prettier.resolveConfig(workspacePackagePath)),
               filepath: workspacePackagePath
             });
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
           } catch (_) {
             spinner.warn(
               `Prettier is installed but failed to format ${Colors.url(workspaceRelativePath)}: make sure that there is an ${Colors.value('.npmrc')} file defined in the repo root that defines at least ${Colors.value('public-hoist-pattern[]')}=${Colors.regexpValue('*prettier*')}.`
@@ -270,7 +277,6 @@ export async function run() {
             : JSON.stringify(summary, null, 2) + '\n'
         );
       }
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
       spinner.fail(
         Colors.error(`Not found: ${`${Colors.url(workspaceRelativePath)}`}`)
