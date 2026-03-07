@@ -6,3 +6,5 @@ export * from './Methods';
 export * from './Properties';
 export * from './Record';
 export * from './StaticImplements';
+
+export * from './_Deprecated';
