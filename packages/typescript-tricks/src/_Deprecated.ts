@@ -28,6 +28,16 @@ export type AssociativeArray<T> = { [key: string]: T };
 
 /** @deprecated Use {@link JSONPrimitive} */
 export type JSONPrimitiveTypes = JSONPrimitive;
+
+/**
+ * @deprecated See
+ *   {@link https://www.typescriptlang.org/docs/handbook/mixins.html#constrained-mixins TypeScript docs}
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type Mixin<T extends (...args: any[]) => any> = InstanceType<
+  ReturnType<T>
+>;
+
 /** @deprecated Use {@link filterByType} */
 export const instanceOf = filterByType;
 
