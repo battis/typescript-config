@@ -9,4 +9,14 @@ export interface JSONObject {
 
 export type JSONValue = JSONPrimitive | JSONArray | JSONObject;
 
+/** @deprecated Default exports are not best practice */
 export default JSONValue;
+
+export function isJSONPrimitive(value: unknown): value is JSONPrimitive {
+  return (
+    value === null ||
+    typeof value === 'string' ||
+    typeof value === 'number' ||
+    typeof value === 'boolean'
+  );
+}
