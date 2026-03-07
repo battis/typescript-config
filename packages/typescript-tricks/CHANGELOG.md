@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.9](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.8...typescript-tricks/0.7.9) (2026-03-07)
+
+
+### Bug Fixes
+
+* testing that FormData is not (really) a Record ([a32e806](https://github.com/battis/typescript-config/commit/a32e806669c9f0290c47ce21ffec0f2a7fd907c0))
+
 ## [0.7.8](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.7...typescript-tricks/0.7.8) (2026-03-06)
 
 
