@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.4](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.4.3...monorepo-package-paths/0.4.4) (2026-03-07)
+
+
+### Bug Fixes
+
+* address expanded IPackageJson.workspaces definition ([3ba1e56](https://github.com/battis/typescript-config/commit/3ba1e56199ca578b518de01e828acf0bc7d608d2))
+
 ## [0.4.3](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.4.2...monorepo-package-paths/0.4.3) (2025-12-20)
 
 
