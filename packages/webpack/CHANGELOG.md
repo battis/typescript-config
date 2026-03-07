@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.1](https://github.com/battis/typescript-config/compare/webpack/2.1.0...webpack/2.1.1) (2026-03-07)
+
+
+### Bug Fixes
+
+* re-style plugins as functions returning plugins ([e514826](https://github.com/battis/typescript-config/commit/e514826663139becbed307a11b06f3ee516de179))
+
 ## [2.1.0](https://github.com/battis/typescript-config/compare/webpack/2.0.8...webpack/2.1.0) (2025-12-10)
 
 
