@@ -28,6 +28,9 @@ export type AssociativeArray<T> = { [key: string]: T };
 
 /** @deprecated Use {@link JSONPrimitive} */
 export type JSONPrimitiveTypes = JSONPrimitive;
+/** @deprecated Use {@link filterByType} */
+export const instanceOf = filterByType;
+
 /** @deprecated Use-case unclear */
 export function Coerce<T>(
   u: unknown,
@@ -51,3 +54,45 @@ export function Coerce<T>(
 /** @deprecated Use-case unclear */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type Subset<T, U extends T> = T;
+/** @deprecated Use-case unclear */
+export type Constructor<T = object> = new (...args: unknown[]) => T;
+
+/** @deprecated Use-case unclear */
+export function isConstructor<T = unknown>(
+  value: unknown
+): value is Constructor<T> {
+  return (
+    !!value &&
+    typeof value === 'object' &&
+    'prototype' in value &&
+    typeof value.prototype === 'object' &&
+    !!value.prototype &&
+    'constructor' in value.prototype.constructor
+  );
+}
+
+/**
+ * ```ts
+ * class A {}
+ * class B {}
+ * class C extends A {}
+ *
+ * const a = new A();
+ * const b = new B();
+ * const c = new C();
+ *
+ * const list = [a, b, c];
+ * const filteredList = filterByType(list, A);
+ * // filteredList = [a, c]
+ * ```
+ *
+ * @ see https://stackoverflow.com/a/65152869/294171
+ *
+ * @deprecated Use-case unclear
+ */
+export function filterByType<Elements, Filter extends Elements>(
+  array: Elements[],
+  filterType: Constructor<Filter>
+): Filter[] {
+  return <Filter[]>array.filter((e) => e instanceof filterType);
+}

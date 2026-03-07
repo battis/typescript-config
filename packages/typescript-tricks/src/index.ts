@@ -1,5 +1,4 @@
 export * from './ArrayElement';
-export * from './Constructor';
 export * from './EnumeratedTypes';
 export * from './Forms';
 export * from './JSONValue';
