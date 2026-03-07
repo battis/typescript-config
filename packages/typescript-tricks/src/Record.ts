@@ -34,7 +34,8 @@ export function isRecord<K extends string | number | symbol, V>(
       DataView,
       Promise,
       DisposableStack,
-      AsyncDisposableStack
+      AsyncDisposableStack,
+      FormData
     ].reduce((result, T) => result && !(obj instanceof T), true)
   );
 }
