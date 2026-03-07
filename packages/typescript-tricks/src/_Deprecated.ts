@@ -1,3 +1,5 @@
+import { JSONPrimitive } from './JSON.js';
+
 /** @deprecated Use Error.isError() */
 export function isError(error: unknown): error is Error {
   return (
@@ -15,6 +17,17 @@ export function CoerceError(error: unknown): Error {
   return Coerce<Error>(error, isError, (e) => e as Error);
 }
 
+/** @deprecated `null` is part of type unless using utility type `Nonnullable` */
+export type Nullable<T> = T | null;
+
+/** @deprecated Use `?` */
+export type Optional<T> = T | undefined;
+
+/** @deprecated Use `Record<string,T>` */
+export type AssociativeArray<T> = { [key: string]: T };
+
+/** @deprecated Use {@link JSONPrimitive} */
+export type JSONPrimitiveTypes = JSONPrimitive;
 /** @deprecated Use-case unclear */
 export function Coerce<T>(
   u: unknown,
@@ -35,3 +48,6 @@ export function Coerce<T>(
   }
 }
 
+/** @deprecated Use-case unclear */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export type Subset<T, U extends T> = T;
