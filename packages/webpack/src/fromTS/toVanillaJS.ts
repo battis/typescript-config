@@ -12,7 +12,7 @@ import { esmResolver } from '../esmResolver.js';
 type VanillaOptions = Options & {
   target?: webpack.Configuration['target'];
   extractCSS?: boolean;
-  hash?:boolean
+  hash?: boolean;
 };
 
 export default function config({
@@ -36,7 +36,7 @@ export default function config({
 }: VanillaOptions): webpack.Configuration {
   output = {
     path: 'build',
-    filename: `[name]${hash ? '.[contenthash]' :''}`,
+    filename: `[name]${hash ? '.[contenthash]' : ''}`,
     ...output
   };
   return {
@@ -91,7 +91,7 @@ export default function config({
             test: /\.(jpe?g|gif|png)$/i,
             type: 'asset/resource',
             generator: {
-              filename: `assets/images/[name]${hash ? '.[hash]' :''}.[ext]`
+              filename: `assets/images/[name]${hash ? '.[hash]' : ''}.[ext]`
             }
           }
         ],
@@ -110,13 +110,14 @@ export default function config({
     externals,
     plugins: Options.resolve.plugins(
       [
-        new Dotenv(),
-        new MiniCssExtractPlugin({
-          filename:
-            path.extname(output.filename!) == '.js'
-              ? `[name]${hash?'.[contenthash]':''}.css`
-              : `${output.filename}.css`
-        })
+        () => new Dotenv(),
+        () =>
+          new MiniCssExtractPlugin({
+            filename:
+              path.extname(output.filename!) == '.js'
+                ? `[name]${hash ? '.[contenthash]' : ''}.css`
+                : `${output.filename}.css`
+          })
       ],
       override?.plugins,
       plugins

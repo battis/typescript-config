@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import fs from 'node:fs';
 import path from 'node:path';
 import TerserPlugin from 'terser-webpack-plugin';
-import webpack from 'webpack';
+import webpack, { Compiler } from 'webpack';
 import Options from '../../Options.js';
 import { esmResolver } from '../../esmResolver.js';
 
@@ -106,11 +106,11 @@ export default function config({
     externals,
     plugins: Options.resolve.plugins(
       [
-        new Dotenv(),
-        HtmlWebpackPage('install.html'),
-        HtmlWebpackPage('embed.html'),
-        {
-          apply: (compiler) => {
+        () => new Dotenv(),
+        () => HtmlWebpackPage('install.html'),
+        () => HtmlWebpackPage('embed.html'),
+        () => ({
+          apply: (compiler: Compiler) => {
             compiler.hooks.afterEmit.tap('AfterEmitPlugin', () => {
               const readme = fs.readFileSync(
                 path.resolve(template, 'README.md'),
@@ -130,7 +130,7 @@ export default function config({
               );
             });
           }
-        }
+        })
       ],
       override?.plugins,
       plugins

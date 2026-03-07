@@ -111,27 +111,30 @@ export default async function config({
     externals,
     plugins: Options.resolve.plugins(
       [
-        new Dotenv(),
-        new CopyWebpackPlugin({
-          patterns: [
-            {
-              from: path.resolve(root, template),
-              to: path.resolve(root, output.path!),
-              filter: (filePath) => !/index\.html$/.test(filePath)
-            }
-          ]
-        }),
-        new HtmlWebpackPlugin({
-          templateParameters: {
-            PUBLIC_PATH: output.publicPath!,
-            APP_NAME: appName || bundle
-          },
-          template: path.resolve(root, template, 'index.html'),
-          hash: true
-        }),
-        new MiniCssExtractPlugin({
-          filename: 'assets/css/[name].[contenthash].css'
-        })
+        () => new Dotenv(),
+        () =>
+          new CopyWebpackPlugin({
+            patterns: [
+              {
+                from: path.resolve(root, template),
+                to: path.resolve(root, output.path!),
+                filter: (filePath) => !/index\.html$/.test(filePath)
+              }
+            ]
+          }),
+        () =>
+          new HtmlWebpackPlugin({
+            templateParameters: {
+              PUBLIC_PATH: output.publicPath!,
+              APP_NAME: appName || bundle
+            },
+            template: path.resolve(root, template, 'index.html'),
+            hash: true
+          }),
+        () =>
+          new MiniCssExtractPlugin({
+            filename: 'assets/css/[name].[contenthash].css'
+          })
       ],
       override?.plugins,
       plugins
