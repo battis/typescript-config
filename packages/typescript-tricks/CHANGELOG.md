@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.0](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.9...typescript-tricks/0.8.0) (2026-03-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* deprecate getEnumValue in favor of normal TypeScript usage
+* deprecate Mixin
+* deprecate Constructor and related methods
+* deprecate Nullable, Optional, AssociativeArray, JSONPrimitiveTypes, Subset
+* deprecate Coerce
+* deprecate isError and CoerceError, preferring built-in Error.isError
+
+### Features
+
+* describe generic keyof types (string|number|symbol) as Key ([47a89d9](https://github.com/battis/typescript-config/commit/47a89d9a7fc7df631fccbbe666eed3dfb675dc40))
+* identify an array of entries with isEntries() ([e97da7a](https://github.com/battis/typescript-config/commit/e97da7ac3bac43f109ff989e252665a7f5c34868))
+* identify keys and keys of objects with isKey() and isKeyof() ([87aedd8](https://github.com/battis/typescript-config/commit/87aedd82ee4ab0e45f71fa7fa52dd4803fcfe207))
+* optional type detection with isRecord() ([c26b5b7](https://github.com/battis/typescript-config/commit/c26b5b7a4b65ce5ff8cd3ab09e8aa6738fde4479))
+
+
+### Bug Fixes
+
+* deprecate Coerce ([3060632](https://github.com/battis/typescript-config/commit/306063272093426f8c910261dd8a65d6a5c31dbb))
+* deprecate Constructor and related methods ([d01206e](https://github.com/battis/typescript-config/commit/d01206e5cfa283a5cc74fe830c27126253465086))
+* deprecate getEnumValue in favor of normal TypeScript usage ([1516b04](https://github.com/battis/typescript-config/commit/1516b04279165c031d8b64312d6fb0860f565442))
+* deprecate isError and CoerceError, preferring built-in Error.isError ([7f65938](https://github.com/battis/typescript-config/commit/7f659388a7ea8fabd208a1747ec184eb6803fdb9))
+* deprecate Mixin ([b25266d](https://github.com/battis/typescript-config/commit/b25266d61cfb3c9d648997bc415a9dc539e37a83))
+* deprecate Nullable, Optional, AssociativeArray, JSONPrimitiveTypes, Subset ([c3730d1](https://github.com/battis/typescript-config/commit/c3730d1e3797167c2d93e84abc916787dc406385))
+
 ## [0.7.9](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.8...typescript-tricks/0.7.9) (2026-03-07)
 
 
