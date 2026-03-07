@@ -321,9 +321,12 @@ if (cache) {
 
 if (metadata) {
   spinner.start(`Adding cache data to ${Colors.value('peerDependenciesMeta')}`);
-  projectPackage.peerDependenciesMeta = {
-    ...projectPackage.peerDependenciesMeta,
-    ...cacheHistory
+  projectPackage = {
+    ...projectPackage,
+    peerDependenciesMeta: {
+      ...projectPackage.peerDependenciesMeta,
+      ...cacheHistory
+    }
   };
   spinner.succeed(
     `Cache data added to ${Colors.value('peerDependenciesMeta')}`
