@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.14](https://github.com/battis/typescript-config/compare/add-peer-dependencies/0.1.13...add-peer-dependencies/0.1.14) (2026-03-07)
+
+
+### Bug Fixes
+
+* address immutability of IPackageJson ([38332a4](https://github.com/battis/typescript-config/commit/38332a465204ff69c23da97a36fb526b45c2bd08))
+
 ## [0.1.13](https://github.com/battis/typescript-config/compare/add-peer-dependencies/0.1.12...add-peer-dependencies/0.1.13) (2025-06-28)
 
 
