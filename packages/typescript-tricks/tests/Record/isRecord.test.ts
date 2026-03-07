@@ -1,22 +1,7 @@
-import { JSONPrimitive } from '../../src/JSONValue.js';
+import { isJSONPrimitive, JSONPrimitive } from '../../src/JSON.js';
+import { isKey } from '../../src/Key.js';
 import { isRecord } from '../../src/Record.js';
-import { isJSONPrimitive } from '../JSONValue/JSONPrimitive.test.js';
-
-function isKey(obj: unknown): obj is keyof object {
-  return (
-    typeof obj === 'string' ||
-    typeof obj === 'number' ||
-    typeof obj === 'symbol'
-  );
-}
-
-function isUnknown(obj: unknown): obj is unknown {
-  return true;
-}
-
-function isString(obj: unknown): obj is string {
-  return typeof obj === 'string';
-}
+import { isString, isUnknown } from '../../src/TypeJuggling.js';
 
 test('Record<string,string>', () => {
   expect(
