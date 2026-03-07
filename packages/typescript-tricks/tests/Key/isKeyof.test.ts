@@ -9,4 +9,5 @@ test('truthy', () => {
 
 test('falsy', () => {
   expect(isKeyof('a', { b: 2 })).toBeFalsy();
+  expect(isKeyof('a', new Date())).toBeFalsy();
 });

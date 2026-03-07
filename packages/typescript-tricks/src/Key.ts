@@ -1,4 +1,6 @@
-export function isKey(value: unknown): value is keyof object {
+export type Key = string | number | symbol;
+
+export function isKey(value: unknown): value is Key {
   return (
     value !== undefined &&
     (typeof value === 'string' ||
@@ -11,5 +13,12 @@ export function isKeyof<T extends object>(
   value: unknown,
   obj: T
 ): value is keyof T {
-  return isKey(value) && Object.keys(obj).includes(value);
+  return (
+    isKey(value) &&
+    ((typeof value === 'string' && Object.keys(obj).includes(value)) ||
+      (typeof value === 'number' &&
+        Object.keys(obj).includes(value.toString())) ||
+      (typeof value === 'symbol' &&
+        Object.getOwnPropertySymbols(obj).includes(value)))
+  );
 }

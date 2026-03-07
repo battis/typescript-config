@@ -1,5 +1,5 @@
 import { isJSONPrimitive, JSONPrimitive } from '../../src/JSON.js';
-import { isKey } from '../../src/Key.js';
+import { isKey, Key } from '../../src/Key.js';
 import { isRecord } from '../../src/Record.js';
 import { isString, isUnknown } from '../../src/TypeJuggling.js';
 
@@ -21,21 +21,13 @@ test('Record<string,JSONPrimitive>', () => {
 
 test('built-in objects', () => {
   expect(
-    isRecord<keyof object, unknown>(new String('foo bar'), isKey, isUnknown)
+    isRecord<Key, unknown>(new String('foo bar'), isKey, isUnknown)
   ).toBeFalsy();
+  expect(isRecord<Key, unknown>(new Number(123), isKey, isUnknown)).toBeFalsy();
+  expect(isRecord<Key, unknown>(Math.PI, isKey, isUnknown)).toBeFalsy();
   expect(
-    isRecord<keyof object, unknown>(new Number(123), isKey, isUnknown)
+    isRecord<Key, unknown>(new Uint8Array(0), isKey, isUnknown)
   ).toBeFalsy();
-  expect(
-    isRecord<keyof object, unknown>(Math.PI, isKey, isUnknown)
-  ).toBeFalsy();
-  expect(
-    isRecord<keyof object, unknown>(new Uint8Array(0), isKey, isUnknown)
-  ).toBeFalsy();
-  expect(
-    isRecord<keyof object, unknown>(new Map(), isKey, isUnknown)
-  ).toBeFalsy();
-  expect(
-    isRecord<keyof object, unknown>(new Date(), isKey, isUnknown)
-  ).toBeFalsy();
+  expect(isRecord<Key, unknown>(new Map(), isKey, isUnknown)).toBeFalsy();
+  expect(isRecord<Key, unknown>(new Date(), isKey, isUnknown)).toBeFalsy();
 });
