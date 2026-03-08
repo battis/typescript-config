@@ -2,7 +2,7 @@
 export type NumericBoolean = 1 | 0;
 
 /** A number that represents a timestamp value */
-export type NumericTimestamp = number;
+export type NumericTimestamp<Format extends string> = number;
 
 /** A number that represents time duration */
-export type NumericDuration = number;
+export type NumericDuration<Units extends string> = number;
