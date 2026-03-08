@@ -47,5 +47,4 @@ export type ListOf<
 > = string;
 
 /** A string that represents a boolean value */
-export type BooleanString<ExpectedValues extends string = 'true' | 'false'> =
-  ExpectedValues;
+export type BooleanString<Truthy = 'true', Falsy = 'false'> = Truthy | Falsy;
