@@ -17,3 +17,27 @@ export function isUnknown(obj: unknown): obj is unknown {
 export function isString(obj: unknown): obj is string {
   return typeof obj === 'string';
 }
+
+/**
+ * Caution: if an object may be a generator (in which case obj.iterator returns
+ * `this`), it will be consumed
+ */
+export function isIterable<T = unknown>(
+  obj: unknown,
+  isT?: (elt: unknown) => elt is T
+): obj is Iterable<T> {
+  function _isIterable(obj: unknown): obj is Iterable<unknown> {
+    return !!obj && typeof obj === 'object' && Symbol.iterator in obj;
+  }
+  if (_isIterable(obj)) {
+    if (isT) {
+      for (const elt of obj) {
+        if (!isT(elt)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+  return false;
+}
