@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.1](https://github.com/battis/typescript-config/compare/typescript-tricks/0.8.0...typescript-tricks/0.8.1) (2026-03-10)
+
+
+### Features
+
+* isIterable() ([38044eb](https://github.com/battis/typescript-config/commit/38044ebd2b76068c57829df55666a6216bd0f0e0))
+
+
+### Bug Fixes
+
+* increased type-safety on isEntries key-checking ([1ec0979](https://github.com/battis/typescript-config/commit/1ec097918c40e8332723c8a4d8f8d417130658a5))
+
 ## [0.8.0](https://github.com/battis/typescript-config/compare/typescript-tricks/0.7.9...typescript-tricks/0.8.0) (2026-03-07)
 
 
