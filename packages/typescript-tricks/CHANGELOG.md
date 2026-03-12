@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.2](https://github.com/battis/typescript-config/compare/typescript-tricks/0.8.1...typescript-tricks/0.8.2) (2026-03-12)
+
+
+### Features
+
+* isNonEmptyString() & NonEmptyString ([06cd18c](https://github.com/battis/typescript-config/commit/06cd18c4528e1efc1e9c78c60861fb8c9aef308f))
+
 ## [0.8.1](https://github.com/battis/typescript-config/compare/typescript-tricks/0.8.0...typescript-tricks/0.8.1) (2026-03-10)
 
 
