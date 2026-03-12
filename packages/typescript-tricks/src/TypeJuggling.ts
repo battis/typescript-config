@@ -14,10 +14,6 @@ export function isUnknown(obj: unknown): obj is unknown {
   return true;
 }
 
-export function isString(obj: unknown): obj is string {
-  return typeof obj === 'string';
-}
-
 /**
  * Caution: if an object may be a generator (in which case obj.iterator returns
  * `this`), it will be consumed

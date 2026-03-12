@@ -6,6 +6,7 @@ export * from './Methods';
 export * from './Object';
 export * from './Properties';
 export * from './Record';
+export * from './String';
 export * from './TypeJuggling';
 
 export * from './_Deprecated';
