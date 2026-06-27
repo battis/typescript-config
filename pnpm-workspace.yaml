@@ -1,6 +1,15 @@
 packages:
   - packages/*
 
+allowBuilds:
+  '@parcel/watcher': true
+  gifsicle: true
+  jpegtran-bin: true
+  nx: true
+  optipng-bin: true
+  sharp: true
+  unrs-resolver: true
+
 ignoredBuiltDependencies:
   - '@parcel/watcher'
 
