@@ -1,11 +1,11 @@
 /** A string that represents a date value without a time */
-export type DateString<Format extends string = ''> = string;
+export type DateString<_Format extends string = ''> = string;
 
 /** A string that represents a time without a date */
-export type TimeString<Format extends string = ''> = string;
+export type TimeString<_Format extends string = ''> = string;
 
 /** A string that represents a date and time value */
-export type DateTimeString<Format extends string = ''> = string;
+export type DateTimeString<_Format extends string = ''> = string;
 
 /** A string that represents an IANA time zone name */
 export type TimeZoneString = string;
@@ -38,12 +38,12 @@ export type MimeTypeString = string;
  * A string that represents a color definition, with an Format type of 'Hex',
  * 'HSL', etc.
  */
-export type ColorString<Format extends string> = string;
+export type ColorString<_Format extends string> = string;
 
 /** A string that is a list of data of ItemType separated by Delimiter */
 export type ListOf<
-  ItemType extends string,
-  Delimiter extends string = ','
+  _ItemType extends string,
+  _Delimiter extends string = ','
 > = string;
 
 /** A string that represents a boolean value */
