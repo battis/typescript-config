@@ -9,13 +9,7 @@ allowBuilds:
   optipng-bin: true
   sharp: true
   unrs-resolver: true
-
-ignoredBuiltDependencies:
-  - '@parcel/watcher'
-
-onlyBuiltDependencies:
-  - gifsicle
-  - jpegtran-bin
-  - nx
-  - optipng-bin
-  - sharp
+  
+publicHoistPattern:
+  - '*eslint*'
+  - '*prettier*'
