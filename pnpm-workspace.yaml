@@ -1,5 +1,6 @@
-packages:
-  - packages/*
+publicHoistPattern:
+  - '*eslint*'
+  - '*prettier*'
 
 allowBuilds:
   '@parcel/watcher': true
@@ -9,7 +10,6 @@ allowBuilds:
   optipng-bin: true
   sharp: true
   unrs-resolver: true
-  
-publicHoistPattern:
-  - '*eslint*'
-  - '*prettier*'
+
+packages:
+  - packages/*
