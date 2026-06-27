@@ -1,6 +1,7 @@
 {
   "extends": "@tsconfig/recommended",
   "compilerOptions": {
+    "rootDir": "./src",
     "declaration": true,
     "outDir": "./dist"
   },
