@@ -1,5 +1,0 @@
-{
-  "path": ".",
-  "tag-prefix": "babel-config/",
-  "releaseCommitMessageFormat": "chore(babel-config): @battis/babel-config@{{currentTag}}"
-}
