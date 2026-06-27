@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 import pkg from '@battis/import-package-json';
-import { Colors } from '@battis/qui-cli.colors';
-import { Log } from '@battis/qui-cli.log';
-import * as Plugin from '@battis/qui-cli.plugin';
-import { Root } from '@battis/qui-cli.root';
 import { Validators } from '@battis/qui-cli.validators';
 import input from '@inquirer/input';
+import { Colors } from '@qui-cli/colors';
+import { Log } from '@qui-cli/log';
+import * as Plugin from '@qui-cli/plugin';
+import { Root } from '@qui-cli/root';
 import fs from 'fs';
 import { glob } from 'glob';
 import ora from 'ora';
@@ -25,61 +25,56 @@ type Configuration = Plugin.Configuration & {
 };
 
 export const name = 'monorepo-package-paths';
-export const src = import.meta.dirname;
 
-let monorepoRoot = path.join(Root.path(), 'package.json');
-let repository = true;
-let author = true;
-let homepage = true;
-let homepagePrefix = 'tree/main';
-let write = true;
+const config: Configuration = {
+  monorepoRoot: path.join(Root.path(), 'package.json'),
+  repository: true,
+  author: true,
+  homepage: true,
+  homepagePrefix: 'tree/main',
+  write: true
+};
 
-export function configure(config: Configuration = {}) {
-  monorepoRoot = Plugin.hydrate(config.monorepoRoot, monorepoRoot);
-  repository = Plugin.hydrate(config.repository, repository);
-  author = Plugin.hydrate(config.author, author);
-  homepage = Plugin.hydrate(config.homepage, homepage);
-  homepagePrefix = Plugin.hydrate(config.homepagePrefix, homepagePrefix);
-  write = Plugin.hydrate(config.write, write);
+export function configure(proposal: Configuration = {}) {
+  for (const key in proposal) {
+    if (proposal[key] !== undefined) {
+      config[key] = proposal[key];
+    }
+  }
 }
 
 export function options(): Plugin.Options {
   return {
+    man: [{ level: 1, text: 'Monorepo Package Paths options' }],
     opt: {
       monorepoRoot: {
         short: 'p',
-        description: `Path to monorepo root package file (default: ${Colors.url(
-          monorepoRoot
-        )})`,
-        default: monorepoRoot
+        description: 'Path to monorepo root package file',
+        default: config.monorepoRoot
       },
       homepagePrefix: {
         short: 'x',
-        description: `Prefix relative path URLs (default" ${Colors.quotedValue(
-          `"${homepagePrefix}"`
-        )} as for GitHub)`,
-        default: homepagePrefix
+        description: 'Prefix relative path URLs',
+        default: config.homepagePrefix
       }
     },
     flag: {
       write: {
         short: 'w',
-        description: `Write changes to workspace package files (default: ${Colors.value(write)})}`,
-        default: write
+        description: 'Write changes to workspace package files',
+        default: config.write
       },
       repository: {
-        description: `Update ${Colors.value(
-          'package.repo.directory'
-        )} (default: ${Colors.value(repository)}, ${Colors.value('--no-repository')} to disable)`,
-        default: repository
+        description: `Update ${Colors.value('package.repo.directory')}`,
+        default: config.repository
       },
       homepage: {
-        description: `Update ${Colors.value('package.homepage')} (default: ${Colors.value(homepage)}, ${Colors.value('--no-homepage')} to disable)`,
-        default: homepage
+        description: `Update ${Colors.value('package.homepage')}`,
+        default: config.homepage
       },
       author: {
-        description: `Update ${Colors.value('package.author')} (default: ${Colors.value(author)}, ${Colors.value('--no-author')} to disable)`,
-        default: author
+        description: `Update ${Colors.value('package.author')}`,
+        default: config.author
       }
     }
   };
@@ -92,12 +87,12 @@ export function init(args: Plugin.ExpectedArguments<typeof options>) {
 export async function run() {
   const spinner = ora();
 
-  if (!monorepoRoot) {
+  if (!config.monorepoRoot) {
     throw new Error(`option ${Colors.value('--monorepoRoot')} must be defined`);
   }
 
   // TODO waiting on better typing in @battis/qui-cli
-  if (!homepagePrefix) {
+  if (!config.homepagePrefix) {
     throw new Error(
       `option ${Colors.value('--homepagePrefix')} must be defined`
     );
@@ -113,7 +108,7 @@ export async function run() {
     spinner.fail('Prettier not found, using basic JSON formatting');
   }
 
-  let rootPath = path.resolve(Root.path(), monorepoRoot);
+  let rootPath = path.resolve(Root.path(), config.monorepoRoot);
   spinner.start(`Loading ${Colors.url(rootPath)}`);
   const monorepo = await pkg.importLocal(rootPath);
   spinner.succeed(`Root package ${Colors.url(rootPath)}`);
@@ -160,13 +155,15 @@ export async function run() {
     process.exit(0);
   }
 
-  const rootAuthor = author ? monorepo.author : undefined;
+  const rootAuthor = config.author ? monorepo.author : undefined;
 
   const rootHomepage =
-    homepage && monorepo.homepage ? new URL(monorepo.homepage) : undefined;
+    config.homepage && monorepo.homepage
+      ? new URL(monorepo.homepage)
+      : undefined;
 
   const rootRepository =
-    repository && monorepo.repository
+    config.repository && monorepo.repository
       ? {
           url:
             typeof monorepo.repository == 'string'
@@ -215,7 +212,7 @@ export async function run() {
           : new URL(rootHomepage);
         workspaceHomepage.pathname = path.join(
           rootHomepage.pathname,
-          homepagePrefix,
+          config.homepagePrefix,
           workspaceRelativePath
         );
       }
@@ -228,7 +225,7 @@ export async function run() {
         };
       }
 
-      if (write) {
+      if (config.write) {
         const updatedPackage = { ...workspacePackage };
         if (rootAuthor) {
           updatedPackage.author = rootAuthor;

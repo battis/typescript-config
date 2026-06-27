@@ -1,5 +1,5 @@
-import { Core } from '@battis/qui-cli.core';
-import { register } from '@battis/qui-cli.plugin';
+import { Core } from '@qui-cli/core';
+import { register } from '@qui-cli/plugin';
 import * as MonorepoPackagePaths from './MonorepoPackagePaths.js';
 
 await register(MonorepoPackagePaths);
