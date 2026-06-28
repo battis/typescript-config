@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+import fs from 'node:fs';
+import path from 'node:path';
+
+const prettierrcPath = path.join(
+  process.cwd().slice(0, process.cwd().indexOf('node_modules') - 1),
+  '.prettierrc.json'
+);
+if (!fs.existsSync(prettierrcPath)) {
+  fs.writeFileSync(prettierrcPath, '"@battis/prettier-config"');
+}

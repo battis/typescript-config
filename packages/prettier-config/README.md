@@ -8,16 +8,4 @@ Shared Prettier configuration across all projects
 npm i -D @battis/prettier-config
 ```
 
-### Usage
-
-In `.prettierrc.json`:
-
-```json
-"@battis/prettier-config"
-```
-
-In `.npmrc` (especially in monorepos using `pnpm`):
-
-```ini
-public-hoist-pattern[]=*prettier*
-```
+The postinstall script creates the necessary `.prettierrc.json` file script in the project directory.
