@@ -8,16 +8,4 @@ Shared `eslint` config across all projects
 npm i -D @battis/eslint-config
 ```
 
-### Usage
-
-In `eslint.config.mjs`:
-
-```json
-export { default as default } from '@battis/eslint-config';
-```
-
-In `.npmrc` (especially in monorepos using `pnpm`):
-
-```ini
-public-hoist-pattern[]=*eslint*
-```
+The postinstall script creates the necessary `eslint.config.mjs` file script in the project directory.
