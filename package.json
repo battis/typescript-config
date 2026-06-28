@@ -21,10 +21,6 @@
     "release:login": "npm login",
     "release:publish": "pnpm publish -r --access public"
   },
-  "prettier": "@battis/prettier-config",
-  "eslintConfig": {
-    "extends": "@battis/eslint-config"
-  },
   "devDependencies": {
     "@battis/eslint-config": "workspace:^",
     "@battis/prettier-config": "workspace:^",
