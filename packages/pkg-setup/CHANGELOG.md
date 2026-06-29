@@ -1,0 +1,12 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## 0.0.1 (2026-06-29)
+
+
+### Features
+
+* copy pkg-setup directory to dependent package ([10a6c2e](https://github.com/battis/typescript-config/commit/10a6c2e90728d1871dfd1d37ea1ba0d3cfcd106e))
+* merge package.json keys together ([f04fb1f](https://github.com/battis/typescript-config/commit/f04fb1ff957749f77c3f61f1eac8fb2bafa402cb))
+* merge pnpm-workspace.yaml ([1c4fa5d](https://github.com/battis/typescript-config/commit/1c4fa5dc0f75d0f368a1592b05c43816c3fe6c08))
