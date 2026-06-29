@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://github.com/battis/typescript-config/compare/eslint/2.1.0...eslint/3.0.0) (2026-06-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* shorten package name
+
+### Features
+
+* include pnpm workspace updates in setup ([78f7271](https://github.com/battis/typescript-config/commit/78f7271a6b87a3724c99ae625b26cf487048e61a))
+* shorten package name ([6e3fd76](https://github.com/battis/typescript-config/commit/6e3fd76e602ecdaae34b1a4eed0811e1162d99a8))
+
 ## [2.1.0](https://github.com/battis/typescript-config/compare/eslint-config/2.0.9...eslint-config/2.1.0) (2026-01-25)
 
 
