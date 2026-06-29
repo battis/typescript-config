@@ -10,10 +10,10 @@ importers:
     devDependencies:
       '@battis/eslint-config':
         specifier: workspace:*
-        version: link:packages/eslint-config
+        version: link:packages/eslint
       '@battis/prettier-config':
         specifier: workspace:*
-        version: link:packages/prettier-config
+        version: link:packages/prettier
       '@commitlint/cli':
         specifier: ^21.1.0
         version: 21.1.0(@types/node@26.0.1)(conventional-commits-parser@6.4.0)(typescript@5.9.3)
@@ -73,7 +73,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/eslint-config:
+  packages/eslint:
     dependencies:
       '@battis/pkg-setup':
         specifier: workspace:*
@@ -263,7 +263,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/prettier-config:
+  packages/prettier:
     dependencies:
       '@battis/pkg-setup':
         specifier: workspace:*
