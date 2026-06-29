@@ -15,15 +15,17 @@
     "build": "run-s build:*",
     "build:compile": "lerna run build",
     "build:paths": "monorepo-package-paths -w --author --homepage --repository",
+    "build:setup": "run-s setup",
     "release": "run-s release:*",
     "release:build": "run-s build",
     "release:git": "git push --follow-tags",
     "release:login": "npm login",
     "release:publish": "pnpm publish -r --access public",
-    "postinstall": "run-s postinstall:*",
-    "postinstall:prettier": "setup-prettier -f",
-    "postinstall:eslint": "setup-eslint -f",
-    "postinstall:commt": "setup-commit -f"
+    "postinstall": "run-s setup",
+    "setup": "run-s setup:*",
+    "setup:prettier": "setup-prettier -f",
+    "setup:eslint": "setup-eslint -f",
+    "setup:commt": "setup-commit -f"
   },
   "devDependencies": {
     "@battis/commit": "workspace:*",
