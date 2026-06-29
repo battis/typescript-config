@@ -25,7 +25,8 @@
     "build:compile": "tsc",
     "build:copy-html": "copyfiles -u 1 ./src/**/*.html ./dist",
     "clean": "del ./dist/*",
-    "version": "commit-and-tag-version"
+    "release": "commit-and-tag-version --noBumpWhenEmptyChanges",
+    "prepack": "run-s build"
   },
   "dependencies": {
     "@battis/pkg-setup": "workspace:*",

@@ -19,7 +19,8 @@
     "bin": "./bin"
   },
   "scripts": {
-    "version": "commit-and-tag-version"
+    "prepack": "run-s build",
+    "release": "commit-and-tag-version --noBumpWhenEmptyChanges"
   },
   "dependencies": {
     "@battis/pkg-setup": "workspace:*",

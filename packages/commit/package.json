@@ -16,6 +16,9 @@
   "directories": {
     "bin": "./bin"
   },
+  "scripts": {
+    "release": "commit-and-tag-version --noBumpWhenEmptyChanges"
+  },
   "dependencies": {
     "@battis/pkg-setup": "workspace:*",
     "@qui-cli/colors": "^3.2.4",
