@@ -19,7 +19,11 @@
     "release:build": "run-s build",
     "release:git": "git push --follow-tags",
     "release:login": "npm login",
-    "release:publish": "pnpm publish -r --access public"
+    "release:publish": "pnpm publish -r --access public",
+    "postinstall": "run-s postinstall:*",
+    "postinstall:prettier": "setup-prettier -f",
+    "postinstall:eslint": "setup-eslint -f",
+    "postinstall:commt": "setup-commit -f"
   },
   "devDependencies": {
     "@battis/commit": "workspace:*",
