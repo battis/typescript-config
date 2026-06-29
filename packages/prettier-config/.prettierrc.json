@@ -6,6 +6,7 @@
   "organizeImportsSkipDestructiveCodeActions": true,
   "plugins": [
     "@prettier/plugin-xml",
+    "@trivago/prettier-plugin-sort-imports",
     "prettier-plugin-packagejson",
     "prettier-plugin-organize-imports",
     "prettier-plugin-jsdoc",

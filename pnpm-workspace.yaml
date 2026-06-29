@@ -1,15 +1,20 @@
 publicHoistPattern:
-  - '*eslint*'
-  - '*prettier*'
+  - '*eslint*' # @battis/eslint-config
+  - '*prettier*' # @battis/prettier-config
 
 allowBuilds:
-  '@parcel/watcher': true
-  gifsicle: true
-  jpegtran-bin: true
-  nx: true
-  optipng-bin: true
-  sharp: true
-  unrs-resolver: true
+  # development environment
+  '@battis/eslint-config': true
+  '@battis/prettier-config': true
+  nx: true # lerna
+  unrs-resolver: true # jest
+
+  # @battis/webpack peer dependencies needed for webpack builds only
+  '@parcel/watcher': false # sass
+  gifsicle: false
+  jpegtran-bin: false
+  optipng-bin: false
+  sharp: false
 
 packages:
   - packages/*

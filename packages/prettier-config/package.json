@@ -13,13 +13,17 @@
     "name": "Seth Battis",
     "url": "https://github.com/battis"
   },
+  "type": "module",
   "main": ".prettierrc.json",
+  "directories": {
+    "bin": "./bin"
+  },
   "scripts": {
-    "postinstall": "./scripts/create-prettierrc",
     "version": "commit-and-tag-version"
   },
-  "devDependencies": {
-    "commit-and-tag-version": "^12.7.3"
+  "dependencies": {
+    "@battis/pkg-setup": "workspace:*",
+    "@qui-cli/core": "^7.0.0"
   },
   "peerDependencies": {
     "@prettier/plugin-xml": "*",

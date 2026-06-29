@@ -16,6 +16,9 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "directories": {
+    "bin": "./bin"
+  },
   "scripts": {
     "build": "run-s build:*",
     "build:clean": "run-s clean",
@@ -24,8 +27,12 @@
     "clean": "del ./dist/*",
     "version": "commit-and-tag-version"
   },
+  "dependencies": {
+    "@battis/pkg-setup": "workspace:*",
+    "@qui-cli/core": "^7.0.0"
+  },
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.13",
+    "@tsconfig/node-lts": "^24.0.0",
     "@types/dotenv-webpack": "^7.0.8",
     "@types/node": "^24.13.2",
     "copyfiles": "^2.4.1",

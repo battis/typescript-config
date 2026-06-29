@@ -13,41 +13,12 @@ Reusable, extensible webpack configurations for different needs;
 
 ```bash
 npm i -D @battis/webpack
+npm exec setup-webpack
 ```
-
-if working in a monorepo or using `pnpm`, you may want to explore [`add-peer-dependencies`](../add-peer-dependencies).
 
 ## Usage
 
 ### `package.json`
-
-```json
-{
-  "scripts": {
-    "serve": "webpack serve",
-    "build": "webpack"
-  }
-}
-```
-
-### `tsconfig.json`:
-
-```json
-{
-  "extends": "@battis/webpack/tsconfig.json",
-  "include": ["./src"]
-}
-```
-
-### `webpack.config.mjs`
-
-```js
-import bundle from `@battis/webpack`;
-
-export default bundle.fromTS.toVanillaJS({
-  root: import.meta.dirname
-});
-```
 
 See [Choose Build](#choose-build) below.
 
@@ -57,12 +28,12 @@ Optional unless otherwise indicated.
 
 ##### Script configuration
 
-| Parameter         | Description                                                                                                                                                                                                                                                                 |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `root` (required) | Path to project root, where `package.json`, `webpack.config.mjs`, etc. reside. In general, `import.meta.dirname` is the right answer.                                                                                                                                       |
-| `template`        | Path to template directory (if needed) relative to `root`, from which to draw static web templates that will be updated during the build. Defaults to `'template'`                                                                                                          |
-| `bundle`          | Name of the module to bundle. Defaults to `'main'`                                                                                                                                                                                                                          |
-| `production`      | Whether this is a production or development build (which includes a great deal more debugging information and takes up a a lot more space). Defaults to `true`                                                                                                              |
+| Parameter         | Description                                                                                                                                                                                                                                                                  |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `root` (required) | Path to project root, where `package.json`, `webpack.config.mjs`, etc. reside. In general, `import.meta.dirname` is the right answer.                                                                                                                                        |
+| `template`        | Path to template directory (if needed) relative to `root`, from which to draw static web templates that will be updated during the build. Defaults to `'template'`                                                                                                           |
+| `bundle`          | Name of the module to bundle. Defaults to `'main'`                                                                                                                                                                                                                           |
+| `production`      | Whether this is a production or development build (which includes a great deal more debugging information and takes up a a lot more space). Defaults to `true`                                                                                                               |
 | `override`        | An object indicating which of the below Webpack configurations override, rather than extend the default configurationof the script. By default, all overrides are `false`. Possible overrides include `resolveExtensions`,`moduleRules`,`externals`,`plugins`,`optimization` |
 
 ##### Webpack configuration
@@ -139,7 +110,7 @@ export default bundle.fromTS.toVanillaJS({
 | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | `target`     | Webpack target value. Defaults to `'web'`, but `'node'` is useful for compiling node apps and libraries.               |
 | `extractCSS` | Boolean value determining whether CSS is extracted as a separate file or embedded in the JS bundle. Defaults to `true` |
-| `hash` | Boolean value determining whether content hashes are appended to output file names. Defaults to `true` |
+| `hash`       | Boolean value determining whether content hashes are appended to output file names. Defaults to `true`                 |
 
 #### `package.json`
 

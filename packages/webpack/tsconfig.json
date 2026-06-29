@@ -1,15 +1,10 @@
 {
-  "extends": "@tsconfig/recommended",
+  "extends": "@tsconfig/node-lts/tsconfig.json",
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "lib": ["es2022", "dom"],
-    "target": "esnext",
-    "declaration": true,
     "types": ["node"],
-    "esModuleInterop": true
+    "declaration": true
   },
   "include": ["./src"]
 }

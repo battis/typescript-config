@@ -6,6 +6,5 @@ Shared `eslint` config across all projects
 
 ```bash
 npm i -D @battis/eslint-config
+npm exec setup-eslint
 ```
-
-The postinstall script creates the necessary `eslint.config.mjs` file script in the project directory.

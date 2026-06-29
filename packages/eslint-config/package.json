@@ -16,12 +16,19 @@
   "type": "module",
   "main": "./dist/eslint.config.js",
   "types": "./dist/eslint.config.d.ts",
+  "directories": {
+    "bin": "./bin"
+  },
   "scripts": {
+    "clean": "del ./dist",
     "build": "run-s build:*",
-    "build:clean": "del ./dist/*",
+    "build:clean": "run-s clean",
     "build:compile": "tsc",
-    "postinstall": "./scripts/create-eslint-config",
     "version": "commit-and-tag-version"
+  },
+  "dependencies": {
+    "@battis/pkg-setup": "workspace:*",
+    "@qui-cli/core": "^7.0.0"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^24.0.0",

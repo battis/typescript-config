@@ -6,6 +6,5 @@ Shared Prettier configuration across all projects
 
 ```bash
 npm i -D @battis/prettier-config
+npm exec setup-prettier
 ```
-
-The postinstall script creates the necessary `.prettierrc.json` file script in the project directory.
