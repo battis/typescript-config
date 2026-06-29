@@ -1,5 +1,5 @@
 {
   "path": ".",
-  "tag-prefix": "setup/",
-  "releaseCommitMessageFormat": "chore(setup): @battis/setup@{{currentTag}}"
+  "tag-prefix": "pkg-setup/",
+  "releaseCommitMessageFormat": "chore(pkg-setup): @battis/pkg-setup@{{currentTag}}"
 }
