@@ -1,20 +1,15 @@
-publicHoistPattern:
-  - '*eslint*' # @battis/eslint
-  - '*prettier*' # @battis/prettier
-  - '@commitlint/*' # @battis/commit
-  - 'commit-and-tag-version' # @battis/commit
-
 allowBuilds:
-  # development environment
-  nx: true # lerna
-  unrs-resolver: true # jest
-
-  # @battis/webpack peer dependencies needed for webpack builds only
-  '@parcel/watcher': false # sass
+  nx: true
+  unrs-resolver: true
+  "@parcel/watcher": false
   gifsicle: false
   jpegtran-bin: false
   optipng-bin: false
   sharp: false
-
 packages:
   - packages/*
+publicHoistPattern:
+  - "*prettier*"
+  - "*eslint*"
+  - "@commitlint/*"
+  - commit-and-tag-version

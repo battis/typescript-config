@@ -28,7 +28,8 @@
     "@inquirer/confirm": "^6.1.1",
     "@qui-cli/colors": "^3.2.4",
     "@qui-cli/log": "^4.0.4",
-    "@qui-cli/plugin": "^4.1.2"
+    "@qui-cli/plugin": "^4.1.2",
+    "yaml": "^2.9.0"
   },
   "devDependencies": {
     "@battis/descriptive-types": "workspace:*",

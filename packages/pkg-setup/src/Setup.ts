@@ -6,6 +6,7 @@ import confirm from '@inquirer/confirm';
 import { Log } from '@qui-cli/log';
 import { PathString, JSONValue } from '@battis/descriptive-types';
 import type { IPackageJson } from 'package-json-type';
+import * as yaml from 'yaml';
 
 export type Configuration = Plugin.Configuration & {
   packageName?: string;
@@ -110,12 +111,18 @@ export async function run() {
     process.exit(6);
   }
 
+  let workspaceChanged = false;
   for (const filename of fs.readdirSync(srcPath)) {
     if (filename === 'package.json') {
       await confirmPackageUpdate(
         pkg,
         path.join(srcPath, filename),
         destPackagePath
+      );
+    } else if (filename === 'pnpm-workspace.yaml') {
+      workspaceChanged = await confirmWorkspaceUpdate(
+        path.join(srcPath, filename),
+        path.join(process.cwd(), filename)
       );
     } else {
       if (!['.', '..', '.DS_Store'].includes(filename)) {
@@ -125,6 +132,12 @@ export async function run() {
         );
       }
     }
+  }
+
+  if (workspaceChanged) {
+    Log.info(
+      `Changes have been made to ${Colors.path(path.join(process.cwd(), 'pnpm-workspace.yaml'), Colors.keyword)}, please run ${Colors.command('pnpm install')} to update the lockfile`
+    );
   }
 }
 
@@ -139,8 +152,13 @@ async function confirmPackageUpdate(
     const identifier = Colors.value(`package.${key}`);
     if (
       !pkg[key] ||
+      config.force ||
       (await confirm({
-        message: `Review proposed changes to ${identifier}:\n${Log.syntaxColor({ current: pkg[key], update: proposal[key], result: update })}\n\nAllow update?`
+        message: `Review proposed changes to ${identifier}:\n${Log.syntaxColor({
+          current: pkg[key],
+          update: proposal[key],
+          result: update
+        })}\n\nAllow update?`
       }))
     ) {
       pkg[key] = update;
@@ -152,10 +170,49 @@ async function confirmPackageUpdate(
   fs.writeFileSync(destPackagePath, JSON.stringify(pkg, null, 2));
 }
 
+async function confirmWorkspaceUpdate(
+  srcWorkspacePath: PathString,
+  destWorkspacePath: PathString
+) {
+  let changed = false;
+  if (fs.existsSync(destWorkspacePath)) {
+    const workspace = yaml.parse(fs.readFileSync(destWorkspacePath, 'utf8'));
+    const proposal = yaml.parse(fs.readFileSync(srcWorkspacePath, 'utf8'));
+    for (const key in proposal) {
+      const update = mergeJSONValues(proposal[key], workspace[key]);
+      const identifier = Colors.value(`pnpm-workspace.yaml#${key}`);
+      if (
+        !(key in workspace) ||
+        config.force ||
+        (await confirm({
+          message: `Review proposed changes to ${identifier}\n${Log.syntaxColor(
+            {
+              current: workspace[key],
+              update: proposal[key],
+              result: update
+            }
+          )}\n\nAllow update?`
+        }))
+      ) {
+        workspace[key] = update;
+        Log.info(`${identifier} updated`);
+        changed = true;
+      } else {
+        Log.warning(`${identifier} left unchanged`);
+      }
+    }
+    fs.writeFileSync(destWorkspacePath, yaml.stringify(workspace));
+  } else {
+    fs.copyFileSync(srcWorkspacePath, destWorkspacePath);
+    changed = true;
+  }
+  return changed;
+}
+
 function mergeJSONValues(src: JSONValue, dest: JSONValue) {
   if (typeof dest === 'object' && typeof src === 'object') {
     if (Array.isArray(dest) && Array.isArray(src)) {
-      return [...dest, ...src];
+      return [...new Set([...dest, ...src])];
     } else {
       return { ...dest, ...src };
     }

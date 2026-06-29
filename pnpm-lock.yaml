@@ -258,6 +258,9 @@ importers:
       '@qui-cli/plugin':
         specifier: ^4.1.2
         version: 4.1.2(@qui-cli/colors@3.2.4)
+      yaml:
+        specifier: ^2.9.0
+        version: 2.9.0
     devDependencies:
       '@battis/descriptive-types':
         specifier: workspace:*
