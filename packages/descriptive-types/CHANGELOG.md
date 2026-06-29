@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.0](https://github.com/battis/typescript-config/compare/descriptive-types/0.2.6...descriptive-types/0.3.0) (2026-06-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* separate annotation for Truthy and Falsy values
+
+### Features
+
+* add additional optional annotations ([1c25ab4](https://github.com/battis/typescript-config/commit/1c25ab47c6b4646a8bab0b40059fe0f65553ffc2))
+* added a selection of type guards and converters ([6dfaeca](https://github.com/battis/typescript-config/commit/6dfaeca94074f7854605162496e4986b8843da05))
+* re-export JSON types from @battis/typescript-tricks ([ba3749f](https://github.com/battis/typescript-config/commit/ba3749f3a6c286f186d95cbfc048910938b3fa06))
+* separate annotation for Truthy and Falsy values ([86d03ad](https://github.com/battis/typescript-config/commit/86d03ad78d11be93abd998c9dd0560b45a19c941))
+
+
+### Bug Fixes
+
+* major dependency bumps ([0f9b96d](https://github.com/battis/typescript-config/commit/0f9b96dff4438134198e4b3f8329592b070a564d))
+
 ## [0.2.6](https://github.com/battis/typescript-config/compare/descriptive-types/0.2.5...descriptive-types/0.2.6) (2025-10-30)
 
 ### Bug Fixes
