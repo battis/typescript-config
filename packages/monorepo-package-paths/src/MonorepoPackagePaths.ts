@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import pkg from '@battis/import-package-json';
-import { Validators } from '@battis/qui-cli.validators';
+import { Validators } from '@qui-cli/validators';
 import input from '@inquirer/input';
 import { Colors } from '@qui-cli/colors';
 import { Log } from '@qui-cli/log';
