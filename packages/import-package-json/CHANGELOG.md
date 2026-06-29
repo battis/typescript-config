@@ -1,4 +1,13 @@
-# get-package-json
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [0.1.8](https://github.com/battis/typescript-config/compare/import-package-json/0.1.7...import-package-json/0.1.8) (2026-06-29)
+
+
+### Bug Fixes
+
+* major dependency bumps ([0f9b96d](https://github.com/battis/typescript-config/commit/0f9b96dff4438134198e4b3f8329592b070a564d))
 
 ## 0.1.7
 
