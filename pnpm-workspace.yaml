@@ -1,6 +1,8 @@
 publicHoistPattern:
   - '*eslint*' # @battis/eslint
   - '*prettier*' # @battis/prettier
+  - '@commitlint/*' # @battis/commit
+  - 'commit-and-tag-version' # @battis/commit
 
 allowBuilds:
   # development environment

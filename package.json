@@ -22,11 +22,9 @@
     "release:publish": "pnpm publish -r --access public"
   },
   "devDependencies": {
+    "@battis/commit": "workspace:*",
     "@battis/eslint": "workspace:*",
     "@battis/prettier": "workspace:*",
-    "@commitlint/cli": "^21.1.0",
-    "@commitlint/config-conventional": "^21.1.0",
-    "@commitlint/config-pnpm-scopes": "^21.0.2",
     "@tsconfig/node-lts": "^24.0.0",
     "@types/jest": "^30.0.0",
     "lerna": "^9.0.7",

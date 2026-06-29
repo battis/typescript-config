@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+import { Setup } from '@battis/pkg-setup';
+import { Core } from '@qui-cli/core';
+import { Shell } from '@qui-cli/shell';
+import { Colors } from '@qui-cli/colors';
+
+Setup.configure({ packageName: '@battis/commit' });
+await Core.run();
+
+if (Shell.exec('which pre-commit').stdout !== '') {
+  Shell.exec('pre-commit install');
+  Shell.exec('pre-commit install --hook-type commit-msg');
+} else {
+  Log.warning(
+    `Install pre-commit and then re-run ${Colors.command(process.argv[1])} (see ${Colors.url('https://pre-commit.com/#install')})`
+  );
+}
