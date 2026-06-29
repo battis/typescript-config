@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.1](https://github.com/battis/typescript-config/compare/prettier/2.0.0...prettier/2.0.1) (2026-06-29)
+
+
+### Bug Fixes
+
+* include .prettierrc.json template ([11d1810](https://github.com/battis/typescript-config/commit/11d1810cb68c5810e22714fd3d61976997c9a88c))
+
 ## [2.0.0](https://github.com/battis/typescript-config/compare/prettier/1.7.3...prettier/2.0.0) (2026-06-29)
 
 
