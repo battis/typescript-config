@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.2](https://github.com/battis/typescript-config/compare/webpack/2.1.1...webpack/2.1.2) (2026-06-29)
+
+
+### Bug Fixes
+
+* major dependency bumps ([0f9b96d](https://github.com/battis/typescript-config/commit/0f9b96dff4438134198e4b3f8329592b070a564d))
+* remove deprecated peer ([3bf0e78](https://github.com/battis/typescript-config/commit/3bf0e78c1bbb546293bafb6771ca20e68fedf16b))
+
 ## [2.1.1](https://github.com/battis/typescript-config/compare/webpack/2.1.0...webpack/2.1.1) (2026-03-07)
 
 
