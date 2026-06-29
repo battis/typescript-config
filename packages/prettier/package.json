@@ -1,12 +1,12 @@
 {
-  "name": "@battis/prettier-config",
+  "name": "@battis/prettier",
   "version": "1.7.3",
   "description": "",
-  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/prettier-config#readme",
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/prettier#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/battis/typescript-config.git",
-    "directory": "packages/prettier-config"
+    "directory": "packages/prettier"
   },
   "license": "GPL-3.0",
   "author": {

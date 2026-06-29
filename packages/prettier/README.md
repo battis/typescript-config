@@ -1,10 +1,10 @@
-# @battis/prettier-config
+# @battis/prettier
 
 Shared Prettier configuration across all projects
 
 ### Install
 
 ```bash
-npm i -D @battis/prettier-config
+npm i -D @battis/prettier
 npm exec setup-prettier
 ```

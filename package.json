@@ -22,8 +22,8 @@
     "release:publish": "pnpm publish -r --access public"
   },
   "devDependencies": {
-    "@battis/eslint-config": "workspace:*",
-    "@battis/prettier-config": "workspace:*",
+    "@battis/eslint": "workspace:*",
+    "@battis/prettier": "workspace:*",
     "@commitlint/cli": "^21.1.0",
     "@commitlint/config-conventional": "^21.1.0",
     "@commitlint/config-pnpm-scopes": "^21.0.2",

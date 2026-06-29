@@ -8,10 +8,10 @@ importers:
 
   .:
     devDependencies:
-      '@battis/eslint-config':
+      '@battis/eslint':
         specifier: workspace:*
         version: link:packages/eslint
-      '@battis/prettier-config':
+      '@battis/prettier':
         specifier: workspace:*
         version: link:packages/prettier
       '@commitlint/cli':

@@ -1,11 +1,9 @@
 publicHoistPattern:
-  - '*eslint*' # @battis/eslint-config
-  - '*prettier*' # @battis/prettier-config
+  - '*eslint*' # @battis/eslint
+  - '*prettier*' # @battis/prettier
 
 allowBuilds:
   # development environment
-  '@battis/eslint-config': true
-  '@battis/prettier-config': true
   nx: true # lerna
   unrs-resolver: true # jest
 

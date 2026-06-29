@@ -1,12 +1,12 @@
 {
-  "name": "@battis/eslint-config",
+  "name": "@battis/eslint",
   "version": "2.1.0",
   "description": "",
-  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/eslint-config#readme",
+  "homepage": "https://github.com/battis/typescript-config/tree/main/packages/eslint#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/battis/typescript-config.git",
-    "directory": "packages/eslint-config"
+    "directory": "packages/eslint"
   },
   "license": "GPL-3.0",
   "author": {
