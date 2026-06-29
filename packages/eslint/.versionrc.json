@@ -1,5 +1,5 @@
 {
   "path": ".",
-  "tag-prefix": "eslint-config/",
-  "releaseCommitMessageFormat": "chore(eslint-config): @battis/eslint-config@{{currentTag}}"
+  "tag-prefix": "eslint/",
+  "releaseCommitMessageFormat": "chore(eslint): @battis/eslint@{{currentTag}}"
 }
