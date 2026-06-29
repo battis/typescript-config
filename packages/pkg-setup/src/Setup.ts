@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import confirm from '@inquirer/confirm';
 import { Log } from '@qui-cli/log';
-import { PathString } from '@battis/descriptive-types';
+import { PathString, JSONValue } from '@battis/descriptive-types';
 import type { IPackageJson } from 'package-json-type';
 
 export type Configuration = Plugin.Configuration & {
@@ -57,74 +57,124 @@ export function init({ values }: Plugin.ExpectedArguments<typeof options>) {
 }
 
 export async function run() {
-  if (config.packageName) {
-    if (config.setupDir) {
-      const destPackagePath = path.join(process.cwd(), 'package.json');
-      if (fs.existsSync(destPackagePath)) {
-        try {
-          const pkg: IPackageJson = JSON.parse(
-            fs.readFileSync(destPackagePath, 'utf8')
-          );
-          if (
-            (pkg.dependencies && config.packageName in pkg.dependencies) ||
-            (pkg.devDependencies &&
-              config.packageName in pkg.devDependencies) ||
-            (pkg.peerDependencies && config.packageName in pkg.peerDependencies)
-          ) {
-            const srcPath = path.join(
-              process.cwd(),
-              'node_modules',
-              config.packageName,
-              config.setupDir
-            );
-            if (fs.existsSync(srcPath)) {
-              for (const filename of fs.readdirSync(srcPath)) {
-                if (!['.', '..', '.DS_Store'].includes(filename)) {
-                  const destPath = path.join(process.cwd(), filename);
-                  if (
-                    !fs.existsSync(destPath) ||
-                    config.force ||
-                    (await confirm({
-                      message: `File ${Colors.path(destPath, Colors.keyword)} exists. Overwrite?`
-                    }))
-                  ) {
-                    fs.copyFileSync(path.join(srcPath, filename), destPath);
-                    Log.info(
-                      `Created ${Colors.path(destPath, Colors.keyword)}`
-                    );
-                  } else {
-                    Log.warning(
-                      `${Colors.path(destPath, Colors.keyword)} left unchanged.`
-                    );
-                  }
-                }
-              }
-              process.exit(0);
-            } else {
-              Log.error(
-                `Could not find source directory ${Colors.path(srcPath, Colors.keyword)}`
-              );
-            }
-          } else {
-            Log.error(
-              `${Colors.value(config.packageName)} must be a dependency of the local package`
-            );
-          }
-        } catch (_) {
-          Log.error(
-            `${Colors.path(destPackagePath, Colors.keyword)} could not be parsed`
-          );
-        }
-      } else {
-        Log.error(
-          `${Colors.command(process.argv[1])} can only be run at a package root`
+  if (!config.packageName) {
+    Log.error(`${Colors.optionArg('--packageName')} must be defined`);
+    process.exit(1);
+  }
+
+  if (!config.setupDir) {
+    Log.error(`${Colors.optionArg('--setupDir')} must be defined`);
+    process.exit(2);
+  }
+
+  const destPackagePath = path.join(process.cwd(), 'package.json');
+  if (!fs.existsSync(destPackagePath)) {
+    Log.error(
+      `${Colors.command(process.argv[1])} can only be run at a package root`
+    );
+    process.exit(3);
+  }
+
+  let pkg: IPackageJson;
+  try {
+    pkg = JSON.parse(fs.readFileSync(destPackagePath, 'utf8'));
+  } catch (_) {
+    Log.error(
+      `${Colors.path(destPackagePath, Colors.keyword)} could not be parsed`
+    );
+    process.exit(4);
+  }
+
+  if (!(
+    (pkg.dependencies && config.packageName in pkg.dependencies) ||
+    (pkg.devDependencies && config.packageName in pkg.devDependencies) ||
+    (pkg.peerDependencies && config.packageName in pkg.peerDependencies)
+  )) {
+    Log.error(
+      `${Colors.value(config.packageName)} must be a dependency of the local package`
+    );
+    process.exit(5);
+  }
+
+  const srcPath = path.join(
+    process.cwd(),
+    'node_modules',
+    config.packageName,
+    config.setupDir
+  );
+
+  if (!fs.existsSync(srcPath)) {
+    Log.error(
+      `Could not find source directory ${Colors.path(srcPath, Colors.keyword)}`
+    );
+    process.exit(6);
+  }
+
+  for (const filename of fs.readdirSync(srcPath)) {
+    if (filename === 'package.json') {
+      await confirmPackageUpdate(
+        pkg,
+        path.join(srcPath, filename),
+        destPackagePath
+      );
+    } else {
+      if (!['.', '..', '.DS_Store'].includes(filename)) {
+        await confirmCopy(
+          path.join(srcPath, filename),
+          path.join(process.cwd(), filename)
         );
       }
+    }
+  }
+}
+
+async function confirmPackageUpdate(
+  pkg: IPackageJson,
+  srcPackagePath: PathString,
+  destPackagePath: PathString
+) {
+  const proposal = JSON.parse(fs.readFileSync(srcPackagePath, 'utf8'));
+  for (const key in proposal) {
+    const update = mergeJSONValues(proposal[key], pkg[key]);
+    const identifier = Colors.value(`package.${key}`);
+    if (
+      !pkg[key] ||
+      (await confirm({
+        message: `Review proposed changes to ${identifier}:\n${Log.syntaxColor({ current: pkg[key], update: proposal[key], result: update })}\n\nAllow update?`
+      }))
+    ) {
+      pkg[key] = update;
+      Log.info(`${identifier} updated`);
     } else {
-      Log.error(`${Colors.optionArg('--setupDir')} must be defined`);
+      Log.warning(`${identifier} left unchanged`);
+    }
+  }
+  fs.writeFileSync(destPackagePath, JSON.stringify(pkg, null, 2));
+}
+
+function mergeJSONValues(src: JSONValue, dest: JSONValue) {
+  if (typeof dest === 'object' && typeof src === 'object') {
+    if (Array.isArray(dest) && Array.isArray(src)) {
+      return [...dest, ...src];
+    } else {
+      return { ...dest, ...src };
     }
   } else {
-    Log.error(`${Colors.optionArg('--packageName')} must be defined`);
+    return src;
   }
-  process.exit(1);
+}
+
+async function confirmCopy(srcPath: PathString, destPath: PathString) {
+  if (
+    !fs.existsSync(destPath) ||
+    config.force ||
+    (await confirm({
+      message: `File ${Colors.path(destPath, Colors.keyword)} exists. Overwrite?`
+    }))
+  ) {
+    fs.copyFileSync(srcPath, destPath);
+    Log.info(`Created ${Colors.path(destPath, Colors.keyword)}`);
+  } else {
+    Log.warning(`${Colors.path(destPath, Colors.keyword)} left unchanged.`);
+  }
 }
