@@ -8,6 +8,7 @@ import { Colors } from '@qui-cli/colors';
 Setup.configure({ packageName: '@battis/commit' });
 await Core.run();
 
+Shell.configure({ silent: true });
 if (Shell.exec('which pre-commit').stdout !== '') {
   Shell.exec('pre-commit install');
   Shell.exec('pre-commit install --hook-type commit-msg');
