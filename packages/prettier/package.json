@@ -19,7 +19,6 @@
     "bin": "./bin"
   },
   "scripts": {
-    "prepack": "run-s build",
     "release": "commit-and-tag-version --noBumpWhenEmptyChanges"
   },
   "dependencies": {
