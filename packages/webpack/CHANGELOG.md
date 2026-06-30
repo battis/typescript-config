@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.3](https://github.com/battis/typescript-config/compare/webpack/2.1.2...webpack/2.1.3) (2026-06-30)
+
+
+### Bug Fixes
+
+* include image optimization scripts in workspace config ([25f0efe](https://github.com/battis/typescript-config/commit/25f0efeb3a2cdeb4e0c377d7b786dfd26c594184))
+
 ## [2.1.2](https://github.com/battis/typescript-config/compare/webpack/2.1.1...webpack/2.1.2) (2026-06-29)
 
 
