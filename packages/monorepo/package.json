@@ -22,6 +22,9 @@
     "@battis/pkg-setup": "workspace:*",
     "@qui-cli/core": "7.0.0"
   },
+  "devDependencies": {
+    "@battis/workspace": "workspace:*"
+  },
   "peerDependencies": {
     "@battis/commit": "workspace:*",
     "@battis/eslint": "workspace:*",

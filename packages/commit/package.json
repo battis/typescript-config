@@ -25,6 +25,9 @@
     "@qui-cli/core": "7.0.0",
     "@qui-cli/shell": "3.1.4"
   },
+  "devDependencies": {
+    "@battis/workspace": "workspace:*"
+  },
   "peerDependencies": {
     "@commitlint/config-conventional": "^21.1.0",
     "@commitlint/config-pnpm-scopes": "^21.0.2",

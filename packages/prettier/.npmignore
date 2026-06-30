@@ -1,2 +1,4 @@
 .*
-!.prettierrc.json
+!/pkg-setup/.*
+/src/
+/tsconfig.json

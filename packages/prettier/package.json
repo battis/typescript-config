@@ -25,6 +25,9 @@
     "@battis/pkg-setup": "workspace:*",
     "@qui-cli/core": "^7.0.0"
   },
+  "devDependencies": {
+    "@battis/workspace": "workspace:*"
+  },
   "peerDependencies": {
     "@prettier/plugin-xml": "*",
     "@trivago/prettier-plugin-sort-imports": "*",
