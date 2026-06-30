@@ -1,0 +1,6 @@
+allowBuilds:
+  '@parcel/watcher': true # sass
+  gifsicle: true
+  jpegtran-bin: true
+  optipng-bin: true
+  sharp: true
