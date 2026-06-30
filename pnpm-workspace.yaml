@@ -13,3 +13,6 @@ publicHoistPattern:
   - "*eslint*"
   - "@commitlint/*"
   - commit-and-tag-version
+  - lerna
+  - monorepo-package-paths
+  - npm-run-all

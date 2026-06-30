@@ -1,0 +1,5 @@
+{
+  "path": ".",
+  "tag-prefix": "monorepo/",
+  "releaseCommitMessageFormat": "chore(monorepo): @battis/monorepo@{{currentTag}}"
+}

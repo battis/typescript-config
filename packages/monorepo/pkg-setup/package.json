@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "run-s build:*",
+    "build:compile": "lerna run build",
+    "build:paths": "monorepo-package-paths -w --author --homepage --repository",
+    "release": "run-s release:*",
+    "release:build": "lerna run --concurrency 1 release",
+    "release:git": "git push --follow-tags",
+    "release:login": "pnpm login",
+    "release:publish": "pnpm publish -r --access public"
+  }
+}

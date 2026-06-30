@@ -1,0 +1,8 @@
+publicHoistPattern:
+  - 'lerna'
+  - 'monorepo-package-paths'
+  - 'npm-run-all'
+allowBuilds:
+  nx: true
+packages:
+  - packages/*
