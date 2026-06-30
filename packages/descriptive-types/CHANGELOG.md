@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.1](https://github.com/battis/typescript-config/compare/descriptive-types/0.3.0...descriptive-types/0.3.1) (2026-06-30)
+
+
+### Bug Fixes
+
+* standardize workspace package configuration ([2dac8c8](https://github.com/battis/typescript-config/commit/2dac8c859257d34117b1e14552fb9381ff45f921))
+
 ## [0.3.0](https://github.com/battis/typescript-config/compare/descriptive-types/0.2.6...descriptive-types/0.3.0) (2026-06-29)
 
 
