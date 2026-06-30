@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.4](https://github.com/battis/typescript-config/compare/commit/0.0.3...commit/0.0.4) (2026-06-30)
+
+
+### Bug Fixes
+
+* simplify log output ([3419e7d](https://github.com/battis/typescript-config/commit/3419e7d47a4b54e27c8fc3a9348c98adb6834da0))
+
 ## [0.0.3](https://github.com/battis/typescript-config/compare/commit/0.0.2...commit/0.0.3) (2026-06-30)
 
 
