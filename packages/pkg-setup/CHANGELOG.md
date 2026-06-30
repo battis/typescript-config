@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.4](https://github.com/battis/typescript-config/compare/pkg-setup/0.0.3...pkg-setup/0.0.4) (2026-06-30)
+
+
+### Bug Fixes
+
+* improve copy-diffing logic and logging ([acd23f3](https://github.com/battis/typescript-config/commit/acd23f3706696c547786611fbba6d38ed918c26a))
+* streamline update logic and logging ([2750b19](https://github.com/battis/typescript-config/commit/2750b19b4b3f0e9cacd8e093b4f0f5b076fa452a))
+
 ## [0.0.3](https://github.com/battis/typescript-config/compare/pkg-setup/0.0.2...pkg-setup/0.0.3) (2026-06-30)
 
 
