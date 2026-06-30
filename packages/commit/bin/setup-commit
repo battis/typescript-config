@@ -4,16 +4,21 @@ import { Setup } from '@battis/pkg-setup';
 import { Core } from '@qui-cli/core';
 import { Shell } from '@qui-cli/shell';
 import { Colors } from '@qui-cli/colors';
+import ora from 'ora';
 
 Setup.configure({ packageName: '@battis/commit' });
 await Core.run();
 
-Shell.configure({ silent: true });
+const spinner = ora(`Verifying ${Colors.command('pre-commit')} hooks`).start();
+Shell.configure({ showCommands: false, logging: false, silent: true });
 if (Shell.exec('which pre-commit').stdout !== '') {
   Shell.exec('pre-commit install');
   Shell.exec('pre-commit install --hook-type commit-msg');
+  spinner.succeed(`${Colors.command('pre-commit')} hooks registered`);
 } else {
-  Log.warning(
-    `Install pre-commit and then re-run ${Colors.command(process.argv[1])} (see ${Colors.url('https://pre-commit.com/#install')})`
+  spinner.fail(
+    Colors.error(
+      `Install pre-commit and then re-run ${Colors.command(process.argv[1])} (see ${Colors.url('https://pre-commit.com/#install')})`
+    )
   );
 }
