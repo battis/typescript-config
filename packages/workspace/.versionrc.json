@@ -1,5 +1,5 @@
 {
   "path": ".",
-  "tag-prefix": "webpack/",
-  "releaseCommitMessageFormat": "chore(webpack): @battis/webpack@{{currentTag}}"
+  "tag-prefix": "workspace/",
+  "releaseCommitMessageFormat": "chore(workspace): @battis/workspace@{{currentTag}}"
 }
