@@ -128,7 +128,7 @@ export async function run() {
       if (!['.', '..', '.DS_Store'].includes(filename)) {
         await confirmCopy(
           path.join(srcPath, filename),
-          path.join(process.cwd(), filename)
+          path.join(process.cwd(), filename.replace(/^dot\./, '.'))
         );
       }
     }
