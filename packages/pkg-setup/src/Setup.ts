@@ -231,9 +231,23 @@ async function confirmWithDiff(
       }
       let update = config.force;
       if (!update) {
-        spinner.clear();
+        spinner.stop();
         update = await confirm({
-          message: `In ${identifier}, replace:\n${Log.syntaxColor(dest || 'null')}\nwith:\n${Log.syntaxColor(src || 'null')}\nConfirm?`
+          message: `In ${identifier}, replace:\n\n${
+            typeof dest === 'string'
+              ? dest
+                  .split('\n')
+                  .map((line) => `  ${line}`)
+                  .join('\n')
+              : Log.syntaxColor(dest || 'null')
+          }\n\nwith:\n\n${
+            typeof src === 'string'
+              ? src
+                  .split('\n')
+                  .map((line) => `  ${line}`)
+                  .join('\n')
+              : Log.syntaxColor(src || 'null')
+          }\n\nConfirm?`
         });
       }
       if (update) {
