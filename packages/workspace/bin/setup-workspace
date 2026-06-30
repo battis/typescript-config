@@ -12,12 +12,6 @@ await Core.run();
 
 const versionrcPath = path.join(process.cwd(), '.versionrc.json');
 const packagePath = path.join(process.cwd(), 'package.json');
-Log.info({
-  versionrcPath,
-  versionrcPathExists: fs.existsSync(versionrcPath),
-  packagePath,
-  packagePathExists: fs.existsSync(packagePath)
-});
 if (fs.existsSync(versionrcPath) && fs.existsSync(packagePath)) {
   const pkg = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
   fs.writeFileSync(
