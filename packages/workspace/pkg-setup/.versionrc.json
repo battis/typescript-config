@@ -1,0 +1,5 @@
+{
+  "path": ".",
+  "tag-prefix": "{{DIR}}/",
+  "releaseCommitMessageFormat": "chore({{DIR}}): {{NAME}}@{{currentTag}}"
+}

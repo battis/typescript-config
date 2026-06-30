@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "scripts": {
+    "prepack": "run-s build",
+    "release": "commit-and-tag-version --noBumpWhenEmptyChanges"
+  }
+}
