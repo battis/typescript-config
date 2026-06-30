@@ -1,0 +1,10 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [0.0.1](https://github.com/battis/typescript-config/compare/webpack/2.1.3...webpack/0.0.1) (2026-06-30)
+
+
+### Features
+
+* standardize workspace package configuration ([87b8385](https://github.com/battis/typescript-config/commit/87b8385c7ac641eb787f6955860d53f2f5182a7f))
