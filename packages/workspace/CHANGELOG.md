@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.4](https://github.com/battis/typescript-config/compare/workspace/0.0.3...workspace/0.0.4) (2026-06-30)
+
+
+### Bug Fixes
+
+* remove extraneous debugging log ([c76df65](https://github.com/battis/typescript-config/commit/c76df65cd707ee12863a302febb1de624c658b2c))
+
 ## [0.0.3](https://github.com/battis/typescript-config/compare/workspace/0.0.2...workspace/0.0.3) (2026-06-30)
 
 
