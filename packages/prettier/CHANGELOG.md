@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.3](https://github.com/battis/typescript-config/compare/prettier/2.0.2...prettier/2.0.3) (2026-06-30)
+
+
+### Bug Fixes
+
+* use updated dot.dotfile notation for pkg-setup ([23b8c83](https://github.com/battis/typescript-config/commit/23b8c8386eb26b30aed0771158a19c050442422f))
+
 ## [2.0.2](https://github.com/battis/typescript-config/compare/prettier/2.0.1...prettier/2.0.2) (2026-06-30)
 
 
