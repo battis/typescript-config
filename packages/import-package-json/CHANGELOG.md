@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.9](https://github.com/battis/typescript-config/compare/import-package-json/0.1.8...import-package-json/0.1.9) (2026-06-30)
+
+
+### Bug Fixes
+
+* standardize workspace package configuration ([2dac8c8](https://github.com/battis/typescript-config/commit/2dac8c859257d34117b1e14552fb9381ff45f921))
+
 ## [0.1.8](https://github.com/battis/typescript-config/compare/import-package-json/0.1.7...import-package-json/0.1.8) (2026-06-29)
 
 
