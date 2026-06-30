@@ -7,6 +7,7 @@ import { Log } from '@qui-cli/log';
 import { PathString, JSONValue } from '@battis/descriptive-types';
 import type { IPackageJson } from 'package-json-type';
 import * as yaml from 'yaml';
+import ora from 'ora';
 
 export type Configuration = Plugin.Configuration & {
   packageName?: string;
@@ -111,10 +112,11 @@ export async function run() {
     process.exit(6);
   }
 
+  let packageChanged = false;
   let workspaceChanged = false;
   for (const filename of fs.readdirSync(srcPath)) {
     if (filename === 'package.json') {
-      await confirmPackageUpdate(
+      packageChanged = await confirmPackageUpdate(
         pkg,
         path.join(srcPath, filename),
         destPackagePath
@@ -134,9 +136,18 @@ export async function run() {
     }
   }
 
+  if (packageChanged) {
+    Log.info(
+      Colors.error(
+        `\nChanges have been made to ${Colors.path(path.join(process.cwd(), 'package.json'), Colors.keyword)}, please verify package dependency and build status`
+      )
+    );
+  }
   if (workspaceChanged) {
     Log.info(
-      `Changes have been made to ${Colors.path(path.join(process.cwd(), 'pnpm-workspace.yaml'), Colors.keyword)}, please run ${Colors.command('pnpm install')} to update the lockfile`
+      Colors.error(
+        `\nChanges have been made to ${Colors.path(path.join(process.cwd(), 'pnpm-workspace.yaml'), Colors.keyword)}, please verify lockfile status`
+      )
     );
   }
 }
@@ -147,27 +158,23 @@ async function confirmPackageUpdate(
   destPackagePath: PathString
 ) {
   const proposal = JSON.parse(fs.readFileSync(srcPackagePath, 'utf8'));
+  let changed = false;
   for (const key in proposal) {
     const update = mergeJSONValues(proposal[key], pkg[key]);
-    const identifier = Colors.value(`package.${key}`);
-    if (
-      !pkg[key] ||
-      config.force ||
-      (await confirm({
-        message: `Review proposed changes to ${identifier}:\n${Log.syntaxColor({
-          current: pkg[key],
-          update: proposal[key],
-          result: update
-        })}\n\nAllow update?`
-      }))
-    ) {
-      pkg[key] = update;
-      Log.info(`${identifier} updated`);
-    } else {
-      Log.warning(`${identifier} left unchanged`);
-    }
+    await confirmWithDiff(
+      update,
+      pkg[key],
+      Colors.value(`package.${key}`),
+      () => {
+        pkg[key] = update;
+        changed = true;
+      }
+    );
   }
-  fs.writeFileSync(destPackagePath, JSON.stringify(pkg, null, 2));
+  if (changed) {
+    fs.writeFileSync(destPackagePath, JSON.stringify(pkg, null, 2));
+  }
+  return changed;
 }
 
 async function confirmWorkspaceUpdate(
@@ -180,33 +187,73 @@ async function confirmWorkspaceUpdate(
     const proposal = yaml.parse(fs.readFileSync(srcWorkspacePath, 'utf8'));
     for (const key in proposal) {
       const update = mergeJSONValues(proposal[key], workspace[key]);
-      const identifier = Colors.value(`pnpm-workspace.yaml#${key}`);
-      if (
-        !(key in workspace) ||
-        config.force ||
-        (await confirm({
-          message: `Review proposed changes to ${identifier}\n${Log.syntaxColor(
-            {
-              current: workspace[key],
-              update: proposal[key],
-              result: update
-            }
-          )}\n\nAllow update?`
-        }))
-      ) {
-        workspace[key] = update;
-        Log.info(`${identifier} updated`);
-        changed = true;
-      } else {
-        Log.warning(`${identifier} left unchanged`);
-      }
+      await confirmWithDiff(
+        update,
+        workspace[key],
+        Colors.value(`pnpm-workspace.yaml#${key}`),
+        () => {
+          workspace[key] = update;
+          changed = true;
+        }
+      );
     }
-    fs.writeFileSync(destWorkspacePath, yaml.stringify(workspace));
+    if (changed) {
+      fs.writeFileSync(destWorkspacePath, yaml.stringify(workspace));
+    }
   } else {
     fs.copyFileSync(srcWorkspacePath, destWorkspacePath);
     changed = true;
   }
   return changed;
+}
+
+async function confirmCopy(srcPath: PathString, destPath: PathString) {
+  await confirmWithDiff(
+    fs.existsSync(srcPath) ? fs.readFileSync(srcPath, 'utf8') : undefined,
+    fs.existsSync(destPath) ? fs.readFileSync(destPath, 'utf8') : undefined,
+    Colors.path(destPath, Colors.keyword),
+    () => fs.copyFileSync(srcPath, destPath)
+  );
+}
+
+async function confirmWithDiff(
+  src: unknown,
+  dest: unknown,
+  identifier: string,
+  action: () => void | Promise<void>
+) {
+  const spinner = ora(identifier).start();
+  if (src !== undefined) {
+    if (dest !== undefined) {
+      if (isEqual(src, dest)) {
+        spinner.succeed(`${identifier} up-to-date`);
+        return;
+      }
+      let update = config.force;
+      if (!update) {
+        spinner.clear();
+        update = await confirm({
+          message: `In ${identifier}, replace:\n${Log.syntaxColor(dest || 'null')}\nwith:\n${Log.syntaxColor(src || 'null')}\nConfirm?`
+        });
+      }
+      if (update) {
+        await action();
+        if (config.force) {
+          spinner.succeed(`${identifier} updated`);
+        }
+        return;
+      }
+    } else {
+      await action();
+      spinner.succeed(`${identifier} created`);
+      return;
+    }
+  } else {
+    spinner.fail(
+      Colors.error(`${identifier} source missing in ${config.packageName}`)
+    );
+    return;
+  }
 }
 
 function mergeJSONValues(src: JSONValue, dest: JSONValue) {
@@ -221,33 +268,30 @@ function mergeJSONValues(src: JSONValue, dest: JSONValue) {
   }
 }
 
-async function confirmCopy(srcPath: PathString, destPath: PathString) {
-  if (fs.existsSync(srcPath)) {
-    let copy = !fs.existsSync(destPath);
-    let diff = false;
-    if (!copy) {
-      if (
-        fs.readFileSync(srcPath, 'utf8') !== fs.readFileSync(destPath, 'utf8')
-      ) {
-        diff = true;
-        copy =
-          config.force ||
-          (await confirm({
-            message: `File ${Colors.path(destPath, Colors.keyword)} exists. Overwrite?`
-          }));
+function isEqual(a: unknown, b: unknown) {
+  if (a && b) {
+    if (typeof a === 'object' && typeof b === 'object') {
+      if (Array.isArray(a) && Array.isArray(b)) {
+        if (a.length === b.length) {
+          for (let i = 0; i < a.length; i++) {
+            if (!isEqual(a[i], b[i])) {
+              return false;
+            }
+          }
+          return true;
+        }
       } else {
-        Log.info(`${Colors.path(destPath, Colors.keyword)} requires no update`);
+        const keys = Object.keys(a) as (keyof typeof a)[];
+        if (keys.length === Object.keys(b).length) {
+          for (const key of keys) {
+            if (!isEqual(a[key], b[key])) {
+              return false;
+            }
+          }
+          return true;
+        }
       }
     }
-    if (copy) {
-      fs.copyFileSync(srcPath, destPath);
-      Log.info(`Wrote ${Colors.path(destPath, Colors.keyword)}`);
-    } else if (diff) {
-      Log.warning(`${Colors.path(destPath, Colors.keyword)} left unchanged`);
-    }
-  } else {
-    Log.error(
-      `Expected file ${Colors.path(srcPath, Colors.keyword)} not found`
-    );
   }
+  return a === b;
 }
