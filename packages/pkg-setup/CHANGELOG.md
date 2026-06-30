@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.3](https://github.com/battis/typescript-config/compare/pkg-setup/0.0.2...pkg-setup/0.0.3) (2026-06-30)
+
+
+### Features
+
+* use `dot.dotfile-name` notation in pkg-setup for clarity ([7f5e96d](https://github.com/battis/typescript-config/commit/7f5e96dbbcb2ff43a80f6f244513d77c99b30d50))
+
 ## [0.0.2](https://github.com/battis/typescript-config/compare/pkg-setup/0.0.1...pkg-setup/0.0.2) (2026-06-30)
 
 
