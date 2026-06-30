@@ -222,16 +222,32 @@ function mergeJSONValues(src: JSONValue, dest: JSONValue) {
 }
 
 async function confirmCopy(srcPath: PathString, destPath: PathString) {
-  if (
-    !fs.existsSync(destPath) ||
-    config.force ||
-    (await confirm({
-      message: `File ${Colors.path(destPath, Colors.keyword)} exists. Overwrite?`
-    }))
-  ) {
-    fs.copyFileSync(srcPath, destPath);
-    Log.info(`Created ${Colors.path(destPath, Colors.keyword)}`);
+  if (fs.existsSync(srcPath)) {
+    let copy = !fs.existsSync(destPath);
+    let diff = false;
+    if (!copy) {
+      if (
+        fs.readFileSync(srcPath, 'utf8') !== fs.readFileSync(destPath, 'utf8')
+      ) {
+        diff = true;
+        copy =
+          config.force ||
+          (await confirm({
+            message: `File ${Colors.path(destPath, Colors.keyword)} exists. Overwrite?`
+          }));
+      } else {
+        Log.info(`${Colors.path(destPath, Colors.keyword)} requires no update`);
+      }
+    }
+    if (copy) {
+      fs.copyFileSync(srcPath, destPath);
+      Log.info(`Wrote ${Colors.path(destPath, Colors.keyword)}`);
+    } else if (diff) {
+      Log.warning(`${Colors.path(destPath, Colors.keyword)} left unchanged`);
+    }
   } else {
-    Log.warning(`${Colors.path(destPath, Colors.keyword)} left unchanged.`);
+    Log.error(
+      `Expected file ${Colors.path(srcPath, Colors.keyword)} not found`
+    );
   }
 }
