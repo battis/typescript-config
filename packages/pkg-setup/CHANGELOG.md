@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.5](https://github.com/battis/typescript-config/compare/pkg-setup/0.0.4...pkg-setup/0.0.5) (2026-06-30)
+
+
+### Bug Fixes
+
+* improved confirmation clarity ([41f4bc2](https://github.com/battis/typescript-config/commit/41f4bc2f41a7ea88aa6aebfb5ea1c43a643932fc))
+
 ## [0.0.4](https://github.com/battis/typescript-config/compare/pkg-setup/0.0.3...pkg-setup/0.0.4) (2026-06-30)
 
 
