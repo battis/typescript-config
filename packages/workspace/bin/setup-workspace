@@ -6,24 +6,39 @@ import fs from 'node:fs';
 import { Log } from '@qui-cli/log';
 import path from 'node:path';
 import { Colors } from '@qui-cli/colors';
+import ora from 'ora';
 
 Setup.configure({ packageName: '@battis/workspace' });
 await Core.run();
 
 const versionrcPath = path.join(process.cwd(), '.versionrc.json');
-const packagePath = path.join(process.cwd(), 'package.json');
-if (fs.existsSync(versionrcPath) && fs.existsSync(packagePath)) {
-  const pkg = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
-  fs.writeFileSync(
-    versionrcPath,
-    fs
-      .readFileSync(versionrcPath, 'utf8')
-      .replaceAll('{{DIR}}', path.basename(process.cwd()))
-      .replaceAll('{{NAME}}', pkg.name)
-  );
-  Log.info(
-    `${Colors.path(versionrcPath, Colors.keyword)} updated for ${Colors.value(pkg.name)}`
-  );
+const spinner = ora(Colors.path(versionrcPath, Colors.keyword)).start();
+if (fs.existsSync(versionrcPath)) {
+  const packagePath = path.join(process.cwd(), 'package.json');
+  if (fs.existsSync(packagePath)) {
+    const pkg = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
+    fs.writeFileSync(
+      versionrcPath,
+      fs
+        .readFileSync(versionrcPath, 'utf8')
+        .replaceAll('{{DIR}}', path.basename(process.cwd()))
+        .replaceAll('{{NAME}}', pkg.name)
+    );
+    spinner.succeed(
+      `${Colors.path(versionrcPath, Colors.keyword)} configured for ${Colors.value(pkg.name)}`
+    );
+  } else {
+    spinner.fail(
+      Colors.error(
+        `${Colors.path(packagePath, Colors, keyword)} missing: ${Colors.path(
+          versionrcPath,
+          Colors.keyword
+        )} could not be configured`
+      )
+    );
+  }
 } else {
-  Log.warning(`${Colors.path(versionrcPath, Colors.keyword)} left unchanged`);
+  spinner.fail(
+    Colors.error(`${Colors.path(versionrcPath, Colors.keyword)} missing`)
+  );
 }
