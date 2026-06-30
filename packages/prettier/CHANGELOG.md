@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.2](https://github.com/battis/typescript-config/compare/prettier/2.0.1...prettier/2.0.2) (2026-06-30)
+
+
+### Bug Fixes
+
+* standardize workspace package configuration ([2dac8c8](https://github.com/battis/typescript-config/commit/2dac8c859257d34117b1e14552fb9381ff45f921))
+
 ## [2.0.1](https://github.com/battis/typescript-config/compare/prettier/2.0.0...prettier/2.0.1) (2026-06-29)
 
 
