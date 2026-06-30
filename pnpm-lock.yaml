@@ -73,9 +73,6 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1
     devDependencies:
-      '@battis/workspace':
-        specifier: workspace:*
-        version: link:../workspace
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
