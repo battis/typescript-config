@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.5](https://github.com/battis/typescript-config/compare/prettier/2.0.4...prettier/2.0.5) (2026-07-01)
+
+
+### Bug Fixes
+
+* remove redundant import organizer ([bae6613](https://github.com/battis/typescript-config/commit/bae661320173ff3fb304afd4c412a82c909c89f5))
+
 ## [2.0.4](https://github.com/battis/typescript-config/compare/prettier/2.0.3...prettier/2.0.4) (2026-07-01)
 
 ### Bug Fixes
