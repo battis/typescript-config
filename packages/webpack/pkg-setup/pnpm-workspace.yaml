@@ -4,3 +4,13 @@ allowBuilds:
   jpegtran-bin: true
   optipng-bin: true
   sharp: true
+publicHoistPattern:
+  - '*-loader'
+  - dotenv-webpack
+  - favicons
+  - 'imagemin*'
+  - 'postcss*'
+  - sass
+  - typescript
+  - '*-webpack-plugin'
+  - 'webpack*'
