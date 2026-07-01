@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.0.6](https://github.com/battis/typescript-config/compare/commit/0.0.5...commit/0.0.6) (2026-07-01)
 
+### Bug Fixes
+
+- bump @battis/pkg-setup to restore desired dot.dotfile behavior
+
 ## [0.0.5](https://github.com/battis/typescript-config/compare/commit/0.0.4...commit/0.0.5) (2026-07-01)
 
 ### Bug Fixes
