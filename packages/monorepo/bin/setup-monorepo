@@ -1,7 +1,3 @@
 #!/usr/bin/env node
 
-import { Setup } from '@battis/pkg-setup';
-import { Core } from '@qui-cli/core';
-
-Setup.configure({ packageName: '@battis/monorepo' });
-await Core.run();
+import '../dist/index.js';
