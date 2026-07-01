@@ -26,7 +26,16 @@ export function getConfiguration() {
 export function configure(proposal: Configuration = {}) {
   for (const key in proposal) {
     if (proposal[key] !== undefined) {
-      config[key] = proposal[key];
+      switch (key) {
+        case 'fileHandlers':
+          config.fileHandlers = {
+            ...config.fileHandlers,
+            ...proposal.fileHandlers
+          };
+          break;
+        default:
+          config[key] = proposal[key];
+      }
     }
   }
 }
