@@ -2,7 +2,7 @@ import { Colors } from '@qui-cli/colors';
 import fs from 'node:fs';
 import * as yaml from 'yaml';
 import { mergeJSONValues } from '../mergeJSONValues.js';
-import { confirmWithDiff } from '../confirmWithDiff.js';
+import * as confirm from '../confirm/index.js';
 import { FileHandler } from '../Configuration.js';
 import path from 'node:path';
 import appRootPath from 'app-root-path';
@@ -19,7 +19,7 @@ export const PNPMWorkspace: FileHandler = async ({
     const proposal = yaml.parse(fs.readFileSync(srcPath, 'utf8'));
     for (const key in proposal) {
       const update = mergeJSONValues(proposal[key], workspace[key]);
-      await confirmWithDiff(
+      await confirm.withDiff(
         update,
         workspace[key],
         Colors.value(`pnpm-workspace.yaml#${key}`),

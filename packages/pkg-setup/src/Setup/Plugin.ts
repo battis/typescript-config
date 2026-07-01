@@ -3,14 +3,13 @@ import { Colors } from '@qui-cli/colors';
 import fs from 'node:fs';
 import path from 'node:path';
 import { Log } from '@qui-cli/log';
-import { PathString } from '@battis/descriptive-types';
 import type { IPackageJson } from 'package-json-type';
 import { Configuration } from './Configuration.js';
 import * as FileHandlers from './FileHandlers/index.js';
-import { confirmWithDiff } from './confirmWithDiff.js';
+import * as confirm from './confirm/index.js';
 
 export const name = '@battis/pkg-setup';
-const config: Configuration = {
+export const config: Configuration = {
   setupDir: 'pkg-setup',
   fileHandlers: {
     'package.json': FileHandlers.NPMPackage,
@@ -150,7 +149,7 @@ export async function run() {
           false
         )
       ) {
-        await confirmCopy(
+        await confirm.copy(
           path.join(srcPath, filename),
           path.join(process.cwd(), normalizedFilename)
         );
@@ -161,14 +160,6 @@ export async function run() {
   if (warnings.length) {
     warnings.map((warning) => Log.warning(warning));
   }
-}
 
-async function confirmCopy(srcPath: PathString, destPath: PathString) {
-  await confirmWithDiff(
-    fs.existsSync(srcPath) ? fs.readFileSync(srcPath, 'utf8') : undefined,
-    fs.existsSync(destPath) ? fs.readFileSync(destPath, 'utf8') : undefined,
-    Colors.path(destPath, Colors.keyword),
-    () => fs.copyFileSync(srcPath, destPath),
-    config
-  );
+  return true;
 }

@@ -25,7 +25,7 @@ const versionrc: Setup.FileHandler = async ({
         .replaceAll('{{SCOPE}}', path.basename(process.cwd()))
         .replaceAll('{{NAME}}', pkg.name);
 
-      await Setup.confirmWithDiff(
+      await Setup.confirm.withDiff(
         src,
         fs.existsSync(destPath) ? fs.readFileSync(destPath, 'utf8') : undefined,
         Colors.path(destPath, Colors.keyword),

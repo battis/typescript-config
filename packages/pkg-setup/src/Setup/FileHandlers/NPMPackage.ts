@@ -1,7 +1,7 @@
 import { Colors } from '@qui-cli/colors';
 import fs from 'node:fs';
 import { mergeJSONValues } from '../mergeJSONValues.js';
-import { confirmWithDiff } from '../confirmWithDiff.js';
+import * as confirm from '../confirm/index.js';
 import { FileHandler } from '../Configuration.js';
 import path from 'node:path';
 
@@ -15,7 +15,7 @@ export const NPMPackage: FileHandler = async ({
   let changed = false;
   for (const key in proposal) {
     const update = mergeJSONValues(proposal[key], pkg[key]);
-    await confirmWithDiff(
+    await confirm.withDiff(
       update,
       pkg[key],
       Colors.value(`package.${key}`),

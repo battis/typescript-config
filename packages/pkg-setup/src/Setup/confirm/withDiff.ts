@@ -1,11 +1,11 @@
 import ora from 'ora';
-import { isEqual } from './isEqual.js';
+import { isEqual } from '../isEqual.js';
 import confirm from '@inquirer/confirm';
 import { Log } from '@qui-cli/log';
-import { Configuration } from './Configuration.js';
+import { Configuration } from '../Configuration.js';
 import { Colors } from '@qui-cli/colors';
 
-export async function confirmWithDiff(
+export async function withDiff(
   src: unknown,
   dest: unknown,
   identifier: string,
