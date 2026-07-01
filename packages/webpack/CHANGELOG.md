@@ -4,91 +4,83 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [2.1.6](https://github.com/battis/typescript-config/compare/webpack/2.1.5...webpack/2.1.6) (2026-07-01)
 
-## [2.1.5](https://github.com/battis/typescript-config/compare/webpack/2.1.4...webpack/2.1.5) (2026-07-01)
+### Bug Fixes
 
+- bump @battis/pkg-setup for better pnpm-workspace.yaml handling
+
+## [2.1.5](https://github.com/battis/typescript-config/compare/webpack/2.1.4...webpack/2.1.5) (2026-07-01)
 
 ### Bug Fixes
 
-* add public-hoist-pattern to setup ([1dfc799](https://github.com/battis/typescript-config/commit/1dfc79995d7cba5fdb2eab4111161187ecbfe53c))
-* prune unused peer dependencies ([b19bdd5](https://github.com/battis/typescript-config/commit/b19bdd5b208bddee7f4a72d6d6232829d834d5f4))
+- add public-hoist-pattern to setup ([1dfc799](https://github.com/battis/typescript-config/commit/1dfc79995d7cba5fdb2eab4111161187ecbfe53c))
+- prune unused peer dependencies ([b19bdd5](https://github.com/battis/typescript-config/commit/b19bdd5b208bddee7f4a72d6d6232829d834d5f4))
 
 ## [2.1.4](https://github.com/battis/typescript-config/compare/webpack/2.1.3...webpack/2.1.4) (2026-06-30)
 
-
 ### Bug Fixes
 
-* standardize workspace package configuration ([2dac8c8](https://github.com/battis/typescript-config/commit/2dac8c859257d34117b1e14552fb9381ff45f921))
+- standardize workspace package configuration ([2dac8c8](https://github.com/battis/typescript-config/commit/2dac8c859257d34117b1e14552fb9381ff45f921))
 
 ## [2.1.3](https://github.com/battis/typescript-config/compare/webpack/2.1.2...webpack/2.1.3) (2026-06-30)
 
-
 ### Bug Fixes
 
-* include image optimization scripts in workspace config ([25f0efe](https://github.com/battis/typescript-config/commit/25f0efeb3a2cdeb4e0c377d7b786dfd26c594184))
+- include image optimization scripts in workspace config ([25f0efe](https://github.com/battis/typescript-config/commit/25f0efeb3a2cdeb4e0c377d7b786dfd26c594184))
 
 ## [2.1.2](https://github.com/battis/typescript-config/compare/webpack/2.1.1...webpack/2.1.2) (2026-06-29)
 
-
 ### Bug Fixes
 
-* major dependency bumps ([0f9b96d](https://github.com/battis/typescript-config/commit/0f9b96dff4438134198e4b3f8329592b070a564d))
-* remove deprecated peer ([3bf0e78](https://github.com/battis/typescript-config/commit/3bf0e78c1bbb546293bafb6771ca20e68fedf16b))
+- major dependency bumps ([0f9b96d](https://github.com/battis/typescript-config/commit/0f9b96dff4438134198e4b3f8329592b070a564d))
+- remove deprecated peer ([3bf0e78](https://github.com/battis/typescript-config/commit/3bf0e78c1bbb546293bafb6771ca20e68fedf16b))
 
 ## [2.1.1](https://github.com/battis/typescript-config/compare/webpack/2.1.0...webpack/2.1.1) (2026-03-07)
 
-
 ### Bug Fixes
 
-* re-style plugins as functions returning plugins ([e514826](https://github.com/battis/typescript-config/commit/e514826663139becbed307a11b06f3ee516de179))
+- re-style plugins as functions returning plugins ([e514826](https://github.com/battis/typescript-config/commit/e514826663139becbed307a11b06f3ee516de179))
 
 ## [2.1.0](https://github.com/battis/typescript-config/compare/webpack/2.0.8...webpack/2.1.0) (2025-12-10)
 
-
 ### Features
 
-* toVanillaJS() toggle content hashes off ([fde5c94](https://github.com/battis/typescript-config/commit/fde5c94ab4f43db8eade01a35fcd4e1d3c57608f))
+- toVanillaJS() toggle content hashes off ([fde5c94](https://github.com/battis/typescript-config/commit/fde5c94ab4f43db8eade01a35fcd4e1d3c57608f))
 
 ## [2.0.8](https://github.com/battis/typescript-config/compare/webpack/2.0.7...webpack/2.0.8) (2025-10-28)
 
-
 ### Bug Fixes
 
-* suppress imagemin configuration error (?) ([8e1c709](https://github.com/battis/typescript-config/commit/8e1c709cf70bbb28b6a07631fef9da847741c62c))
+- suppress imagemin configuration error (?) ([8e1c709](https://github.com/battis/typescript-config/commit/8e1c709cf70bbb28b6a07631fef9da847741c62c))
 
 ## [2.0.7](https://github.com/battis/typescript-config/compare/webpack/2.0.6...webpack/2.0.7) (2025-09-01)
 
-
 ### Bug Fixes
 
-* use esmResolver for sass-loader ([6400a2c](https://github.com/battis/typescript-config/commit/6400a2c9e89216e8e952238ca17cfd2fb85de293))
+- use esmResolver for sass-loader ([6400a2c](https://github.com/battis/typescript-config/commit/6400a2c9e89216e8e952238ca17cfd2fb85de293))
 
 ## [2.0.6](https://github.com/battis/typescript-config/compare/webpack/2.0.5...webpack/2.0.6) (2025-08-09)
 
-
 ### Bug Fixes
 
-* resolve webpack plugins in pnpm monorepo successfully ([0158005](https://github.com/battis/typescript-config/commit/0158005e2d3493a0ce80e5132e5eacdfa6d6d8db))
+- resolve webpack plugins in pnpm monorepo successfully ([0158005](https://github.com/battis/typescript-config/commit/0158005e2d3493a0ce80e5132e5eacdfa6d6d8db))
 
 ## [2.0.5](https://github.com/battis/typescript-config/compare/webpack/2.0.4...webpack/2.0.5) (2025-04-18)
 
-
 ### Bug Fixes
 
-* **webpack:** include @tsconfig/recommended in peers ([99a1a2f](https://github.com/battis/typescript-config/commit/99a1a2f9f43b4845c94c8ba4cd0d7403b8a7b890))
+- **webpack:** include @tsconfig/recommended in peers ([99a1a2f](https://github.com/battis/typescript-config/commit/99a1a2f9f43b4845c94c8ba4cd0d7403b8a7b890))
 
 ## [2.0.4](https://github.com/battis/typescript-config/compare/webpack/2.0.3...webpack/2.0.4) (2025-03-01)
 
-
 ### Bug Fixes
 
-* **webpack:** do not treat html files as images ([21ac5a3](https://github.com/battis/typescript-config/commit/21ac5a3d3ccf3cc04b0b321164cbc81b9f76f62c))
+- **webpack:** do not treat html files as images ([21ac5a3](https://github.com/battis/typescript-config/commit/21ac5a3d3ccf3cc04b0b321164cbc81b9f76f62c))
 
 ## [2.0.3](https://github.com/battis/typescript-config/compare/webpack/2.0.2...webpack/2.0.3) (2025-03-01)
 
-
 ### Bug Fixes
 
-* **webpack:** remove overly-complex optional peer imagemin ([8b87dd1](https://github.com/battis/typescript-config/commit/8b87dd13ea3113632ee0cbf96477cca96b930920))
+- **webpack:** remove overly-complex optional peer imagemin ([8b87dd1](https://github.com/battis/typescript-config/commit/8b87dd13ea3113632ee0cbf96477cca96b930920))
 
 ## 2.0.2
 
