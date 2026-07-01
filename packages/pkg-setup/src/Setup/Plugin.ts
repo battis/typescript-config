@@ -151,7 +151,7 @@ export async function run() {
       ) {
         await confirmCopy(
           path.join(srcPath, filename),
-          path.join(process.cwd(), filename)
+          path.join(process.cwd(), normalizedFilename)
         );
       }
     }
