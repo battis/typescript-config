@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.7](https://github.com/battis/typescript-config/compare/workspace/0.0.6...workspace/0.0.7) (2026-07-01)
+
+
+### Bug Fixes
+
+* improve clarity by refactoring .versionrc as FileHandler ([e347c22](https://github.com/battis/typescript-config/commit/e347c225c6515c65248be0d5575e5da55415217e))
+
 ## [0.0.6](https://github.com/battis/typescript-config/compare/workspace/0.0.5...workspace/0.0.6) (2026-07-01)
 
 ### Bug Fixes
