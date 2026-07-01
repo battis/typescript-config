@@ -1,4 +1,4 @@
-import * as Setup from './Setup.js';
+import * as Setup from './Setup/index.js';
 import { register } from '@qui-cli/plugin';
 
 export { Setup };
