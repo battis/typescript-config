@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.5](https://github.com/battis/typescript-config/compare/monorepo/0.0.4...monorepo/0.0.5) (2026-07-01)
+
+
+### Features
+
+* run lerna init (if needed) on successful setup ([9e69e15](https://github.com/battis/typescript-config/commit/9e69e158f144ef50ddd690ed13869d86da30df08))
+
 ## [0.0.4](https://github.com/battis/typescript-config/compare/monorepo/0.0.3...monorepo/0.0.4) (2026-07-01)
 
 ### Bug Fixes
