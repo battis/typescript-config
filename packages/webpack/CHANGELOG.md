@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.5](https://github.com/battis/typescript-config/compare/webpack/2.1.4...webpack/2.1.5) (2026-07-01)
+
+
+### Bug Fixes
+
+* add public-hoist-pattern to setup ([1dfc799](https://github.com/battis/typescript-config/commit/1dfc79995d7cba5fdb2eab4111161187ecbfe53c))
+* prune unused peer dependencies ([b19bdd5](https://github.com/battis/typescript-config/commit/b19bdd5b208bddee7f4a72d6d6232829d834d5f4))
+
 ## [2.1.4](https://github.com/battis/typescript-config/compare/webpack/2.1.3...webpack/2.1.4) (2026-06-30)
 
 
