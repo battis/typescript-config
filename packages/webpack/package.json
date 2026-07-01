@@ -39,19 +39,16 @@
     "@types/node": "^24.13.2",
     "copyfiles": "^2.4.1",
     "del-cli": "^7.0.0",
-    "npm-run-all": "^4.1.5",
-    "typescript": "^5.9.3"
+    "npm-run-all": "^4.1.5"
   },
   "peerDependencies": {
     "@tsconfig/recommended": "*",
-    "app-root-path": "*",
     "copy-webpack-plugin": "*",
     "css-loader": "*",
     "css-minimizer-webpack-plugin": "*",
     "dotenv-webpack": "*",
     "favicons": "*",
     "favicons-webpack-plugin": "*",
-    "file-loader": "*",
     "html-webpack-plugin": "*",
     "image-minimizer-webpack-plugin": "*",
     "imagemin": "*",
@@ -70,7 +67,6 @@
     "terser-webpack-plugin": "*",
     "ts-loader": "*",
     "typescript": "5.x",
-    "url-loader": "*",
     "webpack": "5.x",
     "webpack-cli": "*",
     "webpack-dev-server": "*"
