@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.8](https://github.com/battis/typescript-config/compare/pkg-setup/0.0.7...pkg-setup/0.0.8) (2026-07-01)
+
+
+### Features
+
+* export types ([97aba0a](https://github.com/battis/typescript-config/commit/97aba0a3b0bbfbbba0006d9cc9bd7ef666a43449))
+
+
+### Bug Fixes
+
+* objectify FileHandler params, check against _normalized_ filename ([d6b60d4](https://github.com/battis/typescript-config/commit/d6b60d496d8075d3014c3a888f121bd70b4d0fb9))
+
 ## [0.0.7](https://github.com/battis/typescript-config/compare/pkg-setup/0.0.6...pkg-setup/0.0.7) (2026-07-01)
 
 
