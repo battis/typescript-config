@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.6](https://github.com/battis/typescript-config/compare/pkg-setup/0.0.5...pkg-setup/0.0.6) (2026-07-01)
+
+
+### Features
+
+* configurable file ignore list ([e368f14](https://github.com/battis/typescript-config/commit/e368f148f1a9127983891f699d96586f38c57f4f))
+* configurable FileHandlers (defaults to handling package.json and pnpm-workspace.yaml) ([0add4b6](https://github.com/battis/typescript-config/commit/0add4b6a90084361b13271bf244b3fa535362123))
+
+
+### Bug Fixes
+
+* look for pnpm-workspace.yaml in monorepo root ([c35b992](https://github.com/battis/typescript-config/commit/c35b992ed4d0e36b10363975a34caaa442329a6d))
+* merge/overwrite (rather than replace entirely) additonal configured FileHandlers ([64abd2f](https://github.com/battis/typescript-config/commit/64abd2ff6111e1aca22abf793d7c28cc4e552f3b))
+
 ## [0.0.5](https://github.com/battis/typescript-config/compare/pkg-setup/0.0.4...pkg-setup/0.0.5) (2026-06-30)
 
 
