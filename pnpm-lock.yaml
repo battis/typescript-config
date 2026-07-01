@@ -201,9 +201,6 @@ importers:
       '@qui-cli/core':
         specifier: 7.0.0
         version: 7.0.0(@qui-cli/colors@3.2.4)(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4))
-      '@qui-cli/log':
-        specifier: ^4.0.4
-        version: 4.0.4(@qui-cli/colors@3.2.4)(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4))(@qui-cli/root@3.1.1(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4)))
       '@qui-cli/plugin':
         specifier: ^4.1.2
         version: 4.1.2(@qui-cli/colors@3.2.4)
@@ -216,6 +213,9 @@ importers:
       monorepo-package-paths:
         specifier: workspace:*
         version: link:../monorepo-package-paths
+      ora:
+        specifier: ^9.4.1
+        version: 9.4.1
     devDependencies:
       '@battis/workspace':
         specifier: workspace:*
