@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.8](https://github.com/battis/typescript-config/compare/workspace/0.0.7...workspace/0.0.8) (2026-07-01)
+
+
+### Features
+
+* support nested workspace namespaces ([e6c5847](https://github.com/battis/typescript-config/commit/e6c58475fd63976e0c6e29c8b4652bc1b130fdd8))
+
 ## [0.0.7](https://github.com/battis/typescript-config/compare/workspace/0.0.6...workspace/0.0.7) (2026-07-01)
 
 
