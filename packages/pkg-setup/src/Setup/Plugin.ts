@@ -127,12 +127,13 @@ export async function run() {
   const warnings: string[] = [];
   for (const filename of fs.readdirSync(srcPath)) {
     const normalizedFilename = filename.replace(/^dot\./, '.');
-    if (config.fileHandlers && filename in config.fileHandlers) {
-      const warning = await config.fileHandlers[filename](
-        path.join(srcPath, filename),
-        path.join(process.cwd(), normalizedFilename),
-        config
-      );
+    if (config.fileHandlers && normalizedFilename in config.fileHandlers) {
+      const warning = await config.fileHandlers[normalizedFilename]({
+        srcPath: path.join(srcPath, filename),
+        destPath: path.join(process.cwd(), normalizedFilename),
+        config,
+        pkg
+      });
       if (warning) {
         warnings.push(warning);
       }

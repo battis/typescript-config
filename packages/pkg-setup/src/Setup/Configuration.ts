@@ -1,11 +1,17 @@
 import { PathString } from '@battis/descriptive-types';
 import * as Plugin from '@qui-cli/plugin';
+import { IPackageJson } from 'package-json-type';
+
+type Options = {
+  srcPath: PathString;
+  destPath: PathString;
+  config: Configuration;
+  pkg: IPackageJson;
+};
 
 /** Optionally returns a warning to be displayed at the end of the set up process */
 export type FileHandler = (
-  srcPath: PathString,
-  destPath: PathString,
-  config: Configuration
+  options: Options
 ) => (undefined | string) | Promise<undefined | string>;
 
 export type Configuration = Plugin.Configuration & {

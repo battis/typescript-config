@@ -1,18 +1,16 @@
-import { PathString } from '@battis/descriptive-types';
 import { Colors } from '@qui-cli/colors';
 import fs from 'node:fs';
-import type { IPackageJson } from 'package-json-type';
 import { mergeJSONValues } from '../mergeJSONValues.js';
 import { confirmWithDiff } from '../confirmWithDiff.js';
-import { Configuration, FileHandler } from '../Configuration.js';
+import { FileHandler } from '../Configuration.js';
 import path from 'node:path';
 
-export const NPMPackage: FileHandler = async (
-  srcPath: PathString,
-  destPath: PathString,
-  config: Configuration
-) => {
-  const pkg: IPackageJson = JSON.parse(fs.readFileSync(destPath, 'utf8'));
+export const NPMPackage: FileHandler = async ({
+  srcPath,
+  destPath,
+  config,
+  pkg
+}) => {
   const proposal = JSON.parse(fs.readFileSync(srcPath, 'utf8'));
   let changed = false;
   for (const key in proposal) {
