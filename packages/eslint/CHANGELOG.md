@@ -4,45 +4,44 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [3.0.2](https://github.com/battis/typescript-config/compare/eslint/3.0.1...eslint/3.0.2) (2026-07-01)
 
-## [3.0.1](https://github.com/battis/typescript-config/compare/eslint/3.0.0...eslint/3.0.1) (2026-06-30)
+### Bug Fixes
 
+- Bump @battis/pkg-setup to latest version
+
+## [3.0.1](https://github.com/battis/typescript-config/compare/eslint/3.0.0...eslint/3.0.1) (2026-06-30)
 
 ### Bug Fixes
 
-* standardize workspace package configuration ([2dac8c8](https://github.com/battis/typescript-config/commit/2dac8c859257d34117b1e14552fb9381ff45f921))
+- standardize workspace package configuration ([2dac8c8](https://github.com/battis/typescript-config/commit/2dac8c859257d34117b1e14552fb9381ff45f921))
 
 ## [3.0.0](https://github.com/battis/typescript-config/compare/eslint/2.1.0...eslint/3.0.0) (2026-06-29)
 
-
 ### ⚠ BREAKING CHANGES
 
-* shorten package name
+- shorten package name
 
 ### Features
 
-* include pnpm workspace updates in setup ([78f7271](https://github.com/battis/typescript-config/commit/78f7271a6b87a3724c99ae625b26cf487048e61a))
-* shorten package name ([6e3fd76](https://github.com/battis/typescript-config/commit/6e3fd76e602ecdaae34b1a4eed0811e1162d99a8))
+- include pnpm workspace updates in setup ([78f7271](https://github.com/battis/typescript-config/commit/78f7271a6b87a3724c99ae625b26cf487048e61a))
+- shorten package name ([6e3fd76](https://github.com/battis/typescript-config/commit/6e3fd76e602ecdaae34b1a4eed0811e1162d99a8))
 
 ## [2.1.0](https://github.com/battis/typescript-config/compare/eslint-config/2.0.9...eslint-config/2.1.0) (2026-01-25)
 
-
 ### Features
 
-* unused-vars named ^_.* do not trigger warnings ([727f075](https://github.com/battis/typescript-config/commit/727f075c4832145fc723973a868c87179a72fc32))
+- unused-vars named ^_.* do not trigger warnings ([727f075](https://github.com/battis/typescript-config/commit/727f075c4832145fc723973a868c87179a72fc32))
 
 ## [2.0.9](https://github.com/battis/typescript-config/compare/eslint-config/2.0.8...eslint-config/2.0.9) (2026-01-06)
 
-
 ### Bug Fixes
 
-* adjust peer dependencies to get typescript-eslint to calm down ([7fbb9c2](https://github.com/battis/typescript-config/commit/7fbb9c2906131a0caac90ac0144499081bdd540d))
+- adjust peer dependencies to get typescript-eslint to calm down ([7fbb9c2](https://github.com/battis/typescript-config/commit/7fbb9c2906131a0caac90ac0144499081bdd540d))
 
 ## [2.0.8](https://github.com/battis/typescript-config/compare/eslint-config/2.0.7...eslint-config/2.0.8) (2025-12-20)
 
-
 ### Bug Fixes
 
-* update README to document `.npmrc` in `pnpm` monorepos ([2fe8040](https://github.com/battis/typescript-config/commit/2fe80408160dd421b8381da9e88f936c31a91cb9))
+- update README to document `.npmrc` in `pnpm` monorepos ([2fe8040](https://github.com/battis/typescript-config/commit/2fe80408160dd421b8381da9e88f936c31a91cb9))
 
 ## [2.0.7](https://github.com/battis/typescript-config/compare/eslint-config/2.0.6...eslint-config/2.0.7) (2025-10-28)
 
