@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.6](https://github.com/battis/typescript-config/compare/webpack/2.1.5...webpack/2.1.6) (2026-07-01)
+
 ## [2.1.5](https://github.com/battis/typescript-config/compare/webpack/2.1.4...webpack/2.1.5) (2026-07-01)
 
 
