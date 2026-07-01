@@ -3,21 +3,22 @@ import { Colors } from '@qui-cli/colors';
 import fs from 'node:fs';
 import * as yaml from 'yaml';
 import { mergeJSONValues } from '../mergeJSONValues.js';
-import { withDiff } from './withDiff.js';
-import { Configuration } from '../Configuration.js';
+import { confirmWithDiff } from '../confirmWithDiff.js';
+import { Configuration, FileHandler } from '../Configuration.js';
+import path from 'node:path';
 
-export async function updatePNPMWorkspace(
+export const PNPMWorkspace: FileHandler = async (
   srcWorkspacePath: PathString,
   destWorkspacePath: PathString,
   config: Configuration
-) {
+) => {
   let changed = false;
   if (fs.existsSync(destWorkspacePath)) {
     const workspace = yaml.parse(fs.readFileSync(destWorkspacePath, 'utf8'));
     const proposal = yaml.parse(fs.readFileSync(srcWorkspacePath, 'utf8'));
     for (const key in proposal) {
       const update = mergeJSONValues(proposal[key], workspace[key]);
-      await withDiff(
+      await confirmWithDiff(
         update,
         workspace[key],
         Colors.value(`pnpm-workspace.yaml#${key}`),
@@ -33,7 +34,6 @@ export async function updatePNPMWorkspace(
     }
   } else {
     fs.copyFileSync(srcWorkspacePath, destWorkspacePath);
-    changed = true;
+    return `Changes have been made to ${Colors.path(path.join(process.cwd(), 'pnpm-workspace.yaml'), Colors.keyword)}, please verify lockfile status`;
   }
-  return changed;
-}
+};
