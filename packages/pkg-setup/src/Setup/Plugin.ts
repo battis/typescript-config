@@ -16,6 +16,7 @@ const config: Configuration = {
     'package.json': FileHandlers.NPMPackage,
     'pnpm-workspace.yaml': FileHandlers.PNPMWorkspace
   },
+  ignore: ['.DS_Store'],
   force: false
 };
 
@@ -136,7 +137,18 @@ export async function run() {
         warnings.push(warning);
       }
     } else {
-      if (!['.', '..', '.DS_Store'].includes(filename)) {
+      if (
+        ![
+          '.',
+          '..',
+          ...(config.ignore?.filter((i) => typeof i === 'string') || [])
+        ].includes(filename) &&
+        !(config.ignore || []).reduce(
+          (ignore, item) =>
+            ignore || (typeof item !== 'string' && item.test(filename)),
+          false
+        )
+      ) {
         await confirmCopy(
           path.join(srcPath, filename),
           path.join(process.cwd(), filename)

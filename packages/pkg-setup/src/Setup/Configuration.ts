@@ -18,7 +18,7 @@ export type Configuration = Plugin.Configuration & {
    * `pnpm-workspace.yaml` are merged together rather than replaced by default)
    */
   fileHandlers?: Record<string, FileHandler>;
-  /** File names or patterns to ignore in `setupDir` */
+  /** File names or patterns to ignore in `setupDir` (`'.DS_Store'` by default) */
   ignore?: (string | RegExp)[];
   /** Run without confirmation, accepting proposed changes automatically */
   force?: boolean;
