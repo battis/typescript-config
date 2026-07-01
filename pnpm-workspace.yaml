@@ -1,7 +1,7 @@
 allowBuilds:
   nx: true
   unrs-resolver: true
-  "@parcel/watcher": false
+  '@parcel/watcher': false
   gifsicle: false
   jpegtran-bin: false
   optipng-bin: false
@@ -9,9 +9,9 @@ allowBuilds:
 packages:
   - packages/*
 publicHoistPattern:
-  - "*prettier*"
-  - "*eslint*"
-  - "@commitlint/*"
+  - '*prettier*'
+  - '*eslint*'
+  - '@commitlint/*'
   - commit-and-tag-version
   - lerna
   - monorepo-package-paths

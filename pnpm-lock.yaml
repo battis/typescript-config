@@ -512,6 +512,9 @@ importers:
       '@qui-cli/log':
         specifier: ^4.0.4
         version: 4.0.4(@qui-cli/colors@3.2.4)(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4))(@qui-cli/root@3.1.1(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4)))
+      app-root-path:
+        specifier: ^3.1.0
+        version: 3.1.0
       commit-and-tag-version:
         specifier: ^12.7.3
         version: 12.7.3

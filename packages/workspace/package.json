@@ -29,7 +29,8 @@
     "@battis/pkg-setup": "workspace:*",
     "@qui-cli/colors": "^3.2.4",
     "@qui-cli/core": "^7.0.0",
-    "@qui-cli/log": "^4.0.4"
+    "@qui-cli/log": "^4.0.4",
+    "app-root-path": "^3.1.0"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^24.0.0",

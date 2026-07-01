@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { Colors } from '@qui-cli/colors';
 import { Log } from '@qui-cli/log';
+import appRootPath from 'app-root-path';
 
 const versionrc: Setup.FileHandler = async ({
   srcPath,
@@ -15,7 +16,13 @@ const versionrc: Setup.FileHandler = async ({
     if (fs.existsSync(srcPath)) {
       const src = fs
         .readFileSync(srcPath, 'utf8')
-        .replaceAll('{{DIR}}', path.basename(process.cwd()))
+        .replaceAll(
+          '{{PATH}}',
+          path
+            .relative(path.join(appRootPath.toString()), process.cwd())
+            .replace(/^[^/]+\//, '')
+        )
+        .replaceAll('{{SCOPE}}', path.basename(process.cwd()))
         .replaceAll('{{NAME}}', pkg.name);
 
       await Setup.confirmWithDiff(
