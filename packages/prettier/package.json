@@ -30,7 +30,6 @@
   },
   "peerDependencies": {
     "@prettier/plugin-xml": "*",
-    "@trivago/prettier-plugin-sort-imports": "*",
     "prettier": "3.x >=3.5",
     "prettier-plugin-ejs": "*",
     "prettier-plugin-jsdoc": "*",
