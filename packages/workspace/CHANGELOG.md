@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.9](https://github.com/battis/typescript-config/compare/workspace/0.0.8...workspace/0.0.9) (2026-07-01)
+
+
+### Features
+
+* return true on setup success ([7676a7c](https://github.com/battis/typescript-config/commit/7676a7c00ee8e87ba93e1c1492a98676caae070e))
+
 ## [0.0.8](https://github.com/battis/typescript-config/compare/workspace/0.0.7...workspace/0.0.8) (2026-07-01)
 
 
