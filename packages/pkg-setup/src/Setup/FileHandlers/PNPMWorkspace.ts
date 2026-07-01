@@ -6,12 +6,17 @@ import { mergeJSONValues } from '../mergeJSONValues.js';
 import { confirmWithDiff } from '../confirmWithDiff.js';
 import { Configuration, FileHandler } from '../Configuration.js';
 import path from 'node:path';
+import appRootPath from 'app-root-path';
 
 export const PNPMWorkspace: FileHandler = async (
   srcWorkspacePath: PathString,
   destWorkspacePath: PathString,
   config: Configuration
 ) => {
+  destWorkspacePath = path.join(
+    appRootPath.toString(),
+    path.basename(destWorkspacePath)
+  );
   let changed = false;
   if (fs.existsSync(destWorkspacePath)) {
     const workspace = yaml.parse(fs.readFileSync(destWorkspacePath, 'utf8'));

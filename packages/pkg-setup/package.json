@@ -30,6 +30,7 @@
     "@qui-cli/colors": "^3.2.4",
     "@qui-cli/log": "^4.0.4",
     "@qui-cli/plugin": "^4.1.2",
+    "app-root-path": "^3.1.0",
     "ora": "^9.4.1",
     "yaml": "^2.9.0"
   },
