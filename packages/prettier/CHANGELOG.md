@@ -4,87 +4,80 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [2.0.4](https://github.com/battis/typescript-config/compare/prettier/2.0.3...prettier/2.0.4) (2026-07-01)
 
-## [2.0.3](https://github.com/battis/typescript-config/compare/prettier/2.0.2...prettier/2.0.3) (2026-06-30)
+### Bug Fixes
 
+- Bump @battis/pkg-setup to latest version
+
+## [2.0.3](https://github.com/battis/typescript-config/compare/prettier/2.0.2...prettier/2.0.3) (2026-06-30)
 
 ### Bug Fixes
 
-* use updated dot.dotfile notation for pkg-setup ([23b8c83](https://github.com/battis/typescript-config/commit/23b8c8386eb26b30aed0771158a19c050442422f))
+- use updated dot.dotfile notation for pkg-setup ([23b8c83](https://github.com/battis/typescript-config/commit/23b8c8386eb26b30aed0771158a19c050442422f))
 
 ## [2.0.2](https://github.com/battis/typescript-config/compare/prettier/2.0.1...prettier/2.0.2) (2026-06-30)
 
-
 ### Bug Fixes
 
-* standardize workspace package configuration ([2dac8c8](https://github.com/battis/typescript-config/commit/2dac8c859257d34117b1e14552fb9381ff45f921))
+- standardize workspace package configuration ([2dac8c8](https://github.com/battis/typescript-config/commit/2dac8c859257d34117b1e14552fb9381ff45f921))
 
 ## [2.0.1](https://github.com/battis/typescript-config/compare/prettier/2.0.0...prettier/2.0.1) (2026-06-29)
 
-
 ### Bug Fixes
 
-* include .prettierrc.json template ([11d1810](https://github.com/battis/typescript-config/commit/11d1810cb68c5810e22714fd3d61976997c9a88c))
+- include .prettierrc.json template ([11d1810](https://github.com/battis/typescript-config/commit/11d1810cb68c5810e22714fd3d61976997c9a88c))
 
 ## [2.0.0](https://github.com/battis/typescript-config/compare/prettier/1.7.3...prettier/2.0.0) (2026-06-29)
 
-
 ### ⚠ BREAKING CHANGES
 
-* shorten package name
+- shorten package name
 
 ### Features
 
-* include pnpm workspace updates in setup ([78f7271](https://github.com/battis/typescript-config/commit/78f7271a6b87a3724c99ae625b26cf487048e61a))
-* shorten package name ([6e3fd76](https://github.com/battis/typescript-config/commit/6e3fd76e602ecdaae34b1a4eed0811e1162d99a8))
+- include pnpm workspace updates in setup ([78f7271](https://github.com/battis/typescript-config/commit/78f7271a6b87a3724c99ae625b26cf487048e61a))
+- shorten package name ([6e3fd76](https://github.com/battis/typescript-config/commit/6e3fd76e602ecdaae34b1a4eed0811e1162d99a8))
 
 ## [1.7.3](https://github.com/battis/typescript-config/compare/prettier-config/1.7.2...prettier-config/1.7.3) (2025-12-28)
 
-
 ### Bug Fixes
 
-* remove flaky SQL formatting ([e27bd47](https://github.com/battis/typescript-config/commit/e27bd474cb850b6a089a550a37da2925d4b89228))
+- remove flaky SQL formatting ([e27bd47](https://github.com/battis/typescript-config/commit/e27bd474cb850b6a089a550a37da2925d4b89228))
 
 ## [1.7.2](https://github.com/battis/typescript-config/compare/prettier-config/1.7.1...prettier-config/1.7.2) (2025-12-20)
 
-
 ### Bug Fixes
 
-* update README to document `.npmrc` in `pnpm` monorepos ([2fe8040](https://github.com/battis/typescript-config/commit/2fe80408160dd421b8381da9e88f936c31a91cb9))
+- update README to document `.npmrc` in `pnpm` monorepos ([2fe8040](https://github.com/battis/typescript-config/commit/2fe80408160dd421b8381da9e88f936c31a91cb9))
 
 ## [1.7.1](https://github.com/battis/typescript-config/compare/prettier-config/1.7.0...prettier-config/1.7.1) (2025-11-28)
 
-
 ### Bug Fixes
 
-* more expansive prettier peer dependency ([6e50a15](https://github.com/battis/typescript-config/commit/6e50a155eee2f816275665a0f63f5452ec3b65d9))
+- more expansive prettier peer dependency ([6e50a15](https://github.com/battis/typescript-config/commit/6e50a155eee2f816275665a0f63f5452ec3b65d9))
 
 ## [1.7.0](https://github.com/battis/typescript-config/compare/prettier-config/1.6.4...prettier-config/1.7.0) (2025-10-11)
 
-
 ### Features
 
-* add support for ejs files ([1123e45](https://github.com/battis/typescript-config/commit/1123e45f64a99660120768d8bacba7b0e8611eff))
+- add support for ejs files ([1123e45](https://github.com/battis/typescript-config/commit/1123e45f64a99660120768d8bacba7b0e8611eff))
 
 ## [1.6.4](https://github.com/battis/typescript-config/compare/prettier-config/1.6.3...prettier-config/1.6.4) (2025-06-25)
 
-
 ### Bug Fixes
 
-* revert to prettier@3.5.3 ([720ea9b](https://github.com/battis/typescript-config/commit/720ea9b90c7fd7530038480db0208a3be8d3c7a0))
+- revert to prettier@3.5.3 ([720ea9b](https://github.com/battis/typescript-config/commit/720ea9b90c7fd7530038480db0208a3be8d3c7a0))
 
 ## [1.6.3](https://github.com/battis/typescript-config/compare/prettier-config/1.6.2...prettier-config/1.6.3) (2025-06-25)
 
-
 ### Bug Fixes
 
-* override @prettier/plugin-xml regression ([f8cadd4](https://github.com/battis/typescript-config/commit/f8cadd47a712d732231d00783d79852496f4ef20)), closes [/github.com/prettier/prettier/issues/17653#issuecomment-2995829311](https://github.com/battis//github.com/prettier/prettier/issues/17653/issues/issuecomment-2995829311)
+- override @prettier/plugin-xml regression ([f8cadd4](https://github.com/battis/typescript-config/commit/f8cadd47a712d732231d00783d79852496f4ef20)), closes [/github.com/prettier/prettier/issues/17653#issuecomment-2995829311](https://github.com/battis//github.com/prettier/prettier/issues/17653/issues/issuecomment-2995829311)
 
 ## [1.6.2](https://github.com/battis/typescript-config/compare/prettier-config/1.6.1...prettier-config/1.6.2) (2025-06-18)
 
-
 ### Bug Fixes
 
-* **prettier-config:** replace dependencies with peer dependencies ([c5731d9](https://github.com/battis/typescript-config/commit/c5731d9dcf4e32138e1fe4d045a4a3d4e7f7ed2e))
+- **prettier-config:** replace dependencies with peer dependencies ([c5731d9](https://github.com/battis/typescript-config/commit/c5731d9dcf4e32138e1fe4d045a4a3d4e7f7ed2e))
 
 ## [1.6.1](https://github.com/battis/typescript-config/compare/prettier-config/1.6.0...prettier-config/1.6.1) (2025-06-14)
 
