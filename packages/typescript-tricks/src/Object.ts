@@ -23,3 +23,15 @@ export type StaticImplements<
   I extends new (...args: unknown[]) => object,
   C extends I
 > = InstanceType<C>;
+
+/**
+ * A match for `{}`, especially useful if working with unions of types:
+ *
+ * ```ts
+ * type MessyType = {} | {} | { example: number } | {} | {};
+ *
+ * // { example: number } only
+ * type TidyType = Exclude<MessyType, EmptyObject>;
+ * ```
+ */
+export type EmptyObject = Record<string, never>;
