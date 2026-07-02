@@ -25,6 +25,8 @@ export type StaticImplements<
 > = InstanceType<C>;
 
 /**
+ * @see {@link https://www.totaltypescript.com/the-empty-object-type-in-typescript} on empty objects
+ *
  * A match for `{}`, especially useful if working with unions of types:
  *
  * ```ts
