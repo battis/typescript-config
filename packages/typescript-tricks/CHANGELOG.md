@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.5](https://github.com/battis/typescript-config/compare/typescript-tricks/0.8.4...typescript-tricks/0.8.5) (2026-07-02)
+
+
+### Features
+
+* add EmptyObject type ([96a565b](https://github.com/battis/typescript-config/commit/96a565ba9bbb108f45e1a18a18cf792208dd5ce3))
+
 ## [0.8.4](https://github.com/battis/typescript-config/compare/typescript-tricks/0.8.3...typescript-tricks/0.8.4) (2026-06-30)
 
 
