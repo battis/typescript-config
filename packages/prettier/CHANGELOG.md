@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [2.0.7](https://github.com/battis/typescript-config/compare/prettier/2.0.6...prettier/2.0.7) (2026-07-02)
 
+- bump @battis/pkg-setup to current version
+
 ## [2.0.6](https://github.com/battis/typescript-config/compare/prettier/2.0.5...prettier/2.0.6) (2026-07-01)
 
 ### Bug Fixes

@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.0.7](https://github.com/battis/typescript-config/compare/commit/0.0.6...commit/0.0.7) (2026-07-02)
 
+- bump @battis/pkg-setup to current version
+
 ## [0.0.6](https://github.com/battis/typescript-config/compare/commit/0.0.5...commit/0.0.6) (2026-07-01)
 
 ### Bug Fixes
