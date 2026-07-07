@@ -1,5 +1,5 @@
 {
   "path": ".",
-  "tag-prefix": "{{PATH}}/",
-  "releaseCommitMessageFormat": "chore({{SCOPE}}): {{NAME}}@{{currentTag}}"
+  "tag-prefix": "$path/",
+  "releaseCommitMessageFormat": "chore($scope): $name@{{currentTag}}"
 }
