@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.4](https://github.com/battis/typescript-config/compare/eslint/3.0.3...eslint/3.0.4) (2026-07-07)
+
+
+### Bug Fixes
+
+* replace @battis/pkg-setup with @qui-cli/init ([15dbf58](https://github.com/battis/typescript-config/commit/15dbf588c53635d0a0eb692d90cf7869a1215a9f))
+
 ## [3.0.3](https://github.com/battis/typescript-config/compare/eslint/3.0.2...eslint/3.0.3) (2026-07-02)
 
 - bump @battis/pkg-setup to current version
