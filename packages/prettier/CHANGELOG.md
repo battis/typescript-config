@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.9](https://github.com/battis/typescript-config/compare/prettier/2.0.8...prettier/2.0.9) (2026-07-07)
+
+
+### Bug Fixes
+
+* replace @battis/pkg-setup with @qui-cli/init ([15dbf58](https://github.com/battis/typescript-config/commit/15dbf588c53635d0a0eb692d90cf7869a1215a9f))
+
 ## [2.0.8](https://github.com/battis/typescript-config/compare/prettier/2.0.7...prettier/2.0.8) (2026-07-03)
 
 ### Bug Fixes
