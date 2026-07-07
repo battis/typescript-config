@@ -29,8 +29,8 @@
     "prepack": "run-s build"
   },
   "dependencies": {
-    "@battis/pkg-setup": "workspace:*",
-    "@qui-cli/core": "^7.0.0"
+    "@qui-cli/core": "^7.0.0",
+    "@qui-cli/init": "^1.1"
   },
   "devDependencies": {
     "@battis/workspace": "workspace:*",

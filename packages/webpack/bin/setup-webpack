@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 
-import { Setup } from '@battis/pkg-setup';
+import { Init } from '@qui-cli/init';
 import { Core } from '@qui-cli/core';
+import path from 'node:path';
 
-Setup.configure({ packageName: '@battis/webpack' });
+Init.configure({
+  enclosingDirectory: false,
+  template: path.resolve(import.meta.dirname, '../template')
+});
 await Core.run();

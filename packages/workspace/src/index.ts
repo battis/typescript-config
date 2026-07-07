@@ -1,17 +1,19 @@
-import { Setup } from '@battis/pkg-setup';
-import { Core } from '@qui-cli/core';
+import { Init } from '@qui-cli/init';
+import { Core, Positionals } from '@qui-cli/core';
 import fs from 'node:fs';
 import path from 'node:path';
 import { Colors } from '@qui-cli/colors';
 import { Log } from '@qui-cli/log';
 import appRootPath from 'app-root-path';
 
-const versionrc: Setup.FileHandler = async ({
+const versionrc: Init.FileHandlers.FileHandler = async ({
   srcPath,
   destPath,
-  config,
-  pkg
+  force
 }) => {
+  const pkg = JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8')
+  );
   if (pkg.name) {
     if (fs.existsSync(srcPath)) {
       const src = fs
@@ -25,13 +27,15 @@ const versionrc: Setup.FileHandler = async ({
         .replaceAll('{{SCOPE}}', path.basename(process.cwd()))
         .replaceAll('{{NAME}}', pkg.name);
 
-      await Setup.confirm.withDiff(
+      await Init.Confirm.withDiff({
         src,
-        fs.existsSync(destPath) ? fs.readFileSync(destPath, 'utf8') : undefined,
-        Colors.path(destPath, Colors.keyword),
-        () => fs.writeFileSync(destPath, src),
-        config
-      );
+        dest: fs.existsSync(destPath)
+          ? fs.readFileSync(destPath, 'utf8')
+          : undefined,
+        identifier: Colors.path(destPath, Colors.keyword),
+        action: () => fs.writeFileSync(destPath, src),
+        force
+      });
     } else {
       Log.error(
         Colors.error(
@@ -50,8 +54,10 @@ const versionrc: Setup.FileHandler = async ({
   }
 };
 
-Setup.configure({
-  packageName: '@battis/workspace',
+Init.configure({
+  enclosingDirectory: false,
+  template: path.resolve(import.meta.dirname, '../template'),
   fileHandlers: { '.versionrc.json': versionrc }
 });
+Positionals.requireAtLeast(0);
 await Core.run();
