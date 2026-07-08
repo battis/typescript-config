@@ -1,0 +1,5 @@
+{
+  "path": ".",
+  "tag-prefix": "toc/",
+  "releaseCommitMessageFormat": "chore(toc): @battis/toc@{{currentTag}}"
+}

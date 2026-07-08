@@ -6,6 +6,8 @@ allowBuilds:
   jpegtran-bin: false
   optipng-bin: false
   sharp: false
+minimumReleaseAgeExclude:
+  - '@qui-cli/*'
 packages:
   - packages/*
 publicHoistPattern:
