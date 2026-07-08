@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@qui-cli/core": "^7.0.0",
-    "@qui-cli/init": "^1.1"
+    "@qui-cli/init": "^1.1.1"
   },
   "devDependencies": {
     "@battis/workspace": "workspace:*",
