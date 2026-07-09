@@ -1,6 +1,6 @@
 {
   "name": "@battis/toc",
-  "version": "1.0.0-0",
+  "version": "1.0.0-1",
   "description": "Auto-generated package table of contents for monorepo README files",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/toc#readme",
   "repository": {
