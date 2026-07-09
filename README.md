@@ -1,3 +1,7 @@
+# @battis/typescript-config
+
+A collection of packages useful for setting up and managing TypeScript modules, especially those in monorepos.
+
 ## Packages
 
 ### [@battis/descriptive-types](./descriptive-types/README.md)

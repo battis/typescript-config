@@ -16,7 +16,7 @@
     "build:compile": "lerna run build",
     "build:paths": "monorepo-package-paths -w --author --homepage --repository",
     "build:setup": "run-s setup",
-    "build:toc": "toc -O -o . ./packages",
+    "build:toc": "toc -O -t ./docs/toc.md -o . ./packages",
     "release": "run-s release:*",
     "release:build": "lerna run --concurrency 1 release",
     "release:git": "git push --follow-tags",
