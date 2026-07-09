@@ -1,14 +1,14 @@
-# @battis/eslint
+# @battis/commit
 
-@battis's [ESLint](https://eslint.org/) static analysis configuration
+@battis's commit linting configuration
 
-[![npm version](https://badge.fury.io/js/@battis%2Feslint.svg)](https://npmjs.com/package/@battis/eslint)
+[![npm version](https://badge.fury.io/js/@battis%2Fcommit.svg)](https://npmjs.com/package/@battis/commit)
 [![Module type: ESM](https://img.shields.io/badge/module%20type-esm-brightgreen)](https://nodejs.org/api/esm.html)
 
-### Install
+### Usage
 
 ```bash
-npx @battis/eslint
+npx @battis/commit
 ```
 
 This can be optionally configured as a build step in `package.json`, to ensure continued consistency:
@@ -16,10 +16,10 @@ This can be optionally configured as a build step in `package.json`, to ensure c
 ```json
 {
   "scripts": {
-    "build:eslint": "setup-eslint -f"
+    "build:commit": "setup-commit -f"
   },
   "devDependencies": {
-    "@battis/eslint": "3.x"
+    "@battis/commit": "0.x"
   }
 }
 ```

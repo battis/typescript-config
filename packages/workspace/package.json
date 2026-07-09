@@ -1,6 +1,7 @@
 {
   "name": "@battis/workspace",
   "version": "0.0.10",
+  "description": "@battis's configuration for published monorepo workspaces",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/workspace#readme",
   "repository": {
     "type": "git",
@@ -15,9 +16,7 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "directories": {
-    "bin": "./bin"
-  },
+  "bin": "./bin/setup-workspace",
   "scripts": {
     "clean": "del ./dist",
     "build": "run-s build:*",
