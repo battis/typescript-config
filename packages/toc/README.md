@@ -27,7 +27,7 @@ In `package.json`:
 
 Usage:
 
-<pre lang="bash">toc -hOr --o=&lt;outputPath&gt; --t=&lt;templatePath&gt; --d=&lt;depth&gt; --heading=&lt;heading&gt; --logFilePath=&lt;logFilePath&gt; --stdoutLevel=&lt;all|trace|debug|info|warning|error|fatal|off&gt; --fileLevel=&lt;all|trace|debug|info|warning|error|fatal|off&gt; <u>scanPath</u></pre>
+<pre lang="bash">toc -hOr --o=&lt;outputPath&gt; --t=&lt;templatePath&gt; --d=&lt;depth&gt; --title=&lt;title&gt; --heading=&lt;heading&gt; --logFilePath=&lt;logFilePath&gt; --stdoutLevel=&lt;all|trace|debug|info|warning|error|fatal|off&gt; --fileLevel=&lt;all|trace|debug|info|warning|error|fatal|off&gt; <u>scanPath</u></pre>
 
 
 
@@ -49,11 +49,15 @@ Generates a table of contents for a given directory by scanning all of the subdi
 
 #### `-o<outputPath> --outputPath=<outputPath>`
 
-Path to TOC output file (defaults to `<u>`scanPath`</u>/README.md`)
+Path to TOC output file (defaults to `<u>`scanPath`</u>/README.md}`)
 
 #### `-t<templatePath> --templatePath=<templatePath>`
 
 Path to template into which to insert TOC at `{{TOC}}`
+
+#### `--title=<title>`
+
+Title of TOC list (Default: capitalized name of the `--scanPath`)
 
 #### `-O --overwrite`
 
@@ -69,7 +73,7 @@ If making at `--recursive` scan, the maximum depth to scan
 
 #### `--heading=<n>`
 
-Base (largest) heading level in the TOC (Default: `3`)
+Heading level of TOC title (all others will be nested subheadings of this level) (Default: `2`)
 
 ### Logging options
 

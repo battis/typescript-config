@@ -16,8 +16,10 @@ type Configuration = Plugin.Configuration & {
   overwrite?: boolean;
   recursive?: boolean;
   depth?: number;
+  readme?: string;
   heading?: number;
   templatePath?: PathString;
+  fileName?: string;
 };
 
 type Entry = {
@@ -37,7 +39,8 @@ export const name = 'toc';
 const config: Configuration = {
   overwrite: false,
   recursive: false,
-  heading: 3
+  heading: 2,
+  readme: 'README.md'
 };
 
 export function configure(proposal: Configuration = {}) {
@@ -63,14 +66,26 @@ export function options() {
     ],
     opt: {
       outputPath: {
-        description: `Path to TOC output file (defaults to ${Colors.path(`${Colors.positionalArg('scanPath')}/README.md`)})`,
+        description:
+          `Path to TOC output file (defaults to ` +
+          `${Colors.path(`${Colors.positionalArg('scanPath')}/${config.readme}}`)})`,
         short: 'o',
         default: config.outputPath
       },
       templatePath: {
-        description: `Path to template into which to insert TOC at ${Colors.value(`{{TOC}}`)}`,
+        description:
+          `Path to template into which to insert TOC at ` +
+          `${Colors.value(`{{TOC}}`)}`,
         short: 't',
         default: config.templatePath
+      },
+      title: {
+        description: `Title of TOC list${
+          config.title
+            ? ''
+            : ` (Default: capitalized name of the ${Colors.optionArg('--scanPath')})`
+        }`,
+        default: config.title
       }
     },
     flag: {
@@ -92,7 +107,7 @@ export function options() {
         default: config.depth
       },
       heading: {
-        description: `Base (largest) heading level in the TOC`,
+        description: `Heading level of TOC title (all others will be nested subheadings of this level)`,
         default: config.heading
       }
     }
@@ -109,32 +124,19 @@ export async function run() {
     process.exit(1);
   }
 
-  config.scanPath = path.resolve(process.cwd(), config.scanPath);
-  if (!config.outputPath) {
-    config.outputPath = path.join(config.scanPath, 'README.md');
-  } else {
-    config.outputPath = path.resolve(process.cwd(), config.outputPath);
-  }
-  const outputPath = config.outputPath;
+  const scanPath = path.resolve(process.cwd(), config.scanPath);
+  const outputPath = buildOutputPath(scanPath);
 
-  const entries = scan(config.scanPath);
+  const entries = scan(scanPath);
   if (entries) {
-    let toc = `${heading(config.heading ? config.heading - 1 : 2)} ${capitalCase(path.basename(config.scanPath))}\n\n${render(entries).join('\n')}`;
-    if (config.templatePath) {
-      config.templatePath = path.resolve(process.cwd(), config.templatePath);
-      if (fs.existsSync(config.templatePath)) {
-        toc = fs
-          .readFileSync(config.templatePath, 'utf8')
-          .replace('{{TOC}}', toc);
-      }
-    }
-    toc = await prettier.format(toc, {
-      ...(await prettier.resolveConfig(config.outputPath)),
-      filepath: config.outputPath
-    });
+    const toc = await render(
+      entries,
+      config.title || capitalCase(path.basename(scanPath)),
+      outputPath
+    );
     await Confirm.withDiff({
       src: toc,
-      dest: fs.existsSync(config.outputPath)
+      dest: fs.existsSync(outputPath)
         ? fs.readFileSync(outputPath, 'utf8')
         : undefined,
       identifier: Colors.path(outputPath, Colors.keyword),
@@ -149,11 +151,27 @@ export async function run() {
   }
 }
 
-function scan(scanPath: PathString, depth = 0) {
-  const toc: Entry[] = [];
+function buildOutputPath(scanPath: string) {
+  if (!config.readme) {
+    throw new Error(`${Colors.optionArg('--readme')} must be defined`);
+  }
+  let outputPath = path.resolve(process.cwd(), config.outputPath || scanPath);
+  if (fs.existsSync(outputPath)) {
+    if (fs.statSync(outputPath).isDirectory()) {
+      outputPath = path.join(outputPath, config.fileName || config.readme);
+    }
+  }
+  return outputPath;
+}
+
+function scan(scanPath: PathString, depth = 1) {
+  if (!config.readme) {
+    throw new Error(`${Colors.optionArg('--readme')} must be defined`);
+  }
+  const index: Entry[] = [];
   for (const filename of fs.readdirSync(scanPath)) {
     const entryPath = path.join(scanPath, filename);
-    const readme = path.join(entryPath, 'README.md');
+    const readme = path.join(entryPath, config.readme);
     const skip = (message: string) =>
       Log.warning(
         `Skipping ${Colors.path(entryPath, Colors.keyword)} (${message})`
@@ -170,7 +188,7 @@ function scan(scanPath: PathString, depth = 0) {
         if (pkg.name) {
           if (pkg.description) {
             if (fs.existsSync(readme)) {
-              toc.push({
+              index.push({
                 name: pkg.name,
                 description: pkg.description,
                 readme,
@@ -194,13 +212,32 @@ function scan(scanPath: PathString, depth = 0) {
       }
     }
   }
-  if (toc.length) {
-    return toc;
+  if (index.length) {
+    return index;
   }
   return undefined;
 }
 
-function render(entries: Entry[], depth = 0) {
+async function render(entries: Entry[], title: string, outputPath: string) {
+  let toc = `${heading(config.heading || 2)} ${title}\n\n${renderSubentries(entries).join('\n')}`;
+  if (config.templatePath) {
+    const templatePath = path.resolve(process.cwd(), config.templatePath);
+    if (fs.existsSync(templatePath)) {
+      toc = fs.readFileSync(templatePath, 'utf8').replace('{{TOC}}', toc);
+    }
+  }
+  try {
+    toc = await prettier.format(toc, {
+      ...(await prettier.resolveConfig(outputPath)),
+      filepath: outputPath
+    });
+  } catch (_) {
+    // ignore prettier failures
+  }
+  return toc;
+}
+
+function renderSubentries(entries: Entry[], depth = 1) {
   const lines: string[] = [];
   for (const entry of entries) {
     lines.push(
@@ -214,10 +251,10 @@ function render(entries: Entry[], depth = 0) {
       )})\n\n${entry.description}
 `
         .split('\n')
-        .map((line) => `${quote(depth)}${line}`)
+        .map((line) => `${quote(depth - 1)}${line}`)
     );
     if (entry.subentries) {
-      lines.push(...render(entry.subentries, depth + 1));
+      lines.push(...renderSubentries(entry.subentries, depth + 1));
     }
   }
   if (entries.length) {
