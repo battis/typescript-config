@@ -11,14 +11,40 @@ import prettier from 'prettier';
 import { capitalCase } from 'change-case';
 
 type Configuration = Plugin.Configuration & {
+  /** Path to a directory to scan for packages */
   scanPath?: PathString;
+
+  /** Path to TOC output file (Default: `scanPath/fileName`) */
   outputPath?: PathString;
+
+  /** Overwrite any existing TOC if present */
   overwrite?: boolean;
+
+  /** Whether or not to recursively traverse `scanPath` */
   recursive?: boolean;
+
+  /** If making at `recursive` scan, the maximum depth to scan */
   depth?: number;
+
+  /** Name of the file to link to in scanned packages (Default: `"README.md"`) */
   readme?: string;
+
+  /**
+   * Heading level of TOC title (all others will be nested subheadings of this
+   * level)
+   */
   heading?: number;
+
+  /** Title of TOC list (Default: capitalized name of `scanPath`) */
+  title?: string;
+
+  /** Path to template into which to insert TOC at `{{TOC}}` */
   templatePath?: PathString;
+
+  /**
+   * Name of file to write (if `outputPath` is a directory) (Default: `readme`
+   * value)
+   */
   fileName?: string;
 };
 
