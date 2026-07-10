@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.11](https://github.com/battis/typescript-config/compare/workspace/0.0.10...workspace/0.0.11) (2026-07-10)
+
 ## [0.0.10](https://github.com/battis/typescript-config/compare/workspace/0.0.9...workspace/0.0.10) (2026-07-07)
 
 
