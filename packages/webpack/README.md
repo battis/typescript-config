@@ -1,9 +1,9 @@
 # @battis/webpack
 
+Reusable, extensible webpack configurations for different needs
+
 [![npm version](https://badge.fury.io/js/@battis%2Fwebpack.svg)](https://badge.fury.io/js/@battis%2Fwebpack)
 [![Module type: CJS](https://img.shields.io/badge/module%20type-cjs-brightgreen)](https://nodejs.org/api/modules.html#modules-commonjs-modules)
-
-Reusable, extensible webpack configurations for different needs;
 
 1. [Single Page App](#single-page-app): a generic single-page web app with manifest, favicons, etc. Supports TypeScript and SASS.
 2. [Vanilla JS](#vanilla-js): develop in TypeScript and SASS, compile to minified, uglified vanilla JavaScript and CSS.
@@ -12,8 +12,7 @@ Reusable, extensible webpack configurations for different needs;
 ## Install
 
 ```bash
-npm i -D @battis/webpack
-npm exec setup-webpack
+npx @battis/webpack
 ```
 
 ## Usage

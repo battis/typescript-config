@@ -168,9 +168,9 @@ importers:
       '@battis/workspace':
         specifier: workspace:*
         version: link:../workspace
-      '@tsconfig/recommended':
-        specifier: ^1.0.13
-        version: 1.0.13
+      '@tsconfig/node-lts':
+        specifier: ^24
+        version: 24.0.0
       '@types/node':
         specifier: ^24.13.2
         version: 24.13.2

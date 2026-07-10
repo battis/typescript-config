@@ -1,7 +1,7 @@
 {
   "name": "@battis/webpack",
   "version": "2.1.7",
-  "description": "",
+  "description": "Reusable, extensible webpack configurations for different needs",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/webpack#readme",
   "repository": {
     "type": "git",
@@ -16,9 +16,7 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "directories": {
-    "bin": "./bin"
-  },
+  "bin": "./bin/setup-webpack",
   "scripts": {
     "build": "run-s build:*",
     "build:clean": "run-s clean",

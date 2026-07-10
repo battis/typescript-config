@@ -16,6 +16,10 @@ Towards domain-specific types for more legible code
 
 @battis's [ESLint](https://eslint.org/) static analysis configuration
 
+### [@battis/import-package-json](./import-package-json/README.md)
+
+Import package files as typed objects locally or from [npm](https://npmjs.com)
+
 ### [@battis/monorepo](./monorepo/README.md)
 
 @battis's monorepo configuration
@@ -35,6 +39,10 @@ Auto-generated package table of contents for monorepo README files
 ### [@battis/typescript-tricks](./typescript-tricks/README.md)
 
 A handful of useful types and operators
+
+### [@battis/webpack](./webpack/README.md)
+
+Reusable, extensible webpack configurations for different needs
 
 ### [@battis/workspace](./workspace/README.md)
 
