@@ -1,6 +1,6 @@
 {
   "name": "@battis/prettier",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "@battis's code formatting configuration (using [Prettier](https://prettier.io/))",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/prettier#readme",
   "repository": {

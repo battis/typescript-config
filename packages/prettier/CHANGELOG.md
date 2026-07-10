@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.10](https://github.com/battis/typescript-config/compare/prettier/2.0.9...prettier/2.0.10) (2026-07-10)
+
 ## [2.0.9](https://github.com/battis/typescript-config/compare/prettier/2.0.8...prettier/2.0.9) (2026-07-07)
 
 
