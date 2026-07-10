@@ -20,7 +20,7 @@ export async function importLocalWithNPMFallback(
         `Local package ${pkg.name}@${pkg.version} does not satisfy version range ${packageVersion}`
       );
     }
-  } catch (error) {
+  } catch (_) {
     return await fetchNPM(packageName, packageVersion);
   }
 }
