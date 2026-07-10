@@ -1,6 +1,6 @@
 {
   "name": "@battis/eslint",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "@battis's [ESLint](https://eslint.org/) static analysis configuration",
   "homepage": "https://github.com/battis/typescript-config/tree/main/packages/eslint#readme",
   "repository": {
