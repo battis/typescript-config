@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.6](https://github.com/battis/typescript-config/compare/eslint/3.0.5...eslint/3.0.6) (2026-07-13)
+
+
+### Bug Fixes
+
+* rename bin back to setup-eslint explicitly ([4b09f52](https://github.com/battis/typescript-config/commit/4b09f52dbd93c8871ad161c124659a386bb72a09))
+
 ## [3.0.5](https://github.com/battis/typescript-config/compare/eslint/3.0.4...eslint/3.0.5) (2026-07-10)
 
 ## [3.0.4](https://github.com/battis/typescript-config/compare/eslint/3.0.3...eslint/3.0.4) (2026-07-07)
