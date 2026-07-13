@@ -14,7 +14,9 @@
     "url": "https://github.com/battis"
   },
   "type": "module",
-  "bin": "./bin/setup-commit",
+  "bin": {
+    "setup-commit": "./bin/setup-commit"
+  },
   "scripts": {
     "release": "commit-and-tag-version --noBumpWhenEmptyChanges"
   },

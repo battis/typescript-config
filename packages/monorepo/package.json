@@ -13,7 +13,9 @@
     "url": "https://github.com/battis"
   },
   "type": "module",
-  "bin": "./bin/setup-monorepo",
+  "bin": {
+    "setup-monorepo": "./bin/setup-monorepo"
+  },
   "scripts": {
     "clean": "del ./dist",
     "build": "run-s build:*",

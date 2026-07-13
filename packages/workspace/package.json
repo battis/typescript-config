@@ -16,7 +16,9 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "bin": "./bin/setup-workspace",
+  "bin": {
+    "setup-workspace": "./bin/setup-workspace"
+  },
   "scripts": {
     "clean": "del ./dist",
     "build": "run-s build:*",

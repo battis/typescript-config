@@ -15,8 +15,8 @@
   },
   "type": "module",
   "main": ".prettierrc.json",
-  "directories": {
-    "bin": "./bin"
+  "bin": {
+    "setup-prettier": "./bin/setup-prettier"
   },
   "scripts": {
     "release": "commit-and-tag-version --noBumpWhenEmptyChanges"
