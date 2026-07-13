@@ -16,7 +16,9 @@
   "type": "module",
   "main": "./dist/eslint.config.js",
   "types": "./dist/eslint.config.d.ts",
-  "bin": "./bin/setup-eslint",
+  "bin": {
+    "setup-eslint": "./bin/setup-eslint"
+  },
   "scripts": {
     "clean": "del ./dist",
     "build": "run-s build:*",
