@@ -33,7 +33,6 @@
     "@qui-cli/init": "^1.1.1"
   },
   "devDependencies": {
-    "@battis/workspace": "workspace:*",
     "@tsconfig/node-lts": "^24.0.0",
     "@types/dotenv-webpack": "^7.0.8",
     "@types/node": "^24.13.2",

@@ -26,7 +26,8 @@
     "setup": "run-s setup:*",
     "setup:prettier": "setup-prettier -f",
     "setup:eslint": "setup-eslint -f",
-    "setup:commt": "setup-commit -f"
+    "setup:monorepo": "setup-monorepo -f",
+    "setup:commit": "setup-commit -f"
   },
   "devDependencies": {
     "@battis/commit": "workspace:*",

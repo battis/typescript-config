@@ -40,7 +40,6 @@
     "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "@battis/workspace": "workspace:*",
     "@tsconfig/node-lts": "^24.0.0",
     "@types/glob": "^9.0.0",
     "@types/node": "^24.13.2",

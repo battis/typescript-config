@@ -32,7 +32,6 @@
     "ora": "^9.4.1"
   },
   "devDependencies": {
-    "@battis/workspace": "workspace:*",
     "@tsconfig/node-lts": "^24.0.0",
     "@types/node": "^24.13.2",
     "del-cli": "^7.0.0",
