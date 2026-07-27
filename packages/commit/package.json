@@ -28,8 +28,8 @@
     "ora": "^9.4.1"
   },
   "peerDependencies": {
-    "@commitlint/config-conventional": "^21.1.0",
-    "@commitlint/config-pnpm-scopes": "^21.0.2",
-    "commit-and-tag-version": "12.7.3"
+    "@commitlint/config-conventional": "21.x",
+    "@commitlint/config-pnpm-scopes": "21.x",
+    "commit-and-tag-version": "13.x"
   }
 }

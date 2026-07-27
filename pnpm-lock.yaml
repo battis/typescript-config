@@ -36,10 +36,10 @@ importers:
   packages/commit:
     dependencies:
       '@commitlint/config-conventional':
-        specifier: ^21.1.0
+        specifier: 21.x
         version: 21.2.0
       '@commitlint/config-pnpm-scopes':
-        specifier: ^21.0.2
+        specifier: 21.x
         version: 21.2.0
       '@qui-cli/colors':
         specifier: ^3.2.4
@@ -54,7 +54,7 @@ importers:
         specifier: 3.1.4
         version: 3.1.4(@qui-cli/colors@3.2.4)(@qui-cli/log@4.0.4(@qui-cli/colors@3.2.4)(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4))(@qui-cli/root@3.1.1(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4))))(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4))
       commit-and-tag-version:
-        specifier: ^13
+        specifier: 13.x
         version: 13.1.0(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.1)
       ora:
         specifier: ^9.4.1
