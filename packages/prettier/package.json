@@ -25,6 +25,9 @@
     "@qui-cli/core": "^7.0.0",
     "@qui-cli/init": "^1.1.1"
   },
+  "devDependencies": {
+    "commit-and-tag-version": "^13.1.0"
+  },
   "peerDependencies": {
     "@prettier/plugin-xml": "*",
     "prettier": "3.x >=3.5",
@@ -32,8 +35,5 @@
     "prettier-plugin-jsdoc": "*",
     "prettier-plugin-organize-imports": "*",
     "prettier-plugin-packagejson": "*"
-  },
-  "engines": {
-    "node": ">=12.17"
   }
 }

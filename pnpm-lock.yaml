@@ -201,7 +201,7 @@ importers:
         specifier: 3.1.4
         version: 3.1.4(@qui-cli/colors@3.2.4)(@qui-cli/log@4.0.4(@qui-cli/colors@3.2.4)(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4))(@qui-cli/root@3.1.1(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4))))(@qui-cli/plugin@4.1.2(@qui-cli/colors@3.2.4))
       lerna:
-        specifier: ^9.0.7
+        specifier: 9.x
         version: 9.0.7(@types/node@24.13.3)
       monorepo-package-paths:
         specifier: workspace:*
@@ -216,6 +216,9 @@ importers:
       '@types/node':
         specifier: ^24.13.3
         version: 24.13.3
+      commit-and-tag-version:
+        specifier: ^13.1.0
+        version: 13.1.0(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.1)
       del-cli:
         specifier: ^7.0.0
         version: 7.0.0
@@ -262,7 +265,7 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2
       prettier:
-        specifier: ^3.0
+        specifier: 3.x >=3.5
         version: 3.9.6
       yaml:
         specifier: ^2.9.0
@@ -316,6 +319,10 @@ importers:
       prettier-plugin-packagejson:
         specifier: '*'
         version: 3.0.2(prettier@3.9.6)
+    devDependencies:
+      commit-and-tag-version:
+        specifier: ^13.1.0
+        version: 13.1.0(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.1)
 
   packages/toc:
     dependencies:
@@ -353,6 +360,9 @@ importers:
       '@types/node':
         specifier: ^24.13.3
         version: 24.13.3
+      commit-and-tag-version:
+        specifier: ^13.1.0
+        version: 13.1.0(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.1)
       del-cli:
         specifier: ^7.0.0
         version: 7.0.0
@@ -495,6 +505,9 @@ importers:
       '@types/node':
         specifier: ^24.13.3
         version: 24.13.3
+      commit-and-tag-version:
+        specifier: ^13.1.0
+        version: 13.1.0(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.1)
       copyfiles:
         specifier: ^2.4.1
         version: 2.4.1
@@ -523,7 +536,7 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       commit-and-tag-version:
-        specifier: ^13
+        specifier: 13.x
         version: 13.1.0(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.1)
     devDependencies:
       '@tsconfig/node-lts':
