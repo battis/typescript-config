@@ -21,11 +21,11 @@
     "release": "commit-and-tag-version --noBumpWhenEmptyChanges"
   },
   "dependencies": {
-    "@qui-cli/colors": "^3.2.4",
-    "@qui-cli/core": "7.0.0",
-    "@qui-cli/init": "^1.1.1",
-    "@qui-cli/shell": "3.1.4",
-    "ora": "^9.4.1"
+    "@qui-cli/colors": "catalog:prod",
+    "@qui-cli/core": "catalog:prod",
+    "@qui-cli/init": "catalog:prod",
+    "@qui-cli/shell": "catalog:prod",
+    "ora": "catalog:prod"
   },
   "peerDependencies": {
     "@commitlint/config-conventional": "21.x",

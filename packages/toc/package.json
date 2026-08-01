@@ -26,23 +26,23 @@
     "release": "commit-and-tag-version --noBumpWhenEmptyChanges"
   },
   "dependencies": {
-    "@qui-cli/colors": "3.2.5-0",
-    "@qui-cli/core": "7.1.0-0",
-    "@qui-cli/init": "^2.0.0",
-    "@qui-cli/log": "4.0.5-0",
-    "@qui-cli/plugin": "4.2.0-0",
+    "@qui-cli/colors": "catalog:dev",
+    "@qui-cli/core": "catalog:dev",
+    "@qui-cli/init": "catalog:dev",
+    "@qui-cli/log": "catalog:dev",
+    "@qui-cli/plugin": "catalog:dev",
     "change-case": "^5.4.4",
-    "prettier": "^3.9.6"
+    "prettier": "catalog:common-peer"
   },
   "devDependencies": {
     "@battis/descriptive-types": "workspace:*",
-    "@qui-cli/markdown": "^2.0.1",
-    "@tsconfig/node-lts": "^24.0.0",
-    "@types/node": "^24.13.3",
-    "commit-and-tag-version": "^13.1.0",
-    "del-cli": "^7.0.0",
-    "npm-run-all": "^4.1.5",
-    "package-json-type": "^1.1.2",
-    "typescript": "^5.9.3"
+    "@qui-cli/markdown": "catalog:prod",
+    "@tsconfig/node-lts": "catalog:prod",
+    "@types/node": "catalog:prod",
+    "commit-and-tag-version": "catalog:prod",
+    "del-cli": "catalog:prod",
+    "npm-run-all": "catalog:prod",
+    "package-json-type": "catalog:common-peer",
+    "typescript": "catalog:prod"
   }
 }
