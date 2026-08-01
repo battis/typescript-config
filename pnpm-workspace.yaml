@@ -36,7 +36,7 @@ catalogs:
     '@inquirer/input': ~5.1.2
     '@qui-cli/colors': ~3.2.4
     '@qui-cli/core': ~7.0.0
-    '@qui-cli/init': ~1.1.1
+    '@qui-cli/init': ~2.0.0
     '@qui-cli/log': ~4.0.4
     '@qui-cli/markdown': ~2.0.1
     '@qui-cli/plugin': ~4.1.2
@@ -53,7 +53,6 @@ catalogs:
   dev:
     '@qui-cli/colors': 3.2.5-0
     '@qui-cli/core': 7.1.0-0
-    '@qui-cli/init': ~2.0.0
     '@qui-cli/log': 4.0.5-0
     '@qui-cli/plugin': 4.2.0-0
 

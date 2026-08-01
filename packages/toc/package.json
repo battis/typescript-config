@@ -28,7 +28,7 @@
   "dependencies": {
     "@qui-cli/colors": "catalog:dev",
     "@qui-cli/core": "catalog:dev",
-    "@qui-cli/init": "catalog:dev",
+    "@qui-cli/init": "catalog:prod",
     "@qui-cli/log": "catalog:dev",
     "@qui-cli/plugin": "catalog:dev",
     "change-case": "^5.4.4",
