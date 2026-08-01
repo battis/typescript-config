@@ -1,23 +1,31 @@
+import { DateTimeString } from '@battis/descriptive-types';
 import fetch from 'node-fetch';
 import { IPackageJson } from 'package-json-type';
 import semver from 'semver';
 
-type PackageDescription = {
+type Version = string;
+type Tag = string;
+
+type PackageDescription = Pick<
+  IPackageJson,
+  | 'name'
+  | 'bugs'
+  | 'author'
+  | 'contributers'
+  | 'maintainers'
+  | 'license'
+  | 'homepage'
+  | 'description'
+  | 'keywords'
+> & {
   _id: IPackageJson['name'];
-  _ref: string;
-  name: IPackageJson['name'];
-  'dist-tags': { latest: string } & Record<string, string>;
-  versions: Record<NonNullable<IPackageJson['version']>, IPackageJson>;
-  time: { created: string; modified: string } & Record<
-    NonNullable<IPackageJson['version']>,
-    string
-  >;
-  bugs?: IPackageJson['bugs'];
-  author?: IPackageJson['author'];
-  license?: IPackageJson['license'];
-  homepage?: IPackageJson['homepage'];
-  description?: IPackageJson['description'];
-  maintainers?: { name: string; email: string }[];
+  _rev: string;
+  'dist-tags': { latest: Version } & Record<Tag, Version>;
+  versions: Record<Version, IPackageJson>;
+  time: {
+    created: DateTimeString<'RFC 3339'>;
+    modified: DateTimeString<'RFC 3339'>;
+  } & Record<Version, DateTimeString<'RFC 3339'>>;
   readme?: string;
   readmeFilename?: string;
 };
