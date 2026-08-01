@@ -6,7 +6,7 @@ import { PathString } from '@battis/descriptive-types';
 import { Colors } from '@qui-cli/colors';
 import { Log } from '@qui-cli/log';
 import { IPackageJson } from 'package-json-type';
-import * as Confirm from '@qui-cli/init/dist/Init/Confirm/index.js';
+import { Init } from '@qui-cli/init';
 import prettier from 'prettier';
 import { capitalCase } from 'change-case';
 
@@ -160,7 +160,7 @@ export async function run() {
       config.title || capitalCase(path.basename(scanPath)),
       outputPath
     );
-    await Confirm.withDiff({
+    await Init.Confirm.withDiff({
       src: toc,
       dest: fs.existsSync(outputPath)
         ? fs.readFileSync(outputPath, 'utf8')

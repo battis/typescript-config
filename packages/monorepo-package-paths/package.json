@@ -30,6 +30,7 @@
     "@inquirer/input": "catalog:prod",
     "@qui-cli/colors": "catalog:prod",
     "@qui-cli/core": "catalog:prod",
+    "@qui-cli/init": "catalog:prod",
     "@qui-cli/log": "catalog:prod",
     "@qui-cli/plugin": "catalog:prod",
     "@qui-cli/root": "catalog:prod",

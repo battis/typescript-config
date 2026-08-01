@@ -26,11 +26,11 @@
     "release": "commit-and-tag-version --noBumpWhenEmptyChanges"
   },
   "dependencies": {
-    "@qui-cli/colors": "catalog:dev",
-    "@qui-cli/core": "catalog:dev",
+    "@qui-cli/colors": "catalog:prod",
+    "@qui-cli/core": "catalog:prod",
     "@qui-cli/init": "catalog:prod",
-    "@qui-cli/log": "catalog:dev",
-    "@qui-cli/plugin": "catalog:dev",
+    "@qui-cli/log": "catalog:prod",
+    "@qui-cli/plugin": "catalog:prod",
     "change-case": "^5.4.4",
     "prettier": "catalog:common-peer"
   },
