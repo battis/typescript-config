@@ -2,18 +2,19 @@
   "$schema": "https://json.schemastore.org/prettierrc.json",
   "singleQuote": true,
   "trailingComma": "none",
-  "xmlWhitespaceSensitivity": "ignore",
-  "organizeImportsSkipDestructiveCodeActions": true,
   "plugins": [
     "@prettier/plugin-xml",
-    "prettier-plugin-packagejson",
-    "prettier-plugin-organize-imports",
+    "prettier-plugin-ejs",
     "prettier-plugin-jsdoc",
-    "prettier-plugin-ejs"
+    "prettier-plugin-packagejson",
+    "@ianvs/prettier-plugin-sort-imports"
   ],
+  "importOrder": ["", "^[.]"],
+  "importOrderTypeScriptVersion": "5.9.3",
+  "xmlWhitespaceSensitivity": "ignore",
   "overrides": [
     {
-      "files": "**/*.{ts,tsx}",
+      "files": "*.tsx",
       "options": {
         "parser": "typescript"
       }

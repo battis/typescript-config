@@ -26,14 +26,14 @@
     "@qui-cli/init": "^1.1.1"
   },
   "devDependencies": {
-    "commit-and-tag-version": "^13.1.0"
+    "commit-and-tag-version": "^13.1.2"
   },
   "peerDependencies": {
-    "@prettier/plugin-xml": "*",
+    "@ianvs/prettier-plugin-sort-imports": "4.x",
+    "@prettier/plugin-xml": "3.x",
     "prettier": "3.x >=3.5",
-    "prettier-plugin-ejs": "*",
-    "prettier-plugin-jsdoc": "*",
-    "prettier-plugin-organize-imports": "*",
-    "prettier-plugin-packagejson": "*"
+    "prettier-plugin-ejs": "1.x",
+    "prettier-plugin-jsdoc": "1.x",
+    "prettier-plugin-packagejson": "3.x"
   }
 }
