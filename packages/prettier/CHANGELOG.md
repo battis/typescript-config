@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.11](https://github.com/battis/typescript-config/compare/prettier/2.0.10...prettier/2.0.11) (2026-08-02)
+
+### Bug Fixes
+
+* clean up peer dependency versoning ([8662652](https://github.com/battis/typescript-config/commit/866265250bec732b0f13273561652587df75eba4))
+* reduce complexity of import organization config ([cbe5a6e](https://github.com/battis/typescript-config/commit/cbe5a6eaf528b07d0e90368a179ff9a2d5554ca0))
+* rename bin to match documentation ([b841083](https://github.com/battis/typescript-config/commit/b841083a59a458d27442f7b70aa0a12e96814001))
 ## [2.0.10](https://github.com/battis/typescript-config/compare/prettier/2.0.9...prettier/2.0.10) (2026-07-10)
 
 ## [2.0.9](https://github.com/battis/typescript-config/compare/prettier/2.0.8...prettier/2.0.9) (2026-07-07)
