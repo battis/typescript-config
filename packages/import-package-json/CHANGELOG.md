@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.11](https://github.com/battis/typescript-config/compare/import-package-json/0.1.10...import-package-json/0.1.11) (2026-08-02)
+
+### Bug Fixes
+
+* clean up typing on packages pulled from npm registry ([a53110b](https://github.com/battis/typescript-config/commit/a53110bcb85a272565996e9564fb82021c16bf72))
 ## [0.1.10](https://github.com/battis/typescript-config/compare/import-package-json/0.1.9...import-package-json/0.1.10) (2026-07-10)
 
 
