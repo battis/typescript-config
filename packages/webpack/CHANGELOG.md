@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.8](https://github.com/battis/typescript-config/compare/webpack/2.1.7...webpack/2.1.8) (2026-08-02)
+
+### Bug Fixes
+
+* clean up peer dependency versoning ([8662652](https://github.com/battis/typescript-config/commit/866265250bec732b0f13273561652587df75eba4))
+* rename bin to match documentation ([b841083](https://github.com/battis/typescript-config/commit/b841083a59a458d27442f7b70aa0a12e96814001))
 ## [2.1.7](https://github.com/battis/typescript-config/compare/webpack/2.1.6...webpack/2.1.7) (2026-07-07)
 
 
