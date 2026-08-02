@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.0](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.4.6...monorepo-package-paths/1.0.0) (2026-08-02)
+
+### ⚠ BREAKING CHANGES
+
+* use @qui-cli/init to update files
+
+### Features
+
+* use @qui-cli/init to update files ([c144e45](https://github.com/battis/typescript-config/commit/c144e45cb31c5f6ac504fe5f0a011f169323d7b3))
+
+### Bug Fixes
+
+* bump [@qui-cli](https://github.com/qui-cli) to latest version ([61a1906](https://github.com/battis/typescript-config/commit/61a1906bacd573147613a1dd2f6a5a4aab35d22d))
+* clean up peer dependency versoning ([8662652](https://github.com/battis/typescript-config/commit/866265250bec732b0f13273561652587df75eba4))
 ## [0.4.6](https://github.com/battis/typescript-config/compare/monorepo-package-paths/0.4.5...monorepo-package-paths/0.4.6) (2026-06-30)
 
 
