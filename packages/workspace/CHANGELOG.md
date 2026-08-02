@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.12](https://github.com/battis/typescript-config/compare/workspace/0.0.11...workspace/0.0.12) (2026-08-02)
+
+### Bug Fixes
+
+* clean up peer dependency versoning ([8662652](https://github.com/battis/typescript-config/commit/866265250bec732b0f13273561652587df75eba4))
+* rename bin to match documentation ([b841083](https://github.com/battis/typescript-config/commit/b841083a59a458d27442f7b70aa0a12e96814001))
+* update .versionrc FileHandler to work with current @qui-cli/init ([d7f565b](https://github.com/battis/typescript-config/commit/d7f565bb79867441e827988f59d76e661f080573))
 ## [0.0.11](https://github.com/battis/typescript-config/compare/workspace/0.0.10...workspace/0.0.11) (2026-07-10)
 
 ## [0.0.10](https://github.com/battis/typescript-config/compare/workspace/0.0.9...workspace/0.0.10) (2026-07-07)
