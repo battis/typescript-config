@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.10](https://github.com/battis/typescript-config/compare/commit/0.0.9...commit/0.0.10) (2026-08-02)
+
+### Bug Fixes
+
+* commit-and-tag-version@13.x ([3cc14f6](https://github.com/battis/typescript-config/commit/3cc14f64a1768352756ff2b12f635ae9681eeb5f))
+* rename bin to match documentation ([b841083](https://github.com/battis/typescript-config/commit/b841083a59a458d27442f7b70aa0a12e96814001))
 ## [0.0.9](https://github.com/battis/typescript-config/compare/commit/0.0.8...commit/0.0.9) (2026-07-10)
 
 ## [0.0.8](https://github.com/battis/typescript-config/compare/commit/0.0.7...commit/0.0.8) (2026-07-07)
