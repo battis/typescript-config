@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.6](https://github.com/battis/typescript-config/compare/typescript-tricks/0.8.5...typescript-tricks/0.8.6) (2026-08-02)
+
+### Bug Fixes
+
+* clean up peer dependency versoning ([8662652](https://github.com/battis/typescript-config/commit/866265250bec732b0f13273561652587df75eba4))
 ## [0.8.5](https://github.com/battis/typescript-config/compare/typescript-tricks/0.8.4...typescript-tricks/0.8.5) (2026-07-02)
 
 
