@@ -322,9 +322,6 @@ importers:
       '@qui-cli/init':
         specifier: catalog:prod
         version: 2.0.1(@qui-cli/colors@3.2.5)(@qui-cli/core@7.1.0(@qui-cli/colors@3.2.5)(@qui-cli/plugin@4.2.0(@qui-cli/colors@3.2.5)))(@qui-cli/log@4.0.5(@qui-cli/colors@3.2.5)(@qui-cli/plugin@4.2.0(@qui-cli/colors@3.2.5))(@qui-cli/root@3.1.2(@qui-cli/plugin@4.2.0(@qui-cli/colors@3.2.5))))(@qui-cli/plugin@4.2.0(@qui-cli/colors@3.2.5))(@types/node@24.13.3)(typescript@5.9.3)
-      '@qui-cli/log':
-        specifier: catalog:prod
-        version: 4.0.5(@qui-cli/colors@3.2.5)(@qui-cli/plugin@4.2.0(@qui-cli/colors@3.2.5))(@qui-cli/root@3.1.2(@qui-cli/plugin@4.2.0(@qui-cli/colors@3.2.5)))
       '@qui-cli/plugin':
         specifier: catalog:prod
         version: 4.2.0(@qui-cli/colors@3.2.5)

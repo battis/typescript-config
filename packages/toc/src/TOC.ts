@@ -1,14 +1,14 @@
-import * as Plugin from '@qui-cli/plugin';
-import { Positionals } from '@qui-cli/core';
 import fs from 'node:fs';
 import path from 'node:path';
 import { PathString } from '@battis/descriptive-types';
 import { Colors } from '@qui-cli/colors';
+import { Positionals } from '@qui-cli/core';
+import { withDiff } from '@qui-cli/init/dist/Init/Confirm/withDiff.js';
 import { Log } from '@qui-cli/log';
-import { IPackageJson } from 'package-json-type';
-import { Init } from '@qui-cli/init';
-import prettier from 'prettier';
+import * as Plugin from '@qui-cli/plugin';
 import { capitalCase } from 'change-case';
+import { IPackageJson } from 'package-json-type';
+import prettier from 'prettier';
 
 type Configuration = Plugin.Configuration & {
   /** Path to a directory to scan for packages */
@@ -160,7 +160,7 @@ export async function run() {
       config.title || capitalCase(path.basename(scanPath)),
       outputPath
     );
-    await Init.Confirm.withDiff({
+    await withDiff({
       src: toc,
       dest: fs.existsSync(outputPath)
         ? fs.readFileSync(outputPath, 'utf8')

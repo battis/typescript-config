@@ -31,60 +31,60 @@ Usage:
 
 
 
-### Positional arguments
+######## Positional arguments
 
-#### <u>`scanPath`</u>
+######## <u>`scanPath`</u>
 
 Path to a directory to scan for packages
 
-### Arguments
+####### Arguments
 
 #### `-h --help`
 
 Show this usage information
 
-### TOC Options
+######## TOC Options
 
 Generates a table of contents for a given directory by scanning all of the subdirectories for packages with README files. To be included in the TOC, the package must have both a `name` and `description` and links are directly to the README file.
 
-#### `-o<outputPath> --outputPath=<outputPath>`
+######### `-o<outputPath> --outputPath=<outputPath>`
 
 Path to TOC output file (defaults to `<u>`scanPath`</u>/README.md}`)
 
-#### `-t<templatePath> --templatePath=<templatePath>`
+######### `-t<templatePath> --templatePath=<templatePath>`
 
 Path to template into which to insert TOC at `{{TOC}}`
 
-#### `--title=<title>`
+######### `--title=<title>`
 
 Title of TOC list (Default: capitalized name of the `--scanPath`)
 
-#### `-O --overwrite`
+######### `-O --overwrite`
 
 Overwrite any existing TOC if present (Default: `false`)
 
-#### `-r --recursive`
+######### `-r --recursive`
 
 Whether or not to recursively traverse <u>`scanPath`</u> (Default: `false`)
 
-#### `-d<n> --depth=<n>`
+######### `-d<n> --depth=<n>`
 
 If making at `--recursive` scan, the maximum depth to scan
 
-#### `--heading=<n>`
+######### `--heading=<n>`
 
 Heading level of TOC title (all others will be nested subheadings of this level) (Default: `2`)
 
-### Logging options
+######## Logging options
 
-#### `--logFilePath=<logFilePath>`
+######### `--logFilePath=<logFilePath>`
 
 Path to log file (optional)
 
-#### `--stdoutLevel=<all|trace|debug|info|warning|error|fatal|off>`
+######### `--stdoutLevel=<all|trace|debug|info|warning|error|fatal|off>`
 
 Log level to console stdout (Default: `"info"`)
 
-#### `--fileLevel=<all|trace|debug|info|warning|error|fatal|off>`
+######### `--fileLevel=<all|trace|debug|info|warning|error|fatal|off>`
 
 Log level to log file if `--logFilePath` provided (Default: `"all"`)

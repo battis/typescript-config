@@ -1,16 +1,15 @@
 #!/usr/bin/env node
-
+import fs from 'fs';
+import path from 'path';
 import pkg from '@battis/import-package-json';
-import { Validators } from '@qui-cli/validators';
 import input from '@inquirer/input';
 import { Colors } from '@qui-cli/colors';
-import { Log } from '@qui-cli/log';
+import { withDiff } from '@qui-cli/init/dist/Init/Confirm/withDiff.js';
 import * as Plugin from '@qui-cli/plugin';
 import { Root } from '@qui-cli/root';
-import fs from 'fs';
+import { Validators } from '@qui-cli/validators';
 import { glob } from 'glob';
 import ora from 'ora';
-import path from 'path';
 import YAML from 'yaml';
 
 Root.configure({ root: process.cwd() });
@@ -59,21 +58,21 @@ export function options(): Plugin.Options {
       }
     },
     flag: {
-      write: {
-        short: 'w',
-        description: 'Write changes to workspace package files',
+      force: {
+        short: 'f',
+        description: `Force updates to workspace ${Colors.path('package.json')} files`,
         default: config.write
       },
       repository: {
-        description: `Update ${Colors.value('package.repo.directory')}`,
+        description: `Update ${Colors.varName('package.repo.directory')}`,
         default: config.repository
       },
       homepage: {
-        description: `Update ${Colors.value('package.homepage')}`,
+        description: `Update ${Colors.varName('package.homepage')}`,
         default: config.homepage
       },
       author: {
-        description: `Update ${Colors.value('package.author')}`,
+        description: `Update ${Colors.varName('package.author')}`,
         default: config.author
       }
     }
@@ -194,12 +193,11 @@ export async function run() {
     }
   }
 
-  for (const packagePath of packagePaths) {
+  for (const packagePath of packagePaths.reverse()) {
     const workspaceRelativePath = packagePath.replace(
       new RegExp(`^${rootPath}/`),
       ''
     );
-    spinner.start(Colors.url(workspaceRelativePath));
     const workspacePackagePath = path.join(packagePath, 'package.json');
     try {
       const workspacePackage = await pkg.importLocal(workspacePackagePath);
@@ -225,55 +223,40 @@ export async function run() {
         };
       }
 
-      if (config.write) {
-        const updatedPackage = { ...workspacePackage };
-        if (rootAuthor) {
-          updatedPackage.author = rootAuthor;
-        }
-        if (workspaceHomepage) {
-          updatedPackage.homepage = workspaceHomepage.toString();
-        }
-        if (workspaceRepository) {
-          updatedPackage.repository = workspaceRepository;
-        }
-        let json = JSON.stringify(updatedPackage, null, 2) + '\n';
-        if (prettier) {
-          try {
-            json = await prettier.format(json, {
-              ...(await prettier.resolveConfig(workspacePackagePath)),
-              filepath: workspacePackagePath
-            });
-          } catch (_) {
-            spinner.warn(
-              `Prettier is installed but failed to format ${Colors.url(workspaceRelativePath)}: make sure that there is an ${Colors.value('.npmrc')} file defined in the repo root that defines at least ${Colors.value('public-hoist-pattern[]')}=${Colors.regexpValue('*prettier*')}.`
-            );
-          }
-        }
-        fs.writeFileSync(workspacePackagePath, json);
-        spinner.succeed(`Updated ${Colors.url(workspaceRelativePath)}`);
-      } else {
-        const summary: Record<string, unknown> = {
-          name: workspacePackage.name
-        };
-        if (rootAuthor) {
-          summary['author'] = rootAuthor;
-        }
-        if (workspaceHomepage) {
-          summary['homepage'] = workspaceHomepage.toString();
-        }
-        if (workspaceRepository) {
-          summary['repository'] = workspaceRepository;
-        }
-        spinner.succeed(`Computed ${Colors.url(workspaceRelativePath)}`);
-        Log.info(
-          prettier
-            ? await prettier.format(JSON.stringify(summary), {
-                ...(await prettier.resolveConfig(workspacePackagePath)),
-                filepath: workspacePackagePath
-              })
-            : JSON.stringify(summary, null, 2) + '\n'
-        );
+      const updatedPackage = { ...workspacePackage };
+      if (rootAuthor) {
+        updatedPackage.author = rootAuthor;
       }
+      if (workspaceHomepage) {
+        updatedPackage.homepage = workspaceHomepage.toString();
+      }
+      if (workspaceRepository) {
+        updatedPackage.repository = workspaceRepository;
+      }
+      let json = JSON.stringify(updatedPackage, null, 2) + '\n';
+      if (prettier) {
+        try {
+          json = await prettier.format(json, {
+            ...(await prettier.resolveConfig(workspacePackagePath)),
+            filepath: workspacePackagePath
+          });
+        } catch (_) {
+          spinner.warn(
+            `Prettier is installed but failed to format ` +
+              `${Colors.url(workspaceRelativePath)}: make sure that there ` +
+              `is an ${Colors.varName('publicHoistPattern')} entry in for ` +
+              `${Colors.regexpValue('*prettier*')} in ` +
+              `${Colors.path('pnpm-workspace.yaml')})}.`
+          );
+        }
+      }
+      await withDiff({
+        src: updatedPackage,
+        dest: workspacePackage,
+        identifier: Colors.path(workspacePackagePath, Colors.keyword),
+        action: () => fs.writeFileSync(workspacePackagePath, json),
+        force: config.write
+      });
     } catch (_) {
       spinner.fail(
         Colors.error(`Not found: ${`${Colors.url(workspaceRelativePath)}`}`)
