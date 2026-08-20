@@ -11,7 +11,7 @@ export default defineConfig(
   tseslint.configs.recommended,
   eslintConfigPrettier,
   {
-    files: ['**/*.ts', '**/*.mts', '**/*.cts', '**/*.tsx'],
+    files: ['**/*.ts', '**/*.mts', '**/*.cts', '**/*.tsx', '**/*.html'],
     rules: {
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': [
