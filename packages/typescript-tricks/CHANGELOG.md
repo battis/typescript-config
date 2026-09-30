@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.7](https://github.com/battis/typescript-config/compare/typescript-tricks/0.8.6...typescript-tricks/0.8.7) (2026-09-30)
+
+### Features
+
+* added WritableKeys, ReadonlyKeys, RequiredKeys, OptionalKeys ([8c18a14](https://github.com/battis/typescript-config/commit/8c18a147e114f036813d71dda4eb7b77fb14c6b1))
 ## [0.8.6](https://github.com/battis/typescript-config/compare/typescript-tricks/0.8.5...typescript-tricks/0.8.6) (2026-08-02)
 
 ### Bug Fixes
