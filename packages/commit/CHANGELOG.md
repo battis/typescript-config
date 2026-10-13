@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.11](https://github.com/battis/typescript-config/compare/commit/0.0.10...commit/0.0.11) (2026-10-13)
+
+### Features
+
+* add TODO to Issue GitHub Action ([b6671ac](https://github.com/battis/typescript-config/commit/b6671acfb54ca02ae823a9134eed2b67f096cac8))
+* lint for console.log() ([4495adb](https://github.com/battis/typescript-config/commit/4495adb870df75b65c42043089da01d74495f09c))
 ## [0.0.10](https://github.com/battis/typescript-config/compare/commit/0.0.9...commit/0.0.10) (2026-08-02)
 
 ### Bug Fixes
