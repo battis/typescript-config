@@ -35,7 +35,7 @@
     "@tsconfig/node-lts": "catalog:prod",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint-plugin-markdown": "^2.0.2",
-    "@typescript-eslint/utils": "^8.65.0",
+    "@typescript-eslint/utils": "^8.72.1",
     "commit-and-tag-version": "catalog:prod",
     "del-cli": "catalog:prod",
     "npm-run-all": "catalog:prod",

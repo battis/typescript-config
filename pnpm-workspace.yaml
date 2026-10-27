@@ -28,12 +28,12 @@ catalogs:
 
     # Node/TypeScript
     typescript: ~5.9.3
-    '@types/node': ~24.13.3
-    '@tsconfig/node-lts': ~24.0.0
+    '@types/node': ~24.13.6
+    '@tsconfig/node-lts': ~24.0.1
     '@tsconfig/recommended': ~1.0.13
 
     # cli apps
-    '@inquirer/input': ^5.1.2
+    '@inquirer/input': ^5.1.8
     '@qui-cli/colors': ^3.2.5
     '@qui-cli/core': ^7.1.0
     '@qui-cli/init': ^2.0.1
@@ -46,10 +46,10 @@ catalogs:
     ora: ~9.4.1
 
     # unit tests
-    ts-jest: ^29.4.12
-    jest: ^30.4.2
+    ts-jest: ^29.4.15
+    jest: ^30.5.2
     '@types/jest': ^30.0.0
 
   common-peer:
-    prettier: ^3.9.6
+    prettier: ^3.9.10
     package-json-type: ^1.1.2

@@ -37,7 +37,7 @@
     "glob": "^13.0.6",
     "ora": "catalog:prod",
     "package-json-type": "catalog:common-peer",
-    "yaml": "^2.9.0"
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "catalog:prod",
