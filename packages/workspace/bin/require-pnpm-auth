@@ -1,0 +1,20 @@
+#!/bin/sh
+
+CURRENT="$(pnpm whoami 2>&1)"
+LOGIN=0
+
+if [ -z $1 ]; then
+    if [[ "$CURRENT" == *"ERR_PNPM"* ]]; then
+        LOGIN=1
+    else
+        echo "Authenticated to npmjs.com in as $CURRENT"
+    fi
+else
+    if [ "$CURRENT" != "$1" ]; then
+        LOGIN=1
+    fi
+fi
+
+if [ $LOGIN == 1 ]; then
+    pnpm login
+fi
