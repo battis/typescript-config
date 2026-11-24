@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.0](https://github.com/battis/typescript-config/compare/monorepo/1.0.0...monorepo/1.1.0) (2026-11-24)
+
+### Features
+
+* move require-pnpm-auth to @battis/monorepo ([1c1d2a8](https://github.com/battis/typescript-config/commit/1c1d2a88d87132de57483ee3158d60844f728b40))
 ## [1.0.0](https://github.com/battis/typescript-config/compare/monorepo/0.0.7...monorepo/1.0.0) (2026-08-02)
 
 ### ⚠ BREAKING CHANGES
