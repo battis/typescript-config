@@ -21,7 +21,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "clean": "del ./dist/*",
+    "clean": "del ./dist",
     "build": "run-s build:*",
     "build:clean": "run-s clean",
     "build:compile": "tsc",

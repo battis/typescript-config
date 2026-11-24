@@ -29,7 +29,7 @@
     "build:clean": "run-s clean",
     "build:compile": "tsc",
     "build:copy-html": "copyfiles -u 1 ./src/**/*.html ./dist",
-    "clean": "del ./dist/*",
+    "clean": "del ./dist",
     "release": "commit-and-tag-version --noBumpWhenEmptyChanges",
     "prepack": "run-s build"
   },

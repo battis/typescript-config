@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "run-s build:*",
-    "build:clean": "del ./dist/*",
+    "build:clean": "del ./dist",
     "build:compile": "tsc",
     "release": "commit-and-tag-version --noBumpWhenEmptyChanges",
     "prepack": "run-s build"
