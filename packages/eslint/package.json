@@ -14,8 +14,13 @@
     "url": "https://github.com/battis"
   },
   "type": "module",
-  "main": "./dist/eslint.config.js",
-  "types": "./dist/eslint.config.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "bin": {
     "setup-eslint": "./bin/setup-eslint"
   },

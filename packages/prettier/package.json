@@ -14,7 +14,10 @@
     "url": "https://github.com/battis"
   },
   "type": "module",
-  "main": ".prettierrc.json",
+  "exports": {
+    ".": "./prettierrc.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "setup-prettier": "./bin/setup-prettier"
   },
