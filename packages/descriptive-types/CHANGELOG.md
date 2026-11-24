@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.2](https://github.com/battis/typescript-config/compare/descriptive-types/0.3.1...descriptive-types/0.3.2) (2026-11-24)
+
+### Bug Fixes
+
+* bump dependencies ([8e84724](https://github.com/battis/typescript-config/commit/8e84724c9cc303ca24938451c8915fc871353ca0))
 ## [0.3.1](https://github.com/battis/typescript-config/compare/descriptive-types/0.3.0...descriptive-types/0.3.1) (2026-06-30)
 
 
