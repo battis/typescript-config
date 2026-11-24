@@ -19,7 +19,7 @@
     "release": "run-s release:*",
     "release:build": "lerna run --concurrency 1 release",
     "release:git": "git push --follow-tags",
-    "release:auth": "require-pnpm-auth battis",
+    "release:login": "require-pnpm-auth battis",
     "release:publish": "pnpm publish -r --access public"
   },
   "devDependencies": {
