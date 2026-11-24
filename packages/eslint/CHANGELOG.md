@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.9](https://github.com/battis/typescript-config/compare/eslint/3.0.8...eslint/3.0.9) (2026-11-24)
+
+### Bug Fixes
+
+* bump dependencies ([8e84724](https://github.com/battis/typescript-config/commit/8e84724c9cc303ca24938451c8915fc871353ca0))
 ## [3.0.8](https://github.com/battis/typescript-config/compare/eslint/3.0.7...eslint/3.0.8) (2026-10-27)
 
 ### Bug Fixes
