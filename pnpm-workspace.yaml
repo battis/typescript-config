@@ -30,10 +30,10 @@ catalogs:
     typescript: ~5.9.3
     '@types/node': ~24.13.6
     '@tsconfig/node-lts': ~24.0.1
-    '@tsconfig/recommended': ~1.0.13
+    '@tsconfig/recommended': ~1.0.14
 
     # cli apps
-    '@inquirer/input': ^5.1.8
+    '@inquirer/input': ^5.2.1
     '@qui-cli/colors': ^3.2.5
     '@qui-cli/core': ^7.1.0
     '@qui-cli/init': ^2.0.1
@@ -51,5 +51,5 @@ catalogs:
     '@types/jest': ^30.0.0
 
   common-peer:
-    prettier: ^3.9.10
+    prettier: ^3.10.1
     package-json-type: ^1.1.2

@@ -34,7 +34,7 @@
     "@qui-cli/plugin": "catalog:prod",
     "@qui-cli/root": "catalog:prod",
     "@qui-cli/validators": "catalog:prod",
-    "glob": "^13.0.6",
+    "glob": "^13.0.7",
     "ora": "catalog:prod",
     "package-json-type": "catalog:common-peer",
     "yaml": "^2.9.1"
