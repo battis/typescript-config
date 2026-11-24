@@ -13,8 +13,8 @@
     "url": "https://github.com/battis"
   },
   "type": "module",
-  "bin": {
-    "setup-monorepo": "./bin/setup-monorepo"
+  "directories": {
+    "bin": "./bin"
   },
   "scripts": {
     "clean": "del ./dist",
