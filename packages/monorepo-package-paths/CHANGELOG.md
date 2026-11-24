@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.2](https://github.com/battis/typescript-config/compare/monorepo-package-paths/1.0.1...monorepo-package-paths/1.0.2) (2026-11-24)
+
+### Bug Fixes
+
+* bump dependencies ([8e84724](https://github.com/battis/typescript-config/commit/8e84724c9cc303ca24938451c8915fc871353ca0))
 ## [1.0.1](https://github.com/battis/typescript-config/compare/monorepo-package-paths/1.0.0...monorepo-package-paths/1.0.1) (2026-10-27)
 
 ### Bug Fixes
