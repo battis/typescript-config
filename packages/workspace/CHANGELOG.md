@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.13](https://github.com/battis/typescript-config/compare/workspace/0.0.12...workspace/0.0.13) (2026-11-24)
+
+### Features
+
+* move require-pnpm-auth to @battis/monorepo ([1c1d2a8](https://github.com/battis/typescript-config/commit/1c1d2a88d87132de57483ee3158d60844f728b40))
+* require-pnpm-auth ([cac1ea6](https://github.com/battis/typescript-config/commit/cac1ea65efa75672070ec68fa90969b1b912b0f3))
 ## [0.0.12](https://github.com/battis/typescript-config/compare/workspace/0.0.11...workspace/0.0.12) (2026-08-02)
 
 ### Bug Fixes
